@@ -28,7 +28,7 @@
 - [`PoE Trade Multi Listings Extension`](https://github.com/Rasslabsya4el/PoE-Trade-Multi-Listings-extension)  
   Chrome extension that groups duplicate trade listings by seller, normalizes prices to chaos, and helps jump to the best lot faster.
 
-- [`YoutubeAim Trainer Extension`](https://github.com/Rasslabsya4el/Youtube-Aim-trainer-extension)  
+- [`Youtube Aim Trainer Extension`](https://github.com/Rasslabsya4el/Youtube-Aim-trainer-extension)  
   Lightweight YouTube overlay game built as a Chrome extension.
 
 - [`7TV Telegram Bot`](https://github.com/Rasslabsya4el/7tv-telegram-bot)  
