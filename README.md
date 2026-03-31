@@ -1,9 +1,3 @@
-# Anton Petrov
-
-I build internal tools, workflow automation, and operations-facing systems.
-
-Most of my work sits between Python, APIs, Google Sheets, browser automation, internal dashboards, and AI-assisted workflows. I am strongest in messy real-world environments where the process already exists, but the system around it is weak, manual, or unreliable.
-
 **Contacts:** [LinkedIn](https://www.linkedin.com/in/anton-petrov-551a8b246/) · Telegram `@Rasslabsya4el` · Viber / WhatsApp `+381 65 317 3296`
 
 ## What I work on
