@@ -1,7 +1,4 @@
 # Anton Petrov
-
-I build internal tools, automation, and operational software for teams that need things to work reliably in the real world.
-
 **Contacts:** [LinkedIn](https://www.linkedin.com/in/anton-petrov-551a8b246/) · Telegram `@Rasslabsya4el` · Viber / WhatsApp `+381 65 317 3296`
 
 ## What I work on
