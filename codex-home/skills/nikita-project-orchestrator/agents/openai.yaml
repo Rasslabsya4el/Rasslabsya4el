@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nikita Project Оркестратор"
+  short_description: "Проектный оркестратор для роудмепа, постановки и приемки в Nikita Project"
+  default_prompt: "Используй $nikita-project-orchestrator для постановки задач, приемки и ведения скеджела в Nikita Project."

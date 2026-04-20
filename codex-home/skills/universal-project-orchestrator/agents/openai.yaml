@@ -1,0 +1,4 @@
+interface:
+  display_name: "Универсальный Оркестратор Проекта"
+  short_description: "Универсальный оркестратор для роудмепа, постановки и приемки"
+  default_prompt: "Используй $universal-project-orchestrator для роудмепа, постановки задач и приемки в любом проекте."

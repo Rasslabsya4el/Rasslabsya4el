@@ -1,0 +1,4 @@
+interface:
+  display_name: "Универсальный Сабтаск Воркер"
+  short_description: "Универсальный воркер для одной узкой задачи в проекте"
+  default_prompt: "Используй $universal-subtask-worker для выполнения одной узкой задачи в любом проекте."

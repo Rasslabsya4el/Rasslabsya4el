@@ -1,0 +1,4 @@
+interface:
+  display_name: "n8n Workflow Specialist"
+  short_description: "n8n workflow build and validation overlay"
+  default_prompt: "Use $n8n-workflow-specialist to design, patch, validate, and test an n8n workflow in this project."

@@ -1,0 +1,14 @@
+This folder mirrors the restorable parts of C:\Users\user\.codex.
+
+Included:
+- top-level config-style files such as *.toml, *.yaml, *.yml, *.md, *.rules
+- full directories: agents, skills, plugins, rules, memories, automations
+
+Excluded on purpose:
+- auth/session/secrets files
+- app-global state and migration markers
+- sqlite databases, WAL/SHM files, logs
+- caches, sandbox temp data, generated images, archived sessions
+
+To refresh this backup, run:
+pwsh -File .\scripts\sync-codex-home.ps1

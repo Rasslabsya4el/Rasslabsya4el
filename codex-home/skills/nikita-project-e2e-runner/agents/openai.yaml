@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nikita Project E2E Раннер"
+  short_description: "Проектный валидационный раннер для e2e и прогонов census/stopper в Nikita Project"
+  default_prompt: "Используй $nikita-project-e2e-runner для e2e-валидации и анализа runtime-артефактов в Nikita Project."

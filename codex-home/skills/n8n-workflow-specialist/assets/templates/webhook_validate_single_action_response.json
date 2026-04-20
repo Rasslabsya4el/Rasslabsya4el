@@ -1,0 +1,159 @@
+﻿{
+  "name": "Webhook Validate Single Action Template",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "single-action",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "1d57447a-6f27-49cc-ac0f-f2ecf173b709",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [260, 360]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "payload-present",
+              "leftValue": "={{ !!$json.body }}",
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {
+          "ignoreCase": true
+        }
+      },
+      "id": "b73db936-9dbe-4af9-8475-fb445911b9ef",
+      "name": "Validate Payload",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [500, 360]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "result-status",
+              "name": "status",
+              "value": "ok",
+              "type": "string"
+            },
+            {
+              "id": "result-message",
+              "name": "message",
+              "value": "Action completed",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9a13f0d1-ef17-45d6-ab6b-02a44bd622aa",
+      "name": "Build Success Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [740, 260]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "error-status",
+              "name": "status",
+              "value": "error",
+              "type": "string"
+            },
+            {
+              "id": "error-code",
+              "name": "code",
+              "value": "invalid_payload",
+              "type": "string"
+            },
+            {
+              "id": "error-message",
+              "name": "message",
+              "value": "Payload validation failed",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f3f33462-ff99-4758-8f55-e1e8d68aad3d",
+      "name": "Build Error Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [740, 500]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "430fb1eb-8d75-44cf-becb-993d80d8865e",
+      "name": "Return Success 200",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [980, 260]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 400
+        }
+      },
+      "id": "bf7f4b80-5751-4282-a0cb-c96d9189c654",
+      "name": "Return Error 400",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [980, 500]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook Trigger": {
+      "main": [[{"node": "Validate Payload", "type": "main", "index": 0}]]
+    },
+    "Validate Payload": {
+      "main": [
+        [{"node": "Build Success Response", "type": "main", "index": 0}],
+        [{"node": "Build Error Response", "type": "main", "index": 0}]
+      ]
+    },
+    "Build Success Response": {
+      "main": [[{"node": "Return Success 200", "type": "main", "index": 0}]]
+    },
+    "Build Error Response": {
+      "main": [[{"node": "Return Error 400", "type": "main", "index": 0}]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "tags": []
+}

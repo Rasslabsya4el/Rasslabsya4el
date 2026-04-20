@@ -1,0 +1,4 @@
+interface:
+  display_name: "Universal Deep Research"
+  short_description: "Run deep research and turn findings into implementation guidance"
+  default_prompt: "Use $universal-deep-research to research this topic deeply and turn the findings into actionable implementation guidance."

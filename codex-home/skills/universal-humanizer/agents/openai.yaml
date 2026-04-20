@@ -1,0 +1,4 @@
+interface:
+  display_name: "Universal Humanizer"
+  short_description: "Rewrite text to sound natural, specific, and non-AI"
+  default_prompt: "Use $universal-humanizer to rewrite this text so it sounds natural, specific, and not AI-generated."

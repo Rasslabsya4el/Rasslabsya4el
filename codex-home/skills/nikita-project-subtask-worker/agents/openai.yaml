@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nikita Project Сабтаск Воркер"
+  short_description: "Проектный воркер для одной узкой задачи в Nikita Project"
+  default_prompt: "Используй $nikita-project-subtask-worker для выполнения одной узкой задачи в Nikita Project."

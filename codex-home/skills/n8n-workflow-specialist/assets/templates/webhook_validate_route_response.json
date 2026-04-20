@@ -1,0 +1,260 @@
+﻿{
+  "name": "Webhook Validate Route Response Template",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "api-router",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "e7b45d9b-29b3-4b44-bf66-0b6d58e66edb",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [260, 420]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "condition-mode-exists",
+              "leftValue": "={{ $json.body.mode }}",
+              "operator": {
+                "type": "string",
+                "operation": "exists"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {
+          "ignoreCase": true
+        }
+      },
+      "id": "a65592b5-2391-4782-a79b-d22ab7d6d8fa",
+      "name": "Validate Payload",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [500, 420]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": ""
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.mode }}",
+                    "rightValue": "ingest",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ingest"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": ""
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.mode }}",
+                    "rightValue": "query",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "query"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9e5849b8-0044-4ac4-a9ac-bd74b56b5cbb",
+      "name": "Route by Mode",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [740, 320]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "status-ok-ingest",
+              "name": "status",
+              "value": "ok",
+              "type": "string"
+            },
+            {
+              "id": "mode-ingest",
+              "name": "mode",
+              "value": "ingest",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e9299576-4f76-42d6-87d2-00e7a6653065",
+      "name": "Build Ingest Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [980, 220]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "status-ok-query",
+              "name": "status",
+              "value": "ok",
+              "type": "string"
+            },
+            {
+              "id": "mode-query",
+              "name": "mode",
+              "value": "query",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6f2ea5c3-c430-4d56-b80c-9e43ca4474eb",
+      "name": "Build Query Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [980, 420]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "status-error",
+              "name": "status",
+              "value": "error",
+              "type": "string"
+            },
+            {
+              "id": "code-invalid",
+              "name": "code",
+              "value": "invalid_payload",
+              "type": "string"
+            },
+            {
+              "id": "message-invalid",
+              "name": "message",
+              "value": "Validation failed",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9d5f9137-ea7a-462f-8ed9-cff9854a83db",
+      "name": "Build Error Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [740, 620]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "8cbec65f-7c72-43fd-b790-b5f7d68992bf",
+      "name": "Return Success 200",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [1220, 320]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 400
+        }
+      },
+      "id": "5224f46e-ec49-4e84-bc5b-b7ef5665ecf9",
+      "name": "Return Error 400",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [980, 620]
+    },
+    {
+      "parameters": {
+        "content": "## Input Contract\\nPOST JSON body. Validation first, route second, respond at terminal nodes."
+      },
+      "id": "1d9670bc-05b9-458b-a16b-2551d5d69b3e",
+      "name": "Input Contract",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [40, 620]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook Trigger": {
+      "main": [[{"node": "Validate Payload", "type": "main", "index": 0}]]
+    },
+    "Validate Payload": {
+      "main": [
+        [{"node": "Route by Mode", "type": "main", "index": 0}],
+        [{"node": "Build Error Response", "type": "main", "index": 0}]
+      ]
+    },
+    "Route by Mode": {
+      "main": [
+        [{"node": "Build Ingest Response", "type": "main", "index": 0}],
+        [{"node": "Build Query Response", "type": "main", "index": 0}]
+      ]
+    },
+    "Build Ingest Response": {
+      "main": [[{"node": "Return Success 200", "type": "main", "index": 0}]]
+    },
+    "Build Query Response": {
+      "main": [[{"node": "Return Success 200", "type": "main", "index": 0}]]
+    },
+    "Build Error Response": {
+      "main": [[{"node": "Return Error 400", "type": "main", "index": 0}]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "tags": []
+}

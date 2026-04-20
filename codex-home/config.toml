@@ -1,0 +1,80 @@
+model = "gpt-5.4"
+model_reasoning_effort = "xhigh"
+personality = "pragmatic"
+model_provider = "cliproxyapi"
+
+[windows]
+sandbox = "elevated"
+
+[features]
+multi_agent = true
+
+[model_providers.cliproxyapi]
+name = "CLIProxyAPI"
+base_url = "http://127.0.0.1:8317/v1"
+wire_api = "responses"
+env_key = "CLIPROXYAPI_API_KEY"
+env_key_instructions = "Stored locally in the user environment; rotate from C:\\Coding\\Tools\\limit-hub\\config\\.env if needed."
+requires_openai_auth = false
+supports_websockets = false
+
+[agents]
+max_threads = 20
+max_depth = 1
+
+[projects.'C:\Coding\Tools']
+trust_level = "trusted"
+
+[projects.'C:\Coding\n8n']
+trust_level = "trusted"
+
+[projects.'C:\Coding\Freelance\Nikita project']
+trust_level = "trusted"
+
+[projects.'C:\Coding\Endless project']
+trust_level = "trusted"
+
+[projects.'C:\Coding\YT_downloader']
+trust_level = "trusted"
+
+[projects.'C:\Coding\CS2\First mod']
+trust_level = "trusted"
+
+[projects.'C:\Users\user\Documents\Codex\2026-04-18-new-chat']
+trust_level = "trusted"
+
+[projects.'C:\Users\user\Documents\Codex\2026-04-19-https-www-reddit-com-r-codex']
+trust_level = "trusted"
+
+[projects.'C:\Users\user\Documents\Codex\2026-04-19-cedevita-10-15-3-5-7']
+trust_level = "trusted"
+
+[projects.'C:\Coding\Main readme repo']
+trust_level = "trusted"
+
+[projects.'C:\Users\user\Documents\Codex\2026-04-19-2-2-sifre12345678']
+trust_level = "trusted"
+
+[projects.'C:\Users\user\Documents\Codex\2026-04-19-new-chat']
+trust_level = "trusted"
+
+[projects.'C:\Coding\TG services aggregator']
+trust_level = "trusted"
+
+[projects.'C:\Users\user\Documents\Codex\2026-04-20-new-chat']
+trust_level = "trusted"
+
+[projects.'C:\Users\user\Documents\Codex\2026-04-20-new-chat-2']
+trust_level = "trusted"
+
+[projects.'C:\Users\user\Documents\Codex\2026-04-20-new-chat-3']
+trust_level = "trusted"
+
+[projects.'C:\Users\user\Documents\Codex\2026-04-20-https-www-reddit-com-r-codex']
+trust_level = "trusted"
+
+[projects.'C:\Users\user\Documents\Codex\2026-04-20-path-of-building-99']
+trust_level = "trusted"
+
+[projects.'C:\Coding\Poe Junkroan']
+trust_level = "trusted"
