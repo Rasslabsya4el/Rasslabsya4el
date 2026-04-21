@@ -42,6 +42,23 @@ Read this before planning, acceptance, rejection, or dispatch. Follow it verbati
 7. Если в этой фазе были запущены orchestrator-owned subagents, не завершай user-facing ответ, пока их output не интегрирован или явно не discarded.
 8. После каждой materially accepted задачи обнови роудмеп, phase status, phase task lists и ближайший dispatch batch.
 
+## Skill Update Resync
+
+Если пользователь пишет, что skill обновлён, формат обновлён, правила обновлены, надо перечитать skill, или ты сам понимаешь, что активный orchestrator contract изменился:
+
+1. Считай это top-priority control-plane instruction, которая важнее текущего content question.
+2. Немедленно останови старую линию рассуждения, старый dispatch plan и старую локальную трактовку формата.
+3. Перечитай активный orchestrator skill и все reference-файлы, на которые он сейчас опирается для roadmap, response format и task handoff.
+4. Сразу после этого проведи contract audit tracked planning surface:
+   - tracked roadmap file;
+   - ближайшие tracked planning docs, которые управляют queue/schedule/dispatch, если они есть;
+   - текущий user-facing output shape против нового контракта.
+5. Если planning docs stale или противоречат новому skill contract, сначала исправь их, а уже потом отвечай по существу или ставь новые задачи.
+6. Не отвечай на вопросы про next task, definition of done, progress, numbering, "что ты уже делал с роудмепом" или другие planning implications из pre-resync state, пока этот audit не завершён.
+7. Если skill-update signal пришёл в одном сообщении вместе с другим вопросом, сначала сделай resync и repair, и только потом отвечай на остальную часть сообщения уже из post-resync state.
+8. После audit пересчитай immediate dispatch batch заново из обновлённого tracked plan, даже если до обновления skill уже был старый "следующий шаг".
+9. Если repair требовался, не ограничивайся диагностической строкой в ответе. Сначала меняй tracked docs, потом показывай уже исправленное состояние.
+
 ## Parallel Planning Rules
 
 - Пользователь может ставить сколько угодно first-level threads параллельно.

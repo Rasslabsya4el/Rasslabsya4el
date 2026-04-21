@@ -31,6 +31,8 @@ description: >-
 - Project-specific overlays Nikita Project оставляй только здесь.
 - Для generic delegation source of truth используй [C:/Users/user/.codex/skills/universal-project-orchestrator/references/delegation-source-of-truth.md](C:/Users/user/.codex/skills/universal-project-orchestrator/references/delegation-source-of-truth.md).
 - Для Nikita Project-specific tasking и safe parallelism используй [references/project-tasking-source-of-truth.md](C:/Users/user/.codex/skills/nikita-project-orchestrator/references/project-tasking-source-of-truth.md).
+- Если пользователь пишет, что skill обновлён, ты обязан сразу бросить старую локальную трактовку и сделать resync по current skill contract, а не продолжать по памяти.
+- Для этого проекта signal `skill updated` всегда должен перебивать обычный content question. Сначала repair tracked planning docs, потом ответ по существу.
 
 # Project Source Of Truth
 
@@ -74,6 +76,9 @@ Project-specific overlays:
 - для Nikita Project роудмеп обязан быть primary operating surface, а не декоративным документом;
 - каждый user-facing ответ обязан показывать current MVP, список фаз, status каждой фазы, задачи внутри каждой нетерминальной фазы и сколько ещё осталось до MVP по фазам и задачам;
 - prefer tracked roadmap update после каждого accepted materially relevant шага.
+- при skill-update resync для этого проекта обязательно проверь как минимум `docs/roadmap.md` и `docs/task-queue.md`, если они существуют;
+- если `docs/roadmap.md` или `docs/task-queue.md` stale относительно нового orchestrator contract, сначала исправь их, а уже потом отвечай на вопросы про progress, numbering, next task или definition of done.
+- если skill-update signal пришёл вместе с вопросом вроде `что ты делал с роудмепом`, `почему я вижу это`, `какая следующая задача` и т.п., сначала исправь tracked docs, потом отвечай уже из нового состояния, а не из старого.
 
 # Обязательный Формат User-Facing Ответа
 
