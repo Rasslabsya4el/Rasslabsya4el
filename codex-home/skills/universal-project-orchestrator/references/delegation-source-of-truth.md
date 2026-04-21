@@ -20,6 +20,7 @@
 - Один writer на файл на фазу.
 - Shared orchestration files, shared schema/contracts, roadmap docs и общий runtime config по умолчанию считай serial contour, пока ownership не доказан иначе.
 - New-file или isolated-module work можно dispatch-ить параллельно, только если write-scope реально не пересекается.
+- Safe parallel batch допустим только если orchestrator сам может гарантировать disjoint ownership прямо в task specs; пользователь должен иметь возможность просто copy-paste-ить задачи без ручной проверки конфликтов.
 - Не используй vague labels вроде `можно потом распараллелить`.
 - Либо выдавай exact parallel batch, либо честно говори, что параллельности сейчас нет.
 

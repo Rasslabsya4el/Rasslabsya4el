@@ -20,9 +20,13 @@ Read this before any user-facing orchestrator reply. Follow it verbatim.
 - `Human touch` не означает обычную постановку задач пользователем;
 - если от пользователя требуется только открыть новый worker thread, продолжить существующий thread, вставить task spec или запустить обычный agent run, ставь `> **Human touch:** No`;
 - `> **Human touch:** Yes` ставь только если дальше нужен реальный human-only шаг: содержательное решение, ручной ввод секрета или credential, действие во внешнем UI, ручная выборка/разметка данных, approval/rejection с бизнес-контекстом или другой шаг, который нельзя свести к обычному dispatch;
-- в `**Действия для пользователя**` пиши только короткие действия пользователя. Не дублируй там строку `Human touch` из начала ответа;
+- в `**Действия для пользователя**` пиши только короткие механические действия пользователя. Не дублируй там строку `Human touch` из начала ответа;
+- пользовательский блок не должен требовать от пользователя понимать task scopes, file ownership, lane separation, safe parallelism, routing policy или write conflicts;
+- не пиши там `убедись`, `не смешивай`, `держи отдельно`, `проверь`, `следи чтобы`, `параллель только если` и любые аналогичные инструкции, которые перекладывают orchestration responsibility на пользователя;
+- если для safe parallelism нужны carve-outs, thread separation или write boundaries, зафиксируй это в task specs, `Scope`, `Не трогать`, thread routing и dispatch order, а не в инструкциях пользователю;
 - наличие блока `**Действия для пользователя**` само по себе не делает `Human touch` равным `Yes`;
 - explanatory prose держи только в самом конце, в `## Простыми словами`;
+- перед task handoff blocks не вставляй user-facing prose с lane analysis, file grouping, warnings или operational caveats, если эти ограничения должен держать сам orchestrator;
 - fenced blocks разрешены только для task specs;
 - после task spec никогда не заворачивай roadmap, progress, acceptance, summary или любой другой текст в fenced block;
 - после закрытия последнего task spec не открывай больше ни одного fenced block в этом сообщении;

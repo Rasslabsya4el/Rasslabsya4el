@@ -16,6 +16,7 @@ Read this before emitting any worker or validation handoff. Follow it verbatim.
 - не пиши `Задача 1`, `Задача 2` и аналогичные заголовки;
 - дублируй exact task id и вне fenced block, и в начале самой task spec;
 - рутинный thread routing пользователя относится к обычному dispatch и не должен влиять на `Human touch`.
+- task handoff должен быть безопасен для слепого copy-paste пользователем без дополнительной интерпретации scope, conflict rules или safe parallelism.
 
 ## Inside Task Spec
 
@@ -25,6 +26,8 @@ Read this before emitting any worker or validation handoff. Follow it verbatim.
 - не используй markdown tables;
 - не пиши low-signal boilerplate вроде `Project:` или `Repo path:`, если без этого задача остаётся понятной;
 - любые упоминания skills пиши только через `$`, а не через текст `если доступен skill`.
+- если задача участвует в parallel batch, orchestrator обязан сам заранее сузить её так, чтобы worker не пересекался с соседними задачами по write-scope;
+- если такую безопасную границу нельзя сформулировать прямо в `Scope`, `Не трогать` и thread routing, не ставь задачу параллельно.
 
 ## Unified Worker Task Spec
 
@@ -73,6 +76,7 @@ Scope
 
 - это поле обязательно в каждой task spec;
 - значение только `Да` или `Нет`;
+- решение о safe parallelism полностью на orchestrator; пользователь не должен проверять, разделять или интерпретировать batch вручную;
 - если `Да`, оркестратор обязан заранее прописать:
   - сколько first-level subagents спавнить;
   - какого типа каждый subagent;
@@ -85,6 +89,7 @@ Scope
 - только агент, который уже сам запущен как spawned child subagent, не должен порождать детей;
 - если `Нет`, пиши `NO_VALID_SUBAGENT_SPLIT` и короткую причину;
 - не оставляй worker-у расплывчатое `подумай, может быть стоит распараллелить`.
+- не оставляй и пользователю расплывчатое `не смешивай эти задачи`, `держи lane отдельно` или аналогичные ручные safety instructions; безопасный split обязан быть уже зашит в самих task specs.
 
 ## Worker Report Format
 

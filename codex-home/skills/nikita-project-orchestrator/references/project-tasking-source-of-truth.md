@@ -28,6 +28,7 @@
 - Stage queues, private outbox и writer-owned materialization важнее красивого fanout.
 - Несколько воркеров не должны одновременно писать в общий flat output или shared writer-owned file.
 - Shared orchestration surfaces и shared runtime contracts по умолчанию serial.
+- Пользователь здесь не участвует в разделении lane-ов: если parallel batch выдан, он должен быть уже безопасен для слепого copy-paste без ручной проверки scope или ownership.
 
 ## Current Narrow Safe Contour
 
@@ -47,4 +48,5 @@
 
 - Parallel writes допустимы только при non-overlapping write-scope.
 - Если write-scope пересекается, это не parallel batch.
+- Если безопасный split нельзя жёстко зафиксировать в самих task specs, parallel batch не выдавай.
 - При интенсивной multi-agent работе prefer отдельные worktrees, если repo policy это требует.
