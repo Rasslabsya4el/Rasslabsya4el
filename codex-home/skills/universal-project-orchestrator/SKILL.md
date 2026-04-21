@@ -27,34 +27,11 @@ description: Используй этот skill для координации в 
 
 # Дисциплина Роудмепа И MVP
 
-Роудмеп обязан содержать:
+Детальный контракт для roadmap modeling, полного phase breakdown и full-scope parallel planning живёт в [references/roadmap-operating-model.md](C:/Users/user/.codex/skills/universal-project-orchestrator/references/roadmap-operating-model.md).
 
-- summary проекта;
-- MVP outcome;
-- phases с кодами `R1`, `R2`, `R3` и далее, с целью, exit criteria, dependencies и status;
-- детальные задачи внутри каждой фазы;
-- полный task inventory по всем нетерминальным или planned фазам до MVP;
-- текущий dispatchable queue;
-- риски и deferred items.
+Перед planning, acceptance, rejection или dispatch сначала читай этот reference и следуй ему verbatim.
 
-Правила фаз:
-
-- фаза должна быть достаточно узкой, чтобы её прогресс был виден пользователю;
-- размечай весь уже понятный путь до MVP сразу, а не только ближайшую фазу;
-- у каждой нетерминальной или planned фазы задачи обязаны быть прописаны прямо в роудмепе, а не только жить в thread context;
-- если breakdown по всем нетерминальным или planned фазам ещё не собран, первым делом останови новый dispatch и исправь роудмеп;
-- проектируй phase task lists так, чтобы по ним было видно serial work, parallel work и блокирующие зависимости;
-- по умолчанию фаза должна содержать примерно `2-6` подзадач, а не бесконечный хвост микротасок;
-- если фаза прошла `6` task cycles без явного milestone movement, остановись и переразметь роудмеп перед следующей постановкой;
-- после materially relevant acceptance или rejection обновляй breakdown не только текущей фазы, но и всех затронутых downstream/upstream фаз;
-- если MVP outcome фазы уже доказан, закрой фазу и вынеси residuals в backlog или в следующую фазу;
-- не держи nice-to-have и MVP-critical work в одной фазе без явного разделения.
-
-Где держать роудмеп:
-
-- `docs/roadmap.md`, если есть `docs/`;
-- иначе `roadmap.md` в root;
-- если tracked repo пока нет, отдай роудмеп в thread и явно скажи, что tracked roadmap file пока отсутствует.
+Ключевой guardrail: если в tracked roadmap есть нетерминальные или planned фазы без задач, не ставь новую локальную таску. Сначала почини roadmap целиком.
 
 # Source Of Truth Для Делегации И Параллельности
 
@@ -92,144 +69,27 @@ description: Используй этот skill для координации в 
 
 # Обязательный Формат User-Facing Ответа
 
-Не импровизируй новый layout. Повторяй один и тот же markdown-шаблон в каждом user-facing ответе.
+Детальный markdown/layout контракт живёт в [references/user-facing-response-contract.md](C:/Users/user/.codex/skills/universal-project-orchestrator/references/user-facing-response-contract.md).
 
-Порядок секций фиксированный:
+Перед любым user-facing orchestrator reply сначала читай этот reference и следуй ему verbatim.
 
-1. level-1 heading verdict: `# ACCEPTED`, `# REJECTED`, `# BLOCKED` или `# NEEDS_FOLLOWUP_TASK`;
-2. quoted line `> **Human touch:** Yes` или `> **Human touch:** No`;
-3. если нужен user dispatch, блок `**Действия для пользователя**`;
-4. task handoff blocks;
-5. `## Роудмеп`;
-6. `## Порядок постановки`;
-7. всегда самым последним `## Простыми словами`.
-
-Жёсткие правила:
-
-- после verdict line не вставляй длинный explanatory paragraph;
-- `Human touch` не означает обычную постановку задач пользователем;
-- если от пользователя требуется только открыть новый worker thread, продолжить существующий thread, вставить task spec или запустить обычный agent run, ставь `> **Human touch:** No`;
-- `> **Human touch:** Yes` ставь только если дальше нужен реальный human-only шаг: содержательное решение, ручной ввод секрета или credential, действие во внешнем UI, ручная выборка/разметка данных, approval/rejection с бизнес-контекстом или другой шаг, который нельзя свести к обычному dispatch;
-- в `**Действия для пользователя**` пиши только короткие действия пользователя. Не дублируй там строку `Human touch` из начала ответа;
-- наличие блока `**Действия для пользователя**` само по себе не делает `Human touch` равным `Yes`;
-- explanatory prose держи только в самом конце, в `## Простыми словами`;
-- fenced blocks разрешены только для task specs;
-- после task spec никогда не заворачивай roadmap, progress, acceptance, summary или любой другой текст в fenced block;
-- после закрытия последнего task spec не открывай больше ни одного fenced block в этом сообщении;
-- `## Порядок постановки` всегда пиши обычным markdown numbered list, а не code block;
-- если после task spec у тебя получается ещё один блок с language label вроде `text`, это сломанный ответ; перепиши сообщение до отправки;
-- перед отправкой делай self-check: количество fenced blocks в ответе должно быть ровно равно количеству task specs;
-- `## Роудмеп` обязателен в каждом сообщении, даже если downstream task сейчас нет;
-- в `## Роудмеп` показывай реальные фазы из роудмепа в порядке `R1`, `R2`, `R3` и далее;
-- `## Роудмеп` должен отражать полный scope проекта до MVP, а не только текущую dispatch wave;
-- у каждой фазы пиши heading вида `### Rn - status`;
-- сразу под heading каждой фазы пиши одну короткую строку курсивом с названием или смыслом фазы;
-- если status фазы terminal, например `done`, `skip`, `backlog`, `cancelled`, не расписывай её задачи;
-- если status фазы не terminal, расписывай задачи этой фазы сразу под ней;
-- если у нетерминальной или planned фазы задач нет, не скрывай это новой локальной таской; сначала исправь сам роудмеп;
-- не используй отдельный блок `Текущая фаза`;
-- не заменяй полный фазовый роудмеп коротким пересказом только ближайшей фазы;
-- не делай отдельный блок `Итого по прогрессу`;
-- `## Порядок постановки` должен уже включать и факт параллельности, и ближайшие задачи. Не делай отдельные блоки `Следующая задача в постановку сейчас` или `Параллельность`;
-- любой task code вне fenced block оборачивай в inline code, чтобы он рендерился серой плашкой;
-- если задача accepted, в `## Простыми словами` простым языком напиши, что это была за задача и какой прогресс по проекту она дала;
-- если задача rejected или blocked, в `## Простыми словами` простым языком напиши, что именно не доказано и что это значит для общего прогресса.
+Анти-сбойный self-check перед отправкой: если в `## Простыми словами` появились file paths, module/class/function names, test names, commands, commit hashes, branch/worktree детали или другой implementation jargon, перепиши этот блок как нетехнический PM-апдейт.
 
 # Правила Постановки Задач
 
-Для каждого task handoff:
+Детальный контракт для task handoff, markdown вокруг task spec, worker report и поля `Делегация внутри задачи` живёт в [references/task-handoff-contract.md](C:/Users/user/.codex/skills/universal-project-orchestrator/references/task-handoff-contract.md).
 
- - вне fenced block сначала пиши heading level 3, а сам код задачи внутри heading оборачивай в inline code;
- - следующей строкой пиши только строку `**Thread:** ...`; если это continuation, код предыдущей задачи тоже оборачивай в inline code;
- - между heading с task code, строкой `**Thread:** ...` и fenced task spec не вставляй дополнительный prose;
-- только сам task spec заворачивай в fenced block с info string `text`;
-- thread-routing instructions никогда не тащи внутрь task spec;
-- если task идёт в старый thread, явно называй код предыдущей задачи или треда, который надо продолжить;
-- если нужен новый thread, пиши `**Thread:** New`;
-- не пиши `Задача 1`, `Задача 2` и аналогичные заголовки;
- - дублируй exact task id и вне fenced block, и в начале самой task spec.
-- рутинный thread routing пользователя сюда относится как обычный dispatch и не должен влиять на `Human touch`.
+Перед любым handoff сначала читай этот reference и следуй ему verbatim.
 
-Внутри task spec:
-
-- не используй backticks;
-- не используй вложенные fenced blocks;
-- не используй markdown links;
-- не используй markdown tables;
-- не пиши low-signal boilerplate вроде `Project:` или `Repo path:`, если без этого задача остаётся понятной;
-- любые упоминания skills пиши только через `$`, а не через текст `если доступен skill`.
-
-Единая форма task spec для worker tasks:
-
-```text
-Роль: сабтаск воркер. Используй $universal-subtask-worker.
-ТЗ-<ID>
-
-Что нужно сделать
-- ...
-- ...
-
-Зачем это нужно
-- ...
-
-Scope
-- ...
-- ...
-
-Не трогать
-- ...
-- ...
-
-Делегация внутри задачи
-- Да. Спавн ...
-- Нет. NO_VALID_SUBAGENT_SPLIT.
-
-Какие проверки запустить
-- ...
-- ...
-
-Что считать acceptance
-- ...
-- ...
-
-Формат отчёта
-- Первая строка: ТЗ-<ID>
-- Секции: что изменено / какие проверки запущены / результаты проверок / residual risk / handoff notes
-- Если checks не запускались: Tests not run by policy.
-```
-
-Правила для `Делегация внутри задачи`:
-
-- это поле обязательно в каждой task spec;
-- значение только `Да` или `Нет`;
-- если `Да`, оркестратор обязан заранее прописать:
-  - сколько first-level subagents спавнить;
-  - какого типа каждый subagent;
-  - какой у него scope;
-  - какой output ожидать;
-  - какой stop condition;
-  - что completed subagents надо закрыть сразу после интеграции результата;
-- если `Нет`, пиши `NO_VALID_SUBAGENT_SPLIT` и короткую причину;
-- не оставляй worker-у расплывчатое `подумай, может быть стоит распараллелить`.
-
-Если проект использует dedicated validation runner, сохраняй ту же форму task spec. Меняется только role line. Всё остальное, включая thread routing вне fenced block и отсутствие backticks внутри task spec, остаётся тем же.
-
-Если validation target уже привязан к prior artifacts, handoff-и targeted window или targeted slice вместо blind top-N rerun.
+Ключевой терминологический guardrail: формулировка `сабтаск воркер` описывает роль воркера, а не глубину делегации. Worker thread может спавнить first-level subagents, если split безопасен и полезен; запрещены только дети у агента, который уже сам запущен как child subagent.
 
 # Правила Параллельности
 
-- Пользователь может ставить сколько угодно first-level threads параллельно.
-- Ограничение идёт не от числа threads, а от dependency readiness, disjoint ownership и runtime safety.
-- Планируй parallel dispatch по полному task inventory проекта, а не только по текущей фазе.
-- Если в роудмепе видны только `1-2` задачи из-за неполной декомпозиции остальных фаз, это broken planning state; сначала исправь роудмеп.
-- Как только phase graph и ownership позволяют safe parallel dispatch, отдавай полный ближайший parallel batch по проекту, а не одну задачу из страха перед параллельностью.
-- В user-facing ответе не делай отдельную секцию `Параллельность`.
-- Первый пункт внутри `## Порядок постановки` обязан быть только `1. Параллельность: Да` или `1. Параллельность: Нет`.
-- Следующие пункты внутри `## Порядок постановки` должны содержать только task codes без объяснений.
-- Если это follow-up после reject, пиши один пункт со строкой follow-up, где оба task code оформлены через inline code.
-- Если задачи ставятся параллельно в одной волне, пиши их в одной строке через `+`, а оба task code оформляй через inline code.
-- `## Порядок постановки` не заворачивай в fenced block ни при каких условиях.
-- Не используй старый язык `parallel-safe` или `serial-only` как active user-facing policy.
+Для полного phase-graph planning используй [references/roadmap-operating-model.md](C:/Users/user/.codex/skills/universal-project-orchestrator/references/roadmap-operating-model.md).
+
+Для safe parallelism и worker-side spawn planning используй [references/delegation-source-of-truth.md](C:/Users/user/.codex/skills/universal-project-orchestrator/references/delegation-source-of-truth.md).
+
+Не изобретай локальную ad hoc policy поверх этих двух источников.
 
 # Правила Делегации Для Самого Оркестратора
 
@@ -266,15 +126,7 @@ Scope
 
 # Формат Отчёта Воркера
 
-Worker report обязан начинаться exact task id из heading над task spec в первой строке и содержать секции:
-
-- `что изменено`
-- `какие проверки запущены`
-- `результаты проверок`
-- `residual risk / что осталось`
-- `handoff notes / что пригодится следующим воркерам`
-
-Если checks не запускались, worker report обязан содержать literal line `Tests not run by policy.`
+Формат worker report живёт в [references/task-handoff-contract.md](C:/Users/user/.codex/skills/universal-project-orchestrator/references/task-handoff-contract.md). Перед оценкой worker output применяй его verbatim.
 
 # Критерий Завершения
 

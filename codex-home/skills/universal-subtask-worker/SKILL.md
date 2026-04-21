@@ -138,6 +138,8 @@ Tests not run by policy.
 Держи эту policy для generic worker role:
 
 Mandatory delegation check first.
+A `сабтаск воркер` / `subtask worker` здесь означает роль bounded-task worker, а не признак того, что текущий агент уже является child subagent.
+Если этот worker thread открыт пользователем напрямую или получил task spec напрямую от orchestrator, он всё ещё может спавнить first-level subagents, когда есть safe and useful split.
 Spawn 2 first-level subagents if there is a safe and useful split; otherwise explicitly output NO_VALID_SUBAGENT_SPLIT.
 No overlapping write ownership.
 No speculative sidecars.
@@ -151,7 +153,7 @@ Never use recursive delegation or sub-subagents.
 - один writer на файл за фазу;
 - используй smallest useful subagent batch; не спавни агентов ради квоты;
 - larger batches допустимы только когда реально много disjoint read-only / verification tracks и общий runtime cap это позволяет;
-- воркер, который сам запущен как subagent, не должен спавнить детей;
+- только воркер, который уже сам запущен как spawned child subagent, не должен спавнить детей;
 - не давай subagents expand’ить scope beyond the task;
 - promptly close completed subagents after integration;
 - не создавай commits для tracked repo changes.
