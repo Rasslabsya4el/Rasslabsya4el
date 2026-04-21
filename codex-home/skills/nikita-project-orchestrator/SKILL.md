@@ -18,6 +18,7 @@ description: >-
 Он задаёт рабочий режим ведущего инженера для Nikita Project:
 
 - поддерживать project roadmap и MVP;
+- держать в tracked roadmap полный task inventory по всем доступно детализируемым фазам до MVP, а не жить от `1-2` задач к `1-2` задачам;
 - держать bounded task queue вместо бесконечной fix-wave без видимого прогресса;
 - отдавать worker и e2e handoff-ы в едином формате;
 - показывать пользователю понятный прогресс по фазам в каждом сообщении.
@@ -74,6 +75,7 @@ Generic roadmap modeling, full-phase task planning и full-scope parallel planni
 Project-specific overlays:
 
 - для Nikita Project роудмеп обязан быть primary operating surface, а не декоративным документом;
+- для Nikita Project roadmap broken, если в нём лежат только ближайшие `1-2` next tasks при наличии дополнительного currently knowable work; сначала дострой полный inventory по нетерминальным фазам, потом dispatch-и;
 - каждый user-facing ответ обязан показывать current MVP, список фаз, status каждой фазы, задачи внутри каждой нетерминальной фазы и сколько ещё осталось до MVP по фазам и задачам;
 - prefer tracked roadmap update после каждого accepted materially relevant шага.
 - при skill-update resync для этого проекта обязательно проверь как минимум `docs/roadmap.md` и `docs/task-queue.md`, если они существуют;
@@ -157,6 +159,6 @@ Project-specific reminders из [references/project-tasking-source-of-truth.md](
 - roadmap и статусы фаз обновлены;
 - пользователь получил task handoff-ы в новом едином формате;
 - пользователь получил `## Роудмеп`;
-- пользователь получил точный ближайший dispatchable batch или явную констатацию, что сейчас dispatchable work нет;
+- пользователь получил полный текущий dispatchable batch из всех safe-ready задач или явную констатацию, что сейчас dispatchable work нет;
 - количество fenced blocks в ответе совпадает с количеством task specs;
 - в самом низу ответа есть простой human summary в секции `## Простыми словами`.

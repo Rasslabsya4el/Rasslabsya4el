@@ -9,17 +9,20 @@ Read this before planning, acceptance, rejection, or dispatch. Follow it verbati
 - phases с кодами `R1`, `R2`, `R3` и далее, с целью, exit criteria, dependencies и status;
 - детальные задачи внутри каждой фазы;
 - полный task inventory по всем нетерминальным или planned фазам до MVP;
+- все currently knowable задачи, которые уже можно назвать из текущего контекста, а не только ближайшие `1-2` next tasks;
 - текущий dispatchable queue;
+- roadmap как canonical storage для phase tasks: task queue, thread notes или user-facing reply не могут быть единственным местом, где эти задачи живут;
 - риски и deferred items.
 
 ## Phase Rules
 
 - фаза должна быть достаточно узкой, чтобы её прогресс был виден пользователю;
 - размечай весь уже понятный путь до MVP сразу, а не только ближайшую фазу;
+- на каждом planning pass сначала добивайся полного currently knowable breakdown по всему пути до MVP; missing tasks допустимы только там, где работа реально не может быть определена до нового evidence;
 - у каждой нетерминальной или planned фазы задачи обязаны быть прописаны прямо в роудмепе, а не только жить в thread context;
 - если breakdown по всем нетерминальным или planned фазам ещё не собран, первым делом останови новый dispatch и исправь роудмеп;
 - проектируй phase task lists так, чтобы по ним было видно serial work, parallel work и блокирующие зависимости;
-- по умолчанию фаза должна содержать примерно `2-6` подзадач, а не бесконечный хвост микротасок;
+- если после декомпозиции у фазы больше `6` явно понятных задач, не скрывай лишние задачи; либо оставь полный список, либо переразбей фазу, но все known tasks всё равно должны остаться явно записанными в roadmap;
 - если фаза прошла `6` task cycles без явного milestone movement, остановись и переразметь роудмеп перед следующей постановкой;
 - после materially relevant acceptance или rejection обновляй breakdown не только текущей фазы, но и всех затронутых downstream/upstream фаз;
 - если MVP outcome фазы уже доказан, закрой фазу и вынеси residuals в backlog или в следующую фазу;
@@ -35,12 +38,12 @@ Read this before planning, acceptance, rejection, or dispatch. Follow it verbati
 
 1. Проверь `git status` и ближайший repo policy doc перед planning edits или acceptance decisions.
 2. Читай только directly relevant files, ближайший planning doc и минимально нужные policy docs.
-3. Если роудмеп отсутствует, stale или не покрывает задачами все нетерминальные/planned фазы, сначала обнови его.
-4. Выполни delegation check и parallelism check по всему актуальному phase graph, а не только по одной текущей фазе.
+3. Если роудмеп отсутствует, stale, хранит только локальный short queue или не покрывает задачами все нетерминальные/planned фазы, сначала обнови его до полного currently knowable inventory.
+4. Выполни delegation check и parallelism check по всему актуальному phase graph, затем собери полный safe dispatchable batch из всех ready tasks, а не локальную пару next tasks.
 5. Прими explicit decision: `accepted`, `rejected`, `blocked` или `needs_followup_task`.
 6. После acceptance или rejection пересчитай immediate next dispatch из freshest context и полного роудмепа, а не копируй старый локальный план.
 7. Если в этой фазе были запущены orchestrator-owned subagents, не завершай user-facing ответ, пока их output не интегрирован или явно не discarded.
-8. После каждой materially accepted задачи обнови роудмеп, phase status, phase task lists и ближайший dispatch batch.
+8. После каждой materially accepted задачи обнови роудмеп, phase status, phase task lists и полный текущий dispatch batch.
 
 ## Skill Update Resync
 
@@ -65,4 +68,5 @@ Read this before planning, acceptance, rejection, or dispatch. Follow it verbati
 - Ограничение идёт не от числа threads, а от dependency readiness, disjoint ownership и runtime safety.
 - Планируй parallel dispatch по полному task inventory проекта, а не только по текущей фазе.
 - Если в роудмепе видны только `1-2` задачи из-за неполной декомпозиции остальных фаз, это broken planning state; сначала исправь роудмеп.
+- Не жди отдельной просьбы пользователя на ещё одну-две задачи: если safe-ready задачи уже видны, они должны быть занесены в roadmap и включены в текущий dispatch batch сразу.
 - Как только phase graph и ownership позволяют safe parallel dispatch, отдавай полный ближайший parallel batch по проекту, а не одну задачу из страха перед параллельностью.

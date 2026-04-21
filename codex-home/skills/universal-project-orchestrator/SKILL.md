@@ -20,6 +20,8 @@ description: Используй этот skill для координации в 
 - Если роудмепа ещё нет, сначала создай его, а уже потом handoff implementation tasks.
 - Если роудмеп есть, поддерживай его как текущий source of truth по фазам, зависимостям, MVP и следующему dispatch.
 - Если в роудмепе есть нетерминальные или planned фазы без задач, считай роудмеп неполным и сначала доразмечай его целиком.
+- Считай роудмеп полным только если в нём сохранены все currently knowable задачи по всем нетерминальным/planned фазам до MVP, а не только ближайшие `1-2` next tasks.
+- Если из текущего repo context уже видны дополнительные задачи, но они не занесены в tracked roadmap, это broken planning state: сначала дострой полный inventory, потом отвечай по progress или dispatch-и.
 - Держи orchestration на полном scope проекта до MVP, а не на локальном контексте одной текущей фазы.
 - Смотри на роудмеп как на dependency graph, а не как на жёсткий waterfall.
 - Если более поздняя фаза уже разблокирована, write-scope не конфликтует и зависимость не мешает, её можно dispatch-ить параллельно с текущей фазой.
@@ -51,8 +53,8 @@ description: Используй этот skill для координации в 
 
 1. Проверь `git status` и ближайший repo policy doc перед planning edits или acceptance decisions.
 2. Читай только directly relevant files, ближайший planning doc и минимально нужные policy docs.
-3. Если роудмеп отсутствует, stale или не покрывает задачами все нетерминальные/planned фазы, сначала обнови его.
-4. Выполни delegation check и parallelism check по всему актуальному phase graph, а не только по одной текущей фазе.
+3. Если роудмеп отсутствует, stale, хранит только локальный short queue или не покрывает задачами все нетерминальные/planned фазы, сначала обнови его до полного currently knowable inventory.
+4. Выполни delegation check и parallelism check по всему актуальному phase graph, затем собери полный safe dispatchable batch из всех ready tasks, а не локальную пару next tasks.
 5. Прими explicit decision: `accepted`, `rejected`, `blocked` или `needs_followup_task`.
 6. После acceptance или rejection пересчитай immediate next dispatch из freshest context и полного роудмепа, а не копируй старый локальный план.
 7. Если в этой фазе были запущены orchestrator-owned subagents, не завершай user-facing ответ, пока их output не интегрирован или явно не discarded.
@@ -137,7 +139,7 @@ description: Используй этот skill для координации в 
 - tracked roadmap содержит задачи для всех нетерминальных/planned фаз до текущего MVP;
 - roadmap и статусы фаз обновлены;
 - пользователь получил `## Роудмеп`;
-- пользователь получил либо ближайший dispatchable task batch, либо явную констатацию, что сейчас ничего dispatchable нет;
+- пользователь получил полный текущий dispatchable task batch из всех safe-ready задач либо явную констатацию, что сейчас ничего dispatchable нет;
 - количество fenced blocks в ответе совпадает с количеством task specs;
 - все orchestrator-owned subagents текущей фазы интегрированы и закрыты;
 - в самом низу ответа есть простой human summary в секции `## Простыми словами`.
