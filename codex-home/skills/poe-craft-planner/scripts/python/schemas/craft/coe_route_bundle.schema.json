@@ -1,0 +1,786 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/craft/coe_route_bundle.schema.json",
+  "title": "CoERouteBundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "bundle_id",
+    "intake",
+    "wrapper_surface",
+    "data_points",
+    "routes",
+    "provenance",
+    "freshness",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "coe_route_bundle"
+    },
+    "bundle_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "intake": {
+      "$ref": "#/$defs/intake"
+    },
+    "wrapper_surface": {
+      "$ref": "#/$defs/wrapper_surface"
+    },
+    "data_points": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/data_point"
+      }
+    },
+    "routes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/route"
+      }
+    },
+    "provenance": {
+      "$ref": "#/$defs/bundle_provenance"
+    },
+    "freshness": {
+      "$ref": "#/$defs/freshness"
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "wrapper_status": {
+      "type": "string",
+      "enum": [
+        "supported",
+        "unsupported",
+        "simulated_only",
+        "manual_evidence"
+      ]
+    },
+    "simulation_trust_level": {
+      "type": "string",
+      "enum": [
+        "none",
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "freshness_status": {
+      "type": "string",
+      "enum": [
+        "fresh",
+        "stale",
+        "manual_capture"
+      ]
+    },
+    "realm": {
+      "type": "string",
+      "enum": [
+        "pc",
+        "xbox",
+        "sony"
+      ]
+    },
+    "data_point_kind": {
+      "type": "string",
+      "enum": [
+        "base_requirement",
+        "currency_cost_hint",
+        "route_gate",
+        "simulation_observation"
+      ]
+    },
+    "target_rarity": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "magic",
+        "rare"
+      ]
+    },
+    "mod_source": {
+      "type": "string",
+      "enum": [
+        "explicit",
+        "fractured",
+        "influenced",
+        "bench",
+        "implicit"
+      ]
+    },
+    "cost_basis": {
+      "type": "string",
+      "enum": [
+        "simulation",
+        "manual_evidence",
+        "operator_estimate"
+      ]
+    },
+    "provenance_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_kind",
+        "record_id",
+        "source_uri",
+        "observed_at",
+        "collector",
+        "collected_at",
+        "note"
+      ],
+      "properties": {
+        "record_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "collector": {
+          "type": "string",
+          "minLength": 1
+        },
+        "collected_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "observed_at",
+        "captured_at",
+        "note",
+        "expires_at"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/freshness_status"
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expires_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "cost_band": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "currency",
+        "low",
+        "expected",
+        "high",
+        "basis",
+        "note"
+      ],
+      "properties": {
+        "currency": {
+          "type": "string",
+          "const": "chaos"
+        },
+        "low": {
+          "type": "number",
+          "minimum": 0
+        },
+        "expected": {
+          "type": "number",
+          "minimum": 0
+        },
+        "high": {
+          "type": "number",
+          "minimum": 0
+        },
+        "basis": {
+          "$ref": "#/$defs/cost_basis"
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "assumption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "statement",
+        "source",
+        "impact"
+      ],
+      "properties": {
+        "key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "impact": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "target_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "slot",
+        "base_type",
+        "item_class",
+        "rarity",
+        "item_level",
+        "influence_tags",
+        "fractured",
+        "corrupted"
+      ],
+      "properties": {
+        "slot": {
+          "type": "string",
+          "minLength": 1
+        },
+        "base_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "item_class": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rarity": {
+          "$ref": "#/$defs/target_rarity"
+        },
+        "item_level": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "influence_tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "fractured": {
+          "type": "boolean"
+        },
+        "corrupted": {
+          "type": "boolean"
+        }
+      }
+    },
+    "desired_core_mod": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stat_key",
+        "label",
+        "minimum_value",
+        "preferred_tier",
+        "priority",
+        "source"
+      ],
+      "properties": {
+        "stat_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minimum_value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "preferred_tier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "priority": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "source": {
+          "$ref": "#/$defs/mod_source"
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "league",
+        "realm",
+        "max_budget_chaos",
+        "max_steps",
+        "allow_fractured_bases",
+        "allow_influence",
+        "ssf_mode",
+        "banned_methods",
+        "required_methods"
+      ],
+      "properties": {
+        "league": {
+          "type": "string",
+          "minLength": 1
+        },
+        "realm": {
+          "$ref": "#/$defs/realm"
+        },
+        "max_budget_chaos": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "max_steps": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "allow_fractured_bases": {
+          "type": "boolean"
+        },
+        "allow_influence": {
+          "type": "boolean"
+        },
+        "ssf_mode": {
+          "type": "boolean"
+        },
+        "banned_methods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "required_methods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "intake": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "intake_id",
+        "goal",
+        "target_item",
+        "desired_core",
+        "constraints",
+        "provenance"
+      ],
+      "properties": {
+        "intake_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "goal": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_item": {
+          "$ref": "#/$defs/target_item"
+        },
+        "desired_core": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/desired_core_mod"
+          }
+        },
+        "constraints": {
+          "$ref": "#/$defs/constraints"
+        },
+        "provenance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/provenance_ref"
+          }
+        }
+      }
+    },
+    "wrapper_surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "integration_name",
+        "surface_version",
+        "runtime_status",
+        "supported_outputs",
+        "unsupported_capabilities",
+        "note"
+      ],
+      "properties": {
+        "integration_name": {
+          "type": "string",
+          "const": "craft_of_exile"
+        },
+        "surface_version": {
+          "type": "string",
+          "const": "1.0.0"
+        },
+        "runtime_status": {
+          "$ref": "#/$defs/wrapper_status"
+        },
+        "supported_outputs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "unsupported_capabilities": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "data_point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "data_id",
+        "kind",
+        "label",
+        "value_summary",
+        "numeric_value",
+        "unit",
+        "cost_hint",
+        "assumptions",
+        "freshness",
+        "provenance"
+      ],
+      "properties": {
+        "data_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "$ref": "#/$defs/data_point_kind"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "numeric_value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cost_hint": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/cost_band"
+            }
+          ]
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/assumption"
+          }
+        },
+        "freshness": {
+          "$ref": "#/$defs/freshness"
+        },
+        "provenance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/provenance_ref"
+          }
+        }
+      }
+    },
+    "craft_step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "step",
+        "action",
+        "goal",
+        "currency_item",
+        "notes",
+        "cost_hint_chaos"
+      ],
+      "properties": {
+        "step": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "goal": {
+          "type": "string",
+          "minLength": 1
+        },
+        "currency_item": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cost_hint_chaos": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
+      }
+    },
+    "route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "route_id",
+        "label",
+        "status",
+        "route_kind",
+        "simulation_trust_level",
+        "summary",
+        "supporting_data_ids",
+        "steps",
+        "estimated_cost",
+        "assumptions",
+        "freshness",
+        "provenance"
+      ],
+      "properties": {
+        "route_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "$ref": "#/$defs/wrapper_status"
+        },
+        "route_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "simulation_trust_level": {
+          "$ref": "#/$defs/simulation_trust_level"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "supporting_data_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/craft_step"
+          }
+        },
+        "estimated_cost": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/cost_band"
+            }
+          ]
+        },
+        "assumptions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/assumption"
+          }
+        },
+        "freshness": {
+          "$ref": "#/$defs/freshness"
+        },
+        "provenance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/provenance_ref"
+          }
+        }
+      }
+    },
+    "bundle_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generated_at",
+        "generator",
+        "generator_version",
+        "source_name",
+        "runtime_status",
+        "input_sha256",
+        "bundle_sha256",
+        "input_provenance"
+      ],
+      "properties": {
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "generator": {
+          "type": "string",
+          "const": "poe_build_research.craft.coe_contract"
+        },
+        "generator_version": {
+          "type": "string",
+          "const": "1.0.0"
+        },
+        "source_name": {
+          "type": "string",
+          "const": "craft_of_exile"
+        },
+        "runtime_status": {
+          "$ref": "#/$defs/wrapper_status"
+        },
+        "input_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "bundle_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "input_provenance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/provenance_ref"
+          }
+        }
+      }
+    }
+  }
+}

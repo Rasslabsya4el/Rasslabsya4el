@@ -19,6 +19,7 @@
 - Параллельность допустима только при disjoint scopes.
 - Один writer на файл на фазу.
 - Shared orchestration files, shared schema/contracts, roadmap docs и общий runtime config по умолчанию считай serial contour, пока ownership не доказан иначе.
+- Если repo явно показывает hot serial contour в runner/progress/state/work-unit/core-like surfaces, считай его serial даже когда write-scope размазан по нескольким соседним файлам; без явного isolated-module split это обычно `NO_VALID_SUBAGENT_SPLIT`.
 - New-file или isolated-module work можно dispatch-ить параллельно, только если write-scope реально не пересекается.
 - Safe parallel batch допустим только если orchestrator сам может гарантировать disjoint ownership прямо в task specs; пользователь должен иметь возможность просто copy-paste-ить задачи без ручной проверки конфликтов.
 - Не используй vague labels вроде `можно потом распараллелить`.

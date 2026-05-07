@@ -1,0 +1,879 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/data/poe_ninja_character_profile.schema.json",
+  "title": "PoENinjaCharacterProfile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "source",
+    "identity",
+    "page",
+    "timestamps",
+    "snapshot",
+    "defensive_summary",
+    "skill_groups",
+    "equipment",
+    "flasks",
+    "jewels",
+    "passives",
+    "loadout_features",
+    "freshness",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "poe_ninja_character_profile"
+    },
+    "source": {
+      "$ref": "#/$defs/source_surface"
+    },
+    "identity": {
+      "$ref": "#/$defs/identity"
+    },
+    "page": {
+      "$ref": "#/$defs/page_context"
+    },
+    "timestamps": {
+      "$ref": "#/$defs/timestamps"
+    },
+    "snapshot": {
+      "$ref": "#/$defs/snapshot_candidate"
+    },
+    "defensive_summary": {
+      "$ref": "#/$defs/defensive_summary"
+    },
+    "skill_groups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/skill_group"
+      }
+    },
+    "equipment": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item_summary"
+      }
+    },
+    "flasks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item_summary"
+      }
+    },
+    "jewels": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item_summary"
+      }
+    },
+    "passives": {
+      "$ref": "#/$defs/passives"
+    },
+    "loadout_features": {
+      "$ref": "#/$defs/loadout_features"
+    },
+    "freshness": {
+      "$ref": "#/$defs/freshness"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    }
+  },
+  "$defs": {
+    "source_surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "upstream_system",
+        "public_surface",
+        "site_base_url"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "const": "poe_ninja_public_builds"
+        },
+        "upstream_system": {
+          "type": "string",
+          "const": "poe_ninja_public_builds"
+        },
+        "public_surface": {
+          "type": "string",
+          "const": "character_profile"
+        },
+        "site_base_url": {
+          "type": "string",
+          "const": "https://poe.ninja"
+        }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "account",
+        "name",
+        "league",
+        "base_class",
+        "ascendancy_class_name",
+        "secondary_ascendancy_class_name"
+      ],
+      "properties": {
+        "account": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "league": {
+          "type": "string",
+          "minLength": 1
+        },
+        "base_class": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ascendancy_class_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "secondary_ascendancy_class_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "page_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requested_url",
+        "api_url",
+        "league_url",
+        "snapshot_type",
+        "requested_time_machine"
+      ],
+      "properties": {
+        "requested_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "api_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "league_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "snapshot_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "requested_time_machine": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "timestamps": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "last_seen_utc",
+        "updated_utc",
+        "last_checked_utc",
+        "status_code",
+        "time_machine_labels",
+        "profile_visible"
+      ],
+      "properties": {
+        "last_seen_utc": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "updated_utc": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "last_checked_utc": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status_code": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "time_machine_labels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "profile_visible": {
+          "type": "boolean"
+        }
+      }
+    },
+    "snapshot_candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "league_url",
+        "snapshot_type",
+        "league_name",
+        "time_machine_labels",
+        "version",
+        "snapshot_name",
+        "overview_type",
+        "passive_tree",
+        "atlas_tree"
+      ],
+      "properties": {
+        "league_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "snapshot_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "league_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "time_machine_labels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "snapshot_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "overview_type": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "passive_tree": {
+          "type": "string",
+          "minLength": 1
+        },
+        "atlas_tree": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "defensive_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "life",
+        "energy_shield",
+        "mana",
+        "ward",
+        "movement_speed",
+        "effective_health_pool",
+        "lowest_maximum_hit_taken",
+        "resistances",
+        "block",
+        "charges"
+      ],
+      "properties": {
+        "life": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "energy_shield": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mana": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ward": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "movement_speed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "effective_health_pool": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "lowest_maximum_hit_taken": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "resistances": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "fire",
+            "cold",
+            "lightning",
+            "chaos"
+          ],
+          "properties": {
+            "fire": {
+              "type": "integer"
+            },
+            "cold": {
+              "type": "integer"
+            },
+            "lightning": {
+              "type": "integer"
+            },
+            "chaos": {
+              "type": "integer"
+            }
+          }
+        },
+        "block": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "attack",
+            "spell"
+          ],
+          "properties": {
+            "attack": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "spell": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "charges": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "endurance",
+            "frenzy",
+            "power"
+          ],
+          "properties": {
+            "endurance": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "frenzy": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "power": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "skill_group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "item_slot",
+        "primary_skill_names",
+        "gems",
+        "dps_entries"
+      ],
+      "properties": {
+        "item_slot": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "primary_skill_names": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "gems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/gem_summary"
+          }
+        },
+        "dps_entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/dps_entry"
+          }
+        }
+      }
+    },
+    "gem_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "level",
+        "quality",
+        "support",
+        "built_in_support"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "level": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "quality": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "support": {
+          "type": "boolean"
+        },
+        "built_in_support": {
+          "type": "boolean"
+        }
+      }
+    },
+    "dps_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "dps",
+        "dot_dps"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dps": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "dot_dps": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "item_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "item_slot",
+        "inventory_id",
+        "name",
+        "type_line",
+        "base_type",
+        "rarity",
+        "frame_type",
+        "icon",
+        "identified",
+        "corrupted",
+        "explicit_mods",
+        "crafted_mods",
+        "enchant_mods"
+      ],
+      "properties": {
+        "item_slot": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "inventory_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "type_line": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "base_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rarity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "frame_type": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "icon": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "identified": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "corrupted": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "explicit_mods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "crafted_mods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "enchant_mods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "passives": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "passive_tree_name",
+        "atlas_tree_name",
+        "passive_selection_ids",
+        "keystone_names",
+        "mastery_names",
+        "hashes_ex"
+      ],
+      "properties": {
+        "passive_tree_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "atlas_tree_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "passive_selection_ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "keystone_names": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "mastery_names": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "hashes_ex": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "loadout_features": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bandit_choice",
+        "pantheon_major",
+        "pantheon_minor",
+        "use_second_weapon_set"
+      ],
+      "properties": {
+        "bandit_choice": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pantheon_major": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pantheon_minor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "use_second_weapon_set": {
+          "type": "boolean"
+        }
+      }
+    },
+    "freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "retrieved_at",
+        "resources",
+        "observed_data_timestamps"
+      ],
+      "properties": {
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "resources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/resource_freshness"
+          }
+        },
+        "observed_data_timestamps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "resource_freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "url",
+        "method",
+        "content_type",
+        "age_seconds",
+        "last_modified",
+        "cf_cache_status",
+        "max_age_seconds",
+        "stale_while_revalidate_seconds",
+        "stale_if_error_seconds"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "method": {
+          "type": "string",
+          "const": "GET"
+        },
+        "content_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "age_seconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "last_modified": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cf_cache_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "max_age_seconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "stale_while_revalidate_seconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "stale_if_error_seconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generator",
+        "upstream_system",
+        "inputs",
+        "notes"
+      ],
+      "properties": {
+        "generator": {
+          "type": "string",
+          "const": "poe_build_research.data.poe_ninja"
+        },
+        "upstream_system": {
+          "type": "string",
+          "const": "poe_ninja_public_builds"
+        },
+        "inputs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/provenance_input"
+          }
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "provenance_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "url",
+        "method",
+        "status",
+        "content_type",
+        "etag",
+        "body_sha256",
+        "body_bytes",
+        "fetched_at"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "method": {
+          "type": "string",
+          "const": "GET"
+        },
+        "status": {
+          "type": "integer",
+          "minimum": 200
+        },
+        "content_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "etag": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "body_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "body_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fetched_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

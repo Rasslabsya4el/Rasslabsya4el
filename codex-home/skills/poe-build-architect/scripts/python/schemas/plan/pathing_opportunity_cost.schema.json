@@ -1,0 +1,597 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/plan/pathing_opportunity_cost.schema.json",
+  "title": "PathingOpportunityCost",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "opportunity_cost_id",
+    "generated_at",
+    "decision_family",
+    "baseline_tree_ref",
+    "tree_state_ref",
+    "candidate_paths",
+    "selected_path_id",
+    "rejected_path_ids",
+    "resource_cost",
+    "expected_surfaces",
+    "evidence_refs",
+    "value_per_point",
+    "travel_tax",
+    "constraint_relief",
+    "verdict_reason",
+    "uncertainty",
+    "missing_evidence",
+    "summary",
+    "product_agent_behavioral_proof_required"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "pathing_opportunity_cost"
+    },
+    "opportunity_cost_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "decision_family": {
+      "type": "string",
+      "const": "direct_build.tree_pathing"
+    },
+    "baseline_tree_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tree_state_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_paths": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "$ref": "#/$defs/candidate_path"
+      }
+    },
+    "selected_path_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rejected_path_ids": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "resource_cost": {
+      "$ref": "#/$defs/resource_cost"
+    },
+    "expected_surfaces": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/expected_surface"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_ref"
+      }
+    },
+    "value_per_point": {
+      "$ref": "#/$defs/value_per_point"
+    },
+    "travel_tax": {
+      "$ref": "#/$defs/travel_tax"
+    },
+    "constraint_relief": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/constraint_relief"
+      }
+    },
+    "verdict_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "uncertainty": {
+      "$ref": "#/$defs/uncertainty"
+    },
+    "missing_evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/missing_evidence"
+      }
+    },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "product_agent_behavioral_proof_required": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "$defs": {
+    "candidate_path": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path_id",
+        "label",
+        "route_summary",
+        "path_node_refs",
+        "resource_cost",
+        "expected_surfaces",
+        "evidence_refs",
+        "measured_value",
+        "value_per_point",
+        "travel_tax",
+        "constraint_relief",
+        "verdict",
+        "verdict_reason",
+        "uncertainty",
+        "missing_evidence"
+      ],
+      "properties": {
+        "path_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "route_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path_node_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "resource_cost": {
+          "$ref": "#/$defs/resource_cost"
+        },
+        "expected_surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/expected_surface"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          }
+        },
+        "measured_value": {
+          "$ref": "#/$defs/measured_value"
+        },
+        "value_per_point": {
+          "$ref": "#/$defs/value_per_point"
+        },
+        "travel_tax": {
+          "$ref": "#/$defs/travel_tax"
+        },
+        "constraint_relief": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/constraint_relief"
+          }
+        },
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "selected",
+            "rejected",
+            "blocked"
+          ]
+        },
+        "verdict_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uncertainty": {
+          "$ref": "#/$defs/uncertainty"
+        },
+        "missing_evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/missing_evidence"
+          }
+        }
+      }
+    },
+    "resource_cost": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_passive_points",
+        "travel_points",
+        "payoff_points",
+        "refund_or_respec_cost"
+      ],
+      "properties": {
+        "total_passive_points": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "travel_points": {
+          "type": "number",
+          "minimum": 0
+        },
+        "payoff_points": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "refund_or_respec_cost": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true
+        }
+      }
+    },
+    "expected_surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface_kind",
+        "metric_key",
+        "expected_direction",
+        "note"
+      ],
+      "properties": {
+        "surface_kind": {
+          "type": "string",
+          "enum": [
+            "pob_metric",
+            "calc_surface",
+            "tree_state",
+            "constraint",
+            "qol"
+          ]
+        },
+        "metric_key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "expected_direction": {
+          "type": "string",
+          "enum": [
+            "increase",
+            "decrease",
+            "unchanged",
+            "repair",
+            "unknown"
+          ]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "evidence_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ref_id",
+        "evidence_kind",
+        "locator",
+        "json_pointer",
+        "summary"
+      ],
+      "properties": {
+        "ref_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_kind": {
+          "type": "string",
+          "enum": [
+            "action_cost_value_ledger",
+            "calc_delta",
+            "static_cost_estimate",
+            "source_ledger",
+            "other"
+          ]
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "json_pointer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "measured_value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value_units",
+        "value_unit_label",
+        "source_surface_refs",
+        "summary"
+      ],
+      "properties": {
+        "value_units": {
+          "type": "number"
+        },
+        "value_unit_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_surface_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "value_per_point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value_unit_label",
+        "total_value_units",
+        "per_total_passive",
+        "per_payoff_point",
+        "per_travel_point",
+        "summary"
+      ],
+      "properties": {
+        "value_unit_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "total_value_units": {
+          "type": "number"
+        },
+        "per_total_passive": {
+          "type": "number"
+        },
+        "per_payoff_point": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "per_travel_point": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "travel_tax": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "travel_points",
+        "total_passive_points",
+        "payoff_points",
+        "travel_tax_ratio",
+        "travel_to_payoff_ratio",
+        "summary"
+      ],
+      "properties": {
+        "travel_points": {
+          "type": "number",
+          "minimum": 0
+        },
+        "total_passive_points": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "payoff_points": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "travel_tax_ratio": {
+          "type": "number",
+          "minimum": 0
+        },
+        "travel_to_payoff_ratio": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "constraint_relief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "constraint_kind",
+        "metric_key",
+        "before_shortfall",
+        "after_shortfall",
+        "relief_amount",
+        "evidence_refs",
+        "summary"
+      ],
+      "properties": {
+        "constraint_kind": {
+          "type": "string",
+          "enum": [
+            "attribute",
+            "reservation",
+            "resistance",
+            "accuracy",
+            "mana",
+            "other"
+          ]
+        },
+        "metric_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "before_shortfall": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "after_shortfall": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "relief_amount": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          }
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "notes"
+      ],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "unknown"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "missing_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_kind",
+        "reason",
+        "blocking"
+      ],
+      "properties": {
+        "evidence_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blocking": {
+          "type": "boolean"
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "candidate_count",
+        "rejected_path_count",
+        "selected_value_per_total_passive",
+        "selected_travel_tax_ratio",
+        "product_agent_behavioral_proof_required"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rejected_path_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "selected_value_per_total_passive": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "selected_travel_tax_ratio": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "product_agent_behavioral_proof_required": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,372 @@
+{
+  "action_refs": [
+    "tree_pathing.rt_package"
+  ],
+  "calc_diff_refs": [
+    "cv2.calc-snapshot-diff.mvp"
+  ],
+  "classification_id": "cv6.surface-impact-classification.mvp",
+  "classification_reason": "Classified measured DPS and radius gains plus expected requirement relief while keeping defensive/resource losses as regressions and unmapped metrics as unknown.",
+  "comparison_refs": [
+    "cv4.comparison-protocol.tree-pathing.mvp"
+  ],
+  "evidence_refs": [
+    {
+      "evidence_kind": "pre_pob_triage",
+      "json_pointer": "/candidate_hypotheses",
+      "locator": "pre-pob-hypothesis-triage.json",
+      "ref_id": "cv6.evidence.pre-pob-triage",
+      "summary": "CV5 fixture supplies expected requirement relief and blocked unknown evidence context."
+    },
+    {
+      "evidence_kind": "calc_delta",
+      "json_pointer": "/changed_surfaces",
+      "locator": "calc_snapshot_diff_example.json",
+      "ref_id": "evidence.cv6.cv2.calc-snapshot-diff.mvp",
+      "summary": "Calc Snapshot Diff evidence supplied measured surfaces for classification."
+    }
+  ],
+  "generated_at": "2026-05-06T00:00:00Z",
+  "impact_categories": [
+    "offense",
+    "quality_of_life",
+    "defense",
+    "regression",
+    "reservation",
+    "usability",
+    "progression_friction",
+    "requirement_relief",
+    "unknown",
+    "missing_evidence"
+  ],
+  "impacted_surfaces": [
+    {
+      "absolute_delta": 30000.0,
+      "after_value": 210000.0,
+      "baseline_value": 180000.0,
+      "classification_reason": "FullDPS classified as offense from calc_snapshot_diff.",
+      "classification_source": {
+        "calc_classification": "dps_gain",
+        "expected_direction": null
+      },
+      "direction": "increase",
+      "impact_categories": [
+        "offense"
+      ],
+      "is_regression": false,
+      "measured_or_expected": "measured",
+      "metric_key": "FullDPS",
+      "percent_delta": 16.666666666666664,
+      "source_kind": "calc_snapshot_diff",
+      "source_ref_id": "cv2.calc-snapshot-diff.mvp",
+      "surface_id": "FullDPS",
+      "surface_kind": "pob_metric",
+      "surface_ref_id": "calc_delta.FullDPS"
+    },
+    {
+      "absolute_delta": 30000.0,
+      "after_value": 205000.0,
+      "baseline_value": 175000.0,
+      "classification_reason": "CombinedDPS classified as offense from calc_snapshot_diff.",
+      "classification_source": {
+        "calc_classification": "dps_gain",
+        "expected_direction": null
+      },
+      "direction": "increase",
+      "impact_categories": [
+        "offense"
+      ],
+      "is_regression": false,
+      "measured_or_expected": "measured",
+      "metric_key": "CombinedDPS",
+      "percent_delta": 17.142857142857142,
+      "source_kind": "calc_snapshot_diff",
+      "source_ref_id": "cv2.calc-snapshot-diff.mvp",
+      "surface_id": "CombinedDPS",
+      "surface_kind": "pob_metric",
+      "surface_ref_id": "calc_delta.CombinedDPS"
+    },
+    {
+      "absolute_delta": 0.20000000000000018,
+      "after_value": 3.2,
+      "baseline_value": 3.0,
+      "classification_reason": "CastRate classified as offense, quality_of_life from calc_snapshot_diff.",
+      "classification_source": {
+        "calc_classification": "speed_qol_gain",
+        "expected_direction": null
+      },
+      "direction": "increase",
+      "impact_categories": [
+        "offense",
+        "quality_of_life"
+      ],
+      "is_regression": false,
+      "measured_or_expected": "measured",
+      "metric_key": "CastRate",
+      "percent_delta": 6.666666666666672,
+      "source_kind": "calc_snapshot_diff",
+      "source_ref_id": "cv2.calc-snapshot-diff.mvp",
+      "surface_id": "CastRate",
+      "surface_kind": "pob_metric",
+      "surface_ref_id": "calc_delta.CastRate"
+    },
+    {
+      "absolute_delta": -600.0,
+      "after_value": 21400.0,
+      "baseline_value": 22000.0,
+      "classification_reason": "TotalEHP classified as defense, regression from calc_snapshot_diff.",
+      "classification_source": {
+        "calc_classification": "defense_regression",
+        "expected_direction": null
+      },
+      "direction": "decrease",
+      "impact_categories": [
+        "defense",
+        "regression"
+      ],
+      "is_regression": true,
+      "measured_or_expected": "measured",
+      "metric_key": "TotalEHP",
+      "percent_delta": -2.727272727272727,
+      "source_kind": "calc_snapshot_diff",
+      "source_ref_id": "cv2.calc-snapshot-diff.mvp",
+      "surface_id": "TotalEHP",
+      "surface_kind": "pob_metric",
+      "surface_ref_id": "calc_delta.TotalEHP"
+    },
+    {
+      "absolute_delta": -150.0,
+      "after_value": 4350.0,
+      "baseline_value": 4500.0,
+      "classification_reason": "Life classified as defense, regression from calc_snapshot_diff.",
+      "classification_source": {
+        "calc_classification": "defense_regression",
+        "expected_direction": null
+      },
+      "direction": "decrease",
+      "impact_categories": [
+        "defense",
+        "regression"
+      ],
+      "is_regression": true,
+      "measured_or_expected": "measured",
+      "metric_key": "Life",
+      "percent_delta": -3.3333333333333335,
+      "source_kind": "calc_snapshot_diff",
+      "source_ref_id": "cv2.calc-snapshot-diff.mvp",
+      "surface_id": "Life",
+      "surface_kind": "pob_metric",
+      "surface_ref_id": "calc_delta.Life"
+    },
+    {
+      "absolute_delta": -25.0,
+      "after_value": 95.0,
+      "baseline_value": 120.0,
+      "classification_reason": "ManaUnreserved classified as reservation, usability, regression from calc_snapshot_diff.",
+      "classification_source": {
+        "calc_classification": "resource_regression",
+        "expected_direction": null
+      },
+      "direction": "decrease",
+      "impact_categories": [
+        "reservation",
+        "usability",
+        "regression"
+      ],
+      "is_regression": true,
+      "measured_or_expected": "measured",
+      "metric_key": "ManaUnreserved",
+      "percent_delta": -20.833333333333336,
+      "source_kind": "calc_snapshot_diff",
+      "source_ref_id": "cv2.calc-snapshot-diff.mvp",
+      "surface_id": "ManaUnreserved",
+      "surface_kind": "calc_surface",
+      "surface_ref_id": "calc_delta.ManaUnreserved"
+    },
+    {
+      "absolute_delta": 2.0,
+      "after_value": 24.0,
+      "baseline_value": 22.0,
+      "classification_reason": "Radius classified as quality_of_life from calc_snapshot_diff.",
+      "classification_source": {
+        "calc_classification": "aoe_qol_gain",
+        "expected_direction": null
+      },
+      "direction": "increase",
+      "impact_categories": [
+        "quality_of_life"
+      ],
+      "is_regression": false,
+      "measured_or_expected": "measured",
+      "metric_key": "Radius",
+      "percent_delta": 9.090909090909092,
+      "source_kind": "calc_snapshot_diff",
+      "source_ref_id": "cv2.calc-snapshot-diff.mvp",
+      "surface_id": "Radius",
+      "surface_kind": "qol",
+      "surface_ref_id": "calc_delta.Radius"
+    },
+    {
+      "absolute_delta": 10.0,
+      "after_value": 10.0,
+      "baseline_value": 0.0,
+      "classification_reason": "strength.shortfall classified as usability, progression_friction, regression from calc_snapshot_diff.",
+      "classification_source": {
+        "calc_classification": "requirement_pressure",
+        "expected_direction": null
+      },
+      "direction": "increase",
+      "impact_categories": [
+        "usability",
+        "progression_friction",
+        "regression"
+      ],
+      "is_regression": true,
+      "measured_or_expected": "measured",
+      "metric_key": "strength.shortfall",
+      "percent_delta": null,
+      "source_kind": "calc_snapshot_diff",
+      "source_ref_id": "cv2.calc-snapshot-diff.mvp",
+      "surface_id": "requirement.strength",
+      "surface_kind": "constraint",
+      "surface_ref_id": "calc_delta.requirement.strength"
+    },
+    {
+      "absolute_delta": null,
+      "after_value": true,
+      "baseline_value": false,
+      "classification_reason": "unmet_strength_requirement classified as defense, usability, progression_friction, regression from calc_snapshot_diff.",
+      "classification_source": {
+        "calc_classification": "warning_added",
+        "expected_direction": null
+      },
+      "direction": "added",
+      "impact_categories": [
+        "defense",
+        "usability",
+        "progression_friction",
+        "regression"
+      ],
+      "is_regression": true,
+      "measured_or_expected": "measured",
+      "metric_key": "unmet_strength_requirement",
+      "percent_delta": null,
+      "source_kind": "calc_snapshot_diff",
+      "source_ref_id": "cv2.calc-snapshot-diff.mvp",
+      "surface_id": "warning_code.unmet_strength_requirement",
+      "surface_kind": "warning_codes",
+      "surface_ref_id": "calc_delta.warning_code.unmet_strength_requirement"
+    },
+    {
+      "absolute_delta": null,
+      "after_value": null,
+      "baseline_value": null,
+      "classification_reason": "dexterity_requirement_shortfall classified as requirement_relief from expected_surface_input.",
+      "classification_source": {
+        "calc_classification": null,
+        "expected_direction": "repair"
+      },
+      "direction": "repair",
+      "impact_categories": [
+        "requirement_relief"
+      ],
+      "is_regression": false,
+      "measured_or_expected": "expected",
+      "metric_key": "dexterity_requirement_shortfall",
+      "percent_delta": null,
+      "source_kind": "expected_surface_input",
+      "source_ref_id": "cv5.hypothesis.nearby_dex_life_package",
+      "surface_id": "dexterity_requirement_shortfall",
+      "surface_kind": "constraint",
+      "surface_ref_id": "cv5.hypothesis.nearby_dex_life_package"
+    },
+    {
+      "absolute_delta": null,
+      "after_value": null,
+      "baseline_value": null,
+      "classification_reason": "UnmappedMysteryValue did not match a bounded CV6 rule and remains unknown.",
+      "classification_source": {
+        "calc_classification": null,
+        "expected_direction": "unknown"
+      },
+      "direction": "unknown",
+      "impact_categories": [
+        "unknown"
+      ],
+      "is_regression": false,
+      "measured_or_expected": "expected",
+      "metric_key": "UnmappedMysteryValue",
+      "percent_delta": null,
+      "source_kind": "expected_surface_input",
+      "source_ref_id": "cv6.fixture.unknown",
+      "surface_id": "UnmappedMysteryValue",
+      "surface_kind": "calc_surface",
+      "surface_ref_id": "cv6.fixture.unknown"
+    },
+    {
+      "absolute_delta": null,
+      "after_value": null,
+      "baseline_value": null,
+      "classification_reason": "AverageHit is recorded as missing evidence and is not assigned invented value.",
+      "classification_source": {
+        "calc_classification": "missing_metric",
+        "expected_direction": null
+      },
+      "direction": "unknown",
+      "impact_categories": [
+        "missing_evidence",
+        "unknown"
+      ],
+      "is_regression": false,
+      "measured_or_expected": "measured",
+      "metric_key": "AverageHit",
+      "percent_delta": null,
+      "source_kind": "calc_snapshot_diff_missing_metric",
+      "source_ref_id": "cv2.calc-snapshot-diff.mvp",
+      "surface_id": "AverageHit",
+      "surface_kind": "pob_metric",
+      "surface_ref_id": "cv2.calc-snapshot-diff.mvp"
+    }
+  ],
+  "measured_or_expected": "mixed",
+  "missing_evidence": [
+    {
+      "blocking": false,
+      "evidence_kind": "surface_classification_rule",
+      "reason": "No reliable impact rule or source metric evidence for UnmappedMysteryValue.",
+      "surface_ref_id": "cv6.fixture.unknown"
+    },
+    {
+      "blocking": false,
+      "evidence_kind": "surface_classification_rule",
+      "reason": "No reliable impact rule or source metric evidence for AverageHit.",
+      "surface_ref_id": "cv2.calc-snapshot-diff.mvp"
+    }
+  ],
+  "primary_impact": "offense",
+  "product_agent_behavioral_proof_required": false,
+  "record_kind": "surface_impact_classification",
+  "schema_version": "0.1.0",
+  "secondary_impacts": [
+    "quality_of_life",
+    "defense",
+    "regression",
+    "reservation",
+    "usability",
+    "progression_friction",
+    "requirement_relief",
+    "unknown",
+    "missing_evidence"
+  ],
+  "status": "accepted",
+  "uncertainty": {
+    "level": "medium",
+    "notes": [
+      "At least one surface is unknown or missing evidence; no value is invented for it."
+    ]
+  },
+  "validation": {
+    "finding_count": 0,
+    "findings": []
+  }
+}

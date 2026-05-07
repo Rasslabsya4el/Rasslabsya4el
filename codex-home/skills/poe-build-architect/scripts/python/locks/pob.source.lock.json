@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "lane_id": "pob_source_lane",
+  "ownership_model": "git_submodule",
+  "repo": "PathOfBuildingCommunity/PathOfBuilding",
+  "repo_url": "https://github.com/PathOfBuildingCommunity/PathOfBuilding.git",
+  "pinned_ref": "refs/tags/v2.64.0",
+  "pinned_commit": "143ade33da3bd0f1c803671f17930b839c79ace7",
+  "canonical_path": "vendor/pob/source",
+  "sync_policy": {
+    "gitmodules_path": ".gitmodules",
+    "submodule_update": "checkout",
+    "require_initialized_checkout": true,
+    "require_detached_head": true,
+    "require_commit_match": true,
+    "allow_local_modifications": false
+  },
+  "update_policy": {
+    "mode": "explicit_manual_bump",
+    "requires_explicit_ref_bump": true,
+    "requires_lock_update": true,
+    "requires_spec_review": true,
+    "requires_release_lock_review": true
+  },
+  "fail_closed": {
+    "missing_gitmodules_entry": true,
+    "missing_checkout": true,
+    "missing_required_fields": true,
+    "commit_mismatch": true,
+    "repo_url_mismatch": true,
+    "path_mismatch": true
+  }
+}

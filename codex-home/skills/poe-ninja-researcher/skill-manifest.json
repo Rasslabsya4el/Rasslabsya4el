@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "skill_name": "poe-ninja-researcher",
+  "version": "0.1.0-clean-seed",
+  "package_role": "product_runtime_skill",
+  "runtime_boundary": "self_contained_installed_skill",
+  "primary_modes": [
+    "public_build_prior",
+    "pattern_lead_collection",
+    "benchmark_context"
+  ],
+  "packaged_assets": [
+    "SKILL.md",
+    "references/",
+    "scripts/python/src/poe_build_research/data/",
+    "scripts/python/schemas/data/"
+  ],
+  "readiness_probe": "poe-ninja-researcher"
+}

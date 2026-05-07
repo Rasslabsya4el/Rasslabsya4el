@@ -1,0 +1,552 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/plan/action_cost_value_ledger.schema.json",
+  "title": "ActionCostValueLedger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "ledger_id",
+    "generated_at",
+    "decision_family",
+    "action_scope",
+    "comparison_context",
+    "status",
+    "selected_action_id",
+    "rows",
+    "blockers"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "action_cost_value_ledger"
+    },
+    "ledger_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "decision_family": {
+      "type": "string",
+      "minLength": 1
+    },
+    "action_scope": {
+      "$ref": "#/$defs/action_scope"
+    },
+    "comparison_context": {
+      "$ref": "#/$defs/comparison_context"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "accepted",
+        "not_accepted"
+      ]
+    },
+    "selected_action_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "rows": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "$ref": "#/$defs/action_value_row"
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/blocker"
+      }
+    }
+  },
+  "$defs": {
+    "action_scope": {
+      "type": "string",
+      "enum": [
+        "tree",
+        "skill",
+        "item",
+        "config",
+        "mixed"
+      ]
+    },
+    "comparison_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "context_id",
+        "label",
+        "request_summary",
+        "objective_profile",
+        "baseline_refs"
+      ],
+      "properties": {
+        "context_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "request_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "objective_profile": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "baseline_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          }
+        }
+      }
+    },
+    "action_value_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_id",
+        "decision_family",
+        "action_scope",
+        "candidate_action",
+        "resource_cost",
+        "alternatives_considered",
+        "expected_surfaces",
+        "evidence_refs",
+        "value_summary",
+        "verdict",
+        "verdict_reason",
+        "uncertainty",
+        "missing_evidence"
+      ],
+      "properties": {
+        "action_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_family": {
+          "type": "string",
+          "minLength": 1
+        },
+        "action_scope": {
+          "$ref": "#/$defs/action_scope"
+        },
+        "candidate_action": {
+          "$ref": "#/$defs/candidate_action"
+        },
+        "resource_cost": {
+          "$ref": "#/$defs/resource_cost"
+        },
+        "alternatives_considered": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/alternative_ref"
+          }
+        },
+        "expected_surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/expected_surface"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          }
+        },
+        "value_summary": {
+          "$ref": "#/$defs/value_summary"
+        },
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "selected",
+            "rejected",
+            "blocked"
+          ]
+        },
+        "verdict_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uncertainty": {
+          "$ref": "#/$defs/uncertainty"
+        },
+        "missing_evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/missing_evidence"
+          }
+        }
+      }
+    },
+    "candidate_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "summary",
+        "action_kind",
+        "payload_ref",
+        "tags"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "action_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "payload_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "resource_cost": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scarce_resource_summary",
+        "cost_components",
+        "opportunity_cost_notes"
+      ],
+      "properties": {
+        "scarce_resource_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cost_components": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/cost_component"
+          }
+        },
+        "opportunity_cost_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "cost_component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "resource",
+        "amount",
+        "unit",
+        "direction",
+        "note"
+      ],
+      "properties": {
+        "resource": {
+          "type": "string",
+          "minLength": 1
+        },
+        "amount": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "direction": {
+          "type": "string",
+          "enum": [
+            "spent",
+            "saved",
+            "neutral",
+            "unknown"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "alternative_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_id",
+        "label",
+        "relationship"
+      ],
+      "properties": {
+        "action_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relationship": {
+          "type": "string",
+          "enum": [
+            "competing_candidate",
+            "selected_over",
+            "rejected_for",
+            "blocked_by"
+          ]
+        }
+      }
+    },
+    "expected_surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface_kind",
+        "metric_key",
+        "expected_direction",
+        "note"
+      ],
+      "properties": {
+        "surface_kind": {
+          "type": "string",
+          "enum": [
+            "pob_metric",
+            "calc_surface",
+            "tree_state",
+            "skill_state",
+            "item_state",
+            "config_state",
+            "constraint",
+            "qol"
+          ]
+        },
+        "metric_key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "expected_direction": {
+          "type": "string",
+          "enum": [
+            "increase",
+            "decrease",
+            "unchanged",
+            "repair",
+            "unknown"
+          ]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "evidence_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ref_id",
+        "evidence_kind",
+        "locator",
+        "json_pointer",
+        "summary"
+      ],
+      "properties": {
+        "ref_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_kind": {
+          "type": "string",
+          "enum": [
+            "static_cost_estimate",
+            "pob_observation",
+            "calc_delta",
+            "operator_constraint",
+            "source_ledger",
+            "other"
+          ]
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "json_pointer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "value_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value_label",
+        "expected_gain_summary",
+        "cost_summary",
+        "normalized_value",
+        "tradeoff_notes"
+      ],
+      "properties": {
+        "value_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_gain_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cost_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalized_value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tradeoff_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "notes"
+      ],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "unknown"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "missing_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_kind",
+        "reason",
+        "blocking"
+      ],
+      "properties": {
+        "evidence_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blocking": {
+          "type": "boolean"
+        }
+      }
+    },
+    "blocker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "blocker_id",
+        "severity",
+        "summary",
+        "unblock_condition"
+      ],
+      "properties": {
+        "blocker_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "blocking",
+            "major",
+            "minor"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unblock_condition": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

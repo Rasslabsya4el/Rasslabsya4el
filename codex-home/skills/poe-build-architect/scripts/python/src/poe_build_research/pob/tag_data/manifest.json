@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_id": "pob_tag_corpus",
+  "source_corpus": {
+    "corpus_id": "pob_game_corpus",
+    "manifest_path": "src/poe_build_research/pob/corpus_data/manifest.json",
+    "manifest_sha256": "fddf685074afb5109ce7c3336acc57a17663f0c98204d35fbc33d89ba8f02d65",
+    "source_lane": {
+      "canonical_path": "vendor/pob/source",
+      "lane_id": "pob_source_lane",
+      "lock_path": "locks/pob.source.lock.json",
+      "observed_commit": "143ade33da3bd0f1c803671f17930b839c79ace7",
+      "pinned_commit": "143ade33da3bd0f1c803671f17930b839c79ace7",
+      "pinned_ref": "refs/tags/v2.64.0",
+      "repo": "PathOfBuildingCommunity/PathOfBuilding",
+      "repo_url": "https://github.com/PathOfBuildingCommunity/PathOfBuilding.git",
+      "tree_version": "3_28"
+    }
+  },
+  "families": [
+    {
+      "family": "active_gems",
+      "relative_path": "src/poe_build_research/pob/tag_data/active_gems.json",
+      "record_count": 549,
+      "derived_from_bundle_path": "src/poe_build_research/pob/corpus_data/active_gems.json",
+      "derived_from_bundle_sha256": "5af3ac904d18539e8f198bc362ce62f106cf3cb56d150150d1f3fea681087fbf",
+      "derived_from_record_count": 549
+    },
+    {
+      "family": "ascendancies",
+      "relative_path": "src/poe_build_research/pob/tag_data/ascendancies.json",
+      "record_count": 34,
+      "derived_from_bundle_path": "src/poe_build_research/pob/corpus_data/ascendancies.json",
+      "derived_from_bundle_sha256": "421f5d22333ef48a4f137e5f67e03582fde457dfbfa3df20f0e9db57985ab4b0",
+      "derived_from_record_count": 34
+    },
+    {
+      "family": "config_surfaces",
+      "relative_path": "src/poe_build_research/pob/tag_data/config_surfaces.json",
+      "record_count": 569,
+      "derived_from_bundle_path": "src/poe_build_research/pob/corpus_data/config_surfaces.json",
+      "derived_from_bundle_sha256": "6b5878651dfb65a23ba29f15e90123955ead828ac3a3f6817d66d6aa3097fbf4",
+      "derived_from_record_count": 569
+    },
+    {
+      "family": "items",
+      "relative_path": "src/poe_build_research/pob/tag_data/items.json",
+      "record_count": 1062,
+      "derived_from_bundle_path": "src/poe_build_research/pob/corpus_data/items.json",
+      "derived_from_bundle_sha256": "e6d24c4a0d5f46475ddf2380f2fc02b1fab35ff4a004038f7725b59becd8a87c",
+      "derived_from_record_count": 1062
+    },
+    {
+      "family": "keystones",
+      "relative_path": "src/poe_build_research/pob/tag_data/keystones.json",
+      "record_count": 54,
+      "derived_from_bundle_path": "src/poe_build_research/pob/corpus_data/keystones.json",
+      "derived_from_bundle_sha256": "16e10692d2883c8d6a40ff980841b0fee1c927379da2fc3c98799aea268c6cfe",
+      "derived_from_record_count": 54
+    },
+    {
+      "family": "masteries",
+      "relative_path": "src/poe_build_research/pob/tag_data/masteries.json",
+      "record_count": 351,
+      "derived_from_bundle_path": "src/poe_build_research/pob/corpus_data/masteries.json",
+      "derived_from_bundle_sha256": "c32bdb2b2db77d70031c625c98a2c5b970e37b3aebcbb2229aaa298b6b29d207",
+      "derived_from_record_count": 351
+    },
+    {
+      "family": "passives",
+      "relative_path": "src/poe_build_research/pob/tag_data/passives.json",
+      "record_count": 2415,
+      "derived_from_bundle_path": "src/poe_build_research/pob/corpus_data/passives.json",
+      "derived_from_bundle_sha256": "93c1f80d830b7877a1e1e5965228de4ab2bdcd0740810ec8270ba5a3f679e5aa",
+      "derived_from_record_count": 2415
+    },
+    {
+      "family": "support_gems",
+      "relative_path": "src/poe_build_research/pob/tag_data/support_gems.json",
+      "record_count": 261,
+      "derived_from_bundle_path": "src/poe_build_research/pob/corpus_data/support_gems.json",
+      "derived_from_bundle_sha256": "714a464e2de44c7b644d75227793e9ff6482e33cd855cd150e7ee4f0e5bb6aed",
+      "derived_from_record_count": 261
+    }
+  ],
+  "downstream_policy": {
+    "read_root": "src/poe_build_research/pob/tag_data",
+    "derivation_source_root": "src/poe_build_research/pob/corpus_data",
+    "consumer_rule": "Downstream agents must read committed tag bundles for ordinary tag-driven lookup instead of reparsing committed game corpus bundles.",
+    "loader_boundary": "poe_build_research.pob.tag_corpus",
+    "source_lane_authority": "vendor/pob/source",
+    "authority_rule": "Use vendor/pob/source only when updating the accepted game corpus or auditing tag derivation rules."
+  },
+  "field_order": {
+    "manifest": [
+      "schema_version",
+      "corpus_id",
+      "source_corpus",
+      "families",
+      "downstream_policy",
+      "field_order"
+    ],
+    "bundle": [
+      "schema_version",
+      "corpus_id",
+      "family",
+      "record_count",
+      "provenance",
+      "metadata",
+      "records"
+    ],
+    "record": [
+      "source_id",
+      "source_name",
+      "search_tags",
+      "scaling_facets",
+      "supporting_text",
+      "source_context"
+    ],
+    "facet": [
+      "facet",
+      "values"
+    ]
+  }
+}

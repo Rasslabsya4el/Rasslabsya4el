@@ -1,0 +1,12 @@
+{
+  "finding_count": 0,
+  "findings": [],
+  "generated_at": "2026-05-06T00:00:00Z",
+  "product_agent_behavioral_proof_required": false,
+  "record_kind": "pre_pob_hypothesis_triage_validation",
+  "schema_version": "0.1.0",
+  "scope_note": "CV5 validates pre-PoB authored hypothesis triage only; it is not a Direct Build proof or optimizer.",
+  "status": "accepted",
+  "triage_id": "cv5.pre-pob-hypothesis-triage.mvp",
+  "triage_verdict": "measure"
+}

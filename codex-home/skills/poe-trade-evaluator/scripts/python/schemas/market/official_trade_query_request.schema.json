@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/market/official_trade_query_request.schema.json",
+  "title": "OfficialTradeQueryRequest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "request_id",
+    "label",
+    "realm",
+    "league",
+    "requested_at",
+    "result_limit",
+    "source",
+    "trade_query",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "official_trade_query_request"
+    },
+    "request_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._-]+$"
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "realm": {
+      "type": "string",
+      "enum": [
+        "pc",
+        "xbox",
+        "sony"
+      ]
+    },
+    "league": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requested_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "result_limit": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10
+    },
+    "source": {
+      "$ref": "#/$defs/source"
+    },
+    "trade_query": {
+      "$ref": "#/$defs/trade_query"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "support_level",
+        "authority_rank",
+        "role",
+        "hard_requirement",
+        "oauth_required"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "const": "undocumented_trade_api"
+        },
+        "support_level": {
+          "type": "string",
+          "const": "unsupported_opt_in"
+        },
+        "authority_rank": {
+          "type": "integer",
+          "const": 99
+        },
+        "role": {
+          "type": "string",
+          "const": "experimental"
+        },
+        "hard_requirement": {
+          "type": "boolean",
+          "const": false
+        },
+        "oauth_required": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "trade_query": {
+      "type": "object",
+      "minProperties": 2,
+      "required": [
+        "query",
+        "sort"
+      ],
+      "properties": {
+        "query": {
+          "type": "object"
+        },
+        "sort": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    },
+    "input_provenance_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_kind",
+        "record_id",
+        "source_uri",
+        "observed_at",
+        "collector",
+        "collected_at",
+        "note"
+      ],
+      "properties": {
+        "record_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "collector": {
+          "type": "string",
+          "minLength": 1
+        },
+        "collected_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generator",
+        "submission_url",
+        "query_sha256",
+        "input_provenance"
+      ],
+      "properties": {
+        "generator": {
+          "type": "string",
+          "const": "poe_build_research.market.official_trade"
+        },
+        "submission_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "query_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "input_provenance": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/input_provenance_ref"
+          }
+        }
+      }
+    }
+  }
+}

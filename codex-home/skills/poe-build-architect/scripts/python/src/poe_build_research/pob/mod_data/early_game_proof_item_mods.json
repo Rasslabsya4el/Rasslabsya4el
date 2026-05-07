@@ -1,0 +1,4199 @@
+{
+  "affix_ids": {
+    "chaos_resistance": {
+      "source_family": "ChaosResistance",
+      "text_filter": "Chaos Resistance"
+    },
+    "cold_resistance": {
+      "source_family": "ColdResistance",
+      "text_filter": "Cold Resistance"
+    },
+    "fire_resistance": {
+      "source_family": "FireResistance",
+      "text_filter": "Fire Resistance"
+    },
+    "increased_accuracy": {
+      "source_family": "IncreasedAccuracy",
+      "text_filter": "Accuracy Rating"
+    },
+    "increased_cast_speed": {
+      "source_family": "IncreasedCastSpeed",
+      "text_filter": "increased Cast Speed"
+    },
+    "increased_life": {
+      "source_family": "IncreasedLife",
+      "text_filter": "maximum Life"
+    },
+    "lightning_resistance": {
+      "source_family": "LightningResistance",
+      "text_filter": "Lightning Resistance"
+    },
+    "spell_damage": {
+      "source_family": "SpellDamage",
+      "text_filter": "increased Spell Damage"
+    },
+    "weapon_spell_damage_percent": {
+      "source_family": "WeaponCasterDamagePrefix",
+      "text_filter": "increased Spell Damage"
+    }
+  },
+  "catalog_id": "early_game_proof_item_mod_lookup_mvp",
+  "generated_at": "2026-05-07T00:00:00Z",
+  "item_classes": {
+    "Amulet": {
+      "chaos_resistance": [
+        {
+          "name": "of the Lost",
+          "required_item_level": 16,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8dd690d166f863806c285b9d78adeb18b9f89e423d965c7e05b4d76dbc7a9f59",
+          "text": "+(5-10)% to Chaos Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 10.0,
+          "value_min": 5.0
+        },
+        {
+          "name": "of Banishment",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/851625ecad31838c6aa71a487ee0ee247b996df14272d05bcdcf2e9f98fd21c5",
+          "text": "+(11-15)% to Chaos Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 15.0,
+          "value_min": 11.0
+        },
+        {
+          "name": "of Eviction",
+          "required_item_level": 44,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/131f3cbe6111ae4d46ff3047edeca846a846b26d9cdb9cfd082910ebe8e9051a",
+          "text": "+(16-20)% to Chaos Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 20.0,
+          "value_min": 16.0
+        },
+        {
+          "name": "of Expulsion",
+          "required_item_level": 56,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/772c3391e10907f707762447e525e62b9db9fd9877a655dca19c6698f3aa7014",
+          "text": "+(21-25)% to Chaos Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 25.0,
+          "value_min": 21.0
+        },
+        {
+          "name": "of Exile",
+          "required_item_level": 65,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/4b4231a8c92553d53da93ed3ad705e827cf738dda020e78e2ed4e00fd35c61c6",
+          "text": "+(26-30)% to Chaos Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 30.0,
+          "value_min": 26.0
+        },
+        {
+          "name": "of Bameth",
+          "required_item_level": 81,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/953e966414fe2e000e3c39de14695b1567969972c9d312cbb5675427f192e64f",
+          "text": "+(31-35)% to Chaos Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 35.0,
+          "value_min": 31.0
+        }
+      ],
+      "cold_resistance": [
+        {
+          "name": "of the Inuit",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/291dc9169c628e74d79f7c9ffded0216ac0c447b707924388a28f4054eb55f07",
+          "text": "+(6-11)% to Cold Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Seal",
+          "required_item_level": 14,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3628e9c7ffe139708cf3a3f8d7f5860205f50e1162434eaebecbf9ce3e5abd11",
+          "text": "+(12-17)% to Cold Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Penguin",
+          "required_item_level": 26,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1b17a739404b14742ee63bfe67a7e2518d5c65d5dbd433d9af10773afd58fd75",
+          "text": "+(18-23)% to Cold Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Yeti",
+          "required_item_level": 38,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/38518ff3e39bc2c24e9c7a157cfc84bddd9c54ffb27eeb8873c4e8b08a7fc9de",
+          "text": "+(24-29)% to Cold Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Walrus",
+          "required_item_level": 50,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/682d2980a2d01e9599d0335aeac2076a5c4c403edbd56a5298728d44c8c6fa8f",
+          "text": "+(30-35)% to Cold Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Polar Bear",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3f7cc002eb15e9750dac3dff6ab073f70e11d7f74dffeb810eb9a769b95c947f",
+          "text": "+(36-41)% to Cold Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Ice",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2dab79335c9433bf69edecc8ac783008a7797fec75404d9c3299fe4c7e49e11d",
+          "text": "+(42-45)% to Cold Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Haast",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/14232afa53899470e7a0c9a14fce845bacbbd0b0680216519d6f85e3d544a1ba",
+          "text": "+(46-48)% to Cold Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "fire_resistance": [
+        {
+          "name": "of the Whelpling",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/6f08dbd6868378dfbc58a07c09a95362b75b4f1147ce9477032e7687a07b89c1",
+          "text": "+(6-11)% to Fire Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Salamander",
+          "required_item_level": 12,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/23223d8537302b34205ef7bb9e0adf5e87c1ad5d44fb93840c4957a458fb5d9a",
+          "text": "+(12-17)% to Fire Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Drake",
+          "required_item_level": 24,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/a7594f7878b93ae3a594c61ea89559e12a7b18b4179a07b7000356532d1c0640",
+          "text": "+(18-23)% to Fire Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Kiln",
+          "required_item_level": 36,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/b4e0c162307d4dc7a51635c3ebf9d10e6b3b525d9baf562743fb95b2da340150",
+          "text": "+(24-29)% to Fire Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Furnace",
+          "required_item_level": 48,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/d5d995dd4fcc2f4a7a26c3315b22ae5da51031948b2ec8f75f27f47be1cbe400",
+          "text": "+(30-35)% to Fire Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Volcano",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1d3b8e79542c95eb93cefaa14f670010b8868a57ad3538a6b7d5967ed238b28f",
+          "text": "+(36-41)% to Fire Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Magma",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/49c88a84e0d89f8489a05389e79c8963b22ba32c46c6e29c0695d11fbee86b05",
+          "text": "+(42-45)% to Fire Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Tzteosh",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1c52cbd316b4830410696222c0cd3667884279b847d7ef1f8e57fee19c14d855",
+          "text": "+(46-48)% to Fire Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "increased_accuracy": [
+        {
+          "name": "of Steadiness",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1a95fe68d7050e7acb9604a7e62b355a75c2a2e213ed3005d20382d6cafdaa26",
+          "text": "+(50-100) to Accuracy Rating",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 100.0,
+          "value_min": 50.0
+        },
+        {
+          "name": "of Precision",
+          "required_item_level": 20,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1a8738cc0186bcc7bd6064b8679643b0062b0b21e569d5877b1a287805f562d0",
+          "text": "+(100-165) to Accuracy Rating",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 165.0,
+          "value_min": 100.0
+        },
+        {
+          "name": "of the Sniper",
+          "required_item_level": 40,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/9c2d27cf84abacdccef29e38556e903458ea1c909752ac8ec0d19931e9b18973",
+          "text": "+(166-250) to Accuracy Rating",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 250.0,
+          "value_min": 166.0
+        },
+        {
+          "name": "of the Marksman",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/0dd8e46a2d715943024e39ad697563b51baf16ae59686d6bd065841a4a035d96",
+          "text": "+(251-350) to Accuracy Rating",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 350.0,
+          "value_min": 251.0
+        },
+        {
+          "name": "of the Ranger",
+          "required_item_level": 75,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/829338c986aee8cc2a186c856874aa5ebf6b92678990de04235028c418f7c53c",
+          "text": "+(351-480) to Accuracy Rating",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 480.0,
+          "value_min": 351.0
+        }
+      ],
+      "increased_cast_speed": [
+        {
+          "name": "of Talent",
+          "required_item_level": 2,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/c7d15270adbbf403aa7c78b2e48ee42f1c56cac3ebe1637741d6bed75ae90dc2",
+          "text": "(5-8)% increased Cast Speed",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 8.0,
+          "value_min": 5.0
+        },
+        {
+          "name": "of Nimbleness",
+          "required_item_level": 15,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/ec0bf46bba4a11fdbea351aa05f1e7f831469eb0aa8245b33a4eb8fe50d71922",
+          "text": "(9-12)% increased Cast Speed",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 12.0,
+          "value_min": 9.0
+        },
+        {
+          "name": "of Expertise",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/dfd6d81584d634729a804833a704d85e864a24e548830a98a991238375114314",
+          "text": "(13-16)% increased Cast Speed",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 16.0,
+          "value_min": 13.0
+        },
+        {
+          "name": "of Legerdemain",
+          "required_item_level": 40,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/473efa3a52f3c7a545b40efe3ba828b26c4eea2365e2c87b0158697d76ffdfa7",
+          "text": "(17-20)% increased Cast Speed",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 20.0,
+          "value_min": 17.0
+        }
+      ],
+      "increased_life": [
+        {
+          "name": "Hale",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/fbbe5e936b3386513a65ff3a618fa853082667c281dae58f614ac3ea8c33a182",
+          "text": "+(3-9) to maximum Life",
+          "tier": "T9",
+          "tier_number": 9,
+          "value_max": 9.0,
+          "value_min": 3.0
+        },
+        {
+          "name": "Healthy",
+          "required_item_level": 5,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3cbdc8ebf869ae2de6d1d18afdb7f8cb13a0c36bdd6ec019861ceed11aa70e97",
+          "text": "+(10-24) to maximum Life",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 24.0,
+          "value_min": 10.0
+        },
+        {
+          "name": "Sanguine",
+          "required_item_level": 11,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/29f2a68200c7de36f442e8f962ba855ea55574276d31744c5abd909dcbf611b8",
+          "text": "+(25-39) to maximum Life",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 39.0,
+          "value_min": 25.0
+        },
+        {
+          "name": "Stalwart",
+          "required_item_level": 18,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/386283741916c8c23d63ea237a1058f80e8f333ede6fd07eea39c9032a3f48d6",
+          "text": "+(40-54) to maximum Life",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 54.0,
+          "value_min": 40.0
+        },
+        {
+          "name": "Stout",
+          "required_item_level": 24,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1914de410e72a3963ed1eb7d903df3437a2c17abb6e42c7a007311451d19896f",
+          "text": "+(55-69) to maximum Life",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 69.0,
+          "value_min": 55.0
+        },
+        {
+          "name": "Robust",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2abd4457349d914ee82c039ea3320c753b478f563d8e7192b993cfcea4813037",
+          "text": "+(70-84) to maximum Life",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 84.0,
+          "value_min": 70.0
+        },
+        {
+          "name": "Rotund",
+          "required_item_level": 36,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8dd41207fc47345750bc0bf554322002999c83116ba39470a03dc935b5706f8b",
+          "text": "+(85-99) to maximum Life",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 99.0,
+          "value_min": 85.0
+        },
+        {
+          "name": "Virile",
+          "required_item_level": 44,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/09b77c85492b919527638eec061e3c45315f1e6dd8b1209640c60aa9d86756a4",
+          "text": "+(100-114) to maximum Life",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 114.0,
+          "value_min": 100.0
+        },
+        {
+          "name": "Athlete's",
+          "required_item_level": 54,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/9fa0f793edf3e7e8be415dc7edaf56f86a34cb8987a658288c8fb2af05238536",
+          "text": "+(115-129) to maximum Life",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 129.0,
+          "value_min": 115.0
+        }
+      ],
+      "lightning_resistance": [
+        {
+          "name": "of the Cloud",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/97715405ce4ebc137a42b9ec3bba69073634061e810ef2938d834aba5b18a71d",
+          "text": "+(6-11)% to Lightning Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Squall",
+          "required_item_level": 13,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/d24305fe8991cbae200f3bed372b79dc588e33d7b0ecd9fff733ab248d8f184c",
+          "text": "+(12-17)% to Lightning Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Storm",
+          "required_item_level": 25,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/dfb64dae54795a1e4d7a8ea9ce32aa008072de76a9c25bd69d987b8da331d65d",
+          "text": "+(18-23)% to Lightning Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Thunderhead",
+          "required_item_level": 37,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1d7eac54fcb9fa5b9db4a70ec08ca7b88b9151352cd641b59281db51dfbeeb4a",
+          "text": "+(24-29)% to Lightning Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Tempest",
+          "required_item_level": 49,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/5f586c107a79780a2bc1883d4e68600da8f3040302ce3f7eef48e70bd45b77a2",
+          "text": "+(30-35)% to Lightning Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Maelstrom",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/46f497a36a0c61dc019f13d56a152fb76fe80738a12f9b4a82d2ce9f4440f875",
+          "text": "+(36-41)% to Lightning Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Lightning",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/535c3ff88f88f841a627266881a9c668f4b4e4c5b063f7492f2deb5da3ca4941",
+          "text": "+(42-45)% to Lightning Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Ephij",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/0f795951bf1f883190506b5383146c982113b8ce00bdd9790b29f7df82ea325d",
+          "text": "+(46-48)% to Lightning Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "spell_damage": [
+        {
+          "name": "Chanter's",
+          "required_item_level": 5,
+          "source_mod_ref": "?s=Data%5CMods%2FSpellDamage1",
+          "text": "(3-7)% increased Spell Damage",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 7.0,
+          "value_min": 3.0
+        },
+        {
+          "name": "Mage's",
+          "required_item_level": 20,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/af056d9e21cef0664b914f5c9783109bc5a9ec82da06f7f7de33e45223302b51",
+          "text": "(8-12)% increased Spell Damage",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 12.0,
+          "value_min": 8.0
+        },
+        {
+          "name": "Sorcerer's",
+          "required_item_level": 38,
+          "source_mod_ref": "?s=Data%5CMods%2FSpellDamage3",
+          "text": "(13-17)% increased Spell Damage",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 17.0,
+          "value_min": 13.0
+        },
+        {
+          "name": "Thaumaturgist's",
+          "required_item_level": 56,
+          "source_mod_ref": "?s=Data%5CMods%2FSpellDamage4",
+          "text": "(18-22)% increased Spell Damage",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 22.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "Wizard's",
+          "required_item_level": 76,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/4d853b5703a22dd747b9b0dbffe23f24f2a3b7b5ef5e66000180cfb29af13e98",
+          "text": "(23-26)% increased Spell Damage",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 26.0,
+          "value_min": 23.0
+        }
+      ]
+    },
+    "Belt": {
+      "chaos_resistance": [
+        {
+          "name": "of the Lost",
+          "required_item_level": 16,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8dd690d166f863806c285b9d78adeb18b9f89e423d965c7e05b4d76dbc7a9f59",
+          "text": "+(5-10)% to Chaos Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 10.0,
+          "value_min": 5.0
+        },
+        {
+          "name": "of Banishment",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/851625ecad31838c6aa71a487ee0ee247b996df14272d05bcdcf2e9f98fd21c5",
+          "text": "+(11-15)% to Chaos Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 15.0,
+          "value_min": 11.0
+        },
+        {
+          "name": "of Eviction",
+          "required_item_level": 44,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/131f3cbe6111ae4d46ff3047edeca846a846b26d9cdb9cfd082910ebe8e9051a",
+          "text": "+(16-20)% to Chaos Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 20.0,
+          "value_min": 16.0
+        },
+        {
+          "name": "of Expulsion",
+          "required_item_level": 56,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/772c3391e10907f707762447e525e62b9db9fd9877a655dca19c6698f3aa7014",
+          "text": "+(21-25)% to Chaos Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 25.0,
+          "value_min": 21.0
+        },
+        {
+          "name": "of Exile",
+          "required_item_level": 65,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/4b4231a8c92553d53da93ed3ad705e827cf738dda020e78e2ed4e00fd35c61c6",
+          "text": "+(26-30)% to Chaos Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 30.0,
+          "value_min": 26.0
+        },
+        {
+          "name": "of Bameth",
+          "required_item_level": 81,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/953e966414fe2e000e3c39de14695b1567969972c9d312cbb5675427f192e64f",
+          "text": "+(31-35)% to Chaos Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 35.0,
+          "value_min": 31.0
+        }
+      ],
+      "cold_resistance": [
+        {
+          "name": "of the Inuit",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/291dc9169c628e74d79f7c9ffded0216ac0c447b707924388a28f4054eb55f07",
+          "text": "+(6-11)% to Cold Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Seal",
+          "required_item_level": 14,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3628e9c7ffe139708cf3a3f8d7f5860205f50e1162434eaebecbf9ce3e5abd11",
+          "text": "+(12-17)% to Cold Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Penguin",
+          "required_item_level": 26,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1b17a739404b14742ee63bfe67a7e2518d5c65d5dbd433d9af10773afd58fd75",
+          "text": "+(18-23)% to Cold Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Yeti",
+          "required_item_level": 38,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/38518ff3e39bc2c24e9c7a157cfc84bddd9c54ffb27eeb8873c4e8b08a7fc9de",
+          "text": "+(24-29)% to Cold Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Walrus",
+          "required_item_level": 50,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/682d2980a2d01e9599d0335aeac2076a5c4c403edbd56a5298728d44c8c6fa8f",
+          "text": "+(30-35)% to Cold Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Polar Bear",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3f7cc002eb15e9750dac3dff6ab073f70e11d7f74dffeb810eb9a769b95c947f",
+          "text": "+(36-41)% to Cold Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Ice",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2dab79335c9433bf69edecc8ac783008a7797fec75404d9c3299fe4c7e49e11d",
+          "text": "+(42-45)% to Cold Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Haast",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/14232afa53899470e7a0c9a14fce845bacbbd0b0680216519d6f85e3d544a1ba",
+          "text": "+(46-48)% to Cold Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "fire_resistance": [
+        {
+          "name": "of the Whelpling",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/6f08dbd6868378dfbc58a07c09a95362b75b4f1147ce9477032e7687a07b89c1",
+          "text": "+(6-11)% to Fire Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Salamander",
+          "required_item_level": 12,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/23223d8537302b34205ef7bb9e0adf5e87c1ad5d44fb93840c4957a458fb5d9a",
+          "text": "+(12-17)% to Fire Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Drake",
+          "required_item_level": 24,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/a7594f7878b93ae3a594c61ea89559e12a7b18b4179a07b7000356532d1c0640",
+          "text": "+(18-23)% to Fire Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Kiln",
+          "required_item_level": 36,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/b4e0c162307d4dc7a51635c3ebf9d10e6b3b525d9baf562743fb95b2da340150",
+          "text": "+(24-29)% to Fire Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Furnace",
+          "required_item_level": 48,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/d5d995dd4fcc2f4a7a26c3315b22ae5da51031948b2ec8f75f27f47be1cbe400",
+          "text": "+(30-35)% to Fire Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Volcano",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1d3b8e79542c95eb93cefaa14f670010b8868a57ad3538a6b7d5967ed238b28f",
+          "text": "+(36-41)% to Fire Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Magma",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/49c88a84e0d89f8489a05389e79c8963b22ba32c46c6e29c0695d11fbee86b05",
+          "text": "+(42-45)% to Fire Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Tzteosh",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1c52cbd316b4830410696222c0cd3667884279b847d7ef1f8e57fee19c14d855",
+          "text": "+(46-48)% to Fire Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "increased_life": [
+        {
+          "name": "Hale",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/fbbe5e936b3386513a65ff3a618fa853082667c281dae58f614ac3ea8c33a182",
+          "text": "+(3-9) to maximum Life",
+          "tier": "T10",
+          "tier_number": 10,
+          "value_max": 9.0,
+          "value_min": 3.0
+        },
+        {
+          "name": "Healthy",
+          "required_item_level": 5,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3cbdc8ebf869ae2de6d1d18afdb7f8cb13a0c36bdd6ec019861ceed11aa70e97",
+          "text": "+(10-24) to maximum Life",
+          "tier": "T9",
+          "tier_number": 9,
+          "value_max": 24.0,
+          "value_min": 10.0
+        },
+        {
+          "name": "Sanguine",
+          "required_item_level": 11,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/29f2a68200c7de36f442e8f962ba855ea55574276d31744c5abd909dcbf611b8",
+          "text": "+(25-39) to maximum Life",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 39.0,
+          "value_min": 25.0
+        },
+        {
+          "name": "Stalwart",
+          "required_item_level": 18,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/386283741916c8c23d63ea237a1058f80e8f333ede6fd07eea39c9032a3f48d6",
+          "text": "+(40-54) to maximum Life",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 54.0,
+          "value_min": 40.0
+        },
+        {
+          "name": "Stout",
+          "required_item_level": 24,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1914de410e72a3963ed1eb7d903df3437a2c17abb6e42c7a007311451d19896f",
+          "text": "+(55-69) to maximum Life",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 69.0,
+          "value_min": 55.0
+        },
+        {
+          "name": "Robust",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2abd4457349d914ee82c039ea3320c753b478f563d8e7192b993cfcea4813037",
+          "text": "+(70-84) to maximum Life",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 84.0,
+          "value_min": 70.0
+        },
+        {
+          "name": "Rotund",
+          "required_item_level": 36,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8dd41207fc47345750bc0bf554322002999c83116ba39470a03dc935b5706f8b",
+          "text": "+(85-99) to maximum Life",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 99.0,
+          "value_min": 85.0
+        },
+        {
+          "name": "Virile",
+          "required_item_level": 44,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/09b77c85492b919527638eec061e3c45315f1e6dd8b1209640c60aa9d86756a4",
+          "text": "+(100-114) to maximum Life",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 114.0,
+          "value_min": 100.0
+        },
+        {
+          "name": "Athlete's",
+          "required_item_level": 54,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/9fa0f793edf3e7e8be415dc7edaf56f86a34cb8987a658288c8fb2af05238536",
+          "text": "+(115-129) to maximum Life",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 129.0,
+          "value_min": 115.0
+        },
+        {
+          "name": "Fecund",
+          "required_item_level": 64,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/bc554a86525f10a2a6137b3d57dc0523217ffb71aadbbe09ad8e1e61f9c66344",
+          "text": "+(130-144) to maximum Life",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 144.0,
+          "value_min": 130.0
+        }
+      ],
+      "lightning_resistance": [
+        {
+          "name": "of the Cloud",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/97715405ce4ebc137a42b9ec3bba69073634061e810ef2938d834aba5b18a71d",
+          "text": "+(6-11)% to Lightning Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Squall",
+          "required_item_level": 13,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/d24305fe8991cbae200f3bed372b79dc588e33d7b0ecd9fff733ab248d8f184c",
+          "text": "+(12-17)% to Lightning Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Storm",
+          "required_item_level": 25,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/dfb64dae54795a1e4d7a8ea9ce32aa008072de76a9c25bd69d987b8da331d65d",
+          "text": "+(18-23)% to Lightning Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Thunderhead",
+          "required_item_level": 37,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1d7eac54fcb9fa5b9db4a70ec08ca7b88b9151352cd641b59281db51dfbeeb4a",
+          "text": "+(24-29)% to Lightning Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Tempest",
+          "required_item_level": 49,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/5f586c107a79780a2bc1883d4e68600da8f3040302ce3f7eef48e70bd45b77a2",
+          "text": "+(30-35)% to Lightning Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Maelstrom",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/46f497a36a0c61dc019f13d56a152fb76fe80738a12f9b4a82d2ce9f4440f875",
+          "text": "+(36-41)% to Lightning Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Lightning",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/535c3ff88f88f841a627266881a9c668f4b4e4c5b063f7492f2deb5da3ca4941",
+          "text": "+(42-45)% to Lightning Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Ephij",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/0f795951bf1f883190506b5383146c982113b8ce00bdd9790b29f7df82ea325d",
+          "text": "+(46-48)% to Lightning Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ]
+    },
+    "Body Armour": {
+      "chaos_resistance": [
+        {
+          "name": "of the Lost",
+          "required_item_level": 16,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8dd690d166f863806c285b9d78adeb18b9f89e423d965c7e05b4d76dbc7a9f59",
+          "text": "+(5-10)% to Chaos Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 10.0,
+          "value_min": 5.0
+        },
+        {
+          "name": "of Banishment",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/851625ecad31838c6aa71a487ee0ee247b996df14272d05bcdcf2e9f98fd21c5",
+          "text": "+(11-15)% to Chaos Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 15.0,
+          "value_min": 11.0
+        },
+        {
+          "name": "of Eviction",
+          "required_item_level": 44,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/131f3cbe6111ae4d46ff3047edeca846a846b26d9cdb9cfd082910ebe8e9051a",
+          "text": "+(16-20)% to Chaos Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 20.0,
+          "value_min": 16.0
+        },
+        {
+          "name": "of Expulsion",
+          "required_item_level": 56,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/772c3391e10907f707762447e525e62b9db9fd9877a655dca19c6698f3aa7014",
+          "text": "+(21-25)% to Chaos Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 25.0,
+          "value_min": 21.0
+        },
+        {
+          "name": "of Exile",
+          "required_item_level": 65,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/4b4231a8c92553d53da93ed3ad705e827cf738dda020e78e2ed4e00fd35c61c6",
+          "text": "+(26-30)% to Chaos Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 30.0,
+          "value_min": 26.0
+        },
+        {
+          "name": "of Bameth",
+          "required_item_level": 81,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/953e966414fe2e000e3c39de14695b1567969972c9d312cbb5675427f192e64f",
+          "text": "+(31-35)% to Chaos Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 35.0,
+          "value_min": 31.0
+        }
+      ],
+      "cold_resistance": [
+        {
+          "name": "of the Inuit",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/291dc9169c628e74d79f7c9ffded0216ac0c447b707924388a28f4054eb55f07",
+          "text": "+(6-11)% to Cold Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Seal",
+          "required_item_level": 14,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3628e9c7ffe139708cf3a3f8d7f5860205f50e1162434eaebecbf9ce3e5abd11",
+          "text": "+(12-17)% to Cold Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Penguin",
+          "required_item_level": 26,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1b17a739404b14742ee63bfe67a7e2518d5c65d5dbd433d9af10773afd58fd75",
+          "text": "+(18-23)% to Cold Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Yeti",
+          "required_item_level": 38,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/38518ff3e39bc2c24e9c7a157cfc84bddd9c54ffb27eeb8873c4e8b08a7fc9de",
+          "text": "+(24-29)% to Cold Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Walrus",
+          "required_item_level": 50,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/682d2980a2d01e9599d0335aeac2076a5c4c403edbd56a5298728d44c8c6fa8f",
+          "text": "+(30-35)% to Cold Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Polar Bear",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3f7cc002eb15e9750dac3dff6ab073f70e11d7f74dffeb810eb9a769b95c947f",
+          "text": "+(36-41)% to Cold Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Ice",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2dab79335c9433bf69edecc8ac783008a7797fec75404d9c3299fe4c7e49e11d",
+          "text": "+(42-45)% to Cold Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Haast",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/14232afa53899470e7a0c9a14fce845bacbbd0b0680216519d6f85e3d544a1ba",
+          "text": "+(46-48)% to Cold Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "fire_resistance": [
+        {
+          "name": "of the Whelpling",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/6f08dbd6868378dfbc58a07c09a95362b75b4f1147ce9477032e7687a07b89c1",
+          "text": "+(6-11)% to Fire Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Salamander",
+          "required_item_level": 12,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/23223d8537302b34205ef7bb9e0adf5e87c1ad5d44fb93840c4957a458fb5d9a",
+          "text": "+(12-17)% to Fire Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Drake",
+          "required_item_level": 24,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/a7594f7878b93ae3a594c61ea89559e12a7b18b4179a07b7000356532d1c0640",
+          "text": "+(18-23)% to Fire Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Kiln",
+          "required_item_level": 36,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/b4e0c162307d4dc7a51635c3ebf9d10e6b3b525d9baf562743fb95b2da340150",
+          "text": "+(24-29)% to Fire Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Furnace",
+          "required_item_level": 48,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/d5d995dd4fcc2f4a7a26c3315b22ae5da51031948b2ec8f75f27f47be1cbe400",
+          "text": "+(30-35)% to Fire Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Volcano",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1d3b8e79542c95eb93cefaa14f670010b8868a57ad3538a6b7d5967ed238b28f",
+          "text": "+(36-41)% to Fire Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Magma",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/49c88a84e0d89f8489a05389e79c8963b22ba32c46c6e29c0695d11fbee86b05",
+          "text": "+(42-45)% to Fire Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Tzteosh",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1c52cbd316b4830410696222c0cd3667884279b847d7ef1f8e57fee19c14d855",
+          "text": "+(46-48)% to Fire Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "increased_life": [
+        {
+          "name": "Hale",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/fbbe5e936b3386513a65ff3a618fa853082667c281dae58f614ac3ea8c33a182",
+          "text": "+(3-9) to maximum Life",
+          "tier": "T13",
+          "tier_number": 13,
+          "value_max": 9.0,
+          "value_min": 3.0
+        },
+        {
+          "name": "Healthy",
+          "required_item_level": 5,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3cbdc8ebf869ae2de6d1d18afdb7f8cb13a0c36bdd6ec019861ceed11aa70e97",
+          "text": "+(10-24) to maximum Life",
+          "tier": "T12",
+          "tier_number": 12,
+          "value_max": 24.0,
+          "value_min": 10.0
+        },
+        {
+          "name": "Sanguine",
+          "required_item_level": 11,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/29f2a68200c7de36f442e8f962ba855ea55574276d31744c5abd909dcbf611b8",
+          "text": "+(25-39) to maximum Life",
+          "tier": "T11",
+          "tier_number": 11,
+          "value_max": 39.0,
+          "value_min": 25.0
+        },
+        {
+          "name": "Stalwart",
+          "required_item_level": 18,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/386283741916c8c23d63ea237a1058f80e8f333ede6fd07eea39c9032a3f48d6",
+          "text": "+(40-54) to maximum Life",
+          "tier": "T10",
+          "tier_number": 10,
+          "value_max": 54.0,
+          "value_min": 40.0
+        },
+        {
+          "name": "Stout",
+          "required_item_level": 24,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1914de410e72a3963ed1eb7d903df3437a2c17abb6e42c7a007311451d19896f",
+          "text": "+(55-69) to maximum Life",
+          "tier": "T9",
+          "tier_number": 9,
+          "value_max": 69.0,
+          "value_min": 55.0
+        },
+        {
+          "name": "Robust",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2abd4457349d914ee82c039ea3320c753b478f563d8e7192b993cfcea4813037",
+          "text": "+(70-84) to maximum Life",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 84.0,
+          "value_min": 70.0
+        },
+        {
+          "name": "Rotund",
+          "required_item_level": 36,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8dd41207fc47345750bc0bf554322002999c83116ba39470a03dc935b5706f8b",
+          "text": "+(85-99) to maximum Life",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 99.0,
+          "value_min": 85.0
+        },
+        {
+          "name": "Virile",
+          "required_item_level": 44,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/09b77c85492b919527638eec061e3c45315f1e6dd8b1209640c60aa9d86756a4",
+          "text": "+(100-114) to maximum Life",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 114.0,
+          "value_min": 100.0
+        },
+        {
+          "name": "Athlete's",
+          "required_item_level": 54,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/9fa0f793edf3e7e8be415dc7edaf56f86a34cb8987a658288c8fb2af05238536",
+          "text": "+(115-129) to maximum Life",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 129.0,
+          "value_min": 115.0
+        },
+        {
+          "name": "Fecund",
+          "required_item_level": 64,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/bc554a86525f10a2a6137b3d57dc0523217ffb71aadbbe09ad8e1e61f9c66344",
+          "text": "+(130-144) to maximum Life",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 144.0,
+          "value_min": 130.0
+        },
+        {
+          "name": "Vigorous",
+          "required_item_level": 73,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/93dbed8445dd49fa0eef6982aa8010b9ec4a502c6bd14ed502653cbf841d08cd",
+          "text": "+(145-159) to maximum Life",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 159.0,
+          "value_min": 145.0
+        },
+        {
+          "name": "Rapturous",
+          "required_item_level": 81,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/ed18c702a47c99afded959d7a984192771a59ef139c0052a26803bcc3259c6cc",
+          "text": "+(160-174) to maximum Life",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 174.0,
+          "value_min": 160.0
+        },
+        {
+          "name": "Prime",
+          "required_item_level": 86,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/759ae015b1b2d7b7326fdffeb76c51c76a75afe26acf39cfdfa88bf0841a6278",
+          "text": "+(175-189) to maximum Life",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 189.0,
+          "value_min": 175.0
+        }
+      ],
+      "lightning_resistance": [
+        {
+          "name": "of the Cloud",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/97715405ce4ebc137a42b9ec3bba69073634061e810ef2938d834aba5b18a71d",
+          "text": "+(6-11)% to Lightning Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Squall",
+          "required_item_level": 13,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/d24305fe8991cbae200f3bed372b79dc588e33d7b0ecd9fff733ab248d8f184c",
+          "text": "+(12-17)% to Lightning Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Storm",
+          "required_item_level": 25,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/dfb64dae54795a1e4d7a8ea9ce32aa008072de76a9c25bd69d987b8da331d65d",
+          "text": "+(18-23)% to Lightning Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Thunderhead",
+          "required_item_level": 37,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1d7eac54fcb9fa5b9db4a70ec08ca7b88b9151352cd641b59281db51dfbeeb4a",
+          "text": "+(24-29)% to Lightning Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Tempest",
+          "required_item_level": 49,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/5f586c107a79780a2bc1883d4e68600da8f3040302ce3f7eef48e70bd45b77a2",
+          "text": "+(30-35)% to Lightning Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Maelstrom",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/46f497a36a0c61dc019f13d56a152fb76fe80738a12f9b4a82d2ce9f4440f875",
+          "text": "+(36-41)% to Lightning Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Lightning",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/535c3ff88f88f841a627266881a9c668f4b4e4c5b063f7492f2deb5da3ca4941",
+          "text": "+(42-45)% to Lightning Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Ephij",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/0f795951bf1f883190506b5383146c982113b8ce00bdd9790b29f7df82ea325d",
+          "text": "+(46-48)% to Lightning Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ]
+    },
+    "Boots": {
+      "chaos_resistance": [
+        {
+          "name": "of the Lost",
+          "required_item_level": 16,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8dd690d166f863806c285b9d78adeb18b9f89e423d965c7e05b4d76dbc7a9f59",
+          "text": "+(5-10)% to Chaos Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 10.0,
+          "value_min": 5.0
+        },
+        {
+          "name": "of Banishment",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/851625ecad31838c6aa71a487ee0ee247b996df14272d05bcdcf2e9f98fd21c5",
+          "text": "+(11-15)% to Chaos Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 15.0,
+          "value_min": 11.0
+        },
+        {
+          "name": "of Eviction",
+          "required_item_level": 44,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/131f3cbe6111ae4d46ff3047edeca846a846b26d9cdb9cfd082910ebe8e9051a",
+          "text": "+(16-20)% to Chaos Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 20.0,
+          "value_min": 16.0
+        },
+        {
+          "name": "of Expulsion",
+          "required_item_level": 56,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/772c3391e10907f707762447e525e62b9db9fd9877a655dca19c6698f3aa7014",
+          "text": "+(21-25)% to Chaos Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 25.0,
+          "value_min": 21.0
+        },
+        {
+          "name": "of Exile",
+          "required_item_level": 65,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/4b4231a8c92553d53da93ed3ad705e827cf738dda020e78e2ed4e00fd35c61c6",
+          "text": "+(26-30)% to Chaos Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 30.0,
+          "value_min": 26.0
+        },
+        {
+          "name": "of Bameth",
+          "required_item_level": 81,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/953e966414fe2e000e3c39de14695b1567969972c9d312cbb5675427f192e64f",
+          "text": "+(31-35)% to Chaos Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 35.0,
+          "value_min": 31.0
+        }
+      ],
+      "cold_resistance": [
+        {
+          "name": "of the Inuit",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/291dc9169c628e74d79f7c9ffded0216ac0c447b707924388a28f4054eb55f07",
+          "text": "+(6-11)% to Cold Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Seal",
+          "required_item_level": 14,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3628e9c7ffe139708cf3a3f8d7f5860205f50e1162434eaebecbf9ce3e5abd11",
+          "text": "+(12-17)% to Cold Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Penguin",
+          "required_item_level": 26,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1b17a739404b14742ee63bfe67a7e2518d5c65d5dbd433d9af10773afd58fd75",
+          "text": "+(18-23)% to Cold Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Yeti",
+          "required_item_level": 38,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/38518ff3e39bc2c24e9c7a157cfc84bddd9c54ffb27eeb8873c4e8b08a7fc9de",
+          "text": "+(24-29)% to Cold Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Walrus",
+          "required_item_level": 50,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/682d2980a2d01e9599d0335aeac2076a5c4c403edbd56a5298728d44c8c6fa8f",
+          "text": "+(30-35)% to Cold Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Polar Bear",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3f7cc002eb15e9750dac3dff6ab073f70e11d7f74dffeb810eb9a769b95c947f",
+          "text": "+(36-41)% to Cold Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Ice",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2dab79335c9433bf69edecc8ac783008a7797fec75404d9c3299fe4c7e49e11d",
+          "text": "+(42-45)% to Cold Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Haast",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/14232afa53899470e7a0c9a14fce845bacbbd0b0680216519d6f85e3d544a1ba",
+          "text": "+(46-48)% to Cold Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "fire_resistance": [
+        {
+          "name": "of the Whelpling",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/6f08dbd6868378dfbc58a07c09a95362b75b4f1147ce9477032e7687a07b89c1",
+          "text": "+(6-11)% to Fire Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Salamander",
+          "required_item_level": 12,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/23223d8537302b34205ef7bb9e0adf5e87c1ad5d44fb93840c4957a458fb5d9a",
+          "text": "+(12-17)% to Fire Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Drake",
+          "required_item_level": 24,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/a7594f7878b93ae3a594c61ea89559e12a7b18b4179a07b7000356532d1c0640",
+          "text": "+(18-23)% to Fire Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Kiln",
+          "required_item_level": 36,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/b4e0c162307d4dc7a51635c3ebf9d10e6b3b525d9baf562743fb95b2da340150",
+          "text": "+(24-29)% to Fire Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Furnace",
+          "required_item_level": 48,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/d5d995dd4fcc2f4a7a26c3315b22ae5da51031948b2ec8f75f27f47be1cbe400",
+          "text": "+(30-35)% to Fire Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Volcano",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1d3b8e79542c95eb93cefaa14f670010b8868a57ad3538a6b7d5967ed238b28f",
+          "text": "+(36-41)% to Fire Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Magma",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/49c88a84e0d89f8489a05389e79c8963b22ba32c46c6e29c0695d11fbee86b05",
+          "text": "+(42-45)% to Fire Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Tzteosh",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1c52cbd316b4830410696222c0cd3667884279b847d7ef1f8e57fee19c14d855",
+          "text": "+(46-48)% to Fire Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "increased_life": [
+        {
+          "name": "Hale",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/fbbe5e936b3386513a65ff3a618fa853082667c281dae58f614ac3ea8c33a182",
+          "text": "+(3-9) to maximum Life",
+          "tier": "T9",
+          "tier_number": 9,
+          "value_max": 9.0,
+          "value_min": 3.0
+        },
+        {
+          "name": "Healthy",
+          "required_item_level": 5,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3cbdc8ebf869ae2de6d1d18afdb7f8cb13a0c36bdd6ec019861ceed11aa70e97",
+          "text": "+(10-24) to maximum Life",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 24.0,
+          "value_min": 10.0
+        },
+        {
+          "name": "Sanguine",
+          "required_item_level": 11,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/29f2a68200c7de36f442e8f962ba855ea55574276d31744c5abd909dcbf611b8",
+          "text": "+(25-39) to maximum Life",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 39.0,
+          "value_min": 25.0
+        },
+        {
+          "name": "Stalwart",
+          "required_item_level": 18,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/386283741916c8c23d63ea237a1058f80e8f333ede6fd07eea39c9032a3f48d6",
+          "text": "+(40-54) to maximum Life",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 54.0,
+          "value_min": 40.0
+        },
+        {
+          "name": "Stout",
+          "required_item_level": 24,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1914de410e72a3963ed1eb7d903df3437a2c17abb6e42c7a007311451d19896f",
+          "text": "+(55-69) to maximum Life",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 69.0,
+          "value_min": 55.0
+        },
+        {
+          "name": "Robust",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2abd4457349d914ee82c039ea3320c753b478f563d8e7192b993cfcea4813037",
+          "text": "+(70-84) to maximum Life",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 84.0,
+          "value_min": 70.0
+        },
+        {
+          "name": "Rotund",
+          "required_item_level": 36,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8dd41207fc47345750bc0bf554322002999c83116ba39470a03dc935b5706f8b",
+          "text": "+(85-99) to maximum Life",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 99.0,
+          "value_min": 85.0
+        },
+        {
+          "name": "Virile",
+          "required_item_level": 44,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/09b77c85492b919527638eec061e3c45315f1e6dd8b1209640c60aa9d86756a4",
+          "text": "+(100-114) to maximum Life",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 114.0,
+          "value_min": 100.0
+        },
+        {
+          "name": "Athlete's",
+          "required_item_level": 54,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/9fa0f793edf3e7e8be415dc7edaf56f86a34cb8987a658288c8fb2af05238536",
+          "text": "+(115-129) to maximum Life",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 129.0,
+          "value_min": 115.0
+        }
+      ],
+      "lightning_resistance": [
+        {
+          "name": "of the Cloud",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/97715405ce4ebc137a42b9ec3bba69073634061e810ef2938d834aba5b18a71d",
+          "text": "+(6-11)% to Lightning Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Squall",
+          "required_item_level": 13,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/d24305fe8991cbae200f3bed372b79dc588e33d7b0ecd9fff733ab248d8f184c",
+          "text": "+(12-17)% to Lightning Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Storm",
+          "required_item_level": 25,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/dfb64dae54795a1e4d7a8ea9ce32aa008072de76a9c25bd69d987b8da331d65d",
+          "text": "+(18-23)% to Lightning Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Thunderhead",
+          "required_item_level": 37,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1d7eac54fcb9fa5b9db4a70ec08ca7b88b9151352cd641b59281db51dfbeeb4a",
+          "text": "+(24-29)% to Lightning Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Tempest",
+          "required_item_level": 49,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/5f586c107a79780a2bc1883d4e68600da8f3040302ce3f7eef48e70bd45b77a2",
+          "text": "+(30-35)% to Lightning Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Maelstrom",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/46f497a36a0c61dc019f13d56a152fb76fe80738a12f9b4a82d2ce9f4440f875",
+          "text": "+(36-41)% to Lightning Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Lightning",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/535c3ff88f88f841a627266881a9c668f4b4e4c5b063f7492f2deb5da3ca4941",
+          "text": "+(42-45)% to Lightning Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Ephij",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/0f795951bf1f883190506b5383146c982113b8ce00bdd9790b29f7df82ea325d",
+          "text": "+(46-48)% to Lightning Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ]
+    },
+    "Gloves": {
+      "chaos_resistance": [
+        {
+          "name": "of the Lost",
+          "required_item_level": 16,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8dd690d166f863806c285b9d78adeb18b9f89e423d965c7e05b4d76dbc7a9f59",
+          "text": "+(5-10)% to Chaos Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 10.0,
+          "value_min": 5.0
+        },
+        {
+          "name": "of Banishment",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/851625ecad31838c6aa71a487ee0ee247b996df14272d05bcdcf2e9f98fd21c5",
+          "text": "+(11-15)% to Chaos Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 15.0,
+          "value_min": 11.0
+        },
+        {
+          "name": "of Eviction",
+          "required_item_level": 44,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/131f3cbe6111ae4d46ff3047edeca846a846b26d9cdb9cfd082910ebe8e9051a",
+          "text": "+(16-20)% to Chaos Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 20.0,
+          "value_min": 16.0
+        },
+        {
+          "name": "of Expulsion",
+          "required_item_level": 56,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/772c3391e10907f707762447e525e62b9db9fd9877a655dca19c6698f3aa7014",
+          "text": "+(21-25)% to Chaos Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 25.0,
+          "value_min": 21.0
+        },
+        {
+          "name": "of Exile",
+          "required_item_level": 65,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/4b4231a8c92553d53da93ed3ad705e827cf738dda020e78e2ed4e00fd35c61c6",
+          "text": "+(26-30)% to Chaos Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 30.0,
+          "value_min": 26.0
+        },
+        {
+          "name": "of Bameth",
+          "required_item_level": 81,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/953e966414fe2e000e3c39de14695b1567969972c9d312cbb5675427f192e64f",
+          "text": "+(31-35)% to Chaos Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 35.0,
+          "value_min": 31.0
+        }
+      ],
+      "cold_resistance": [
+        {
+          "name": "of the Inuit",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/291dc9169c628e74d79f7c9ffded0216ac0c447b707924388a28f4054eb55f07",
+          "text": "+(6-11)% to Cold Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Seal",
+          "required_item_level": 14,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3628e9c7ffe139708cf3a3f8d7f5860205f50e1162434eaebecbf9ce3e5abd11",
+          "text": "+(12-17)% to Cold Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Penguin",
+          "required_item_level": 26,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1b17a739404b14742ee63bfe67a7e2518d5c65d5dbd433d9af10773afd58fd75",
+          "text": "+(18-23)% to Cold Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Yeti",
+          "required_item_level": 38,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/38518ff3e39bc2c24e9c7a157cfc84bddd9c54ffb27eeb8873c4e8b08a7fc9de",
+          "text": "+(24-29)% to Cold Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Walrus",
+          "required_item_level": 50,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/682d2980a2d01e9599d0335aeac2076a5c4c403edbd56a5298728d44c8c6fa8f",
+          "text": "+(30-35)% to Cold Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Polar Bear",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3f7cc002eb15e9750dac3dff6ab073f70e11d7f74dffeb810eb9a769b95c947f",
+          "text": "+(36-41)% to Cold Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Ice",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2dab79335c9433bf69edecc8ac783008a7797fec75404d9c3299fe4c7e49e11d",
+          "text": "+(42-45)% to Cold Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Haast",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/14232afa53899470e7a0c9a14fce845bacbbd0b0680216519d6f85e3d544a1ba",
+          "text": "+(46-48)% to Cold Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "fire_resistance": [
+        {
+          "name": "of the Whelpling",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/6f08dbd6868378dfbc58a07c09a95362b75b4f1147ce9477032e7687a07b89c1",
+          "text": "+(6-11)% to Fire Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Salamander",
+          "required_item_level": 12,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/23223d8537302b34205ef7bb9e0adf5e87c1ad5d44fb93840c4957a458fb5d9a",
+          "text": "+(12-17)% to Fire Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Drake",
+          "required_item_level": 24,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/a7594f7878b93ae3a594c61ea89559e12a7b18b4179a07b7000356532d1c0640",
+          "text": "+(18-23)% to Fire Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Kiln",
+          "required_item_level": 36,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/b4e0c162307d4dc7a51635c3ebf9d10e6b3b525d9baf562743fb95b2da340150",
+          "text": "+(24-29)% to Fire Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Furnace",
+          "required_item_level": 48,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/d5d995dd4fcc2f4a7a26c3315b22ae5da51031948b2ec8f75f27f47be1cbe400",
+          "text": "+(30-35)% to Fire Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Volcano",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1d3b8e79542c95eb93cefaa14f670010b8868a57ad3538a6b7d5967ed238b28f",
+          "text": "+(36-41)% to Fire Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Magma",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/49c88a84e0d89f8489a05389e79c8963b22ba32c46c6e29c0695d11fbee86b05",
+          "text": "+(42-45)% to Fire Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Tzteosh",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1c52cbd316b4830410696222c0cd3667884279b847d7ef1f8e57fee19c14d855",
+          "text": "+(46-48)% to Fire Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "increased_accuracy": [
+        {
+          "name": "of Steadiness",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1a95fe68d7050e7acb9604a7e62b355a75c2a2e213ed3005d20382d6cafdaa26",
+          "text": "+(50-100) to Accuracy Rating",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 100.0,
+          "value_min": 50.0
+        },
+        {
+          "name": "of Precision",
+          "required_item_level": 20,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1a8738cc0186bcc7bd6064b8679643b0062b0b21e569d5877b1a287805f562d0",
+          "text": "+(100-165) to Accuracy Rating",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 165.0,
+          "value_min": 100.0
+        },
+        {
+          "name": "of the Sniper",
+          "required_item_level": 40,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/9c2d27cf84abacdccef29e38556e903458ea1c909752ac8ec0d19931e9b18973",
+          "text": "+(166-250) to Accuracy Rating",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 250.0,
+          "value_min": 166.0
+        },
+        {
+          "name": "of the Marksman",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/0dd8e46a2d715943024e39ad697563b51baf16ae59686d6bd065841a4a035d96",
+          "text": "+(251-350) to Accuracy Rating",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 350.0,
+          "value_min": 251.0
+        },
+        {
+          "name": "of the Ranger",
+          "required_item_level": 75,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/829338c986aee8cc2a186c856874aa5ebf6b92678990de04235028c418f7c53c",
+          "text": "+(351-480) to Accuracy Rating",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 480.0,
+          "value_min": 351.0
+        },
+        {
+          "name": "of Lioneye",
+          "required_item_level": 85,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8a23910052f089a291af60434116ce4ccd25ccd1fb433f7d07a7ac1cadc87650",
+          "text": "+(481-600) to Accuracy Rating",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 600.0,
+          "value_min": 481.0
+        }
+      ],
+      "increased_life": [
+        {
+          "name": "Hale",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/fbbe5e936b3386513a65ff3a618fa853082667c281dae58f614ac3ea8c33a182",
+          "text": "+(3-9) to maximum Life",
+          "tier": "T9",
+          "tier_number": 9,
+          "value_max": 9.0,
+          "value_min": 3.0
+        },
+        {
+          "name": "Healthy",
+          "required_item_level": 5,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3cbdc8ebf869ae2de6d1d18afdb7f8cb13a0c36bdd6ec019861ceed11aa70e97",
+          "text": "+(10-24) to maximum Life",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 24.0,
+          "value_min": 10.0
+        },
+        {
+          "name": "Sanguine",
+          "required_item_level": 11,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/29f2a68200c7de36f442e8f962ba855ea55574276d31744c5abd909dcbf611b8",
+          "text": "+(25-39) to maximum Life",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 39.0,
+          "value_min": 25.0
+        },
+        {
+          "name": "Stalwart",
+          "required_item_level": 18,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/386283741916c8c23d63ea237a1058f80e8f333ede6fd07eea39c9032a3f48d6",
+          "text": "+(40-54) to maximum Life",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 54.0,
+          "value_min": 40.0
+        },
+        {
+          "name": "Stout",
+          "required_item_level": 24,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1914de410e72a3963ed1eb7d903df3437a2c17abb6e42c7a007311451d19896f",
+          "text": "+(55-69) to maximum Life",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 69.0,
+          "value_min": 55.0
+        },
+        {
+          "name": "Robust",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2abd4457349d914ee82c039ea3320c753b478f563d8e7192b993cfcea4813037",
+          "text": "+(70-84) to maximum Life",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 84.0,
+          "value_min": 70.0
+        },
+        {
+          "name": "Rotund",
+          "required_item_level": 36,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8dd41207fc47345750bc0bf554322002999c83116ba39470a03dc935b5706f8b",
+          "text": "+(85-99) to maximum Life",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 99.0,
+          "value_min": 85.0
+        },
+        {
+          "name": "Virile",
+          "required_item_level": 44,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/09b77c85492b919527638eec061e3c45315f1e6dd8b1209640c60aa9d86756a4",
+          "text": "+(100-114) to maximum Life",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 114.0,
+          "value_min": 100.0
+        },
+        {
+          "name": "Athlete's",
+          "required_item_level": 54,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/9fa0f793edf3e7e8be415dc7edaf56f86a34cb8987a658288c8fb2af05238536",
+          "text": "+(115-129) to maximum Life",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 129.0,
+          "value_min": 115.0
+        }
+      ],
+      "lightning_resistance": [
+        {
+          "name": "of the Cloud",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/97715405ce4ebc137a42b9ec3bba69073634061e810ef2938d834aba5b18a71d",
+          "text": "+(6-11)% to Lightning Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Squall",
+          "required_item_level": 13,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/d24305fe8991cbae200f3bed372b79dc588e33d7b0ecd9fff733ab248d8f184c",
+          "text": "+(12-17)% to Lightning Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Storm",
+          "required_item_level": 25,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/dfb64dae54795a1e4d7a8ea9ce32aa008072de76a9c25bd69d987b8da331d65d",
+          "text": "+(18-23)% to Lightning Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Thunderhead",
+          "required_item_level": 37,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1d7eac54fcb9fa5b9db4a70ec08ca7b88b9151352cd641b59281db51dfbeeb4a",
+          "text": "+(24-29)% to Lightning Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Tempest",
+          "required_item_level": 49,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/5f586c107a79780a2bc1883d4e68600da8f3040302ce3f7eef48e70bd45b77a2",
+          "text": "+(30-35)% to Lightning Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Maelstrom",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/46f497a36a0c61dc019f13d56a152fb76fe80738a12f9b4a82d2ce9f4440f875",
+          "text": "+(36-41)% to Lightning Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Lightning",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/535c3ff88f88f841a627266881a9c668f4b4e4c5b063f7492f2deb5da3ca4941",
+          "text": "+(42-45)% to Lightning Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Ephij",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/0f795951bf1f883190506b5383146c982113b8ce00bdd9790b29f7df82ea325d",
+          "text": "+(46-48)% to Lightning Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ]
+    },
+    "Helmet": {
+      "chaos_resistance": [
+        {
+          "name": "of the Lost",
+          "required_item_level": 16,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8dd690d166f863806c285b9d78adeb18b9f89e423d965c7e05b4d76dbc7a9f59",
+          "text": "+(5-10)% to Chaos Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 10.0,
+          "value_min": 5.0
+        },
+        {
+          "name": "of Banishment",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/851625ecad31838c6aa71a487ee0ee247b996df14272d05bcdcf2e9f98fd21c5",
+          "text": "+(11-15)% to Chaos Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 15.0,
+          "value_min": 11.0
+        },
+        {
+          "name": "of Eviction",
+          "required_item_level": 44,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/131f3cbe6111ae4d46ff3047edeca846a846b26d9cdb9cfd082910ebe8e9051a",
+          "text": "+(16-20)% to Chaos Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 20.0,
+          "value_min": 16.0
+        },
+        {
+          "name": "of Expulsion",
+          "required_item_level": 56,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/772c3391e10907f707762447e525e62b9db9fd9877a655dca19c6698f3aa7014",
+          "text": "+(21-25)% to Chaos Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 25.0,
+          "value_min": 21.0
+        },
+        {
+          "name": "of Exile",
+          "required_item_level": 65,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/4b4231a8c92553d53da93ed3ad705e827cf738dda020e78e2ed4e00fd35c61c6",
+          "text": "+(26-30)% to Chaos Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 30.0,
+          "value_min": 26.0
+        },
+        {
+          "name": "of Bameth",
+          "required_item_level": 81,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/953e966414fe2e000e3c39de14695b1567969972c9d312cbb5675427f192e64f",
+          "text": "+(31-35)% to Chaos Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 35.0,
+          "value_min": 31.0
+        }
+      ],
+      "cold_resistance": [
+        {
+          "name": "of the Inuit",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/291dc9169c628e74d79f7c9ffded0216ac0c447b707924388a28f4054eb55f07",
+          "text": "+(6-11)% to Cold Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Seal",
+          "required_item_level": 14,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3628e9c7ffe139708cf3a3f8d7f5860205f50e1162434eaebecbf9ce3e5abd11",
+          "text": "+(12-17)% to Cold Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Penguin",
+          "required_item_level": 26,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1b17a739404b14742ee63bfe67a7e2518d5c65d5dbd433d9af10773afd58fd75",
+          "text": "+(18-23)% to Cold Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Yeti",
+          "required_item_level": 38,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/38518ff3e39bc2c24e9c7a157cfc84bddd9c54ffb27eeb8873c4e8b08a7fc9de",
+          "text": "+(24-29)% to Cold Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Walrus",
+          "required_item_level": 50,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/682d2980a2d01e9599d0335aeac2076a5c4c403edbd56a5298728d44c8c6fa8f",
+          "text": "+(30-35)% to Cold Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Polar Bear",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3f7cc002eb15e9750dac3dff6ab073f70e11d7f74dffeb810eb9a769b95c947f",
+          "text": "+(36-41)% to Cold Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Ice",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2dab79335c9433bf69edecc8ac783008a7797fec75404d9c3299fe4c7e49e11d",
+          "text": "+(42-45)% to Cold Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Haast",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/14232afa53899470e7a0c9a14fce845bacbbd0b0680216519d6f85e3d544a1ba",
+          "text": "+(46-48)% to Cold Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "fire_resistance": [
+        {
+          "name": "of the Whelpling",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/6f08dbd6868378dfbc58a07c09a95362b75b4f1147ce9477032e7687a07b89c1",
+          "text": "+(6-11)% to Fire Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Salamander",
+          "required_item_level": 12,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/23223d8537302b34205ef7bb9e0adf5e87c1ad5d44fb93840c4957a458fb5d9a",
+          "text": "+(12-17)% to Fire Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Drake",
+          "required_item_level": 24,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/a7594f7878b93ae3a594c61ea89559e12a7b18b4179a07b7000356532d1c0640",
+          "text": "+(18-23)% to Fire Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Kiln",
+          "required_item_level": 36,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/b4e0c162307d4dc7a51635c3ebf9d10e6b3b525d9baf562743fb95b2da340150",
+          "text": "+(24-29)% to Fire Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Furnace",
+          "required_item_level": 48,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/d5d995dd4fcc2f4a7a26c3315b22ae5da51031948b2ec8f75f27f47be1cbe400",
+          "text": "+(30-35)% to Fire Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Volcano",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1d3b8e79542c95eb93cefaa14f670010b8868a57ad3538a6b7d5967ed238b28f",
+          "text": "+(36-41)% to Fire Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Magma",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/49c88a84e0d89f8489a05389e79c8963b22ba32c46c6e29c0695d11fbee86b05",
+          "text": "+(42-45)% to Fire Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Tzteosh",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1c52cbd316b4830410696222c0cd3667884279b847d7ef1f8e57fee19c14d855",
+          "text": "+(46-48)% to Fire Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "increased_accuracy": [
+        {
+          "name": "of Steadiness",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1a95fe68d7050e7acb9604a7e62b355a75c2a2e213ed3005d20382d6cafdaa26",
+          "text": "+(50-100) to Accuracy Rating",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 100.0,
+          "value_min": 50.0
+        },
+        {
+          "name": "of Precision",
+          "required_item_level": 20,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1a8738cc0186bcc7bd6064b8679643b0062b0b21e569d5877b1a287805f562d0",
+          "text": "+(100-165) to Accuracy Rating",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 165.0,
+          "value_min": 100.0
+        },
+        {
+          "name": "of the Sniper",
+          "required_item_level": 40,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/9c2d27cf84abacdccef29e38556e903458ea1c909752ac8ec0d19931e9b18973",
+          "text": "+(166-250) to Accuracy Rating",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 250.0,
+          "value_min": 166.0
+        },
+        {
+          "name": "of the Marksman",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/0dd8e46a2d715943024e39ad697563b51baf16ae59686d6bd065841a4a035d96",
+          "text": "+(251-350) to Accuracy Rating",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 350.0,
+          "value_min": 251.0
+        },
+        {
+          "name": "of the Ranger",
+          "required_item_level": 75,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/829338c986aee8cc2a186c856874aa5ebf6b92678990de04235028c418f7c53c",
+          "text": "+(351-480) to Accuracy Rating",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 480.0,
+          "value_min": 351.0
+        },
+        {
+          "name": "of Lioneye",
+          "required_item_level": 85,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8a23910052f089a291af60434116ce4ccd25ccd1fb433f7d07a7ac1cadc87650",
+          "text": "+(481-600) to Accuracy Rating",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 600.0,
+          "value_min": 481.0
+        }
+      ],
+      "increased_life": [
+        {
+          "name": "Hale",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/fbbe5e936b3386513a65ff3a618fa853082667c281dae58f614ac3ea8c33a182",
+          "text": "+(3-9) to maximum Life",
+          "tier": "T10",
+          "tier_number": 10,
+          "value_max": 9.0,
+          "value_min": 3.0
+        },
+        {
+          "name": "Healthy",
+          "required_item_level": 5,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3cbdc8ebf869ae2de6d1d18afdb7f8cb13a0c36bdd6ec019861ceed11aa70e97",
+          "text": "+(10-24) to maximum Life",
+          "tier": "T9",
+          "tier_number": 9,
+          "value_max": 24.0,
+          "value_min": 10.0
+        },
+        {
+          "name": "Sanguine",
+          "required_item_level": 11,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/29f2a68200c7de36f442e8f962ba855ea55574276d31744c5abd909dcbf611b8",
+          "text": "+(25-39) to maximum Life",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 39.0,
+          "value_min": 25.0
+        },
+        {
+          "name": "Stalwart",
+          "required_item_level": 18,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/386283741916c8c23d63ea237a1058f80e8f333ede6fd07eea39c9032a3f48d6",
+          "text": "+(40-54) to maximum Life",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 54.0,
+          "value_min": 40.0
+        },
+        {
+          "name": "Stout",
+          "required_item_level": 24,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1914de410e72a3963ed1eb7d903df3437a2c17abb6e42c7a007311451d19896f",
+          "text": "+(55-69) to maximum Life",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 69.0,
+          "value_min": 55.0
+        },
+        {
+          "name": "Robust",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2abd4457349d914ee82c039ea3320c753b478f563d8e7192b993cfcea4813037",
+          "text": "+(70-84) to maximum Life",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 84.0,
+          "value_min": 70.0
+        },
+        {
+          "name": "Rotund",
+          "required_item_level": 36,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8dd41207fc47345750bc0bf554322002999c83116ba39470a03dc935b5706f8b",
+          "text": "+(85-99) to maximum Life",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 99.0,
+          "value_min": 85.0
+        },
+        {
+          "name": "Virile",
+          "required_item_level": 44,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/09b77c85492b919527638eec061e3c45315f1e6dd8b1209640c60aa9d86756a4",
+          "text": "+(100-114) to maximum Life",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 114.0,
+          "value_min": 100.0
+        },
+        {
+          "name": "Athlete's",
+          "required_item_level": 54,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/9fa0f793edf3e7e8be415dc7edaf56f86a34cb8987a658288c8fb2af05238536",
+          "text": "+(115-129) to maximum Life",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 129.0,
+          "value_min": 115.0
+        },
+        {
+          "name": "Fecund",
+          "required_item_level": 64,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/bc554a86525f10a2a6137b3d57dc0523217ffb71aadbbe09ad8e1e61f9c66344",
+          "text": "+(130-144) to maximum Life",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 144.0,
+          "value_min": 130.0
+        }
+      ],
+      "lightning_resistance": [
+        {
+          "name": "of the Cloud",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/97715405ce4ebc137a42b9ec3bba69073634061e810ef2938d834aba5b18a71d",
+          "text": "+(6-11)% to Lightning Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Squall",
+          "required_item_level": 13,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/d24305fe8991cbae200f3bed372b79dc588e33d7b0ecd9fff733ab248d8f184c",
+          "text": "+(12-17)% to Lightning Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Storm",
+          "required_item_level": 25,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/dfb64dae54795a1e4d7a8ea9ce32aa008072de76a9c25bd69d987b8da331d65d",
+          "text": "+(18-23)% to Lightning Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Thunderhead",
+          "required_item_level": 37,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1d7eac54fcb9fa5b9db4a70ec08ca7b88b9151352cd641b59281db51dfbeeb4a",
+          "text": "+(24-29)% to Lightning Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Tempest",
+          "required_item_level": 49,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/5f586c107a79780a2bc1883d4e68600da8f3040302ce3f7eef48e70bd45b77a2",
+          "text": "+(30-35)% to Lightning Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Maelstrom",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/46f497a36a0c61dc019f13d56a152fb76fe80738a12f9b4a82d2ce9f4440f875",
+          "text": "+(36-41)% to Lightning Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Lightning",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/535c3ff88f88f841a627266881a9c668f4b4e4c5b063f7492f2deb5da3ca4941",
+          "text": "+(42-45)% to Lightning Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Ephij",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/0f795951bf1f883190506b5383146c982113b8ce00bdd9790b29f7df82ea325d",
+          "text": "+(46-48)% to Lightning Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ]
+    },
+    "Ring": {
+      "chaos_resistance": [
+        {
+          "name": "of the Lost",
+          "required_item_level": 16,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8dd690d166f863806c285b9d78adeb18b9f89e423d965c7e05b4d76dbc7a9f59",
+          "text": "+(5-10)% to Chaos Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 10.0,
+          "value_min": 5.0
+        },
+        {
+          "name": "of Banishment",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/851625ecad31838c6aa71a487ee0ee247b996df14272d05bcdcf2e9f98fd21c5",
+          "text": "+(11-15)% to Chaos Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 15.0,
+          "value_min": 11.0
+        },
+        {
+          "name": "of Eviction",
+          "required_item_level": 44,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/131f3cbe6111ae4d46ff3047edeca846a846b26d9cdb9cfd082910ebe8e9051a",
+          "text": "+(16-20)% to Chaos Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 20.0,
+          "value_min": 16.0
+        },
+        {
+          "name": "of Expulsion",
+          "required_item_level": 56,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/772c3391e10907f707762447e525e62b9db9fd9877a655dca19c6698f3aa7014",
+          "text": "+(21-25)% to Chaos Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 25.0,
+          "value_min": 21.0
+        },
+        {
+          "name": "of Exile",
+          "required_item_level": 65,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/4b4231a8c92553d53da93ed3ad705e827cf738dda020e78e2ed4e00fd35c61c6",
+          "text": "+(26-30)% to Chaos Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 30.0,
+          "value_min": 26.0
+        },
+        {
+          "name": "of Bameth",
+          "required_item_level": 81,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/953e966414fe2e000e3c39de14695b1567969972c9d312cbb5675427f192e64f",
+          "text": "+(31-35)% to Chaos Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 35.0,
+          "value_min": 31.0
+        }
+      ],
+      "cold_resistance": [
+        {
+          "name": "of the Inuit",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/291dc9169c628e74d79f7c9ffded0216ac0c447b707924388a28f4054eb55f07",
+          "text": "+(6-11)% to Cold Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Seal",
+          "required_item_level": 14,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3628e9c7ffe139708cf3a3f8d7f5860205f50e1162434eaebecbf9ce3e5abd11",
+          "text": "+(12-17)% to Cold Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Penguin",
+          "required_item_level": 26,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1b17a739404b14742ee63bfe67a7e2518d5c65d5dbd433d9af10773afd58fd75",
+          "text": "+(18-23)% to Cold Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Yeti",
+          "required_item_level": 38,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/38518ff3e39bc2c24e9c7a157cfc84bddd9c54ffb27eeb8873c4e8b08a7fc9de",
+          "text": "+(24-29)% to Cold Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Walrus",
+          "required_item_level": 50,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/682d2980a2d01e9599d0335aeac2076a5c4c403edbd56a5298728d44c8c6fa8f",
+          "text": "+(30-35)% to Cold Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Polar Bear",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3f7cc002eb15e9750dac3dff6ab073f70e11d7f74dffeb810eb9a769b95c947f",
+          "text": "+(36-41)% to Cold Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Ice",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2dab79335c9433bf69edecc8ac783008a7797fec75404d9c3299fe4c7e49e11d",
+          "text": "+(42-45)% to Cold Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Haast",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/14232afa53899470e7a0c9a14fce845bacbbd0b0680216519d6f85e3d544a1ba",
+          "text": "+(46-48)% to Cold Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "fire_resistance": [
+        {
+          "name": "of the Whelpling",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/6f08dbd6868378dfbc58a07c09a95362b75b4f1147ce9477032e7687a07b89c1",
+          "text": "+(6-11)% to Fire Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Salamander",
+          "required_item_level": 12,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/23223d8537302b34205ef7bb9e0adf5e87c1ad5d44fb93840c4957a458fb5d9a",
+          "text": "+(12-17)% to Fire Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Drake",
+          "required_item_level": 24,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/a7594f7878b93ae3a594c61ea89559e12a7b18b4179a07b7000356532d1c0640",
+          "text": "+(18-23)% to Fire Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Kiln",
+          "required_item_level": 36,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/b4e0c162307d4dc7a51635c3ebf9d10e6b3b525d9baf562743fb95b2da340150",
+          "text": "+(24-29)% to Fire Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Furnace",
+          "required_item_level": 48,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/d5d995dd4fcc2f4a7a26c3315b22ae5da51031948b2ec8f75f27f47be1cbe400",
+          "text": "+(30-35)% to Fire Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Volcano",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1d3b8e79542c95eb93cefaa14f670010b8868a57ad3538a6b7d5967ed238b28f",
+          "text": "+(36-41)% to Fire Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Magma",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/49c88a84e0d89f8489a05389e79c8963b22ba32c46c6e29c0695d11fbee86b05",
+          "text": "+(42-45)% to Fire Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Tzteosh",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1c52cbd316b4830410696222c0cd3667884279b847d7ef1f8e57fee19c14d855",
+          "text": "+(46-48)% to Fire Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "increased_accuracy": [
+        {
+          "name": "of Steadiness",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1a95fe68d7050e7acb9604a7e62b355a75c2a2e213ed3005d20382d6cafdaa26",
+          "text": "+(50-100) to Accuracy Rating",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 100.0,
+          "value_min": 50.0
+        },
+        {
+          "name": "of Precision",
+          "required_item_level": 20,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1a8738cc0186bcc7bd6064b8679643b0062b0b21e569d5877b1a287805f562d0",
+          "text": "+(100-165) to Accuracy Rating",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 165.0,
+          "value_min": 100.0
+        },
+        {
+          "name": "of the Sniper",
+          "required_item_level": 40,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/9c2d27cf84abacdccef29e38556e903458ea1c909752ac8ec0d19931e9b18973",
+          "text": "+(166-250) to Accuracy Rating",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 250.0,
+          "value_min": 166.0
+        },
+        {
+          "name": "of the Marksman",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/0dd8e46a2d715943024e39ad697563b51baf16ae59686d6bd065841a4a035d96",
+          "text": "+(251-350) to Accuracy Rating",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 350.0,
+          "value_min": 251.0
+        },
+        {
+          "name": "of the Ranger",
+          "required_item_level": 75,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/829338c986aee8cc2a186c856874aa5ebf6b92678990de04235028c418f7c53c",
+          "text": "+(351-480) to Accuracy Rating",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 480.0,
+          "value_min": 351.0
+        }
+      ],
+      "increased_cast_speed": [
+        {
+          "name": "of Talent",
+          "required_item_level": 2,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/c7d15270adbbf403aa7c78b2e48ee42f1c56cac3ebe1637741d6bed75ae90dc2",
+          "text": "(5-8)% increased Cast Speed",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 8.0,
+          "value_min": 5.0
+        },
+        {
+          "name": "of Nimbleness",
+          "required_item_level": 15,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/ec0bf46bba4a11fdbea351aa05f1e7f831469eb0aa8245b33a4eb8fe50d71922",
+          "text": "(9-12)% increased Cast Speed",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 12.0,
+          "value_min": 9.0
+        },
+        {
+          "name": "of Expertise",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/dfd6d81584d634729a804833a704d85e864a24e548830a98a991238375114314",
+          "text": "(13-16)% increased Cast Speed",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 16.0,
+          "value_min": 13.0
+        }
+      ],
+      "increased_life": [
+        {
+          "name": "Hale",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/fbbe5e936b3386513a65ff3a618fa853082667c281dae58f614ac3ea8c33a182",
+          "text": "+(3-9) to maximum Life",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 9.0,
+          "value_min": 3.0
+        },
+        {
+          "name": "Healthy",
+          "required_item_level": 5,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3cbdc8ebf869ae2de6d1d18afdb7f8cb13a0c36bdd6ec019861ceed11aa70e97",
+          "text": "+(10-24) to maximum Life",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 24.0,
+          "value_min": 10.0
+        },
+        {
+          "name": "Sanguine",
+          "required_item_level": 11,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/29f2a68200c7de36f442e8f962ba855ea55574276d31744c5abd909dcbf611b8",
+          "text": "+(25-39) to maximum Life",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 39.0,
+          "value_min": 25.0
+        },
+        {
+          "name": "Stalwart",
+          "required_item_level": 18,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/386283741916c8c23d63ea237a1058f80e8f333ede6fd07eea39c9032a3f48d6",
+          "text": "+(40-54) to maximum Life",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 54.0,
+          "value_min": 40.0
+        },
+        {
+          "name": "Stout",
+          "required_item_level": 24,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1914de410e72a3963ed1eb7d903df3437a2c17abb6e42c7a007311451d19896f",
+          "text": "+(55-69) to maximum Life",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 69.0,
+          "value_min": 55.0
+        },
+        {
+          "name": "Robust",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2abd4457349d914ee82c039ea3320c753b478f563d8e7192b993cfcea4813037",
+          "text": "+(70-84) to maximum Life",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 84.0,
+          "value_min": 70.0
+        },
+        {
+          "name": "Rotund",
+          "required_item_level": 36,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8dd41207fc47345750bc0bf554322002999c83116ba39470a03dc935b5706f8b",
+          "text": "+(85-99) to maximum Life",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 99.0,
+          "value_min": 85.0
+        },
+        {
+          "name": "Virile",
+          "required_item_level": 44,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/09b77c85492b919527638eec061e3c45315f1e6dd8b1209640c60aa9d86756a4",
+          "text": "+(100-114) to maximum Life",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 114.0,
+          "value_min": 100.0
+        }
+      ],
+      "lightning_resistance": [
+        {
+          "name": "of the Cloud",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/97715405ce4ebc137a42b9ec3bba69073634061e810ef2938d834aba5b18a71d",
+          "text": "+(6-11)% to Lightning Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Squall",
+          "required_item_level": 13,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/d24305fe8991cbae200f3bed372b79dc588e33d7b0ecd9fff733ab248d8f184c",
+          "text": "+(12-17)% to Lightning Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Storm",
+          "required_item_level": 25,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/dfb64dae54795a1e4d7a8ea9ce32aa008072de76a9c25bd69d987b8da331d65d",
+          "text": "+(18-23)% to Lightning Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Thunderhead",
+          "required_item_level": 37,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1d7eac54fcb9fa5b9db4a70ec08ca7b88b9151352cd641b59281db51dfbeeb4a",
+          "text": "+(24-29)% to Lightning Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Tempest",
+          "required_item_level": 49,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/5f586c107a79780a2bc1883d4e68600da8f3040302ce3f7eef48e70bd45b77a2",
+          "text": "+(30-35)% to Lightning Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Maelstrom",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/46f497a36a0c61dc019f13d56a152fb76fe80738a12f9b4a82d2ce9f4440f875",
+          "text": "+(36-41)% to Lightning Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Lightning",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/535c3ff88f88f841a627266881a9c668f4b4e4c5b063f7492f2deb5da3ca4941",
+          "text": "+(42-45)% to Lightning Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Ephij",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/0f795951bf1f883190506b5383146c982113b8ce00bdd9790b29f7df82ea325d",
+          "text": "+(46-48)% to Lightning Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ]
+    },
+    "Sceptre": {
+      "increased_accuracy": [
+        {
+          "name": "of Steadiness",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2489e8f7614bbaa856ec7723ce9336e2be204cc03eccdd469d1f4c5489e75d01",
+          "text": "+(80-130) to Accuracy Rating",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 130.0,
+          "value_min": 80.0
+        },
+        {
+          "name": "of Precision",
+          "required_item_level": 20,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/cc95afa452a304ed84dab51c132c75da87968a425d0f4761d07e590fa12b2084",
+          "text": "+(131-215) to Accuracy Rating",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 215.0,
+          "value_min": 131.0
+        },
+        {
+          "name": "of the Sniper",
+          "required_item_level": 40,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/c320b9e497390bf60064241c1e1b12be59a619079f9e8ecc684c0e54b5b715e0",
+          "text": "+(216-325) to Accuracy Rating",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 325.0,
+          "value_min": 216.0
+        },
+        {
+          "name": "of the Marksman",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/581b229bea2124493a74df65a8139591fb18da6fec52ee1bd962231282baed36",
+          "text": "+(326-455) to Accuracy Rating",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 455.0,
+          "value_min": 326.0
+        },
+        {
+          "name": "of the Ranger",
+          "required_item_level": 75,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8e1e890c14a83340ca79d40167c0581ae4c98b5e7c8924716e785d540e0ce553",
+          "text": "+(456-624) to Accuracy Rating",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 624.0,
+          "value_min": 456.0
+        }
+      ],
+      "increased_cast_speed": [
+        {
+          "name": "of Talent",
+          "required_item_level": 2,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/c7d15270adbbf403aa7c78b2e48ee42f1c56cac3ebe1637741d6bed75ae90dc2",
+          "text": "(5-8)% increased Cast Speed",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 8.0,
+          "value_min": 5.0
+        },
+        {
+          "name": "of Nimbleness",
+          "required_item_level": 15,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/ec0bf46bba4a11fdbea351aa05f1e7f831469eb0aa8245b33a4eb8fe50d71922",
+          "text": "(9-12)% increased Cast Speed",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 12.0,
+          "value_min": 9.0
+        },
+        {
+          "name": "of Expertise",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/dfd6d81584d634729a804833a704d85e864a24e548830a98a991238375114314",
+          "text": "(13-16)% increased Cast Speed",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 16.0,
+          "value_min": 13.0
+        },
+        {
+          "name": "of Legerdemain",
+          "required_item_level": 40,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/473efa3a52f3c7a545b40efe3ba828b26c4eea2365e2c87b0158697d76ffdfa7",
+          "text": "(17-20)% increased Cast Speed",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 20.0,
+          "value_min": 17.0
+        },
+        {
+          "name": "of Prestidigitation",
+          "required_item_level": 55,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/c8373353c3fd4306517bbc7cf19e569a325b04046bc0affc141fc9de7dbb4622",
+          "text": "(21-24)% increased Cast Speed",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 24.0,
+          "value_min": 21.0
+        },
+        {
+          "name": "of Sortilege",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/0b3727c16b2576cbbd9b5cfca09807e6d636a785e2c16f87585d30e0bba99887",
+          "text": "(25-28)% increased Cast Speed",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 28.0,
+          "value_min": 25.0
+        },
+        {
+          "name": "of Finesse",
+          "required_item_level": 83,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/f0c11305be429c1d56d7e031096f7c049a2722c81a535345cde4b85363affdad",
+          "text": "(29-32)% increased Cast Speed",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 32.0,
+          "value_min": 29.0
+        }
+      ],
+      "weapon_spell_damage_percent": [
+        {
+          "name": "Apprentice's",
+          "required_item_level": 2,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/357b1223bb9b1a9f20be59d4c847247ab0faa2bdbb2d2e18784916ec928b35ce",
+          "text": "(10-19)% increased Spell Damage",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 19.0,
+          "value_min": 10.0
+        },
+        {
+          "name": "Adept's",
+          "required_item_level": 11,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/4b73f5f6c90275f9406baa756b3372b150a9ade6947826bb4289ba7254278049",
+          "text": "(20-29)% increased Spell Damage",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 29.0,
+          "value_min": 20.0
+        },
+        {
+          "name": "Scholar's",
+          "required_item_level": 23,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/6e629536cf037d70cfcea9dddd015f98f6523784e8dca846f731edbbcff06bfc",
+          "text": "(30-39)% increased Spell Damage",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 39.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "Professor's",
+          "required_item_level": 35,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/e3f70568ca3435fb9adfdf6efb921bd879c6fd3d5ae24b3c000d240c3efbb72a",
+          "text": "(40-54)% increased Spell Damage",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 54.0,
+          "value_min": 40.0
+        },
+        {
+          "name": "Occultist's",
+          "required_item_level": 46,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/efb6b27fde33ee1fecda50e7900a5bf16d32db1480997115d4ceecd9342d9679",
+          "text": "(55-69)% increased Spell Damage",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 69.0,
+          "value_min": 55.0
+        },
+        {
+          "name": "Incanter's",
+          "required_item_level": 58,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/53337cf3ce565113c4e8bdf247895cc7d37d7c3ffcae283345af4467272c3bce",
+          "text": "(70-84)% increased Spell Damage",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 84.0,
+          "value_min": 70.0
+        },
+        {
+          "name": "Glyphic",
+          "required_item_level": 64,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/ee950ce70c7dc5f53fc75e6cade9ef99f65c741a6dac134a6ff4c8ec753c4d42",
+          "text": "(85-99)% increased Spell Damage",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 99.0,
+          "value_min": 85.0
+        },
+        {
+          "name": "Runic",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3e7f06a8ec4e8dbe22320503432763944c79b689897d651bee680420198fbbf1",
+          "text": "(100-109)% increased Spell Damage",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 109.0,
+          "value_min": 100.0
+        }
+      ]
+    },
+    "Shield": {
+      "chaos_resistance": [
+        {
+          "name": "of the Lost",
+          "required_item_level": 16,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8dd690d166f863806c285b9d78adeb18b9f89e423d965c7e05b4d76dbc7a9f59",
+          "text": "+(5-10)% to Chaos Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 10.0,
+          "value_min": 5.0
+        },
+        {
+          "name": "of Banishment",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/851625ecad31838c6aa71a487ee0ee247b996df14272d05bcdcf2e9f98fd21c5",
+          "text": "+(11-15)% to Chaos Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 15.0,
+          "value_min": 11.0
+        },
+        {
+          "name": "of Eviction",
+          "required_item_level": 44,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/131f3cbe6111ae4d46ff3047edeca846a846b26d9cdb9cfd082910ebe8e9051a",
+          "text": "+(16-20)% to Chaos Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 20.0,
+          "value_min": 16.0
+        },
+        {
+          "name": "of Expulsion",
+          "required_item_level": 56,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/772c3391e10907f707762447e525e62b9db9fd9877a655dca19c6698f3aa7014",
+          "text": "+(21-25)% to Chaos Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 25.0,
+          "value_min": 21.0
+        },
+        {
+          "name": "of Exile",
+          "required_item_level": 65,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/4b4231a8c92553d53da93ed3ad705e827cf738dda020e78e2ed4e00fd35c61c6",
+          "text": "+(26-30)% to Chaos Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 30.0,
+          "value_min": 26.0
+        },
+        {
+          "name": "of Bameth",
+          "required_item_level": 81,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/953e966414fe2e000e3c39de14695b1567969972c9d312cbb5675427f192e64f",
+          "text": "+(31-35)% to Chaos Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 35.0,
+          "value_min": 31.0
+        }
+      ],
+      "cold_resistance": [
+        {
+          "name": "of the Inuit",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/291dc9169c628e74d79f7c9ffded0216ac0c447b707924388a28f4054eb55f07",
+          "text": "+(6-11)% to Cold Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Seal",
+          "required_item_level": 14,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3628e9c7ffe139708cf3a3f8d7f5860205f50e1162434eaebecbf9ce3e5abd11",
+          "text": "+(12-17)% to Cold Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Penguin",
+          "required_item_level": 26,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1b17a739404b14742ee63bfe67a7e2518d5c65d5dbd433d9af10773afd58fd75",
+          "text": "+(18-23)% to Cold Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Yeti",
+          "required_item_level": 38,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/38518ff3e39bc2c24e9c7a157cfc84bddd9c54ffb27eeb8873c4e8b08a7fc9de",
+          "text": "+(24-29)% to Cold Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Walrus",
+          "required_item_level": 50,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/682d2980a2d01e9599d0335aeac2076a5c4c403edbd56a5298728d44c8c6fa8f",
+          "text": "+(30-35)% to Cold Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Polar Bear",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3f7cc002eb15e9750dac3dff6ab073f70e11d7f74dffeb810eb9a769b95c947f",
+          "text": "+(36-41)% to Cold Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Ice",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2dab79335c9433bf69edecc8ac783008a7797fec75404d9c3299fe4c7e49e11d",
+          "text": "+(42-45)% to Cold Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Haast",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/14232afa53899470e7a0c9a14fce845bacbbd0b0680216519d6f85e3d544a1ba",
+          "text": "+(46-48)% to Cold Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "fire_resistance": [
+        {
+          "name": "of the Whelpling",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/6f08dbd6868378dfbc58a07c09a95362b75b4f1147ce9477032e7687a07b89c1",
+          "text": "+(6-11)% to Fire Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Salamander",
+          "required_item_level": 12,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/23223d8537302b34205ef7bb9e0adf5e87c1ad5d44fb93840c4957a458fb5d9a",
+          "text": "+(12-17)% to Fire Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Drake",
+          "required_item_level": 24,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/a7594f7878b93ae3a594c61ea89559e12a7b18b4179a07b7000356532d1c0640",
+          "text": "+(18-23)% to Fire Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Kiln",
+          "required_item_level": 36,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/b4e0c162307d4dc7a51635c3ebf9d10e6b3b525d9baf562743fb95b2da340150",
+          "text": "+(24-29)% to Fire Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Furnace",
+          "required_item_level": 48,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/d5d995dd4fcc2f4a7a26c3315b22ae5da51031948b2ec8f75f27f47be1cbe400",
+          "text": "+(30-35)% to Fire Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Volcano",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1d3b8e79542c95eb93cefaa14f670010b8868a57ad3538a6b7d5967ed238b28f",
+          "text": "+(36-41)% to Fire Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Magma",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/49c88a84e0d89f8489a05389e79c8963b22ba32c46c6e29c0695d11fbee86b05",
+          "text": "+(42-45)% to Fire Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Tzteosh",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1c52cbd316b4830410696222c0cd3667884279b847d7ef1f8e57fee19c14d855",
+          "text": "+(46-48)% to Fire Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ],
+      "increased_life": [
+        {
+          "name": "Hale",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/fbbe5e936b3386513a65ff3a618fa853082667c281dae58f614ac3ea8c33a182",
+          "text": "+(3-9) to maximum Life",
+          "tier": "T11",
+          "tier_number": 11,
+          "value_max": 9.0,
+          "value_min": 3.0
+        },
+        {
+          "name": "Healthy",
+          "required_item_level": 5,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3cbdc8ebf869ae2de6d1d18afdb7f8cb13a0c36bdd6ec019861ceed11aa70e97",
+          "text": "+(10-24) to maximum Life",
+          "tier": "T10",
+          "tier_number": 10,
+          "value_max": 24.0,
+          "value_min": 10.0
+        },
+        {
+          "name": "Sanguine",
+          "required_item_level": 11,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/29f2a68200c7de36f442e8f962ba855ea55574276d31744c5abd909dcbf611b8",
+          "text": "+(25-39) to maximum Life",
+          "tier": "T9",
+          "tier_number": 9,
+          "value_max": 39.0,
+          "value_min": 25.0
+        },
+        {
+          "name": "Stalwart",
+          "required_item_level": 18,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/386283741916c8c23d63ea237a1058f80e8f333ede6fd07eea39c9032a3f48d6",
+          "text": "+(40-54) to maximum Life",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 54.0,
+          "value_min": 40.0
+        },
+        {
+          "name": "Stout",
+          "required_item_level": 24,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1914de410e72a3963ed1eb7d903df3437a2c17abb6e42c7a007311451d19896f",
+          "text": "+(55-69) to maximum Life",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 69.0,
+          "value_min": 55.0
+        },
+        {
+          "name": "Robust",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2abd4457349d914ee82c039ea3320c753b478f563d8e7192b993cfcea4813037",
+          "text": "+(70-84) to maximum Life",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 84.0,
+          "value_min": 70.0
+        },
+        {
+          "name": "Rotund",
+          "required_item_level": 36,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8dd41207fc47345750bc0bf554322002999c83116ba39470a03dc935b5706f8b",
+          "text": "+(85-99) to maximum Life",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 99.0,
+          "value_min": 85.0
+        },
+        {
+          "name": "Virile",
+          "required_item_level": 44,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/09b77c85492b919527638eec061e3c45315f1e6dd8b1209640c60aa9d86756a4",
+          "text": "+(100-114) to maximum Life",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 114.0,
+          "value_min": 100.0
+        },
+        {
+          "name": "Athlete's",
+          "required_item_level": 54,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/9fa0f793edf3e7e8be415dc7edaf56f86a34cb8987a658288c8fb2af05238536",
+          "text": "+(115-129) to maximum Life",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 129.0,
+          "value_min": 115.0
+        },
+        {
+          "name": "Fecund",
+          "required_item_level": 64,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/bc554a86525f10a2a6137b3d57dc0523217ffb71aadbbe09ad8e1e61f9c66344",
+          "text": "+(130-144) to maximum Life",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 144.0,
+          "value_min": 130.0
+        },
+        {
+          "name": "Vigorous",
+          "required_item_level": 73,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/93dbed8445dd49fa0eef6982aa8010b9ec4a502c6bd14ed502653cbf841d08cd",
+          "text": "+(145-159) to maximum Life",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 159.0,
+          "value_min": 145.0
+        }
+      ],
+      "lightning_resistance": [
+        {
+          "name": "of the Cloud",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/97715405ce4ebc137a42b9ec3bba69073634061e810ef2938d834aba5b18a71d",
+          "text": "+(6-11)% to Lightning Resistance",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 11.0,
+          "value_min": 6.0
+        },
+        {
+          "name": "of the Squall",
+          "required_item_level": 13,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/d24305fe8991cbae200f3bed372b79dc588e33d7b0ecd9fff733ab248d8f184c",
+          "text": "+(12-17)% to Lightning Resistance",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 17.0,
+          "value_min": 12.0
+        },
+        {
+          "name": "of the Storm",
+          "required_item_level": 25,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/dfb64dae54795a1e4d7a8ea9ce32aa008072de76a9c25bd69d987b8da331d65d",
+          "text": "+(18-23)% to Lightning Resistance",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 23.0,
+          "value_min": 18.0
+        },
+        {
+          "name": "of the Thunderhead",
+          "required_item_level": 37,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/1d7eac54fcb9fa5b9db4a70ec08ca7b88b9151352cd641b59281db51dfbeeb4a",
+          "text": "+(24-29)% to Lightning Resistance",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 29.0,
+          "value_min": 24.0
+        },
+        {
+          "name": "of the Tempest",
+          "required_item_level": 49,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/5f586c107a79780a2bc1883d4e68600da8f3040302ce3f7eef48e70bd45b77a2",
+          "text": "+(30-35)% to Lightning Resistance",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 35.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "of the Maelstrom",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/46f497a36a0c61dc019f13d56a152fb76fe80738a12f9b4a82d2ce9f4440f875",
+          "text": "+(36-41)% to Lightning Resistance",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 41.0,
+          "value_min": 36.0
+        },
+        {
+          "name": "of the Lightning",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/535c3ff88f88f841a627266881a9c668f4b4e4c5b063f7492f2deb5da3ca4941",
+          "text": "+(42-45)% to Lightning Resistance",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 45.0,
+          "value_min": 42.0
+        },
+        {
+          "name": "of Ephij",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/0f795951bf1f883190506b5383146c982113b8ce00bdd9790b29f7df82ea325d",
+          "text": "+(46-48)% to Lightning Resistance",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 48.0,
+          "value_min": 46.0
+        }
+      ]
+    },
+    "Wand": {
+      "increased_accuracy": [
+        {
+          "name": "of Steadiness",
+          "required_item_level": 1,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/2489e8f7614bbaa856ec7723ce9336e2be204cc03eccdd469d1f4c5489e75d01",
+          "text": "+(80-130) to Accuracy Rating",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 130.0,
+          "value_min": 80.0
+        },
+        {
+          "name": "of Precision",
+          "required_item_level": 20,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/cc95afa452a304ed84dab51c132c75da87968a425d0f4761d07e590fa12b2084",
+          "text": "+(131-215) to Accuracy Rating",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 215.0,
+          "value_min": 131.0
+        },
+        {
+          "name": "of the Sniper",
+          "required_item_level": 40,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/c320b9e497390bf60064241c1e1b12be59a619079f9e8ecc684c0e54b5b715e0",
+          "text": "+(216-325) to Accuracy Rating",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 325.0,
+          "value_min": 216.0
+        },
+        {
+          "name": "of the Marksman",
+          "required_item_level": 60,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/581b229bea2124493a74df65a8139591fb18da6fec52ee1bd962231282baed36",
+          "text": "+(326-455) to Accuracy Rating",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 455.0,
+          "value_min": 326.0
+        },
+        {
+          "name": "of the Ranger",
+          "required_item_level": 75,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/8e1e890c14a83340ca79d40167c0581ae4c98b5e7c8924716e785d540e0ce553",
+          "text": "+(456-624) to Accuracy Rating",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 624.0,
+          "value_min": 456.0
+        },
+        {
+          "name": "of Lioneye",
+          "required_item_level": 85,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3aac4834fbc12d4890e6077430c1b14b656c4ba49cf1f35b2de6c63b82bd47c3",
+          "text": "+(625-780) to Accuracy Rating",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 780.0,
+          "value_min": 625.0
+        }
+      ],
+      "increased_cast_speed": [
+        {
+          "name": "of Talent",
+          "required_item_level": 2,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/c7d15270adbbf403aa7c78b2e48ee42f1c56cac3ebe1637741d6bed75ae90dc2",
+          "text": "(5-8)% increased Cast Speed",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 8.0,
+          "value_min": 5.0
+        },
+        {
+          "name": "of Nimbleness",
+          "required_item_level": 15,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/ec0bf46bba4a11fdbea351aa05f1e7f831469eb0aa8245b33a4eb8fe50d71922",
+          "text": "(9-12)% increased Cast Speed",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 12.0,
+          "value_min": 9.0
+        },
+        {
+          "name": "of Expertise",
+          "required_item_level": 30,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/dfd6d81584d634729a804833a704d85e864a24e548830a98a991238375114314",
+          "text": "(13-16)% increased Cast Speed",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 16.0,
+          "value_min": 13.0
+        },
+        {
+          "name": "of Legerdemain",
+          "required_item_level": 40,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/473efa3a52f3c7a545b40efe3ba828b26c4eea2365e2c87b0158697d76ffdfa7",
+          "text": "(17-20)% increased Cast Speed",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 20.0,
+          "value_min": 17.0
+        },
+        {
+          "name": "of Prestidigitation",
+          "required_item_level": 55,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/c8373353c3fd4306517bbc7cf19e569a325b04046bc0affc141fc9de7dbb4622",
+          "text": "(21-24)% increased Cast Speed",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 24.0,
+          "value_min": 21.0
+        },
+        {
+          "name": "of Sortilege",
+          "required_item_level": 72,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/0b3727c16b2576cbbd9b5cfca09807e6d636a785e2c16f87585d30e0bba99887",
+          "text": "(25-28)% increased Cast Speed",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 28.0,
+          "value_min": 25.0
+        },
+        {
+          "name": "of Finesse",
+          "required_item_level": 83,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/f0c11305be429c1d56d7e031096f7c049a2722c81a535345cde4b85363affdad",
+          "text": "(29-32)% increased Cast Speed",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 32.0,
+          "value_min": 29.0
+        }
+      ],
+      "weapon_spell_damage_percent": [
+        {
+          "name": "Apprentice's",
+          "required_item_level": 2,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/357b1223bb9b1a9f20be59d4c847247ab0faa2bdbb2d2e18784916ec928b35ce",
+          "text": "(10-19)% increased Spell Damage",
+          "tier": "T8",
+          "tier_number": 8,
+          "value_max": 19.0,
+          "value_min": 10.0
+        },
+        {
+          "name": "Adept's",
+          "required_item_level": 11,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/4b73f5f6c90275f9406baa756b3372b150a9ade6947826bb4289ba7254278049",
+          "text": "(20-29)% increased Spell Damage",
+          "tier": "T7",
+          "tier_number": 7,
+          "value_max": 29.0,
+          "value_min": 20.0
+        },
+        {
+          "name": "Scholar's",
+          "required_item_level": 23,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/6e629536cf037d70cfcea9dddd015f98f6523784e8dca846f731edbbcff06bfc",
+          "text": "(30-39)% increased Spell Damage",
+          "tier": "T6",
+          "tier_number": 6,
+          "value_max": 39.0,
+          "value_min": 30.0
+        },
+        {
+          "name": "Professor's",
+          "required_item_level": 35,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/e3f70568ca3435fb9adfdf6efb921bd879c6fd3d5ae24b3c000d240c3efbb72a",
+          "text": "(40-54)% increased Spell Damage",
+          "tier": "T5",
+          "tier_number": 5,
+          "value_max": 54.0,
+          "value_min": 40.0
+        },
+        {
+          "name": "Occultist's",
+          "required_item_level": 46,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/efb6b27fde33ee1fecda50e7900a5bf16d32db1480997115d4ceecd9342d9679",
+          "text": "(55-69)% increased Spell Damage",
+          "tier": "T4",
+          "tier_number": 4,
+          "value_max": 69.0,
+          "value_min": 55.0
+        },
+        {
+          "name": "Incanter's",
+          "required_item_level": 58,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/53337cf3ce565113c4e8bdf247895cc7d37d7c3ffcae283345af4467272c3bce",
+          "text": "(70-84)% increased Spell Damage",
+          "tier": "T3",
+          "tier_number": 3,
+          "value_max": 84.0,
+          "value_min": 70.0
+        },
+        {
+          "name": "Glyphic",
+          "required_item_level": 64,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/ee950ce70c7dc5f53fc75e6cade9ef99f65c741a6dac134a6ff4c8ec753c4d42",
+          "text": "(85-99)% increased Spell Damage",
+          "tier": "T2",
+          "tier_number": 2,
+          "value_max": 99.0,
+          "value_min": 85.0
+        },
+        {
+          "name": "Runic",
+          "required_item_level": 84,
+          "source_mod_ref": "https://cdn.poedb.tw/cache1/us/Poe_Data_Mods_hover/3e7f06a8ec4e8dbe22320503432763944c79b689897d651bee680420198fbbf1",
+          "text": "(100-109)% increased Spell Damage",
+          "tier": "T1",
+          "tier_number": 1,
+          "value_max": 109.0,
+          "value_min": 100.0
+        }
+      ]
+    }
+  },
+  "parser_version": "op2f10-poedb-modsview-parser-v1",
+  "schema_version": "1.0.0",
+  "source_pages": [
+    {
+      "fetched_at": "2026-05-07T00:00:00Z",
+      "item_class": "Ring",
+      "page_id": "Rings",
+      "source_sha256": "CED050AD3263A0BDCD9000805F4B3E10867AC313B18130E2179FBD9739761D0E",
+      "source_size_bytes": 1539583,
+      "source_url": "https://poedb.tw/us/Rings"
+    },
+    {
+      "fetched_at": "2026-05-07T00:00:00Z",
+      "item_class": "Wand",
+      "page_id": "Wands",
+      "source_sha256": "984C7B747A035C0B8930B354AFDD99C9EA077573E9E96FB41CDCA1B0C1B625FE",
+      "source_size_bytes": 2139420,
+      "source_url": "https://poedb.tw/us/Wands"
+    },
+    {
+      "fetched_at": "2026-05-07T00:00:00Z",
+      "item_class": "Sceptre",
+      "page_id": "Sceptres",
+      "source_sha256": "D6076C4DABFDFEAA74A6E8EFAB7EECF7C776F35D61D081CE1F5AD75D9CB9CFAF",
+      "source_size_bytes": 2239774,
+      "source_url": "https://poedb.tw/us/Sceptres"
+    },
+    {
+      "fetched_at": "2026-05-07T00:00:00Z",
+      "item_class": "Shield",
+      "page_id": "Shields_str",
+      "source_sha256": "E5B38138014F6AEE72A0C0372F50F243383E7363E58A3B548EE09F4B35901D76",
+      "source_size_bytes": 1136121,
+      "source_url": "https://poedb.tw/us/Shields_str"
+    },
+    {
+      "fetched_at": "2026-05-07T00:00:00Z",
+      "item_class": "Body Armour",
+      "page_id": "Body_Armours_str",
+      "source_sha256": "ED707F40C3A05311A3CD63A18EA3D79594FDB7B0A1F50C064096A41AEE1DD538",
+      "source_size_bytes": 2410862,
+      "source_url": "https://poedb.tw/us/Body_Armours_str"
+    },
+    {
+      "fetched_at": "2026-05-07T00:00:00Z",
+      "item_class": "Helmet",
+      "page_id": "Helmets_str",
+      "source_sha256": "F8ADA5F434837070BD902AA0ED82B07D713E0B5EEB3FEAF146DCA866E9A82C05",
+      "source_size_bytes": 2693622,
+      "source_url": "https://poedb.tw/us/Helmets_str"
+    },
+    {
+      "fetched_at": "2026-05-07T00:00:00Z",
+      "item_class": "Gloves",
+      "page_id": "Gloves_str",
+      "source_sha256": "E02D56B72BAA34FE33AC5D0217F70E8B7DEFD0A67D6EA1C0D1C26C3A90914B6A",
+      "source_size_bytes": 2760459,
+      "source_url": "https://poedb.tw/us/Gloves_str"
+    },
+    {
+      "fetched_at": "2026-05-07T00:00:00Z",
+      "item_class": "Boots",
+      "page_id": "Boots_str",
+      "source_sha256": "87395483F65E0BA1488DC17487364416D78CC41578F060DC5EB8B6583250328C",
+      "source_size_bytes": 2239373,
+      "source_url": "https://poedb.tw/us/Boots_str"
+    },
+    {
+      "fetched_at": "2026-05-07T00:00:00Z",
+      "item_class": "Belt",
+      "page_id": "Belts",
+      "source_sha256": "383131A4FA67666B659E8F16A3B507254183C2BF05869AEBCFECB4C686FB7EEF",
+      "source_size_bytes": 1037670,
+      "source_url": "https://poedb.tw/us/Belts"
+    },
+    {
+      "fetched_at": "2026-05-07T00:00:00Z",
+      "item_class": "Amulet",
+      "page_id": "Amulets",
+      "source_sha256": "271F93B260FEDA09E695D27911E851BE6B7E84AA7DA2BAAD5C94F5027AA55601",
+      "source_size_bytes": 2958173,
+      "source_url": "https://poedb.tw/us/Amulets"
+    }
+  ],
+  "source_policy": {
+    "base_items": "Use corpus_data/items.json from pinned PathOfBuilding source for base_id/base_name and implicits.",
+    "explicit_affixes": "Use this PoEDB ModsView-derived MVP snapshot for normal rare explicit affix tier/range lookup.",
+    "lane_rule": "Early Game proof items allow only T3 or worse explicit affixes unless operator changes lane."
+  }
+}

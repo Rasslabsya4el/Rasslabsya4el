@@ -1,0 +1,794 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/pob/pob.mechanic-coverage-bundle.schema.json",
+  "title": "PoB mechanic coverage bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "corpus_id",
+    "family",
+    "record_count",
+    "provenance",
+    "metadata",
+    "records"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "corpus_id": {
+      "type": "string",
+      "const": "pob_mechanic_coverage"
+    },
+    "family": {
+      "type": "string",
+      "enum": [
+        "coverage_map",
+        "missing_list"
+      ]
+    },
+    "record_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "coverage_map"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "metadata": {
+            "$ref": "#/$defs/coverage_metadata"
+          },
+          "records": {
+            "items": {
+              "$ref": "#/$defs/coverage_record"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "missing_list"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "metadata": {
+            "$ref": "#/$defs/missing_metadata"
+          },
+          "records": {
+            "items": {
+              "$ref": "#/$defs/missing_record"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "coverage_status": {
+      "type": "string",
+      "enum": [
+        "covered",
+        "partial",
+        "gap"
+      ]
+    },
+    "layer_name": {
+      "type": "string",
+      "enum": [
+        "delivery",
+        "scaling",
+        "enablement"
+      ]
+    },
+    "layer_status": {
+      "type": "string",
+      "enum": [
+        "covered",
+        "missing",
+        "not_required",
+        "tag_only",
+        "mod_only"
+      ]
+    },
+    "tag_family": {
+      "type": "string",
+      "enum": [
+        "items",
+        "active_gems",
+        "support_gems",
+        "passives",
+        "masteries",
+        "ascendancies",
+        "keystones",
+        "config_surfaces"
+      ]
+    },
+    "mod_bundle_family": {
+      "type": "string",
+      "enum": [
+        "mod_families",
+        "stat_families"
+      ]
+    },
+    "source_game_family": {
+      "type": "string",
+      "enum": [
+        "items",
+        "passives",
+        "keystones",
+        "masteries"
+      ]
+    },
+    "candidate_facet": {
+      "type": "string",
+      "enum": [
+        "mechanic",
+        "damage_type",
+        "resource",
+        "defence",
+        "ailment",
+        "weapon",
+        "charge",
+        "attribute"
+      ]
+    },
+    "token": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[ _-][a-z0-9]+)*$"
+    },
+    "group_id": {
+      "type": "string",
+      "pattern": "^mechanic_group:[a-z0-9_]+$"
+    },
+    "string_list": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "coverage_status_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "covered",
+        "partial",
+        "gap"
+      ],
+      "properties": {
+        "covered": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "partial": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "gap": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "source_lane": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lane_id",
+        "canonical_path",
+        "lock_path",
+        "repo",
+        "repo_url",
+        "pinned_ref",
+        "pinned_commit",
+        "observed_commit",
+        "tree_version"
+      ],
+      "properties": {
+        "lane_id": {
+          "type": "string",
+          "const": "pob_source_lane"
+        },
+        "canonical_path": {
+          "type": "string",
+          "const": "vendor/pob/source"
+        },
+        "lock_path": {
+          "type": "string",
+          "const": "locks/pob.source.lock.json"
+        },
+        "repo": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"
+        },
+        "repo_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://github\\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+\\.git$"
+        },
+        "pinned_ref": {
+          "type": "string",
+          "pattern": "^refs/tags/v.+$"
+        },
+        "pinned_commit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "observed_commit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "tree_version": {
+          "type": "string",
+          "pattern": "^\\d+_\\d+(?:_[a-z]+(?:_[a-z]+)?)?$"
+        }
+      }
+    },
+    "source_game_corpus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "corpus_id",
+        "manifest_path",
+        "manifest_sha256",
+        "schema_version",
+        "source_lane"
+      ],
+      "properties": {
+        "corpus_id": {
+          "type": "string",
+          "const": "pob_game_corpus"
+        },
+        "manifest_path": {
+          "type": "string",
+          "const": "src/poe_build_research/pob/corpus_data/manifest.json"
+        },
+        "manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "schema_version": {
+          "type": "string",
+          "const": "1.0.0"
+        },
+        "source_lane": {
+          "$ref": "#/$defs/source_lane"
+        }
+      }
+    },
+    "tag_bundle_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family",
+        "relative_path",
+        "record_count",
+        "sha256"
+      ],
+      "properties": {
+        "family": {
+          "$ref": "#/$defs/tag_family"
+        },
+        "relative_path": {
+          "type": "string",
+          "pattern": "^src/poe_build_research/pob/tag_data/[A-Za-z0-9_.-]+\\.json$"
+        },
+        "record_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "mod_bundle_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family",
+        "relative_path",
+        "record_count",
+        "sha256"
+      ],
+      "properties": {
+        "family": {
+          "$ref": "#/$defs/mod_bundle_family"
+        },
+        "relative_path": {
+          "type": "string",
+          "pattern": "^src/poe_build_research/pob/mod_data/[A-Za-z0-9_.-]+\\.json$"
+        },
+        "record_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "source_tag_corpus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "corpus_id",
+        "manifest_path",
+        "manifest_sha256",
+        "schema_version",
+        "derived_from_game_manifest_sha256",
+        "bundle_inputs"
+      ],
+      "properties": {
+        "corpus_id": {
+          "type": "string",
+          "const": "pob_tag_corpus"
+        },
+        "manifest_path": {
+          "type": "string",
+          "const": "src/poe_build_research/pob/tag_data/manifest.json"
+        },
+        "manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "schema_version": {
+          "type": "string",
+          "const": "1.0.0"
+        },
+        "derived_from_game_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "bundle_inputs": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "$ref": "#/$defs/tag_bundle_input"
+          }
+        }
+      }
+    },
+    "source_mod_corpus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "corpus_id",
+        "manifest_path",
+        "manifest_sha256",
+        "schema_version",
+        "derived_from_game_manifest_sha256",
+        "bundle_inputs"
+      ],
+      "properties": {
+        "corpus_id": {
+          "type": "string",
+          "const": "pob_mod_corpus"
+        },
+        "manifest_path": {
+          "type": "string",
+          "const": "src/poe_build_research/pob/mod_data/manifest.json"
+        },
+        "manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "schema_version": {
+          "type": "string",
+          "const": "1.0.0"
+        },
+        "derived_from_game_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "bundle_inputs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "$ref": "#/$defs/mod_bundle_input"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_game_corpus",
+        "source_tag_corpus",
+        "source_mod_corpus"
+      ],
+      "properties": {
+        "source_game_corpus": {
+          "$ref": "#/$defs/source_game_corpus"
+        },
+        "source_tag_corpus": {
+          "$ref": "#/$defs/source_tag_corpus"
+        },
+        "source_mod_corpus": {
+          "$ref": "#/$defs/source_mod_corpus"
+        }
+      }
+    },
+    "evidence_sample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "corpus_id",
+        "family",
+        "record_id",
+        "display_name",
+        "matched_terms",
+        "source_families",
+        "supporting_text"
+      ],
+      "properties": {
+        "corpus_id": {
+          "type": "string",
+          "enum": [
+            "pob_tag_corpus",
+            "pob_mod_corpus"
+          ]
+        },
+        "family": {
+          "type": "string",
+          "enum": [
+            "items",
+            "active_gems",
+            "support_gems",
+            "passives",
+            "masteries",
+            "ascendancies",
+            "keystones",
+            "config_surfaces",
+            "mod_families",
+            "stat_families"
+          ]
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "matched_terms": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/token"
+          }
+        },
+        "source_families": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "items",
+              "active_gems",
+              "support_gems",
+              "passives",
+              "masteries",
+              "ascendancies",
+              "keystones",
+              "config_surfaces"
+            ]
+          }
+        },
+        "supporting_text": {
+          "$ref": "#/$defs/string_list"
+        }
+      }
+    },
+    "layer_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "layer",
+        "required",
+        "status",
+        "tag_record_count",
+        "tag_source_families",
+        "mod_record_count",
+        "mod_source_families",
+        "evidence_samples"
+      ],
+      "properties": {
+        "layer": {
+          "$ref": "#/$defs/layer_name"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "status": {
+          "$ref": "#/$defs/layer_status"
+        },
+        "tag_record_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tag_source_families": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/tag_family"
+          }
+        },
+        "mod_record_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mod_source_families": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/source_game_family"
+          }
+        },
+        "evidence_samples": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_sample"
+          }
+        }
+      }
+    },
+    "coverage_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "group_id",
+        "group_key",
+        "domains",
+        "matched_terms",
+        "coverage_status",
+        "delivery_required",
+        "layer_coverage",
+        "missing_layers",
+        "partial_layers",
+        "status_reason"
+      ],
+      "properties": {
+        "group_id": {
+          "$ref": "#/$defs/group_id"
+        },
+        "group_key": {
+          "$ref": "#/$defs/token"
+        },
+        "domains": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/candidate_facet"
+          }
+        },
+        "matched_terms": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/token"
+          }
+        },
+        "coverage_status": {
+          "$ref": "#/$defs/coverage_status"
+        },
+        "delivery_required": {
+          "type": "boolean"
+        },
+        "layer_coverage": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/layer_record"
+          }
+        },
+        "missing_layers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/layer_name"
+          }
+        },
+        "partial_layers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/layer_name"
+          }
+        },
+        "status_reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "missing_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "group_id",
+        "group_key",
+        "domains",
+        "coverage_status",
+        "missing_layers",
+        "partial_layers",
+        "present_layers",
+        "status_reason",
+        "next_step_sources",
+        "evidence_samples"
+      ],
+      "properties": {
+        "group_id": {
+          "$ref": "#/$defs/group_id"
+        },
+        "group_key": {
+          "$ref": "#/$defs/token"
+        },
+        "domains": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/candidate_facet"
+          }
+        },
+        "coverage_status": {
+          "type": "string",
+          "enum": [
+            "partial",
+            "gap"
+          ]
+        },
+        "missing_layers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/layer_name"
+          }
+        },
+        "partial_layers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/layer_name"
+          }
+        },
+        "present_layers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/layer_name"
+          }
+        },
+        "status_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "next_step_sources": {
+          "const": [
+            "wiki",
+            "curated_notes"
+          ]
+        },
+        "evidence_samples": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence_sample"
+          }
+        }
+      }
+    },
+    "coverage_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_facets",
+        "layer_order",
+        "status_order",
+        "coverage_status_counts",
+        "coverage_rule",
+        "follow_up_sources"
+      ],
+      "properties": {
+        "candidate_facets": {
+          "const": [
+            "mechanic",
+            "damage_type",
+            "resource",
+            "defence",
+            "ailment",
+            "weapon",
+            "charge",
+            "attribute"
+          ]
+        },
+        "layer_order": {
+          "const": [
+            "delivery",
+            "scaling",
+            "enablement"
+          ]
+        },
+        "status_order": {
+          "const": [
+            "covered",
+            "partial",
+            "gap"
+          ]
+        },
+        "coverage_status_counts": {
+          "$ref": "#/$defs/coverage_status_counts"
+        },
+        "coverage_rule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "follow_up_sources": {
+          "const": [
+            "wiki",
+            "curated_notes"
+          ]
+        }
+      }
+    },
+    "missing_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generated_from_family",
+        "status_order",
+        "coverage_status_counts",
+        "follow_up_sources",
+        "consumer_rule"
+      ],
+      "properties": {
+        "generated_from_family": {
+          "type": "string",
+          "const": "coverage_map"
+        },
+        "status_order": {
+          "const": [
+            "covered",
+            "partial",
+            "gap"
+          ]
+        },
+        "coverage_status_counts": {
+          "$ref": "#/$defs/coverage_status_counts"
+        },
+        "follow_up_sources": {
+          "const": [
+            "wiki",
+            "curated_notes"
+          ]
+        },
+        "consumer_rule": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

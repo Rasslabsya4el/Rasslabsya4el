@@ -1,0 +1,508 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/plan/comparison_protocol.schema.json",
+  "title": "ComparisonProtocol",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "comparison_id",
+    "generated_at",
+    "decision_family",
+    "mode",
+    "status",
+    "candidate_count",
+    "candidates",
+    "selected_candidate_id",
+    "rejected_candidate_ids",
+    "required_artifact_refs",
+    "comparison_basis",
+    "verdict_reason",
+    "stop_or_retry",
+    "validation",
+    "product_agent_behavioral_proof_required"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "comparison_protocol"
+    },
+    "comparison_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "decision_family": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "debug",
+        "trace_sampling"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "accepted",
+        "partial",
+        "blocked"
+      ]
+    },
+    "candidate_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/candidate"
+      }
+    },
+    "selected_candidate_id": {
+      "type": "string"
+    },
+    "rejected_candidate_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required_artifact_refs": {
+      "$ref": "#/$defs/required_artifact_refs"
+    },
+    "comparison_basis": {
+      "$ref": "#/$defs/comparison_basis"
+    },
+    "verdict_reason": {
+      "type": "string"
+    },
+    "stop_or_retry": {
+      "$ref": "#/$defs/stop_or_retry"
+    },
+    "validation": {
+      "$ref": "#/$defs/validation_summary"
+    },
+    "product_agent_behavioral_proof_required": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "$defs": {
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_id",
+        "label",
+        "resource_cost",
+        "expected_surfaces",
+        "evidence_refs",
+        "claims_measured_evidence",
+        "claims_opportunity_cost",
+        "verdict",
+        "verdict_reason",
+        "uncertainty",
+        "missing_evidence"
+      ],
+      "properties": {
+        "candidate_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resource_cost": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "expected_surfaces": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/expected_surface"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          }
+        },
+        "claims_measured_evidence": {
+          "type": "boolean"
+        },
+        "claims_opportunity_cost": {
+          "type": "boolean"
+        },
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "selected",
+            "rejected",
+            "blocked",
+            "pending"
+          ]
+        },
+        "verdict_reason": {
+          "type": "string"
+        },
+        "uncertainty": {
+          "$ref": "#/$defs/uncertainty"
+        },
+        "missing_evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/missing_evidence"
+          }
+        }
+      }
+    },
+    "required_artifact_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_cost_value_ledger_ref",
+        "calc_snapshot_diff_refs",
+        "pathing_opportunity_cost_ref"
+      ],
+      "properties": {
+        "action_cost_value_ledger_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/evidence_ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "calc_snapshot_diff_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          }
+        },
+        "pathing_opportunity_cost_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/evidence_ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "comparison_basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "resource_cost",
+        "expected_surfaces",
+        "measured_evidence",
+        "opportunity_cost",
+        "uncertainty",
+        "missing_evidence",
+        "candidate_ids"
+      ],
+      "properties": {
+        "resource_cost": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "expected_surfaces": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/expected_surface"
+          }
+        },
+        "measured_evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "claimed",
+            "calc_snapshot_diff_refs"
+          ],
+          "properties": {
+            "claimed": {
+              "type": "boolean"
+            },
+            "calc_snapshot_diff_refs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/evidence_ref"
+              }
+            }
+          }
+        },
+        "opportunity_cost": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "claimed",
+            "pathing_opportunity_cost_ref"
+          ],
+          "properties": {
+            "claimed": {
+              "type": "boolean"
+            },
+            "pathing_opportunity_cost_ref": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/evidence_ref"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        },
+        "uncertainty": {
+          "$ref": "#/$defs/uncertainty"
+        },
+        "missing_evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/missing_evidence"
+          }
+        },
+        "candidate_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "expected_surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface_kind",
+        "metric_key",
+        "expected_direction",
+        "note"
+      ],
+      "properties": {
+        "surface_kind": {
+          "type": "string",
+          "enum": [
+            "pob_metric",
+            "calc_surface",
+            "tree_state",
+            "skill_state",
+            "item_state",
+            "config_state",
+            "constraint",
+            "qol"
+          ]
+        },
+        "metric_key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "expected_direction": {
+          "type": "string",
+          "enum": [
+            "increase",
+            "decrease",
+            "unchanged",
+            "repair",
+            "unknown"
+          ]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "evidence_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ref_id",
+        "evidence_kind",
+        "locator",
+        "json_pointer",
+        "summary"
+      ],
+      "properties": {
+        "ref_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_kind": {
+          "type": "string",
+          "enum": [
+            "action_cost_value_ledger",
+            "calc_delta",
+            "pathing_opportunity_cost",
+            "static_cost_estimate",
+            "source_ledger",
+            "other"
+          ]
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "json_pointer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "notes"
+      ],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "unknown"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "missing_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_kind",
+        "reason",
+        "blocking"
+      ],
+      "properties": {
+        "evidence_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blocking": {
+          "type": "boolean"
+        }
+      }
+    },
+    "stop_or_retry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recommendation",
+        "reason",
+        "next_action"
+      ],
+      "properties": {
+        "recommendation": {
+          "type": "string",
+          "enum": [
+            "stop_with_selected",
+            "retry_with_more_evidence",
+            "block"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "next_action": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "validation_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finding_count",
+        "findings"
+      ],
+      "properties": {
+        "finding_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          }
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "severity",
+        "summary"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "blocking",
+            "partial"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidate_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

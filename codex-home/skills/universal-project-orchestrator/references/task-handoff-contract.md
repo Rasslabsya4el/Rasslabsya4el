@@ -2,6 +2,10 @@
 
 Read this before emitting any worker or validation handoff. Follow it verbatim.
 
+Before writing the handoff, also read `agent-context-economy.md`.
+This file defines the markdown wrapper and fixed semantic fields.
+`agent-context-economy.md` defines what should stay out of the handoff because it already belongs in tracked docs or ledgers.
+
 ## Outer Markdown Form
 
 Для каждого task handoff:
@@ -29,24 +33,44 @@ Read this before emitting any worker or validation handoff. Follow it verbatim.
 - если задача участвует в parallel batch, orchestrator обязан сам заранее сузить её так, чтобы worker не пересекался с соседними задачами по write-scope;
 - если такую безопасную границу нельзя сформулировать прямо в `Scope`, `Не трогать` и thread routing, не ставь задачу параллельно.
 
+## Research-First Escalation
+
+- Если ork не знает implementation answer, не задавай пользователю вопрос сразу.
+- Сначала определи, можно ли закрыть gap через repo/docs/primary sources или bounded external research.
+- Если можно, ставь отдельную research-task или проводи bounded research-pass сам.
+- Пользователю эскалируй только то, что после research всё ещё требует business choice, private knowledge, approval или explicit product decision.
+
 ## Unified Worker Task Spec
 
 ```text
 Роль: сабтаск воркер. Используй $universal-subtask-worker.
 ТЗ-<ID>
 
-Что нужно сделать
+Продуктовый target
+- ...
+
+Почему сейчас
+- ...
+
+Прочитать
 - ...
 - ...
 
-Зачем это нужно
-- ...
-
-Scope
-- ...
+Scope записи
 - ...
 
 Не трогать
+- ...
+
+Сделать
+- ...
+- ...
+
+Проверки
+- ...
+- ...
+
+Acceptance для орка
 - ...
 - ...
 
@@ -54,23 +78,67 @@ Scope
 - Да. Спавн ...
 - Нет. NO_VALID_SUBAGENT_SPLIT.
 
-Какие проверки запустить
-- ...
-- ...
-
-Что считать acceptance
-- ...
-- ...
-
 Формат отчёта
 - Первая строка: ТЗ-<ID>
 - Секции: что изменено / какие проверки запущены / результаты проверок / residual risk / handoff notes
 - Если checks не запускались: Tests not run by policy.
 ```
 
+Контекстно-экономные правила для этого spec:
+
+- в `Прочитать` перечисляй paths, а не пересказывай содержимое файлов;
+- не дублируй весь product brief или roadmap внутри задачи;
+- в `Сделать` держи только bounded deliverables текущего task;
+- если follow-up повторяет большую часть старой задачи, не раздувай новый markdown block, а создавай новый compact spec или переводи семью в file-driven protocol;
+- rejection reason держи короткой и операционной, а не essay-style.
+
 Если проект использует dedicated validation runner, сохраняй ту же форму task spec. Меняется только role line. Всё остальное, включая thread routing вне fenced block и отсутствие backticks внутри task spec, остаётся тем же.
 
+Если orchestrator не может привязать задачу к конкретному product outcome, user-visible scenario или proof target из product brief/spec, такую задачу нельзя dispatch-ить до прояснения продуктового контракта.
+
 Если validation target уже привязан к prior artifacts, handoff-и targeted window или targeted slice вместо blind top-N rerun.
+
+Если repo известен нестандартным bootstrap или launcher quirk, orchestrator обязан явно зафиксировать это в `Проверки`: например root `cwd`, `python -m pytest` вместо bare `pytest`, UTF-8 shell output для кириллицы и другие критичные bootstrap assumptions.
+
+## Unified Research Task Spec
+
+```text
+Роль: исследователь. Используй $universal-deep-research.
+ИСС-<ID>
+
+Вопрос исследования
+- ...
+- ...
+
+Почему сейчас
+- ...
+
+Что уже известно
+- ...
+
+Прочитать
+- ...
+
+Какие варианты сравнить
+- ...
+- ...
+
+Какие источники использовать
+- tracked docs и nearby source;
+- official docs и primary sources;
+- вторичные источники только если первичные не закрывают вопрос.
+
+Что считать достаточным ответом
+- ...
+- ...
+
+Формат отчёта
+- Первая строка: ИСС-<ID>
+- Секции: findings / options considered / recommendation / remaining unknowns / нужны ли ещё вопросы пользователю
+- Если после research всё ещё нужен input пользователя: подготовь bounded questions с вариантами ответа и рекомендуемым вариантом первым
+```
+
+Research-task нужна, когда ork упёрся в implementation uncertainty, но это ещё не user-facing product decision.
 
 ## `Делегация внутри задачи`
 

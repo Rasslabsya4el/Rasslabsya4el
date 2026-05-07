@@ -1,0 +1,621 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/market/official_trade_snapshot.schema.json",
+  "title": "OfficialTradeSnapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "snapshot_id",
+    "request_id",
+    "label",
+    "realm",
+    "league",
+    "requested_at",
+    "captured_at",
+    "result_limit",
+    "storage",
+    "source",
+    "trade_query",
+    "search",
+    "listings",
+    "links",
+    "freshness",
+    "provenance",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "official_trade_snapshot"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._-]+$"
+    },
+    "request_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._-]+$"
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "realm": {
+      "type": "string",
+      "enum": [
+        "pc",
+        "xbox",
+        "sony"
+      ]
+    },
+    "league": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requested_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "result_limit": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10
+    },
+    "storage": {
+      "$ref": "#/$defs/storage"
+    },
+    "source": {
+      "$ref": "#/$defs/source"
+    },
+    "trade_query": {
+      "$ref": "#/$defs/trade_query"
+    },
+    "search": {
+      "$ref": "#/$defs/search"
+    },
+    "listings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/normalized_listing"
+      }
+    },
+    "links": {
+      "$ref": "#/$defs/links"
+    },
+    "freshness": {
+      "$ref": "#/$defs/freshness"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "support_level",
+        "authority_rank",
+        "role",
+        "hard_requirement",
+        "oauth_required"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "const": "undocumented_trade_api"
+        },
+        "support_level": {
+          "type": "string",
+          "const": "unsupported_opt_in"
+        },
+        "authority_rank": {
+          "type": "integer",
+          "const": 99
+        },
+        "role": {
+          "type": "string",
+          "const": "experimental"
+        },
+        "hard_requirement": {
+          "type": "boolean",
+          "const": false
+        },
+        "oauth_required": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "trade_query": {
+      "type": "object",
+      "minProperties": 2,
+      "required": [
+        "query",
+        "sort"
+      ],
+      "properties": {
+        "query": {
+          "type": "object"
+        },
+        "sort": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    },
+    "storage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tier",
+        "root",
+        "path",
+        "git_tracked"
+      ],
+      "properties": {
+        "tier": {
+          "type": "string",
+          "const": "dynamic_knowledge"
+        },
+        "root": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "git_tracked": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "search": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "search_id",
+        "total_result_count",
+        "requested_result_limit",
+        "selected_result_ids",
+        "missing_result_ids",
+        "returned_result_count",
+        "bounded",
+        "selection_strategy"
+      ],
+      "properties": {
+        "search_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "total_result_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "requested_result_limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "selected_result_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "missing_result_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "returned_result_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bounded": {
+          "type": "boolean",
+          "const": true
+        },
+        "selection_strategy": {
+          "type": "string",
+          "const": "first_n_by_official_sort"
+        }
+      }
+    },
+    "normalized_listing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result_id",
+        "position",
+        "indexed_at",
+        "seller",
+        "price",
+        "item"
+      ],
+      "properties": {
+        "result_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "position": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "indexed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "seller": {
+          "$ref": "#/$defs/seller"
+        },
+        "price": {
+          "$ref": "#/$defs/price"
+        },
+        "item": {
+          "$ref": "#/$defs/item"
+        }
+      }
+    },
+    "seller": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "account_name",
+        "last_character_name",
+        "is_online"
+      ],
+      "properties": {
+        "account_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "last_character_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "is_online": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "price": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "amount",
+        "currency",
+        "type",
+        "listed_note"
+      ],
+      "properties": {
+        "amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "listed_note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "item_id",
+        "name",
+        "type_line",
+        "base_type",
+        "item_level",
+        "identified",
+        "corrupted",
+        "stack_size",
+        "icon"
+      ],
+      "properties": {
+        "item_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "type_line": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "base_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "item_level": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "identified": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "corrupted": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "stack_size": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "icon": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "search_submission_url",
+        "results_url",
+        "fetch_url"
+      ],
+      "properties": {
+        "search_submission_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "results_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "fetch_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        }
+      }
+    },
+    "freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "captured_at",
+        "status",
+        "fresh_within_seconds",
+        "stale_after_seconds",
+        "clock_skew_tolerance_seconds",
+        "oldest_listing_indexed_at",
+        "newest_listing_indexed_at",
+        "max_listing_age_seconds",
+        "min_listing_age_seconds",
+        "note"
+      ],
+      "properties": {
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "fresh",
+            "aging",
+            "stale",
+            "unknown"
+          ]
+        },
+        "fresh_within_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "stale_after_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "clock_skew_tolerance_seconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "oldest_listing_indexed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "newest_listing_indexed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "max_listing_age_seconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "min_listing_age_seconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "input_provenance_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_kind",
+        "record_id",
+        "source_uri",
+        "observed_at",
+        "collector",
+        "collected_at",
+        "note"
+      ],
+      "properties": {
+        "record_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "collector": {
+          "type": "string",
+          "minLength": 1
+        },
+        "collected_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generator",
+        "upstream_system",
+        "query_sha256",
+        "search_response_sha256",
+        "fetch_response_sha256",
+        "input_provenance"
+      ],
+      "properties": {
+        "generator": {
+          "type": "string",
+          "const": "poe_build_research.market.official_trade"
+        },
+        "upstream_system": {
+          "type": "string",
+          "const": "official_trade_website"
+        },
+        "query_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "search_response_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "fetch_response_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "input_provenance": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/input_provenance_ref"
+          }
+        }
+      }
+    }
+  }
+}

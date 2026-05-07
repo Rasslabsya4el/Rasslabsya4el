@@ -1,0 +1,577 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/plan/loadout_plan.schema.json",
+  "title": "LoadoutPlan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "plan_id",
+    "generated_at",
+    "review_context",
+    "route_summary",
+    "breakpoints"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "loadout_plan"
+    },
+    "plan_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "review_context": {
+      "$ref": "#/$defs/review_context"
+    },
+    "route_summary": {
+      "$ref": "#/$defs/route_summary"
+    },
+    "breakpoints": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "$ref": "#/$defs/breakpoint"
+      }
+    }
+  },
+  "$defs": {
+    "review_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "review_id",
+        "build_id",
+        "build_label",
+        "build_source",
+        "pob_run_id",
+        "archetype_label",
+        "review_status",
+        "baseline_verdict"
+      ],
+      "properties": {
+        "review_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "build_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "build_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "build_source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pob_run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "archetype_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "review_status": {
+          "type": "string",
+          "enum": [
+            "healthy",
+            "salvageable",
+            "blocked"
+          ]
+        },
+        "baseline_verdict": {
+          "type": "string",
+          "enum": [
+            "pass",
+            "fail",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "route_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "route_kind",
+        "route_label",
+        "breakpoint_count",
+        "current_setup_id",
+        "current_setup_label",
+        "target_setup_id",
+        "target_setup_label",
+        "swap_breakpoint_id",
+        "swap_step",
+        "swap_target_level",
+        "swap_target_budget_chaos"
+      ],
+      "properties": {
+        "route_kind": {
+          "type": "string",
+          "const": "deterministic_breakpoint_path"
+        },
+        "route_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "breakpoint_count": {
+          "type": "integer",
+          "minimum": 3
+        },
+        "current_setup_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "current_setup_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_setup_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_setup_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "swap_breakpoint_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "swap_step": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "swap_target_level": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "swap_target_budget_chaos": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
+      }
+    },
+    "play_setup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "setup_id",
+        "label",
+        "primary_skill",
+        "notes"
+      ],
+      "properties": {
+        "setup_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primary_skill": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "swap_trigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trigger_kind",
+        "target_level",
+        "target_budget_chaos",
+        "required_gear_target_ids",
+        "requires_review_pass",
+        "condition_note"
+      ],
+      "properties": {
+        "trigger_kind": {
+          "type": "string",
+          "enum": [
+            "level_gate",
+            "budget_gate",
+            "gear_ready",
+            "review_gate",
+            "immediate",
+            "other"
+          ]
+        },
+        "target_level": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "target_budget_chaos": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "required_gear_target_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "requires_review_pass": {
+          "type": "boolean"
+        },
+        "condition_note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "gear_target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_id",
+        "slot",
+        "label",
+        "priority",
+        "summary",
+        "mandatory_for_swap",
+        "acquisition_kind"
+      ],
+      "properties": {
+        "target_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "slot": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "priority": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mandatory_for_swap": {
+          "type": "boolean"
+        },
+        "acquisition_kind": {
+          "type": "string",
+          "enum": [
+            "buy",
+            "reuse",
+            "craft_follow_up",
+            "respec",
+            "other"
+          ]
+        }
+      }
+    },
+    "trade_link_bundle_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bundle_id",
+        "bundle_kind",
+        "label",
+        "resolved_search_url"
+      ],
+      "properties": {
+        "bundle_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bundle_kind": {
+          "type": "string",
+          "enum": [
+            "unique_item",
+            "rare_item_core"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resolved_search_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        }
+      }
+    },
+    "shopping_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "step",
+        "timing",
+        "action_kind",
+        "title",
+        "summary",
+        "target_gear_ids",
+        "trade_link_bundle_refs"
+      ],
+      "properties": {
+        "step": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "timing": {
+          "type": "string",
+          "enum": [
+            "before_swap",
+            "at_swap",
+            "after_swap"
+          ]
+        },
+        "action_kind": {
+          "type": "string",
+          "enum": [
+            "buy",
+            "socket",
+            "equip",
+            "respec",
+            "rerun_review",
+            "other"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_gear_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "trade_link_bundle_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/trade_link_bundle_ref"
+          }
+        }
+      }
+    },
+    "craft_follow_up_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_kind",
+        "record_id",
+        "label",
+        "status",
+        "note"
+      ],
+      "properties": {
+        "record_kind": {
+          "type": "string",
+          "enum": [
+            "craft_plan",
+            "craft_hint"
+          ]
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "optional",
+            "placeholder",
+            "ready"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "breakpoint_caveat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "category",
+        "statement",
+        "impact_on_progression"
+      ],
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": [
+            "baseline_scope",
+            "conditional_uptime",
+            "budget_window",
+            "trade_link_availability",
+            "craft_placeholder",
+            "other"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "impact_on_progression": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "breakpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "step",
+        "breakpoint_id",
+        "phase_kind",
+        "level_target",
+        "budget_target_chaos",
+        "current_play_setup",
+        "next_play_setup",
+        "swap_trigger",
+        "gear_targets",
+        "shopping_actions",
+        "craft_follow_up_refs",
+        "caveats"
+      ],
+      "properties": {
+        "step": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "breakpoint_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phase_kind": {
+          "type": "string",
+          "enum": [
+            "pre_swap",
+            "swap",
+            "post_swap"
+          ]
+        },
+        "level_target": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "budget_target_chaos": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "current_play_setup": {
+          "$ref": "#/$defs/play_setup"
+        },
+        "next_play_setup": {
+          "$ref": "#/$defs/play_setup"
+        },
+        "swap_trigger": {
+          "$ref": "#/$defs/swap_trigger"
+        },
+        "gear_targets": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/gear_target"
+          }
+        },
+        "shopping_actions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/shopping_action"
+          }
+        },
+        "craft_follow_up_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/craft_follow_up_ref"
+          }
+        },
+        "caveats": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/breakpoint_caveat"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "anyOf": [
+            {
+              "properties": {
+                "level_target": {
+                  "type": "integer"
+                }
+              }
+            },
+            {
+              "properties": {
+                "budget_target_chaos": {
+                  "type": "number"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,6 +1,6 @@
 ---
 name: nikita-project-subtask-worker
-description: Используй этот skill только для Nikita Project, когда пользователь явно вызывает `$nikita-project-subtask-worker`, пишет `Nikita Project сабтаск воркер`, `Nikita Project воркер`, `nikita project subtask worker`, или вставляет task spec с этой ролью и кодом задачи. Это проектный воркер узкой задачи для одной ограниченной задачи в репозитории Nikita Project. Не использовать для оркестрации, приёмки, переприоритизации или полного владения e2e.
+description: Используй этот skill только для Nikita Project, когда пользователь явно вызывает `$nikita-project-subtask-worker`, пишет `Nikita Project сабтаск воркер`, `Nikita Project воркер`, `nikita project subtask worker`, вставляет task spec с этой ролью и кодом задачи, или вставляет copy-paste block с task id, `$nikita-project-subtask-worker` и абсолютным путём к `.task.txt`. Это проектный воркер узкой задачи для одной ограниченной задачи в репозитории Nikita Project. Не использовать для оркестрации, приёмки, переприоритизации или полного владения e2e.
 ---
 
 # Назначение
@@ -17,9 +17,30 @@ description: Используй этот skill только для Nikita Projec
   - generic поведение воркера, формат отчёта, validation discipline, handoff policy -> в этот же ход зеркаль изменение в `universal-subtask-worker`.
 - Если правка смешанная, split обязателен: generic часть уходит в universal skill, project-specific overlay остаётся здесь.
 
+# File Task Mode
+
+Если вход содержит task id, role line `$nikita-project-subtask-worker` и один absolute path к `.task.txt`, сначала прочитай task file по path line.
+
+Preferred copy-paste block shape:
+
+```text
+<TASK_ID>
+$nikita-project-subtask-worker
+C:\absolute\path\to\.orchestrator\tasks\<TASK_ID>\<TASK_ID>.task.txt
+```
+
+Правила:
+
+- path line is source of truth;
+- verify task file `task_id` matches the first line before implementation;
+- follow `chat_response_contract` from task file exactly;
+- if task file contains `progress_guard`, obey `max_cost`/`stop_if` and write `progress_evidence` in result file;
+- final chat response is only the absolute `result_file` path when the task file requires it.
+
 # Правила Task ID
 
 - ожидай новые задачи в формате `Кластер: <code>` и `Код задачи: ТЗ-<CLUSTER>-<AREA>-<NN><suffix>`;
+- принимай copy-paste block нового формата: first line task id, second line role, third non-empty line absolute `.task.txt` path;
 - если пользователь вставил только task spec без отдельного role-only сообщения, считай этого достаточно, если в том же сообщении есть role line и task id.
 
 # Когда Использовать
@@ -28,6 +49,7 @@ description: Используй этот skill только для Nikita Projec
 
 - пользователь открывает fresh thread под одну ограниченную задачу Nikita Project;
 - пользователь обращается к роли как `Nikita Project сабтаск воркер`, `Nikita Project воркер`, `nikita project subtask worker`, `nikita project worker`;
+- пользователь вставляет task id, `$nikita-project-subtask-worker` и absolute `.task.txt` path;
 - пользователь вставляет task spec, в котором явно указана эта роль;
 - задача является implementation task или targeted validation task, а не orchestration.
 
@@ -61,17 +83,31 @@ description: Используй этот skill только для Nikita Projec
 - branch или commit context;
 - явный `Delegation guidance` от оркестратора.
 
+# Bootstrap По Умолчанию Для Nikita Project
+
+- рабочий `cwd` по умолчанию — root репозитория;
+- если нужен `pytest`, по умолчанию запускай `python -m pytest`, а не bare `pytest`, если task spec явно не фиксирует другой launcher;
+- если shell/read path идёт через PowerShell и в контексте есть кириллица или UTF-8 rich text, сначала выставляй `[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false); $OutputEncoding = [Console]::OutputEncoding`;
+- если diff меняет tests, fixtures или assertions, которые задают runtime/API/report contract, эти targeted tests обязаны быть запущены в том же ходе.
+
+# User Boundary
+
+- Nikita Project сабтаск воркер не является user-facing ролью для продуктовых развилок.
+- Не задавай пользователю прямые вопросы по продукту, архитектуре или implementation path.
+- Если task spec неполный и gap нельзя дёшево вывести из nearby code, `AGENTS.md` и task context, не устраивай диалог с пользователем. Остановись и верни blocker в structured report, чтобы оркестратор сам либо доуточнил задачу, либо провёл research, либо задал bounded user question.
+
 # Рабочий Процесс
 
-1. Проверь `git status` и текущую branch перед изменениями.
-2. Разбери задачу на `goal`, `write-scope`, `not-to-touch`, `validation` и `done criteria`. Если чего-то не хватает, но это можно дёшево вывести из nearby code, выведи; иначе задай один короткий уточняющий вопрос.
+1. Проверь `git status` и текущую branch перед изменениями. Для Nikita Project по умолчанию держи repo-root `cwd` и `python -m pytest`, если task spec явно не говорит иначе.
+2. Разбери задачу на `goal`, `write-scope`, `not-to-touch`, `validation` и `done criteria`. Если чего-то не хватает, но это можно дёшево вывести из nearby code, выведи; иначе остановись и верни blocker в structured report. Не задавай пользователю прямой уточняющий вопрос.
 3. Если в задаче есть `Delegation guidance`, считай это strong guidance о том, где спавнить subagents и где не спавнить. Следуй ему, если локальная реальность явно не противоречит.
-4. Читай только task-mentioned files, ближайший применимый `AGENTS.md` и минимально необходимые соседние callsites. Не стартуй с repo-wide scan. Не читай `runtime_local/**`, логи, broad test surfaces и похожие runtime-output каталоги, если задача от них не зависит.
+4. Читай только task-mentioned files, ближайший применимый `AGENTS.md` и минимально необходимые соседние callsites. Не стартуй с repo-wide scan. Не читай `runtime_local/**`, логи, broad test surfaces и похожие runtime-output каталоги, если задача от них не зависит. Если shell/read path идёт через PowerShell и содержит кириллицу или UTF-8 rich text, сначала принудительно включи UTF-8 output.
 5. Делай delegation check первым. Применяй policy ниже verbatim для этого repo и этой роли.
 6. Имплементируй change минимальным scope. Предпочитай dedicated modules вместо свалки логики в orchestration или monolith files. Уважай существующие user changes.
 7. Валидируй в proof-first порядке:
    - запусти хотя бы одну проверку, которая напрямую доказывает заявленный failure path или target contract, когда это возможно;
    - запусти одну nearby guard check, если задача нетривиальна и cheap guard существует;
+   - если diff меняет tests, fixtures или assertions, которые задают runtime/API/report contract, запусти эти targeted tests в том же ходе;
    - запусти `py_compile` для изменённых Python files, когда релевантно;
    - предпочитай недеструктивные validation paths, если они доказывают то же самое и не мешают активной машине пользователя.
 8. Перед тем как объявлять успех, задай себе вопрос: `Я действительно доказал закрытие bug/contract gap, или просто сделал тест зелёным?`
@@ -85,7 +121,7 @@ description: Используй этот skill только для Nikita Projec
 - Будь кратким и фактическим.
 - Начинай с короткого progress update о том, что проверяешь сначала.
 - Перед edit’ами говори, какие файлы меняешь и зачем.
-- Если упёрся в blocker, назови blocker, почему он важен, и какое минимальное human decision нужно.
+- Если упёрся в blocker, назови blocker, почему он важен, и какой артефакт или bounded decision оркестратор должен подготовить следующим ходом.
 - Не добавляй fluff, praise и мотивационные фразы.
 
 Обязательный финальный отчёт:
@@ -162,6 +198,7 @@ Never use recursive delegation or sub-subagents.
 - один writer на файл за фазу;
 - используй smallest useful subagent batch; не спавни агентов ради квоты;
 - larger batches допустимы только когда реально много disjoint read-only / verification tracks и общий runtime cap это выдерживает;
+- hot serial contour этого repo по умолчанию: `run_company_enrichment_pipeline.py`, `app/runtime/progress.py`, `app/runtime/state.py`, `app/runtime/work_units.py`, `company_enrichment_core.py`; если задача заходит в этот contour, по умолчанию это `NO_VALID_SUBAGENT_SPLIT`, пока split не доказан как isolated-module;
 - только воркер, который уже сам запущен как spawned child subagent, не должен порождать детей;
 - не давай subagents expand’ить scope beyond the task;
 - promptly close completed subagents after integration;
@@ -173,6 +210,7 @@ Never use recursive delegation or sub-subagents.
 
 - direct repro или targeted test для заявленного bug/contract;
 - один nearby guard check, когда дешёво и релевантно;
+- rerun изменённых contract-defining tests в том же ходе, если diff меняет test assertions/fixtures для runtime/API/report surface;
 - `py_compile` для изменённых Python files;
 - focused file inspection для подтверждения scope и invariants.
 

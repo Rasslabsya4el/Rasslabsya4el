@@ -1,0 +1,397 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/market/trade_link_bundle.schema.json",
+  "title": "TradeLinkBundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "bundle_id",
+    "bundle_kind",
+    "label",
+    "realm",
+    "league",
+    "query_model",
+    "trade_query",
+    "links",
+    "provenance",
+    "freshness",
+    "liquidity",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "trade_link_bundle"
+    },
+    "bundle_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "bundle_kind": {
+      "type": "string",
+      "enum": ["unique_item", "rare_item_core"]
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "realm": {
+      "type": "string",
+      "enum": ["pc", "xbox", "sony"]
+    },
+    "league": {
+      "type": "string",
+      "minLength": 1
+    },
+    "query_model": {
+      "oneOf": [
+        { "$ref": "#/$defs/unique_item_query_model" },
+        { "$ref": "#/$defs/rare_item_core_query_model" }
+      ]
+    },
+    "trade_query": {
+      "$ref": "#/$defs/trade_query"
+    },
+    "links": {
+      "$ref": "#/$defs/links"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "freshness": {
+      "$ref": "#/$defs/freshness"
+    },
+    "liquidity": {
+      "$ref": "#/$defs/liquidity"
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "trade_query": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["query", "sort"],
+      "properties": {
+        "query": {
+          "type": "object",
+          "required": ["status", "stats"],
+          "properties": {
+            "status": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["option"],
+              "properties": {
+                "option": {
+                  "type": "string",
+                  "enum": ["online", "any"]
+                }
+              }
+            },
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "filters": {
+              "type": "object"
+            },
+            "stats": {
+              "type": "array"
+            }
+          },
+          "additionalProperties": true
+        },
+        "sort": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["price"],
+          "properties": {
+            "price": {
+              "type": "string",
+              "const": "asc"
+            }
+          }
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "search_submission_method",
+        "search_submission_url",
+        "results_url_template",
+        "resolved_search_id",
+        "resolved_search_url"
+      ],
+      "properties": {
+        "search_submission_method": {
+          "type": "string",
+          "const": "POST"
+        },
+        "search_submission_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "results_url_template": {
+          "type": "string",
+          "pattern": "\\{search_id\\}$"
+        },
+        "resolved_search_id": {
+          "type": ["string", "null"],
+          "pattern": "^[A-Za-z0-9]+$"
+        },
+        "resolved_search_url": {
+          "type": ["string", "null"],
+          "format": "uri"
+        }
+      }
+    },
+    "input_provenance_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_kind",
+        "record_id",
+        "source_uri",
+        "observed_at",
+        "collector",
+        "collected_at",
+        "note"
+      ],
+      "properties": {
+        "record_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "collector": {
+          "type": "string",
+          "minLength": 1
+        },
+        "collected_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "note": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generated_at",
+        "generator",
+        "generator_version",
+        "source_id",
+        "support_level",
+        "authority_rank",
+        "hard_requirement",
+        "input_sha256",
+        "query_sha256",
+        "input_provenance"
+      ],
+      "properties": {
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "generator": {
+          "type": "string",
+          "const": "poe_build_research.market.trade_links"
+        },
+        "generator_version": {
+          "type": "string",
+          "const": "1.0.0"
+        },
+        "source_id": {
+          "type": "string",
+          "const": "undocumented_trade_api"
+        },
+        "support_level": {
+          "type": "string",
+          "const": "unsupported_opt_in"
+        },
+        "authority_rank": {
+          "type": "integer",
+          "const": 99
+        },
+        "hard_requirement": {
+          "type": "boolean",
+          "const": false
+        },
+        "input_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "query_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "input_provenance": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/input_provenance_ref"
+          }
+        }
+      }
+    },
+    "freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "generated_at",
+        "latest_input_observed_at",
+        "note"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "const": "query_only"
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "latest_input_observed_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "liquidity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "listing_count", "note"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "const": "unknown"
+        },
+        "listing_count": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "unique_item_query_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "name", "type_line", "online_only"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "unique_item"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type_line": {
+          "type": ["string", "null"]
+        },
+        "online_only": {
+          "type": "boolean"
+        }
+      }
+    },
+    "rare_item_core_stat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trade_stat_id", "label", "minimum", "maximum"],
+      "properties": {
+        "trade_stat_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minimum": {
+          "type": ["number", "null"]
+        },
+        "maximum": {
+          "type": ["number", "null"]
+        }
+      }
+    },
+    "rare_item_core_query_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "label",
+        "base_type",
+        "rarity",
+        "realism_scope",
+        "core_stats"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "rare_item_core"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "base_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rarity": {
+          "type": "string",
+          "const": "rare"
+        },
+        "realism_scope": {
+          "type": "string",
+          "const": "core_requirements_only"
+        },
+        "core_stats": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/rare_item_core_stat"
+          }
+        }
+      }
+    }
+  }
+}

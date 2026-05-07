@@ -1,0 +1,597 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/market/snapshot.schema.json",
+  "title": "MarketSnapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "realm",
+    "league",
+    "league_start_at",
+    "generated_at",
+    "storage",
+    "windows"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "market_snapshot"
+    },
+    "realm": {
+      "type": "string",
+      "enum": [
+        "pc",
+        "xbox",
+        "sony"
+      ]
+    },
+    "league": {
+      "type": "string",
+      "minLength": 1
+    },
+    "league_start_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "storage": {
+      "$ref": "#/$defs/dynamic_storage"
+    },
+    "windows": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "day_1",
+        "day_3",
+        "day_7",
+        "week_1_avg"
+      ],
+      "properties": {
+        "day_1": {
+          "$ref": "#/$defs/window"
+        },
+        "day_3": {
+          "$ref": "#/$defs/window"
+        },
+        "day_7": {
+          "$ref": "#/$defs/window"
+        },
+        "week_1_avg": {
+          "$ref": "#/$defs/window"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "dynamic_storage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tier",
+        "root",
+        "git_tracked"
+      ],
+      "properties": {
+        "tier": {
+          "type": "string",
+          "const": "dynamic_knowledge"
+        },
+        "root": {
+          "type": "string",
+          "minLength": 1
+        },
+        "git_tracked": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "window_key",
+        "label",
+        "start_offset_hours",
+        "end_offset_hours",
+        "listing_count",
+        "aggregate_count",
+        "normalization",
+        "aggregates"
+      ],
+      "properties": {
+        "window_key": {
+          "type": "string",
+          "enum": [
+            "day_1",
+            "day_3",
+            "day_7",
+            "week_1_avg"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_offset_hours": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end_offset_hours": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "listing_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "aggregate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "normalization": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/window_normalization"
+            }
+          ]
+        },
+        "aggregates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/item_aggregate"
+          }
+        }
+      }
+    },
+    "window_normalization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "chaos_per_divine",
+        "divine_per_chaos",
+        "evidence_listing_ids",
+        "evidence_item_keys"
+      ],
+      "properties": {
+        "chaos_per_divine": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "divine_per_chaos": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "evidence_listing_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "evidence_item_keys": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "item_aggregate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "item_key",
+        "item_name",
+        "item_kind",
+        "window_key",
+        "listing_ids",
+        "observed_at_range",
+        "price",
+        "budget",
+        "liquidity",
+        "freshness",
+        "provenance",
+        "sample"
+      ],
+      "properties": {
+        "item_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "item_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "item_kind": {
+          "type": "string",
+          "enum": [
+            "unique",
+            "commodity"
+          ]
+        },
+        "window_key": {
+          "type": "string",
+          "enum": [
+            "day_1",
+            "day_3",
+            "day_7",
+            "week_1_avg"
+          ]
+        },
+        "listing_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "observed_at_range": {
+          "$ref": "#/$defs/observed_at_range"
+        },
+        "price": {
+          "$ref": "#/$defs/price_rollup"
+        },
+        "budget": {
+          "$ref": "#/$defs/budget_rollup"
+        },
+        "liquidity": {
+          "$ref": "#/$defs/liquidity"
+        },
+        "freshness": {
+          "$ref": "#/$defs/freshness"
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "sample": {
+          "$ref": "#/$defs/sample"
+        }
+      }
+    },
+    "observed_at_range": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "first_observed_at",
+        "last_observed_at"
+      ],
+      "properties": {
+        "first_observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "last_observed_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "price_rollup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "currency",
+        "chaos",
+        "divine"
+      ],
+      "properties": {
+        "currency": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "quoted",
+            "quote_notes"
+          ],
+          "properties": {
+            "quoted": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "chaos",
+                  "divine"
+                ]
+              }
+            },
+            "quote_notes": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "chaos": {
+          "$ref": "#/$defs/numeric_rollup"
+        },
+        "divine": {
+          "$ref": "#/$defs/numeric_rollup"
+        }
+      }
+    },
+    "numeric_rollup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "min",
+        "median",
+        "mean",
+        "max"
+      ],
+      "properties": {
+        "min": {
+          "type": "number",
+          "minimum": 0
+        },
+        "median": {
+          "type": "number",
+          "minimum": 0
+        },
+        "mean": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "budget_rollup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reference_price_chaos",
+        "reference_price_divine",
+        "price_floor_chaos",
+        "price_ceiling_chaos"
+      ],
+      "properties": {
+        "reference_price_chaos": {
+          "type": "number",
+          "minimum": 0
+        },
+        "reference_price_divine": {
+          "type": "number",
+          "minimum": 0
+        },
+        "price_floor_chaos": {
+          "type": "number",
+          "minimum": 0
+        },
+        "price_ceiling_chaos": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "liquidity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "listing_count",
+        "seller_count",
+        "sample_size",
+        "status"
+      ],
+      "properties": {
+        "listing_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "seller_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sample_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "illiquid",
+            "thin",
+            "liquid"
+          ]
+        }
+      }
+    },
+    "freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "worst_status",
+        "status_counts",
+        "max_source_lag_seconds",
+        "max_stale_after_seconds",
+        "all_within_sla"
+      ],
+      "properties": {
+        "worst_status": {
+          "type": "string",
+          "enum": [
+            "fresh",
+            "delayed",
+            "stale",
+            "bootstrap"
+          ]
+        },
+        "status_counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "fresh",
+            "delayed",
+            "stale",
+            "bootstrap"
+          ],
+          "properties": {
+            "fresh": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "delayed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "stale": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "bootstrap": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "max_source_lag_seconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_stale_after_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "all_within_sla": {
+          "type": "boolean"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_ids",
+        "origin_types",
+        "raw_trace_paths",
+        "change_ids",
+        "ingestion_run_ids",
+        "authority_ranks",
+        "listing_count"
+      ],
+      "properties": {
+        "source_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "official_public_stashes",
+              "self_recorded_snapshots",
+              "manual_bootstrap_snapshots",
+              "undocumented_trade_api"
+            ]
+          }
+        },
+        "origin_types": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "official_api",
+              "self_recorded_snapshot",
+              "manual_bootstrap_snapshot",
+              "unsupported_opt_in"
+            ]
+          }
+        },
+        "raw_trace_paths": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "change_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "ingestion_run_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "authority_ranks": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "listing_count": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "sample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "listing_count",
+        "seller_count",
+        "stack_size_max",
+        "example_listing_id"
+      ],
+      "properties": {
+        "listing_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "seller_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "stack_size_max": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "example_listing_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

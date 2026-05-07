@@ -1,0 +1,11 @@
+{
+  "classification_id": "cv6.surface-impact-classification.mvp",
+  "finding_count": 0,
+  "findings": [],
+  "generated_at": "2026-05-06T00:00:00Z",
+  "product_agent_behavioral_proof_required": false,
+  "record_kind": "surface_impact_classification_validation",
+  "schema_version": "0.1.0",
+  "scope_note": "CV6 validates surface impact classification only; it is not a Direct Build proof or scoring engine.",
+  "status": "accepted"
+}

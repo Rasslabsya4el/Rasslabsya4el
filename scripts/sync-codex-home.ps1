@@ -78,6 +78,10 @@ $transientFileGlobs = @(
     '*.pyo'
 )
 
+$transientRelativePaths = @(
+    'skills/poe-build-architect/scripts/python/var'
+)
+
 $excludedTopLevelFiles = @(
     'auth.json',
     'cap_sid',
@@ -149,6 +153,13 @@ foreach ($transientDirectoryName in $transientDirectoryNames) {
 foreach ($fileGlob in $transientFileGlobs) {
     Get-ChildItem -LiteralPath $backupRoot -Recurse -File -Force -Filter $fileGlob -ErrorAction SilentlyContinue |
         ForEach-Object { Remove-Item -LiteralPath $_.FullName -Force }
+}
+
+foreach ($relativePath in $transientRelativePaths) {
+    $transientPath = Assert-WithinRoot -Path (Join-Path $backupRoot $relativePath) -Root $backupRoot -Label "Transient path '$relativePath'"
+    if (Test-Path -LiteralPath $transientPath) {
+        Remove-Item -LiteralPath $transientPath -Recurse -Force
+    }
 }
 
 $directorySummary = foreach ($directoryName in $managedDirectories) {

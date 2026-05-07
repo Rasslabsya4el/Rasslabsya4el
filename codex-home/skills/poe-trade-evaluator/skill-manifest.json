@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "skill_name": "poe-trade-evaluator",
+  "version": "0.1.0-clean-seed",
+  "package_role": "product_runtime_skill",
+  "runtime_boundary": "self_contained_installed_skill",
+  "primary_modes": [
+    "trade_price_evidence",
+    "item_availability",
+    "market_freshness"
+  ],
+  "packaged_assets": [
+    "SKILL.md",
+    "references/",
+    "scripts/python/src/poe_build_research/market/",
+    "scripts/python/schemas/market/"
+  ],
+  "readiness_probe": "poe-trade-evaluator"
+}

@@ -1,0 +1,583 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/plan/build_review.schema.json",
+  "title": "BuildReview",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "review_id",
+    "generated_at",
+    "build_summary",
+    "baseline_metrics",
+    "conditional_metrics",
+    "proof_summary",
+    "bottlenecks",
+    "cheap_upgrades",
+    "risks_and_weak_points",
+    "assumptions_and_caveats",
+    "next_actions"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "build_review"
+    },
+    "review_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "build_summary": {
+      "$ref": "#/$defs/build_summary"
+    },
+    "baseline_metrics": {
+      "$ref": "#/$defs/metric_section"
+    },
+    "conditional_metrics": {
+      "$ref": "#/$defs/metric_section"
+    },
+    "proof_summary": {
+      "$ref": "#/$defs/proof_summary"
+    },
+    "bottlenecks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/bottleneck"
+      }
+    },
+    "cheap_upgrades": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/cheap_upgrade"
+      }
+    },
+    "risks_and_weak_points": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/risk_or_weak_point"
+      }
+    },
+    "assumptions_and_caveats": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/assumption_or_caveat"
+      }
+    },
+    "next_actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/next_action"
+      }
+    }
+  },
+  "$defs": {
+    "proof_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proof_status",
+        "trial_budget",
+        "trials_run",
+        "accepted_fix_count",
+        "ledger_refs",
+        "blockers"
+      ],
+      "properties": {
+        "proof_status": {
+          "type": "string",
+          "enum": ["proven", "blocked", "partial"]
+        },
+        "trial_budget": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "trials_run": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "accepted_fix_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ledger_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "blockers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/blocker"
+          }
+        }
+      }
+    },
+    "blocker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "summary"],
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "build_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "build_id",
+        "build_label",
+        "build_source",
+        "pob_run_id",
+        "archetype_label",
+        "review_status",
+        "baseline_verdict",
+        "headline",
+        "recommendation_summary"
+      ],
+      "properties": {
+        "build_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "build_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "build_source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pob_run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "archetype_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "review_status": {
+          "type": "string",
+          "enum": ["healthy", "salvageable", "blocked"]
+        },
+        "baseline_verdict": {
+          "type": "string",
+          "enum": ["pass", "fail", "unknown"]
+        },
+        "headline": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recommendation_summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "metric_section": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary",
+        "metric_rows",
+        "scope_notes"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metric_rows": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/metric_row"
+          }
+        },
+        "scope_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "metric_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metric_key",
+        "label",
+        "value",
+        "unit",
+        "note"
+      ],
+      "properties": {
+        "metric_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": "number"
+        },
+        "unit": {
+          "type": ["string", "null"]
+        },
+        "note": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "bottleneck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "priority",
+        "category",
+        "severity",
+        "title",
+        "summary",
+        "evidence",
+        "affected_area"
+      ],
+      "properties": {
+        "priority": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "offense",
+            "defense",
+            "recovery",
+            "mana",
+            "resistances",
+            "attributes",
+            "mobility",
+            "gear_realism",
+            "budget",
+            "liquidity",
+            "config",
+            "progression"
+          ]
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["blocking", "major", "moderate", "minor"]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "affected_area": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "trade_link_bundle_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bundle_id",
+        "bundle_kind",
+        "label",
+        "resolved_search_url"
+      ],
+      "properties": {
+        "bundle_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bundle_kind": {
+          "type": "string",
+          "enum": ["unique_item", "rare_item_core"]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resolved_search_url": {
+          "type": ["string", "null"],
+          "format": "uri"
+        }
+      }
+    },
+    "cheap_upgrade": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "priority",
+        "upgrade_kind",
+        "target_slot",
+        "title",
+        "summary",
+        "expected_benefit",
+        "estimated_cost_note",
+        "proof_status",
+        "invasiveness",
+        "resource_cost",
+        "alternatives_considered",
+        "trial_refs",
+        "before_after_metric_refs",
+        "trade_link_bundle_refs"
+      ],
+      "properties": {
+        "priority": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "upgrade_kind": {
+          "type": "string",
+          "enum": [
+            "gear_swap",
+            "gem_setup",
+            "passive_tree",
+            "flask_setup",
+            "config_fix",
+            "buy_or_craft",
+            "other"
+          ]
+        },
+        "target_slot": {
+          "type": ["string", "null"]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_benefit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "estimated_cost_note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "proof_status": {
+          "type": "string",
+          "enum": ["proven", "blocked", "hypothesis_only"]
+        },
+        "invasiveness": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "resource_cost": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/resource_cost"
+          }
+        },
+        "alternatives_considered": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "trial_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "before_after_metric_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "trade_link_bundle_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/trade_link_bundle_ref"
+          }
+        }
+      }
+    },
+    "resource_cost": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["resource", "amount", "unit", "note"],
+      "properties": {
+        "resource": {
+          "type": "string",
+          "enum": [
+            "passive_points",
+            "travel_points",
+            "prefix_slot",
+            "suffix_slot",
+            "item_slot",
+            "unique_slot",
+            "gem_socket",
+            "support_slot",
+            "reservation",
+            "mana_cost",
+            "attribute_pressure",
+            "resistance_pressure",
+            "accuracy_pressure",
+            "budget",
+            "craft_difficulty",
+            "trade_availability",
+            "transition_friction",
+            "config_dependency",
+            "other"
+          ]
+        },
+        "amount": {
+          "type": ["number", "null"]
+        },
+        "unit": {
+          "type": ["string", "null"]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "risk_or_weak_point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "severity",
+        "source_area",
+        "title",
+        "summary",
+        "mitigation_note"
+      ],
+      "properties": {
+        "severity": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "source_area": {
+          "type": "string",
+          "enum": ["rules", "pob", "market", "operator_input", "unknown"]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mitigation_note": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "assumption_or_caveat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "category",
+        "statement",
+        "impact_on_review"
+      ],
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": [
+            "baseline_scope",
+            "conditional_uptime",
+            "budget_window",
+            "trade_link_availability",
+            "evidence_gap",
+            "operator_input",
+            "other"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "impact_on_review": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "next_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "step",
+        "action",
+        "rationale",
+        "expected_outcome",
+        "trade_link_bundle_refs"
+      ],
+      "properties": {
+        "step": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_outcome": {
+          "type": "string",
+          "minLength": 1
+        },
+        "trade_link_bundle_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/trade_link_bundle_ref"
+          }
+        }
+      }
+    }
+  }
+}

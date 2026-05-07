@@ -1,0 +1,415 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/market/raw_listing.schema.json",
+  "title": "RawMarketListing",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "listing_id",
+    "realm",
+    "league",
+    "observed_at",
+    "source",
+    "provenance",
+    "freshness",
+    "rate_limit",
+    "checkpoint",
+    "stash",
+    "seller",
+    "item"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "raw_market_listing"
+    },
+    "listing_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "realm": {
+      "type": "string",
+      "enum": ["pc", "xbox", "sony"]
+    },
+    "league": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "$ref": "#/$defs/source"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "freshness": {
+      "$ref": "#/$defs/freshness"
+    },
+    "rate_limit": {
+      "$ref": "#/$defs/rate_limit"
+    },
+    "checkpoint": {
+      "$ref": "#/$defs/checkpoint"
+    },
+    "stash": {
+      "$ref": "#/$defs/stash"
+    },
+    "seller": {
+      "$ref": "#/$defs/seller"
+    },
+    "item": {
+      "$ref": "#/$defs/item"
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "support_level",
+        "authority_rank",
+        "role",
+        "hard_requirement",
+        "oauth_required"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "enum": [
+            "official_public_stashes",
+            "self_recorded_snapshots",
+            "manual_bootstrap_snapshots",
+            "undocumented_trade_api"
+          ]
+        },
+        "support_level": {
+          "type": "string",
+          "enum": ["supported", "bootstrap_only", "unsupported_opt_in"]
+        },
+        "authority_rank": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "live_ingest",
+            "historical_read",
+            "bootstrap_read",
+            "experimental"
+          ]
+        },
+        "hard_requirement": {
+          "type": "boolean"
+        },
+        "oauth_required": {
+          "type": "boolean"
+        },
+        "feature_flag": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "origin",
+        "upstream_system",
+        "endpoint",
+        "method",
+        "change_id_in",
+        "change_id_out",
+        "public_stash_change_id",
+        "page_observed_at",
+        "raw_page_path",
+        "raw_page_sha256",
+        "ingestion_run_id",
+        "seller_key"
+      ],
+      "properties": {
+        "origin": {
+          "type": "string",
+          "enum": [
+            "official_api",
+            "self_recorded_snapshot",
+            "manual_bootstrap_snapshot",
+            "unsupported_opt_in"
+          ]
+        },
+        "upstream_system": {
+          "type": "string",
+          "minLength": 1
+        },
+        "endpoint": {
+          "type": "string",
+          "minLength": 1
+        },
+        "method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "change_id_in": {
+          "type": ["string", "null"]
+        },
+        "change_id_out": {
+          "type": "string",
+          "minLength": 1
+        },
+        "public_stash_change_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "page_observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "raw_page_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "raw_page_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "ingestion_run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "seller_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "quoted_note": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "expected_source_delay_seconds",
+        "source_lag_seconds",
+        "stale_after_seconds",
+        "ingested_within_sla",
+        "status"
+      ],
+      "properties": {
+        "expected_source_delay_seconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source_lag_seconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "stale_after_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ingested_within_sla": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["fresh", "delayed", "stale", "bootstrap"]
+        }
+      }
+    },
+    "rate_limit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy",
+        "active_rules",
+        "limits",
+        "state",
+        "retry_after_seconds",
+        "captured_at"
+      ],
+      "properties": {
+        "policy": {
+          "type": ["string", "null"]
+        },
+        "active_rules": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "limits": {
+          "$ref": "#/$defs/rate_limit_bucket_map"
+        },
+        "state": {
+          "$ref": "#/$defs/rate_limit_bucket_map"
+        },
+        "retry_after_seconds": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "rate_limit_bucket_map": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[A-Za-z0-9_-]+$"
+      },
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[0-9]+:[0-9]+:[0-9]+$"
+        }
+      }
+    },
+    "checkpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "checkpoint_key",
+        "cursor_kind",
+        "cursor_in",
+        "cursor_out",
+        "page_sequence",
+        "persisted_at",
+        "last_observed_at",
+        "last_success_at",
+        "empty_poll_count",
+        "resume_from",
+        "resume_safe"
+      ],
+      "properties": {
+        "checkpoint_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cursor_kind": {
+          "type": "string",
+          "enum": ["next_change_id", "manifest_entry"]
+        },
+        "cursor_in": {
+          "type": ["string", "null"]
+        },
+        "cursor_out": {
+          "type": "string",
+          "minLength": 1
+        },
+        "page_sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "persisted_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "last_observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "last_success_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "empty_poll_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "resume_from": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resume_safe": {
+          "type": "boolean"
+        }
+      }
+    },
+    "stash": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "public",
+        "account_name",
+        "stash_name",
+        "stash_type"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "public": {
+          "type": "boolean"
+        },
+        "account_name": {
+          "type": ["string", "null"]
+        },
+        "stash_name": {
+          "type": ["string", "null"]
+        },
+        "stash_type": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "seller": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["account_name", "seller_key"],
+      "properties": {
+        "account_name": {
+          "type": ["string", "null"]
+        },
+        "seller_key": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "type_line",
+        "listed_note",
+        "raw_payload"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string"
+        },
+        "type_line": {
+          "type": "string"
+        },
+        "listed_note": {
+          "type": ["string", "null"]
+        },
+        "raw_payload": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

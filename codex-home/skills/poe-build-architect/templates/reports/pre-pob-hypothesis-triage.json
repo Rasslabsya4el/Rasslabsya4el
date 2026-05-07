@@ -1,0 +1,306 @@
+{
+  "baseline_refs": [
+    {
+      "evidence_kind": "source_ledger",
+      "json_pointer": "/comparison_basis",
+      "locator": "comparison-protocol.json",
+      "ref_id": "fixture.cv5.baseline-tree",
+      "summary": "Fixture baseline context from CV4 comparison protocol."
+    }
+  ],
+  "blocked_hypotheses": [
+    "hypothesis.unverified_keystone_swap"
+  ],
+  "candidate_count": 3,
+  "candidate_hypotheses": [
+    {
+      "candidate_action": {
+        "action_scope": "tree",
+        "action_type": "pathing_package",
+        "summary": "Nearby Dex/life pathing package"
+      },
+      "estimated_resource_cost": {
+        "payoff_points": 3,
+        "summary": "4 passive points before PoB measurement.",
+        "total_passive_points": 4,
+        "travel_points": 1
+      },
+      "evidence_refs": [
+        {
+          "evidence_kind": "comparison_protocol",
+          "json_pointer": "/candidates",
+          "locator": "comparison-protocol.json",
+          "ref_id": "evidence.cv5.hypothesis.nearby_dex_life_package.comparison",
+          "summary": "CV4 fixture comparison context for authored alternatives."
+        }
+      ],
+      "expected_surfaces": [
+        {
+          "expected_direction": "increase",
+          "metric_key": "normal_passive_count",
+          "note": "Hypothesis consumes passive budget before any PoB measurement.",
+          "surface_kind": "tree_state"
+        },
+        {
+          "expected_direction": "repair",
+          "metric_key": "LifeAndDexRequirement",
+          "note": "Authored expected surface for pre-PoB triage.",
+          "surface_kind": "calc_surface"
+        }
+      ],
+      "expected_value_summary": {
+        "summary": "Medium DPS-adjacent value plus attribute constraint relief.",
+        "value_level": "medium"
+      },
+      "hypothesis_id": "hypothesis.nearby_dex_life_package",
+      "label": "Nearby Dex/life pathing package",
+      "missing_evidence": [],
+      "reason": "Bounded route with likely constraint relief and acceptable passive cost.",
+      "risk_flags": [
+        {
+          "risk_id": "risk.cv5.nearby-dex.low-raw-dps",
+          "severity": "medium",
+          "summary": "May look worse than a pure DPS package if constraint relief is undervalued."
+        }
+      ],
+      "triage_verdict": "selected_for_measurement",
+      "uncertainty": {
+        "level": "medium",
+        "notes": [
+          "CV5 triage is static pre-PoB selection pressure and does not claim measured improvement."
+        ]
+      },
+      "unsupported_claims": [],
+      "worth_pob_cost_reason": "Worth measuring because the expected Dex repair can unlock support and item choices while spending only four passives."
+    },
+    {
+      "candidate_action": {
+        "action_scope": "tree",
+        "action_type": "pathing_package",
+        "summary": "Distant fire cluster route"
+      },
+      "estimated_resource_cost": {
+        "payoff_points": 3,
+        "summary": "8 passive points before PoB measurement.",
+        "total_passive_points": 8,
+        "travel_points": 5
+      },
+      "evidence_refs": [
+        {
+          "evidence_kind": "comparison_protocol",
+          "json_pointer": "/candidates",
+          "locator": "comparison-protocol.json",
+          "ref_id": "evidence.cv5.hypothesis.distant_fire_cluster.comparison",
+          "summary": "CV4 fixture comparison context for authored alternatives."
+        }
+      ],
+      "expected_surfaces": [
+        {
+          "expected_direction": "increase",
+          "metric_key": "normal_passive_count",
+          "note": "Hypothesis consumes passive budget before any PoB measurement.",
+          "surface_kind": "tree_state"
+        },
+        {
+          "expected_direction": "increase",
+          "metric_key": "FullDPS",
+          "note": "Authored expected surface for pre-PoB triage.",
+          "surface_kind": "calc_surface"
+        }
+      ],
+      "expected_value_summary": {
+        "summary": "Higher raw DPS upside, but poor value per passive after travel.",
+        "value_level": "medium"
+      },
+      "hypothesis_id": "hypothesis.distant_fire_cluster",
+      "label": "Distant fire cluster route",
+      "missing_evidence": [],
+      "reason": "Rejected before PoB because CV3-style travel tax is too high for the expected payoff.",
+      "risk_flags": [
+        {
+          "risk_id": "risk.cv5.distant-fire.travel-tax",
+          "severity": "high",
+          "summary": "Five travel points may crowd out life and requirement repairs."
+        }
+      ],
+      "triage_verdict": "rejected_before_pob",
+      "uncertainty": {
+        "level": "medium",
+        "notes": [
+          "CV5 triage is static pre-PoB selection pressure and does not claim measured improvement."
+        ]
+      },
+      "unsupported_claims": [],
+      "worth_pob_cost_reason": "Not worth PoB cost in this pass; measure later only if closer packages fail."
+    },
+    {
+      "candidate_action": {
+        "action_scope": "tree",
+        "action_type": "pathing_package",
+        "summary": "Unverified keystone swap"
+      },
+      "estimated_resource_cost": {
+        "payoff_points": 3,
+        "summary": "3 passive points before PoB measurement.",
+        "total_passive_points": 3,
+        "travel_points": 0
+      },
+      "evidence_refs": [
+        {
+          "evidence_kind": "comparison_protocol",
+          "json_pointer": "/candidates",
+          "locator": "comparison-protocol.json",
+          "ref_id": "evidence.cv5.hypothesis.unverified_keystone_swap.comparison",
+          "summary": "CV4 fixture comparison context for authored alternatives."
+        }
+      ],
+      "expected_surfaces": [
+        {
+          "expected_direction": "increase",
+          "metric_key": "normal_passive_count",
+          "note": "Hypothesis consumes passive budget before any PoB measurement.",
+          "surface_kind": "tree_state"
+        },
+        {
+          "expected_direction": "unknown",
+          "metric_key": "FullDPSAndDefenseTradeoff",
+          "note": "Authored expected surface for pre-PoB triage.",
+          "surface_kind": "calc_surface"
+        }
+      ],
+      "expected_value_summary": {
+        "summary": "Potential high upside, but no supported mechanic evidence is attached.",
+        "value_level": "unknown"
+      },
+      "hypothesis_id": "hypothesis.unverified_keystone_swap",
+      "label": "Unverified keystone swap",
+      "missing_evidence": [
+        {
+          "blocking": true,
+          "evidence_kind": "mechanic_evidence",
+          "reason": "No supported reference proves the keystone interaction applies to this build."
+        }
+      ],
+      "reason": "Blocked because the claimed synergy is unsupported and could invert defenses.",
+      "risk_flags": [
+        {
+          "risk_id": "risk.cv5.keystone.defense-inversion",
+          "severity": "high",
+          "summary": "Could break an implicit defensive assumption."
+        }
+      ],
+      "triage_verdict": "blocked",
+      "uncertainty": {
+        "level": "high",
+        "notes": [
+          "CV5 triage is static pre-PoB selection pressure and does not claim measured improvement."
+        ]
+      },
+      "unsupported_claims": [
+        {
+          "claim_id": "claim.cv5.keystone-double-dips-fireball",
+          "required_evidence": "mechanic_evidence or measured calc diff before selection.",
+          "summary": "Claims an unverified double-dip interaction."
+        }
+      ],
+      "worth_pob_cost_reason": "Not worth PoB cost until mechanic evidence or a prior measured diff supports the claim."
+    }
+  ],
+  "constraints": {
+    "full_dps_floor": 200000,
+    "must_preserve": [
+      "life_floor",
+      "reservation_works",
+      "attribute_requirements"
+    ],
+    "normal_passive_budget": 113
+  },
+  "decision_family": "direct_build.tree_pathing",
+  "estimated_resource_cost": {
+    "selected_hypotheses": [
+      {
+        "estimated_resource_cost": {
+          "payoff_points": 3,
+          "summary": "4 passive points before PoB measurement.",
+          "total_passive_points": 4,
+          "travel_points": 1
+        },
+        "hypothesis_id": "hypothesis.nearby_dex_life_package"
+      }
+    ],
+    "summary": "1 hypotheses selected for measurement."
+  },
+  "expected_surfaces": [
+    {
+      "expected_direction": "increase",
+      "hypothesis_id": "hypothesis.nearby_dex_life_package",
+      "metric_key": "normal_passive_count",
+      "note": "Hypothesis consumes passive budget before any PoB measurement.",
+      "surface_kind": "tree_state"
+    },
+    {
+      "expected_direction": "repair",
+      "hypothesis_id": "hypothesis.nearby_dex_life_package",
+      "metric_key": "LifeAndDexRequirement",
+      "note": "Authored expected surface for pre-PoB triage.",
+      "surface_kind": "calc_surface"
+    }
+  ],
+  "expected_value_summary": {
+    "selected_hypotheses": [
+      {
+        "expected_value_summary": {
+          "summary": "Medium DPS-adjacent value plus attribute constraint relief.",
+          "value_level": "medium"
+        },
+        "hypothesis_id": "hypothesis.nearby_dex_life_package"
+      }
+    ],
+    "summary": "Selected hypotheses have static expected value only; measured value belongs in Calc Snapshot Diff after PoB."
+  },
+  "generated_at": "2026-05-06T00:00:00Z",
+  "missing_evidence": [
+    {
+      "blocking": true,
+      "evidence_kind": "mechanic_evidence",
+      "hypothesis_id": "hypothesis.unverified_keystone_swap",
+      "reason": "No supported reference proves the keystone interaction applies to this build."
+    }
+  ],
+  "product_agent_behavioral_proof_required": false,
+  "reason": "Measure the nearby Dex/life package first because it has bounded passive cost, expected constraint relief, and no unsupported claim; reject the distant package on static travel tax, and block the keystone swap until evidence exists.",
+  "record_kind": "pre_pob_hypothesis_triage",
+  "rejected_before_pob": [
+    "hypothesis.distant_fire_cluster"
+  ],
+  "risk_flags": [
+    {
+      "hypothesis_id": "hypothesis.nearby_dex_life_package",
+      "risk_id": "risk.cv5.nearby-dex.low-raw-dps",
+      "severity": "medium",
+      "summary": "May look worse than a pure DPS package if constraint relief is undervalued."
+    },
+    {
+      "hypothesis_id": "hypothesis.distant_fire_cluster",
+      "risk_id": "risk.cv5.distant-fire.travel-tax",
+      "severity": "high",
+      "summary": "Five travel points may crowd out life and requirement repairs."
+    },
+    {
+      "hypothesis_id": "hypothesis.unverified_keystone_swap",
+      "risk_id": "risk.cv5.keystone.defense-inversion",
+      "severity": "high",
+      "summary": "Could break an implicit defensive assumption."
+    }
+  ],
+  "schema_version": "0.1.0",
+  "selected_for_measurement": [
+    "hypothesis.nearby_dex_life_package"
+  ],
+  "triage_id": "cv5.pre-pob-hypothesis-triage.mvp",
+  "triage_verdict": "measure",
+  "validation": {
+    "finding_count": 0,
+    "findings": []
+  }
+}

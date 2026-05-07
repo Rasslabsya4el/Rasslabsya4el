@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "skill_name": "poe-craft-planner",
+  "version": "0.1.0-clean-seed",
+  "package_role": "product_runtime_skill",
+  "runtime_boundary": "self_contained_installed_skill",
+  "primary_modes": [
+    "craft_feasibility",
+    "craft_cost_evidence",
+    "buy_vs_craft_input"
+  ],
+  "packaged_assets": [
+    "SKILL.md",
+    "references/",
+    "scripts/python/src/poe_build_research/craft/",
+    "scripts/python/src/poe_build_research/market/",
+    "scripts/python/schemas/craft/"
+  ],
+  "readiness_probe": "poe-craft-planner"
+}

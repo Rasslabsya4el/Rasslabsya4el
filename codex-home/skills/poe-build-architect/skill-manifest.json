@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "skill_name": "poe-build-architect",
+  "version": "0.1.0-clean-seed",
+  "package_role": "product_runtime_skill",
+  "runtime_boundary": "self_contained_installed_skill",
+  "primary_modes": [
+    "direct_build",
+    "pob_artifact_generation",
+    "branch_comparison",
+    "build_review_coordination"
+  ],
+  "packaged_assets": [
+    "SKILL.md",
+    "references/",
+    "scripts/python/src/poe_build_research/pob/",
+    "scripts/python/schemas/pob/",
+    "scripts/python/schemas/plan/",
+    "scripts/python/locks/",
+    "templates/reports/",
+    "scripts/python/vendor/pob/source/src/Data/Skills/"
+  ],
+  "readiness_probe": "poe-build-architect"
+}

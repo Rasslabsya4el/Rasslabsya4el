@@ -1,0 +1,216 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/pob/pob.variant-handoff.schema.json",
+  "title": "PoB variant handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "handoff_kind",
+    "workspace_id",
+    "supported_path",
+    "variant_id",
+    "variant_role",
+    "parent_variant_id",
+    "workspace_manifest_path",
+    "variant_manifest_path",
+    "workspace_path",
+    "settings_path",
+    "runtime_manifest_path",
+    "runtime_launcher_path",
+    "primary_build_path",
+    "build_name",
+    "staged_build_files",
+    "control_dependencies",
+    "created_at"
+  ],
+  "properties": {
+    "handoff_kind": {
+      "const": "next_pob_run_variant_workspace_v1"
+    },
+    "workspace_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "supported_path": {
+      "const": "accepted_live_control_variant_workspace_v1"
+    },
+    "variant_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "variant_role": {
+      "type": "string",
+      "enum": [
+        "base",
+        "fork"
+      ]
+    },
+    "parent_variant_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "workspace_manifest_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "variant_manifest_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "workspace_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "settings_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "runtime_manifest_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "runtime_launcher_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "primary_build_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "build_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "staged_build_files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/stagedBuildFile"
+      }
+    },
+    "control_dependencies": {
+      "$ref": "#/$defs/controlDependencies"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "controlDependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "supported_path",
+        "run_id",
+        "build_id",
+        "input_request_path",
+        "input_request_sha256",
+        "control_result_path",
+        "control_result_sha256",
+        "runtime_snapshot_path",
+        "runtime_snapshot_sha256",
+        "run_manifest_path",
+        "run_manifest_sha256",
+        "source_workspace_path",
+        "source_settings_path",
+        "source_runtime_manifest_path",
+        "source_runtime_launcher_path",
+        "source_workspace_build_path",
+        "source_workspace_build_sha256"
+      ],
+      "properties": {
+        "supported_path": {
+          "const": "pinned_portable_build_xml_settings_v1"
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "build_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_request_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_request_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "control_result_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "control_result_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "runtime_snapshot_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "runtime_snapshot_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "run_manifest_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "run_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "source_workspace_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_settings_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_runtime_manifest_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_runtime_launcher_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_workspace_build_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_workspace_build_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "stagedBuildFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "size"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "size": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}

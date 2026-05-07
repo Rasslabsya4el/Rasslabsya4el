@@ -1,0 +1,415 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/plan/surface_impact_classification.schema.json",
+  "title": "SurfaceImpactClassification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "classification_id",
+    "generated_at",
+    "status",
+    "action_refs",
+    "comparison_refs",
+    "calc_diff_refs",
+    "impacted_surfaces",
+    "impact_categories",
+    "primary_impact",
+    "secondary_impacts",
+    "measured_or_expected",
+    "evidence_refs",
+    "classification_reason",
+    "uncertainty",
+    "missing_evidence",
+    "validation",
+    "product_agent_behavioral_proof_required"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "surface_impact_classification"
+    },
+    "classification_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "accepted",
+        "not_accepted"
+      ]
+    },
+    "action_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "comparison_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "calc_diff_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "impacted_surfaces": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/impacted_surface"
+      }
+    },
+    "impact_categories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/impact_category"
+      }
+    },
+    "primary_impact": {
+      "$ref": "#/$defs/impact_category"
+    },
+    "secondary_impacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/impact_category"
+      }
+    },
+    "measured_or_expected": {
+      "type": "string",
+      "enum": [
+        "measured",
+        "expected",
+        "mixed"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_ref"
+      }
+    },
+    "classification_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "uncertainty": {
+      "$ref": "#/$defs/uncertainty"
+    },
+    "missing_evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/missing_evidence"
+      }
+    },
+    "validation": {
+      "$ref": "#/$defs/validation_summary"
+    },
+    "product_agent_behavioral_proof_required": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "$defs": {
+    "impact_category": {
+      "type": "string",
+      "enum": [
+        "offense",
+        "defense",
+        "quality_of_life",
+        "sustain",
+        "requirement_relief",
+        "reservation",
+        "usability",
+        "progression_friction",
+        "regression",
+        "unknown",
+        "missing_evidence"
+      ]
+    },
+    "impacted_surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface_ref_id",
+        "source_kind",
+        "source_ref_id",
+        "surface_id",
+        "surface_kind",
+        "metric_key",
+        "direction",
+        "measured_or_expected",
+        "impact_categories",
+        "is_regression",
+        "baseline_value",
+        "after_value",
+        "absolute_delta",
+        "percent_delta",
+        "classification_source",
+        "classification_reason"
+      ],
+      "properties": {
+        "surface_ref_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_ref_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "surface_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "surface_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metric_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "direction": {
+          "type": "string",
+          "minLength": 1
+        },
+        "measured_or_expected": {
+          "type": "string",
+          "enum": [
+            "measured",
+            "expected",
+            "mixed"
+          ]
+        },
+        "impact_categories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/impact_category"
+          }
+        },
+        "is_regression": {
+          "type": "boolean"
+        },
+        "baseline_value": {
+          "type": [
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "after_value": {
+          "type": [
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "absolute_delta": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "percent_delta": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "classification_source": {
+          "$ref": "#/$defs/classification_source"
+        },
+        "classification_reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "classification_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "calc_classification",
+        "expected_direction"
+      ],
+      "properties": {
+        "calc_classification": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "expected_direction": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "evidence_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ref_id",
+        "evidence_kind",
+        "locator",
+        "json_pointer",
+        "summary"
+      ],
+      "properties": {
+        "ref_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_kind": {
+          "type": "string",
+          "enum": [
+            "pre_pob_triage",
+            "action_cost_value_ledger",
+            "calc_delta",
+            "pathing_opportunity_cost",
+            "comparison_protocol",
+            "surface_impact_classification",
+            "source_ledger",
+            "static_cost_estimate",
+            "other"
+          ]
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "json_pointer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "notes"
+      ],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "unknown"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "missing_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_kind",
+        "reason",
+        "blocking",
+        "surface_ref_id"
+      ],
+      "properties": {
+        "evidence_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blocking": {
+          "type": "boolean"
+        },
+        "surface_ref_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "validation_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finding_count",
+        "findings"
+      ],
+      "properties": {
+        "finding_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          }
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "summary"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "surface_ref_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

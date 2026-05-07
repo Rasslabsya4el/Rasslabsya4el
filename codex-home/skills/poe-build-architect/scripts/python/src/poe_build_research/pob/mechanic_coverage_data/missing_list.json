@@ -1,0 +1,563 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_id": "pob_mechanic_coverage",
+  "family": "missing_list",
+  "record_count": 6,
+  "provenance": {
+    "source_game_corpus": {
+      "corpus_id": "pob_game_corpus",
+      "manifest_path": "src/poe_build_research/pob/corpus_data/manifest.json",
+      "manifest_sha256": "fddf685074afb5109ce7c3336acc57a17663f0c98204d35fbc33d89ba8f02d65",
+      "schema_version": "1.0.0",
+      "source_lane": {
+        "canonical_path": "vendor/pob/source",
+        "lane_id": "pob_source_lane",
+        "lock_path": "locks/pob.source.lock.json",
+        "observed_commit": "143ade33da3bd0f1c803671f17930b839c79ace7",
+        "pinned_commit": "143ade33da3bd0f1c803671f17930b839c79ace7",
+        "pinned_ref": "refs/tags/v2.64.0",
+        "repo": "PathOfBuildingCommunity/PathOfBuilding",
+        "repo_url": "https://github.com/PathOfBuildingCommunity/PathOfBuilding.git",
+        "tree_version": "3_28"
+      }
+    },
+    "source_tag_corpus": {
+      "corpus_id": "pob_tag_corpus",
+      "manifest_path": "src/poe_build_research/pob/tag_data/manifest.json",
+      "manifest_sha256": "cafadad041352467105c02efbab202823c11c4dc6276ae778531a9119f53ba2c",
+      "schema_version": "1.0.0",
+      "derived_from_game_manifest_sha256": "fddf685074afb5109ce7c3336acc57a17663f0c98204d35fbc33d89ba8f02d65",
+      "bundle_inputs": [
+        {
+          "family": "items",
+          "relative_path": "src/poe_build_research/pob/tag_data/items.json",
+          "record_count": 1062,
+          "sha256": "8a24fd645abb86894ddb074567bbadb080e03c14e276f177d35ffb3da1d01414"
+        },
+        {
+          "family": "active_gems",
+          "relative_path": "src/poe_build_research/pob/tag_data/active_gems.json",
+          "record_count": 549,
+          "sha256": "de82931cd95cc0029690d89a0d15efb1da77b54432671d3a33f795f522b2026d"
+        },
+        {
+          "family": "support_gems",
+          "relative_path": "src/poe_build_research/pob/tag_data/support_gems.json",
+          "record_count": 261,
+          "sha256": "35ad2b0e8fc7de25274388f97ad46abcdc7888ca85996b8a32fbc17ab4df56cb"
+        },
+        {
+          "family": "passives",
+          "relative_path": "src/poe_build_research/pob/tag_data/passives.json",
+          "record_count": 2415,
+          "sha256": "bb1a8e3a1212c8130ac558c5a2cbc6f99e2160b97a9bcd058899ac75af4d960a"
+        },
+        {
+          "family": "masteries",
+          "relative_path": "src/poe_build_research/pob/tag_data/masteries.json",
+          "record_count": 351,
+          "sha256": "ee02b95d2a024b2575da4cb05b3a4700fc1b11d1c74c852b23ff2f009c103fc7"
+        },
+        {
+          "family": "ascendancies",
+          "relative_path": "src/poe_build_research/pob/tag_data/ascendancies.json",
+          "record_count": 34,
+          "sha256": "8d1ec40ac6d6709313cadf34027fded3df6ac5dac0d0b7e4e8db3d6ace9a75fe"
+        },
+        {
+          "family": "keystones",
+          "relative_path": "src/poe_build_research/pob/tag_data/keystones.json",
+          "record_count": 54,
+          "sha256": "3d9cd6cc8fa2a50a8434a1801d80b241f3be5cf210dd16f747fb95e2234df498"
+        },
+        {
+          "family": "config_surfaces",
+          "relative_path": "src/poe_build_research/pob/tag_data/config_surfaces.json",
+          "record_count": 569,
+          "sha256": "3730e154772e6e5a3b2ae25afe68339e013f7cf14428e1514f45c35baa9c8204"
+        }
+      ]
+    },
+    "source_mod_corpus": {
+      "corpus_id": "pob_mod_corpus",
+      "manifest_path": "src/poe_build_research/pob/mod_data/manifest.json",
+      "manifest_sha256": "cf80e4a4fc1758a622a0102605b0ab5bd988c25b932d72217611738fe2dd4e42",
+      "schema_version": "1.0.0",
+      "derived_from_game_manifest_sha256": "fddf685074afb5109ce7c3336acc57a17663f0c98204d35fbc33d89ba8f02d65",
+      "bundle_inputs": [
+        {
+          "family": "mod_families",
+          "relative_path": "src/poe_build_research/pob/mod_data/mod_families.json",
+          "record_count": 1787,
+          "sha256": "875479d86481fd39a8181c77b7f4571cacf0ee7ab8f20ae85d00abe3e05b681c"
+        },
+        {
+          "family": "stat_families",
+          "relative_path": "src/poe_build_research/pob/mod_data/stat_families.json",
+          "record_count": 1604,
+          "sha256": "596e58dc200f43d7c7587d3ee97f4eedff5bdc4756fc408c88f5f79bb141b902"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "generated_from_family": "coverage_map",
+    "status_order": [
+      "covered",
+      "partial",
+      "gap"
+    ],
+    "coverage_status_counts": {
+      "covered": 0,
+      "partial": 4,
+      "gap": 2
+    },
+    "follow_up_sources": [
+      "wiki",
+      "curated_notes"
+    ],
+    "consumer_rule": "External wiki and curated notes work must start from this committed missing list instead of inventing ad hoc gap areas."
+  },
+  "records": [
+    {
+      "group_id": "mechanic_group:nova",
+      "group_key": "nova",
+      "domains": [
+        "mechanic"
+      ],
+      "coverage_status": "partial",
+      "missing_layers": [],
+      "partial_layers": [
+        "scaling"
+      ],
+      "present_layers": [
+        "delivery",
+        "scaling",
+        "enablement"
+      ],
+      "status_reason": "Layer(s) scaling rely on single-surface evidence and need follow-up.",
+      "next_step_sources": [
+        "wiki",
+        "curated_notes"
+      ],
+      "evidence_samples": [
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "active_gems",
+          "record_id": "active_gems:blade_blast_alt_x",
+          "display_name": "Blade Blast of Unloading",
+          "matched_terms": [
+            "mechanic",
+            "nova"
+          ],
+          "source_families": [
+            "active_gems"
+          ],
+          "supporting_text": [
+            "Blade Blast of Unloading",
+            "Spell, AoE, Physical, Nova"
+          ]
+        },
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "active_gems",
+          "record_id": "active_gems:blade_blast_alt_y",
+          "display_name": "Blade Blast of Dagger Detonation",
+          "matched_terms": [
+            "mechanic",
+            "nova"
+          ],
+          "source_families": [
+            "active_gems"
+          ],
+          "supporting_text": [
+            "Blade Blast of Dagger Detonation",
+            "Spell, AoE, Physical, Nova"
+          ]
+        },
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "support_gems",
+          "record_id": "support_gems:support_arrow_nova",
+          "display_name": "Arrow Nova",
+          "matched_terms": [
+            "mechanic",
+            "nova"
+          ],
+          "source_families": [
+            "support_gems"
+          ],
+          "supporting_text": [
+            "Arrow Nova",
+            "Bow, Attack, Support, Projectile"
+          ]
+        }
+      ]
+    },
+    {
+      "group_id": "mechanic_group:quiver",
+      "group_key": "quiver",
+      "domains": [
+        "weapon"
+      ],
+      "coverage_status": "partial",
+      "missing_layers": [],
+      "partial_layers": [
+        "scaling"
+      ],
+      "present_layers": [
+        "delivery",
+        "scaling",
+        "enablement"
+      ],
+      "status_reason": "Layer(s) scaling rely on single-surface evidence and need follow-up.",
+      "next_step_sources": [
+        "wiki",
+        "curated_notes"
+      ],
+      "evidence_samples": [
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "items",
+          "record_id": "items:artillery_quiver",
+          "display_name": "Artillery Quiver",
+          "matched_terms": [
+            "item_class",
+            "item_slot",
+            "quiver",
+            "weapon"
+          ],
+          "source_families": [
+            "items"
+          ],
+          "supporting_text": [
+            "Artillery Quiver",
+            "Quiver"
+          ]
+        },
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "items",
+          "record_id": "items:blazing_arrow_quiver",
+          "display_name": "Blazing Arrow Quiver",
+          "matched_terms": [
+            "item_class",
+            "item_slot",
+            "quiver",
+            "weapon"
+          ],
+          "source_families": [
+            "items"
+          ],
+          "supporting_text": [
+            "Blazing Arrow Quiver",
+            "Quiver"
+          ]
+        },
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "items",
+          "record_id": "items:artillery_quiver",
+          "display_name": "Artillery Quiver",
+          "matched_terms": [
+            "item_class",
+            "item_slot",
+            "quiver",
+            "weapon"
+          ],
+          "source_families": [
+            "items"
+          ],
+          "supporting_text": [
+            "Artillery Quiver",
+            "Quiver"
+          ]
+        }
+      ]
+    },
+    {
+      "group_id": "mechanic_group:slam",
+      "group_key": "slam",
+      "domains": [
+        "mechanic"
+      ],
+      "coverage_status": "partial",
+      "missing_layers": [],
+      "partial_layers": [
+        "scaling"
+      ],
+      "present_layers": [
+        "delivery",
+        "scaling",
+        "enablement"
+      ],
+      "status_reason": "Layer(s) scaling rely on single-surface evidence and need follow-up.",
+      "next_step_sources": [
+        "wiki",
+        "curated_notes"
+      ],
+      "evidence_samples": [
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "items",
+          "record_id": "items:battering_uulgraft",
+          "display_name": "Battering Uulgraft",
+          "matched_terms": [
+            "mechanic",
+            "slam"
+          ],
+          "source_families": [
+            "items"
+          ],
+          "supporting_text": [
+            "Battering Uulgraft",
+            "Graft"
+          ]
+        },
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "active_gems",
+          "record_id": "active_gems:consecrated_path",
+          "display_name": "Consecrated Path",
+          "matched_terms": [
+            "mechanic",
+            "slam"
+          ],
+          "source_families": [
+            "active_gems"
+          ],
+          "supporting_text": [
+            "Consecrated Path",
+            "Fire, Melee, Attack, AoE, Movement, Duration, Slam"
+          ]
+        },
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "items",
+          "record_id": "items:battering_uulgraft",
+          "display_name": "Battering Uulgraft",
+          "matched_terms": [
+            "mechanic",
+            "slam"
+          ],
+          "source_families": [
+            "items"
+          ],
+          "supporting_text": [
+            "Battering Uulgraft",
+            "Graft"
+          ]
+        }
+      ]
+    },
+    {
+      "group_id": "mechanic_group:warstaff",
+      "group_key": "warstaff",
+      "domains": [
+        "weapon"
+      ],
+      "coverage_status": "partial",
+      "missing_layers": [],
+      "partial_layers": [
+        "scaling"
+      ],
+      "present_layers": [
+        "delivery",
+        "scaling",
+        "enablement"
+      ],
+      "status_reason": "Layer(s) scaling rely on single-surface evidence and need follow-up.",
+      "next_step_sources": [
+        "wiki",
+        "curated_notes"
+      ],
+      "evidence_samples": [
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "items",
+          "record_id": "items:capacity_rod",
+          "display_name": "Capacity Rod",
+          "matched_terms": [
+            "item_class",
+            "warstaff",
+            "weapon"
+          ],
+          "source_families": [
+            "items"
+          ],
+          "supporting_text": [
+            "Capacity Rod",
+            "Staff"
+          ]
+        },
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "items",
+          "record_id": "items:coiled_staff",
+          "display_name": "Coiled Staff",
+          "matched_terms": [
+            "item_class",
+            "warstaff",
+            "weapon"
+          ],
+          "source_families": [
+            "items"
+          ],
+          "supporting_text": [
+            "Coiled Staff",
+            "Staff"
+          ]
+        },
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "items",
+          "record_id": "items:capacity_rod",
+          "display_name": "Capacity Rod",
+          "matched_terms": [
+            "item_class",
+            "warstaff",
+            "weapon"
+          ],
+          "source_families": [
+            "items"
+          ],
+          "supporting_text": [
+            "Capacity Rod",
+            "Staff"
+          ]
+        }
+      ]
+    },
+    {
+      "group_id": "mechanic_group:exposure",
+      "group_key": "exposure",
+      "domains": [
+        "ailment"
+      ],
+      "coverage_status": "gap",
+      "missing_layers": [
+        "delivery"
+      ],
+      "partial_layers": [],
+      "present_layers": [
+        "scaling",
+        "enablement"
+      ],
+      "status_reason": "Required layer(s) delivery have no committed PoB-side evidence.",
+      "next_step_sources": [
+        "wiki",
+        "curated_notes"
+      ],
+      "evidence_samples": [
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "passives",
+          "record_id": "passives:2306",
+          "display_name": "Corrosive Elements",
+          "matched_terms": [
+            "ailment",
+            "exposure"
+          ],
+          "source_families": [
+            "passives"
+          ],
+          "supporting_text": [
+            "Corrosive Elements",
+            "15% increased Elemental Damage"
+          ]
+        },
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "passives",
+          "record_id": "passives:28551",
+          "display_name": "Heraldry",
+          "matched_terms": [
+            "ailment",
+            "exposure"
+          ],
+          "source_families": [
+            "passives"
+          ],
+          "supporting_text": [
+            "Heraldry",
+            "Nearby Enemies have Cold Exposure while you are affected by Herald of Ice"
+          ]
+        },
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "ascendancies",
+          "record_id": "ascendancies:ascendant",
+          "display_name": "Ascendant",
+          "matched_terms": [
+            "ailment",
+            "exposure"
+          ],
+          "source_families": [
+            "ascendancies"
+          ],
+          "supporting_text": [
+            "Ascendant",
+            "Scion"
+          ]
+        }
+      ]
+    },
+    {
+      "group_id": "mechanic_group:orb",
+      "group_key": "orb",
+      "domains": [
+        "mechanic"
+      ],
+      "coverage_status": "gap",
+      "missing_layers": [
+        "scaling",
+        "enablement"
+      ],
+      "partial_layers": [],
+      "present_layers": [
+        "delivery"
+      ],
+      "status_reason": "Required layer(s) scaling, enablement have no committed PoB-side evidence.",
+      "next_step_sources": [
+        "wiki",
+        "curated_notes"
+      ],
+      "evidence_samples": [
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "active_gems",
+          "record_id": "active_gems:ball_lightning_alt_y",
+          "display_name": "Ball Lightning of Static",
+          "matched_terms": [
+            "mechanic",
+            "orb"
+          ],
+          "source_families": [
+            "active_gems"
+          ],
+          "supporting_text": [
+            "Ball Lightning of Static",
+            "Spell, AoE, Lightning, Orb"
+          ]
+        },
+        {
+          "corpus_id": "pob_tag_corpus",
+          "family": "active_gems",
+          "record_id": "active_gems:cremation",
+          "display_name": "Cremation",
+          "matched_terms": [
+            "mechanic",
+            "orb"
+          ],
+          "source_families": [
+            "active_gems"
+          ],
+          "supporting_text": [
+            "Cremation",
+            "Spell, AoE, Fire, Duration, Projectile, Orb"
+          ]
+        }
+      ]
+    }
+  ]
+}

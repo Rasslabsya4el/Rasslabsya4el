@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "skill_name": "poe-build-review",
+  "version": "0.1.0-clean-seed",
+  "package_role": "product_runtime_skill",
+  "runtime_boundary": "self_contained_installed_skill",
+  "primary_modes": [
+    "bounded_build_review",
+    "bottleneck_ranking",
+    "fix_comparison"
+  ],
+  "packaged_assets": [
+    "SKILL.md",
+    "references/",
+    "templates/build_review.md",
+    "scripts/python/schemas/plan/build_review.schema.json"
+  ],
+  "readiness_probe": "poe-build-review"
+}

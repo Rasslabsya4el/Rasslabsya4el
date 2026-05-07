@@ -11,11 +11,6 @@ import yaml
 
 MAX_SKILL_NAME_LENGTH = 64
 
-try:
-    sys.stdout.reconfigure(encoding="utf-8")
-except Exception:
-    pass
-
 
 def validate_skill(skill_path):
     """Basic validation of a skill"""
@@ -25,10 +20,7 @@ def validate_skill(skill_path):
     if not skill_md.exists():
         return False, "SKILL.md not found"
 
-    try:
-        content = skill_md.read_text(encoding="utf-8")
-    except UnicodeDecodeError:
-        content = skill_md.read_text()
+    content = skill_md.read_text()
     if not content.startswith("---"):
         return False, "No YAML frontmatter found"
 

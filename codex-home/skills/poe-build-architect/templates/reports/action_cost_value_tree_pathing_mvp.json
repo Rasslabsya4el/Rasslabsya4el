@@ -1,0 +1,304 @@
+{
+  "schema_version": "0.1.0",
+  "record_kind": "action_cost_value_ledger",
+  "ledger_id": "cv1.tree-pathing.template",
+  "generated_at": "2026-05-06T00:00:00Z",
+  "decision_family": "direct_build.tree_pathing",
+  "action_scope": "tree",
+  "comparison_context": {
+    "context_id": "cv1.tree-pathing.template",
+    "label": "Direct Build tree/pathing package comparison",
+    "request_summary": "Template fixture showing one selected tree package and two rejected alternatives.",
+    "objective_profile": [
+      "compare resource cost before publication",
+      "preserve rejected alternatives",
+      "record expected affected surfaces"
+    ],
+    "baseline_refs": [
+      {
+        "ref_id": "cv1.template.static-context",
+        "evidence_kind": "static_cost_estimate",
+        "locator": null,
+        "json_pointer": null,
+        "summary": "Template fixture only; no PoB state is mutated."
+      }
+    ]
+  },
+  "status": "accepted",
+  "selected_action_id": "tree_pathing.rt_package",
+  "rows": [
+    {
+      "action_id": "tree_pathing.rt_package",
+      "decision_family": "direct_build.tree_pathing",
+      "action_scope": "tree",
+      "candidate_action": {
+        "label": "Resolute Technique pathing package",
+        "summary": "Spend a compact package to solve hit chance and avoid accuracy pressure.",
+        "action_kind": "allocate_tree_package",
+        "payload_ref": null,
+        "tags": [
+          "accuracy_repair",
+          "tree_package",
+          "low_travel"
+        ]
+      },
+      "resource_cost": {
+        "scarce_resource_summary": "4 passive points, including 2 travel points.",
+        "cost_components": [
+          {
+            "resource": "passive_points",
+            "amount": 4,
+            "unit": "points",
+            "direction": "spent",
+            "note": "Total package cost."
+          },
+          {
+            "resource": "travel_points",
+            "amount": 2,
+            "unit": "points",
+            "direction": "spent",
+            "note": "Connector nodes before payoff nodes."
+          }
+        ],
+        "opportunity_cost_notes": [
+          "Spending this package delays at least one other nearby tree package."
+        ]
+      },
+      "alternatives_considered": [
+        {
+          "action_id": "tree_pathing.damage_wheel",
+          "label": "damage wheel",
+          "relationship": "selected_over"
+        },
+        {
+          "action_id": "tree_pathing.long_life_route",
+          "label": "long life route",
+          "relationship": "selected_over"
+        }
+      ],
+      "expected_surfaces": [
+        {
+          "surface_kind": "tree_state",
+          "metric_key": "normal_passive_count",
+          "expected_direction": "increase",
+          "note": "Tree package consumes passive budget."
+        },
+        {
+          "surface_kind": "constraint",
+          "metric_key": "hit_chance_or_requirement_pressure",
+          "expected_direction": "repair",
+          "note": "Expected constraint repair before later Calc diff evidence exists."
+        }
+      ],
+      "evidence_refs": [
+        {
+          "ref_id": "evidence.tree_pathing.rt_package.static-cost",
+          "evidence_kind": "static_cost_estimate",
+          "locator": null,
+          "json_pointer": null,
+          "summary": "Static package cost authored from the compared tree pathing package."
+        }
+      ],
+      "value_summary": {
+        "value_label": "Resolute Technique pathing package",
+        "expected_gain_summary": "Repairs hit chance reliability while keeping pathing compact.",
+        "cost_summary": "4 passive / 2 travel.",
+        "normalized_value": "constraint repair + low travel cost",
+        "tradeoff_notes": [
+          "Template does not claim measured PoB improvement."
+        ]
+      },
+      "verdict": "selected",
+      "verdict_reason": "Selected because it repairs the accuracy surface for fewer total passives than the damage wheel and has clearer proof needs than the long travel package.",
+      "uncertainty": {
+        "level": "medium",
+        "notes": [
+          "No new PoB optimization run is part of CV1."
+        ]
+      },
+      "missing_evidence": []
+    },
+    {
+      "action_id": "tree_pathing.damage_wheel",
+      "decision_family": "direct_build.tree_pathing",
+      "action_scope": "tree",
+      "candidate_action": {
+        "label": "Nearby fire damage wheel",
+        "summary": "Take a short damage-only wheel near current pathing.",
+        "action_kind": "allocate_tree_package",
+        "payload_ref": null,
+        "tags": [
+          "dps_gain",
+          "tree_package"
+        ]
+      },
+      "resource_cost": {
+        "scarce_resource_summary": "3 passive points, including 1 travel points.",
+        "cost_components": [
+          {
+            "resource": "passive_points",
+            "amount": 3,
+            "unit": "points",
+            "direction": "spent",
+            "note": "Total package cost."
+          },
+          {
+            "resource": "travel_points",
+            "amount": 1,
+            "unit": "points",
+            "direction": "spent",
+            "note": "Connector nodes before payoff nodes."
+          }
+        ],
+        "opportunity_cost_notes": [
+          "Spending this package delays at least one other nearby tree package."
+        ]
+      },
+      "alternatives_considered": [
+        {
+          "action_id": "tree_pathing.rt_package",
+          "label": "rt package",
+          "relationship": "rejected_for"
+        },
+        {
+          "action_id": "tree_pathing.long_life_route",
+          "label": "long life route",
+          "relationship": "rejected_for"
+        }
+      ],
+      "expected_surfaces": [
+        {
+          "surface_kind": "tree_state",
+          "metric_key": "normal_passive_count",
+          "expected_direction": "increase",
+          "note": "Tree package consumes passive budget."
+        },
+        {
+          "surface_kind": "pob_metric",
+          "metric_key": "FullDPS",
+          "expected_direction": "increase",
+          "note": "Damage-only package expects DPS movement."
+        }
+      ],
+      "evidence_refs": [
+        {
+          "ref_id": "evidence.tree_pathing.damage_wheel.static-cost",
+          "evidence_kind": "static_cost_estimate",
+          "locator": null,
+          "json_pointer": null,
+          "summary": "Static package cost authored from the compared tree pathing package."
+        }
+      ],
+      "value_summary": {
+        "value_label": "Nearby fire damage wheel",
+        "expected_gain_summary": "Expected DPS increase without repairing hit chance or requirements.",
+        "cost_summary": "3 passive / 1 travel.",
+        "normalized_value": "moderate DPS per passive, no constraint repair",
+        "tradeoff_notes": [
+          "Template does not claim measured PoB improvement."
+        ]
+      },
+      "verdict": "rejected",
+      "verdict_reason": "Rejected because the package spends fewer points but does not repair the active accuracy constraint.",
+      "uncertainty": {
+        "level": "medium",
+        "notes": [
+          "No new PoB optimization run is part of CV1."
+        ]
+      },
+      "missing_evidence": []
+    },
+    {
+      "action_id": "tree_pathing.long_life_route",
+      "decision_family": "direct_build.tree_pathing",
+      "action_scope": "tree",
+      "candidate_action": {
+        "label": "Long travel to life wheel",
+        "summary": "Travel farther to reach a larger life wheel and incidental attributes.",
+        "action_kind": "allocate_tree_package",
+        "payload_ref": null,
+        "tags": [
+          "defense_gain",
+          "attribute_pressure",
+          "high_travel"
+        ]
+      },
+      "resource_cost": {
+        "scarce_resource_summary": "6 passive points, including 4 travel points.",
+        "cost_components": [
+          {
+            "resource": "passive_points",
+            "amount": 6,
+            "unit": "points",
+            "direction": "spent",
+            "note": "Total package cost."
+          },
+          {
+            "resource": "travel_points",
+            "amount": 4,
+            "unit": "points",
+            "direction": "spent",
+            "note": "Connector nodes before payoff nodes."
+          }
+        ],
+        "opportunity_cost_notes": [
+          "Spending this package delays at least one other nearby tree package."
+        ]
+      },
+      "alternatives_considered": [
+        {
+          "action_id": "tree_pathing.rt_package",
+          "label": "rt package",
+          "relationship": "rejected_for"
+        },
+        {
+          "action_id": "tree_pathing.damage_wheel",
+          "label": "damage wheel",
+          "relationship": "rejected_for"
+        }
+      ],
+      "expected_surfaces": [
+        {
+          "surface_kind": "tree_state",
+          "metric_key": "normal_passive_count",
+          "expected_direction": "increase",
+          "note": "Tree package consumes passive budget."
+        },
+        {
+          "surface_kind": "pob_metric",
+          "metric_key": "Life",
+          "expected_direction": "increase",
+          "note": "Life package expects defense movement."
+        }
+      ],
+      "evidence_refs": [
+        {
+          "ref_id": "evidence.tree_pathing.long_life_route.static-cost",
+          "evidence_kind": "static_cost_estimate",
+          "locator": null,
+          "json_pointer": null,
+          "summary": "Static package cost authored from the compared tree pathing package."
+        }
+      ],
+      "value_summary": {
+        "value_label": "Long travel to life wheel",
+        "expected_gain_summary": "Expected life and attribute comfort, but delayed payoff.",
+        "cost_summary": "6 passive / 4 travel.",
+        "normalized_value": "defense gain with high travel cost",
+        "tradeoff_notes": [
+          "Template does not claim measured PoB improvement."
+        ]
+      },
+      "verdict": "rejected",
+      "verdict_reason": "Rejected for the MVP comparison because four travel points make the opportunity cost too high before the build has solved hit reliability.",
+      "uncertainty": {
+        "level": "medium",
+        "notes": [
+          "No new PoB optimization run is part of CV1."
+        ]
+      },
+      "missing_evidence": []
+    }
+  ],
+  "blockers": []
+}

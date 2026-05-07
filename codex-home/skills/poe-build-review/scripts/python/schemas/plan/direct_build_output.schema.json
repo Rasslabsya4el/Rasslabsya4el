@@ -1,0 +1,1025 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/plan/direct_build_output.schema.json",
+  "title": "DirectBuildOutput",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "assembly_id",
+    "generated_at",
+    "source_context",
+    "artifact_locator",
+    "proof_refs",
+    "composition_summary",
+    "budget_shell",
+    "baseline_state",
+    "conditional_state",
+    "assumptions",
+    "blockers",
+    "freshness_notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "direct_build_output"
+    },
+    "assembly_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_context": {
+      "$ref": "#/$defs/source_context"
+    },
+    "artifact_locator": {
+      "$ref": "#/$defs/artifact_locator"
+    },
+    "proof_refs": {
+      "$ref": "#/$defs/proof_refs"
+    },
+    "composition_summary": {
+      "$ref": "#/$defs/composition_summary"
+    },
+    "budget_shell": {
+      "$ref": "#/$defs/budget_shell"
+    },
+    "baseline_state": {
+      "$ref": "#/$defs/state_section"
+    },
+    "conditional_state": {
+      "$ref": "#/$defs/state_section"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/assumption"
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/blocker"
+      }
+    },
+    "freshness_notes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/freshness_note"
+      }
+    }
+  },
+  "$defs": {
+    "brief_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "brief_id",
+        "label",
+        "locator"
+      ],
+      "properties": {
+        "brief_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "accepted_candidate_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shortlist_id",
+        "candidate_id",
+        "candidate_label",
+        "locator"
+      ],
+      "properties": {
+        "shortlist_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidate_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidate_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "source_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entry_kind",
+        "request_summary",
+        "brief_ref",
+        "accepted_candidate_ref"
+      ],
+      "properties": {
+        "entry_kind": {
+          "type": "string",
+          "enum": [
+            "brief_only",
+            "accepted_candidate_only",
+            "brief_plus_accepted_candidate"
+          ]
+        },
+        "request_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "brief_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/brief_ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "accepted_candidate_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/accepted_candidate_ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "anyOf": [
+            {
+              "properties": {
+                "brief_ref": {
+                  "$ref": "#/$defs/brief_ref"
+                }
+              }
+            },
+            {
+              "properties": {
+                "accepted_candidate_ref": {
+                  "$ref": "#/$defs/accepted_candidate_ref"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "if": {
+            "properties": {
+              "entry_kind": {
+                "const": "brief_only"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "brief_ref": {
+                "$ref": "#/$defs/brief_ref"
+              },
+              "accepted_candidate_ref": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "entry_kind": {
+                "const": "accepted_candidate_only"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "brief_ref": {
+                "type": "null"
+              },
+              "accepted_candidate_ref": {
+                "$ref": "#/$defs/accepted_candidate_ref"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "entry_kind": {
+                "const": "brief_plus_accepted_candidate"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "brief_ref": {
+                "$ref": "#/$defs/brief_ref"
+              },
+              "accepted_candidate_ref": {
+                "$ref": "#/$defs/accepted_candidate_ref"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "artifact_locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "artifact_kind",
+        "locator",
+        "workspace_locator",
+        "handoff_locator"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_kind": {
+          "type": "string",
+          "enum": [
+            "pob_xml",
+            "pob_workspace_build",
+            "pob_import_bundle"
+          ]
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "workspace_locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "handoff_locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "proof_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pob_run_id",
+        "primary_proof_kind",
+        "primary_proof_locator",
+        "live_control_result_locator",
+        "workspace_manifest_locator",
+        "next_run_handoff_locator",
+        "import_code_verifier_status",
+        "import_code_verifier_locator",
+        "import_code_verifier_payload_sha256",
+        "semantic_validation_status",
+        "semantic_validation_locator",
+        "semantic_validation_mode",
+        "materialization_source_packet_status",
+        "materialization_source_packet_locator",
+        "pre_materialization_checkpoint_status",
+        "pre_materialization_checkpoint_locator"
+      ],
+      "properties": {
+        "pob_run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primary_proof_kind": {
+          "type": "string",
+          "enum": [
+            "pob_run",
+            "live_control_load",
+            "workspace_manifest",
+            "handoff_receipt"
+          ]
+        },
+        "primary_proof_locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "live_control_result_locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "workspace_manifest_locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "next_run_handoff_locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "import_code_verifier_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "accepted",
+            null
+          ]
+        },
+        "import_code_verifier_locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "import_code_verifier_payload_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "semantic_validation_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "passed",
+            "needs_revision",
+            "rejected",
+            null
+          ]
+        },
+        "semantic_validation_locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "semantic_validation_mode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "product",
+            "proof/minimal",
+            null
+          ]
+        },
+        "materialization_source_packet_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "source_ready",
+            "blocked",
+            "not_applicable",
+            null
+          ]
+        },
+        "materialization_source_packet_locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pre_materialization_checkpoint_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "passed",
+            "blocked",
+            null
+          ]
+        },
+        "pre_materialization_checkpoint_locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "tree_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary",
+        "keystones",
+        "mastery_focus"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "keystones": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "mastery_focus": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "gem_link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "group_label",
+        "primary_gem",
+        "support_gems",
+        "notes"
+      ],
+      "properties": {
+        "group_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primary_gem": {
+          "type": "string",
+          "minLength": 1
+        },
+        "support_gems": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "item_shell_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "slot",
+        "label",
+        "rarity_expectation",
+        "source_note"
+      ],
+      "properties": {
+        "slot": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rarity_expectation": {
+          "type": "string",
+          "enum": [
+            "normal",
+            "magic",
+            "rare",
+            "unique",
+            "mixed"
+          ]
+        },
+        "source_note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "config_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "baseline_guards",
+        "conditional_enables",
+        "notes"
+      ],
+      "properties": {
+        "baseline_guards": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "conditional_enables": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "composition_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "build_label",
+        "class_name",
+        "ascendancy",
+        "main_skill",
+        "ready_pob_import",
+        "tree_summary",
+        "gem_links",
+        "item_shell",
+        "config_summary"
+      ],
+      "properties": {
+        "build_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "class_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ascendancy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "main_skill": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ready_pob_import": {
+          "$ref": "#/$defs/ready_pob_import"
+        },
+        "tree_summary": {
+          "$ref": "#/$defs/tree_summary"
+        },
+        "gem_links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/gem_link"
+          }
+        },
+        "item_shell": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/item_shell_entry"
+          }
+        },
+        "config_summary": {
+          "$ref": "#/$defs/config_summary"
+        }
+      }
+    },
+    "ready_pob_import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface_kind",
+        "locator",
+        "payload"
+      ],
+      "properties": {
+        "surface_kind": {
+          "type": "string",
+          "enum": [
+            "pob_xml",
+            "pob_string",
+            "pob_import_bundle"
+          ]
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "payload": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "surface_kind": {
+                "const": "pob_string"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "locator": {
+                "type": "null"
+              },
+              "payload": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "(^eN|<\\?xml|<PathOfBuilding)"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "surface_kind": {
+                "enum": [
+                  "pob_xml",
+                  "pob_import_bundle"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              },
+              "payload": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "budget_line_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "slot",
+        "label",
+        "amount_chaos",
+        "mandatory",
+        "source_kind",
+        "source_ref",
+        "note"
+      ],
+      "properties": {
+        "slot": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "amount_chaos": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "mandatory": {
+          "type": "boolean"
+        },
+        "source_kind": {
+          "type": "string",
+          "enum": [
+            "trade_snapshot",
+            "manual_estimate",
+            "starter_baseline_assumption",
+            "carry_over",
+            "craft_placeholder",
+            "unknown"
+          ]
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "source_kind": {
+                "const": "starter_baseline_assumption"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "amount_chaos": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "amount_chaos": {
+                "type": "number",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    "budget_shell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "league",
+        "currency_basis",
+        "budget_cap_chaos",
+        "estimated_total_chaos",
+        "mandatory_total_chaos",
+        "optional_total_chaos",
+        "headroom_chaos",
+        "budget_status",
+        "price_basis_note",
+        "line_items"
+      ],
+      "properties": {
+        "league": {
+          "type": "string",
+          "minLength": 1
+        },
+        "currency_basis": {
+          "type": "string",
+          "const": "chaos_orb"
+        },
+        "budget_cap_chaos": {
+          "type": "number",
+          "minimum": 0
+        },
+        "estimated_total_chaos": {
+          "type": "number",
+          "minimum": 0
+        },
+        "mandatory_total_chaos": {
+          "type": "number",
+          "minimum": 0
+        },
+        "optional_total_chaos": {
+          "type": "number",
+          "minimum": 0
+        },
+        "headroom_chaos": {
+          "type": "number"
+        },
+        "budget_status": {
+          "type": "string",
+          "enum": [
+            "within_budget",
+            "near_cap",
+            "over_cap",
+            "unknown"
+          ]
+        },
+        "price_basis_note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "line_items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/budget_line_item"
+          }
+        }
+      }
+    },
+    "metric_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metric_key",
+        "label",
+        "value",
+        "unit",
+        "note"
+      ],
+      "properties": {
+        "metric_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": "number"
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "state_section": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary",
+        "metric_rows",
+        "scope_notes"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metric_rows": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/metric_row"
+          }
+        },
+        "scope_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "assumption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "category",
+        "statement",
+        "impact_on_output"
+      ],
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": [
+            "brief_interpretation",
+            "budget_window",
+            "trade_availability",
+            "config_scope",
+            "evidence_gap",
+            "other"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "impact_on_output": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "blocker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "severity",
+        "blocker_kind",
+        "summary",
+        "unblock_condition"
+      ],
+      "properties": {
+        "severity": {
+          "type": "string",
+          "enum": [
+            "blocking",
+            "major",
+            "minor"
+          ]
+        },
+        "blocker_kind": {
+          "type": "string",
+          "enum": [
+            "artifact_missing",
+            "proof_gap",
+            "budget_gap",
+            "evidence_gap",
+            "operator_input",
+            "other"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unblock_condition": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "freshness_note": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface_kind",
+        "status",
+        "note",
+        "captured_at"
+      ],
+      "properties": {
+        "surface_kind": {
+          "type": "string",
+          "enum": [
+            "league_state",
+            "market_prices",
+            "proof_run",
+            "artifact_handoff",
+            "other"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "fresh",
+            "aging",
+            "stale",
+            "unknown"
+          ]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "captured_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

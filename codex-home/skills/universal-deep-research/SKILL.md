@@ -7,6 +7,23 @@ description: Universal deep research workflow for Codex. Use when the user expli
 
 Run a serious research process that ends in a decision-ready implementation memo, not a pile of links.
 
+# Autonomous File Mode
+
+If the input is a single absolute path to `*.task.txt`, treat it as a path-only research task from `autonomous-orchestrator`.
+
+In that mode:
+
+- read the task file first;
+- if it is a delta follow-up, read `base_task_file` next and inherit unchanged fields;
+- verify that `role_skill` points to `$universal-deep-research`;
+- use listed context files plus primary external sources;
+- write the answer into the exact `result_file`;
+- reply in chat with the exact absolute `result_file` path only when the task contract says so.
+
+Do not paste the research memo into chat in autonomous file mode.
+Do not ask the user direct clarification questions from the child thread.
+If user input is still required after research, encode that in the result file for the parent to escalate.
+
 This skill is for questions like:
 
 - "What is the right architecture for X in this project?"
@@ -57,6 +74,7 @@ Before searching, define:
 - what would count as a bad recommendation.
 
 If the user already gave enough context, proceed. If not, ask only the smallest set of questions needed to avoid shallow or risky research.
+In autonomous file mode, do not ask the user directly; record the missing decision in the result file instead.
 
 Turn the request into:
 
@@ -208,6 +226,43 @@ If the user explicitly wants more detail, add:
 - chronology;
 - deeper comparison tables;
 - open questions for follow-up research.
+
+In autonomous file mode, place the findings into the machine-oriented result envelope expected by `autonomous-orchestrator`, for example:
+
+```text
+protocol_version: autonomous-orchestrator/v2
+task_code: TASK-...
+attempt: 1
+role_skill: $universal-deep-research
+result_status: completed
+parent_action_hint: accept
+source_task_file: C:\repo\.orchestrator\tasks\...\TASK-....task.txt
+
+findings:
+- ...
+
+options_considered:
+- ...
+
+recommendation:
+- ...
+
+remaining_unknowns:
+- ...
+
+needs_user_input: no
+```
+
+If user input is still required, keep the chat reply path-only and put the blocker into the result file:
+
+```text
+needs_user_input: yes
+bounded_user_question: ...
+recommended_option: A
+options:
+- A: ...
+- B: ...
+```
 
 # Response Style
 

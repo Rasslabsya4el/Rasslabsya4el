@@ -1,0 +1,647 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/plan/pre_pob_hypothesis_triage.schema.json",
+  "title": "PrePoBHypothesisTriage",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "triage_id",
+    "generated_at",
+    "decision_family",
+    "baseline_refs",
+    "constraints",
+    "candidate_count",
+    "candidate_hypotheses",
+    "selected_for_measurement",
+    "rejected_before_pob",
+    "blocked_hypotheses",
+    "expected_surfaces",
+    "estimated_resource_cost",
+    "expected_value_summary",
+    "risk_flags",
+    "missing_evidence",
+    "triage_verdict",
+    "reason",
+    "validation",
+    "product_agent_behavioral_proof_required"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "pre_pob_hypothesis_triage"
+    },
+    "triage_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "decision_family": {
+      "type": "string",
+      "minLength": 1
+    },
+    "baseline_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_ref"
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "candidate_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "candidate_hypotheses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/candidate_hypothesis"
+      }
+    },
+    "selected_for_measurement": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "rejected_before_pob": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "blocked_hypotheses": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "expected_surfaces": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/expected_surface_ref"
+      }
+    },
+    "estimated_resource_cost": {
+      "$ref": "#/$defs/aggregate_resource_cost"
+    },
+    "expected_value_summary": {
+      "$ref": "#/$defs/aggregate_expected_value"
+    },
+    "risk_flags": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/risk_flag_ref"
+      }
+    },
+    "missing_evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/missing_evidence_ref"
+      }
+    },
+    "triage_verdict": {
+      "type": "string",
+      "enum": [
+        "measure",
+        "reject",
+        "blocked",
+        "partial"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "validation": {
+      "$ref": "#/$defs/validation_summary"
+    },
+    "product_agent_behavioral_proof_required": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "$defs": {
+    "candidate_hypothesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hypothesis_id",
+        "label",
+        "candidate_action",
+        "expected_surfaces",
+        "estimated_resource_cost",
+        "expected_value_summary",
+        "risk_flags",
+        "missing_evidence",
+        "unsupported_claims",
+        "evidence_refs",
+        "triage_verdict",
+        "reason",
+        "worth_pob_cost_reason",
+        "uncertainty"
+      ],
+      "properties": {
+        "hypothesis_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidate_action": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "expected_surfaces": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/expected_surface"
+          }
+        },
+        "estimated_resource_cost": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "expected_value_summary": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "risk_flags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/risk_flag"
+          }
+        },
+        "missing_evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/missing_evidence"
+          }
+        },
+        "unsupported_claims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/unsupported_claim"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          }
+        },
+        "triage_verdict": {
+          "type": "string",
+          "enum": [
+            "selected_for_measurement",
+            "rejected_before_pob",
+            "blocked",
+            "pending"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "worth_pob_cost_reason": {
+          "type": "string"
+        },
+        "uncertainty": {
+          "$ref": "#/$defs/uncertainty"
+        }
+      }
+    },
+    "expected_surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface_kind",
+        "metric_key",
+        "expected_direction",
+        "note"
+      ],
+      "properties": {
+        "surface_kind": {
+          "type": "string",
+          "enum": [
+            "pob_metric",
+            "calc_surface",
+            "tree_state",
+            "skill_state",
+            "item_state",
+            "config_state",
+            "constraint",
+            "qol"
+          ]
+        },
+        "metric_key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "expected_direction": {
+          "type": "string",
+          "enum": [
+            "increase",
+            "decrease",
+            "unchanged",
+            "repair",
+            "unknown"
+          ]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "expected_surface_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface_kind",
+        "metric_key",
+        "expected_direction",
+        "note",
+        "hypothesis_id"
+      ],
+      "properties": {
+        "surface_kind": {
+          "type": "string",
+          "enum": [
+            "pob_metric",
+            "calc_surface",
+            "tree_state",
+            "skill_state",
+            "item_state",
+            "config_state",
+            "constraint",
+            "qol"
+          ]
+        },
+        "metric_key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "expected_direction": {
+          "type": "string",
+          "enum": [
+            "increase",
+            "decrease",
+            "unchanged",
+            "repair",
+            "unknown"
+          ]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hypothesis_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "aggregate_resource_cost": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "selected_hypotheses",
+        "summary"
+      ],
+      "properties": {
+        "selected_hypotheses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "hypothesis_id",
+              "estimated_resource_cost"
+            ],
+            "properties": {
+              "hypothesis_id": {
+                "type": "string"
+              },
+              "estimated_resource_cost": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "aggregate_expected_value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "selected_hypotheses",
+        "summary"
+      ],
+      "properties": {
+        "selected_hypotheses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "hypothesis_id",
+              "expected_value_summary"
+            ],
+            "properties": {
+              "hypothesis_id": {
+                "type": "string"
+              },
+              "expected_value_summary": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "risk_flag": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "risk_id",
+        "severity",
+        "summary"
+      ],
+      "properties": {
+        "risk_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "risk_flag_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "risk_id",
+        "severity",
+        "summary",
+        "hypothesis_id"
+      ],
+      "properties": {
+        "risk_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hypothesis_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "missing_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_kind",
+        "reason",
+        "blocking"
+      ],
+      "properties": {
+        "evidence_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blocking": {
+          "type": "boolean"
+        }
+      }
+    },
+    "missing_evidence_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_kind",
+        "reason",
+        "blocking",
+        "hypothesis_id"
+      ],
+      "properties": {
+        "evidence_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blocking": {
+          "type": "boolean"
+        },
+        "hypothesis_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "unsupported_claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id",
+        "summary",
+        "required_evidence"
+      ],
+      "properties": {
+        "claim_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required_evidence": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "evidence_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ref_id",
+        "evidence_kind",
+        "locator",
+        "json_pointer",
+        "summary"
+      ],
+      "properties": {
+        "ref_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_kind": {
+          "type": "string",
+          "enum": [
+            "pre_pob_triage",
+            "action_cost_value_ledger",
+            "calc_delta",
+            "pathing_opportunity_cost",
+            "comparison_protocol",
+            "source_ledger",
+            "static_cost_estimate",
+            "other"
+          ]
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "json_pointer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "notes"
+      ],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "unknown"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "validation_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finding_count",
+        "findings"
+      ],
+      "properties": {
+        "finding_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          }
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "severity",
+        "summary"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "blocking",
+            "partial"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hypothesis_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

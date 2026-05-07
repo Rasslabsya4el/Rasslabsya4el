@@ -1,0 +1,374 @@
+{
+  "baseline_tree_ref": "fixture://cv3/baseline-tree-state",
+  "candidate_paths": [
+    {
+      "constraint_relief": [],
+      "evidence_refs": [
+        {
+          "evidence_kind": "action_cost_value_ledger",
+          "json_pointer": "/rows",
+          "locator": "action_cost_value_tree_pathing_mvp.json",
+          "ref_id": "evidence.cv3.distant-fire.ledger",
+          "summary": "CV1 Action Cost/Value Ledger fixture provides path package cost context."
+        },
+        {
+          "evidence_kind": "calc_delta",
+          "json_pointer": "/changed_surfaces/0",
+          "locator": "calc_snapshot_diff_example.json",
+          "ref_id": "evidence.cv3.distant-fire.calc-diff",
+          "summary": "CV2 Calc Snapshot Diff fixture provides measured delta evidence when available."
+        }
+      ],
+      "expected_surfaces": [
+        {
+          "expected_direction": "increase",
+          "metric_key": "normal_passive_count",
+          "note": "Path package consumes passive budget.",
+          "surface_kind": "tree_state"
+        },
+        {
+          "expected_direction": "increase",
+          "metric_key": "FullDPS",
+          "note": "Authored candidate expects value on this surface before measurement refs are compared.",
+          "surface_kind": "calc_surface"
+        }
+      ],
+      "label": "Distant high-value fire cluster",
+      "measured_value": {
+        "source_surface_refs": [
+          "calc_delta.FullDPS"
+        ],
+        "summary": "Fixture value used only to demonstrate pathing opportunity cost arithmetic.",
+        "value_unit_label": "weighted_delta_percent",
+        "value_units": 30.0
+      },
+      "missing_evidence": [],
+      "path_id": "tree_pathing.distant_big_fire_cluster",
+      "path_node_refs": [
+        "tree_pathing.distant_big_fire_cluster.node.1",
+        "tree_pathing.distant_big_fire_cluster.node.2",
+        "tree_pathing.distant_big_fire_cluster.node.3",
+        "tree_pathing.distant_big_fire_cluster.node.4",
+        "tree_pathing.distant_big_fire_cluster.node.5",
+        "tree_pathing.distant_big_fire_cluster.node.6",
+        "tree_pathing.distant_big_fire_cluster.node.7",
+        "tree_pathing.distant_big_fire_cluster.node.8"
+      ],
+      "resource_cost": {
+        "payoff_points": 3.0,
+        "refund_or_respec_cost": null,
+        "total_passive_points": 8.0,
+        "travel_points": 5.0
+      },
+      "route_summary": "Travel across five connector nodes to reach a strong fire cluster.",
+      "travel_tax": {
+        "payoff_points": 3.0,
+        "summary": "5/8 passives are travel (62.5%).",
+        "total_passive_points": 8.0,
+        "travel_points": 5.0,
+        "travel_tax_ratio": 0.625,
+        "travel_to_payoff_ratio": 1.6666666666666667
+      },
+      "uncertainty": {
+        "level": "medium",
+        "notes": [
+          "CV3 compares authored path candidates only and does not solve the passive tree graph."
+        ]
+      },
+      "value_per_point": {
+        "per_payoff_point": 10.0,
+        "per_total_passive": 3.75,
+        "per_travel_point": 6.0,
+        "summary": "30 weighted_delta_percent over 8 passives.",
+        "total_value_units": 30.0,
+        "value_unit_label": "weighted_delta_percent"
+      },
+      "verdict": "rejected",
+      "verdict_reason": "Rejected because its value per total passive (3.750) and travel tax (0.625) lose to tree_pathing.nearby_dex_life_package (5.250, travel tax 0.250)."
+    },
+    {
+      "constraint_relief": [
+        {
+          "after_shortfall": 0.0,
+          "before_shortfall": 18.0,
+          "constraint_kind": "attribute",
+          "evidence_refs": [
+            {
+              "evidence_kind": "calc_delta",
+              "json_pointer": "/changed_surfaces/7",
+              "locator": "calc_snapshot_diff_example.json",
+              "ref_id": "evidence.cv3.nearby-dex-life.calc-diff.dex",
+              "summary": "Fixture-style Calc diff ref for an attribute shortfall repair surface."
+            }
+          ],
+          "metric_key": "dexterity_requirement_shortfall",
+          "relief_amount": 18.0,
+          "summary": "Repairs an 18 Dexterity shortfall while keeping travel tax low."
+        }
+      ],
+      "evidence_refs": [
+        {
+          "evidence_kind": "action_cost_value_ledger",
+          "json_pointer": "/rows",
+          "locator": "action_cost_value_tree_pathing_mvp.json",
+          "ref_id": "evidence.cv3.nearby-dex-life.ledger",
+          "summary": "CV1 Action Cost/Value Ledger fixture provides path package cost context."
+        },
+        {
+          "evidence_kind": "calc_delta",
+          "json_pointer": "/changed_surfaces/0",
+          "locator": "calc_snapshot_diff_example.json",
+          "ref_id": "evidence.cv3.nearby-dex-life.calc-diff",
+          "summary": "CV2 Calc Snapshot Diff fixture provides measured delta evidence when available."
+        }
+      ],
+      "expected_surfaces": [
+        {
+          "expected_direction": "increase",
+          "metric_key": "normal_passive_count",
+          "note": "Path package consumes passive budget.",
+          "surface_kind": "tree_state"
+        },
+        {
+          "expected_direction": "increase",
+          "metric_key": "LifeAndDexRequirement",
+          "note": "Authored candidate expects value on this surface before measurement refs are compared.",
+          "surface_kind": "calc_surface"
+        }
+      ],
+      "label": "Nearby dexterity and life package",
+      "measured_value": {
+        "source_surface_refs": [
+          "calc_delta.LifeAndDexRequirement"
+        ],
+        "summary": "Fixture value used only to demonstrate pathing opportunity cost arithmetic.",
+        "value_unit_label": "weighted_delta_percent",
+        "value_units": 21.0
+      },
+      "missing_evidence": [],
+      "path_id": "tree_pathing.nearby_dex_life_package",
+      "path_node_refs": [
+        "tree_pathing.nearby_dex_life_package.node.1",
+        "tree_pathing.nearby_dex_life_package.node.2",
+        "tree_pathing.nearby_dex_life_package.node.3",
+        "tree_pathing.nearby_dex_life_package.node.4"
+      ],
+      "resource_cost": {
+        "payoff_points": 3.0,
+        "refund_or_respec_cost": null,
+        "total_passive_points": 4.0,
+        "travel_points": 1.0
+      },
+      "route_summary": "Spend one connector point and three payoff nodes to repair Dex while gaining life.",
+      "travel_tax": {
+        "payoff_points": 3.0,
+        "summary": "1/4 passives are travel (25.0%).",
+        "total_passive_points": 4.0,
+        "travel_points": 1.0,
+        "travel_tax_ratio": 0.25,
+        "travel_to_payoff_ratio": 0.3333333333333333
+      },
+      "uncertainty": {
+        "level": "medium",
+        "notes": [
+          "CV3 compares authored path candidates only and does not solve the passive tree graph."
+        ]
+      },
+      "value_per_point": {
+        "per_payoff_point": 7.0,
+        "per_total_passive": 5.25,
+        "per_travel_point": 21.0,
+        "summary": "21 weighted_delta_percent over 4 passives.",
+        "total_value_units": 21.0,
+        "value_unit_label": "weighted_delta_percent"
+      },
+      "verdict": "selected",
+      "verdict_reason": "Selected because it has the strongest value per total passive (5.250) with travel tax 0.250 among the authored candidates."
+    },
+    {
+      "constraint_relief": [],
+      "evidence_refs": [
+        {
+          "evidence_kind": "action_cost_value_ledger",
+          "json_pointer": "/rows",
+          "locator": "action_cost_value_tree_pathing_mvp.json",
+          "ref_id": "evidence.cv3.nearby-fire-cast.ledger",
+          "summary": "CV1 Action Cost/Value Ledger fixture provides path package cost context."
+        },
+        {
+          "evidence_kind": "calc_delta",
+          "json_pointer": "/changed_surfaces/0",
+          "locator": "calc_snapshot_diff_example.json",
+          "ref_id": "evidence.cv3.nearby-fire-cast.calc-diff",
+          "summary": "CV2 Calc Snapshot Diff fixture provides measured delta evidence when available."
+        }
+      ],
+      "expected_surfaces": [
+        {
+          "expected_direction": "increase",
+          "metric_key": "normal_passive_count",
+          "note": "Path package consumes passive budget.",
+          "surface_kind": "tree_state"
+        },
+        {
+          "expected_direction": "increase",
+          "metric_key": "FullDPSAndCastRate",
+          "note": "Authored candidate expects value on this surface before measurement refs are compared.",
+          "surface_kind": "calc_surface"
+        }
+      ],
+      "label": "Nearby fire and cast speed package",
+      "measured_value": {
+        "source_surface_refs": [
+          "calc_delta.FullDPSAndCastRate"
+        ],
+        "summary": "Fixture value used only to demonstrate pathing opportunity cost arithmetic.",
+        "value_unit_label": "weighted_delta_percent",
+        "value_units": 14.0
+      },
+      "missing_evidence": [
+        {
+          "blocking": false,
+          "evidence_kind": "calc_delta",
+          "reason": "No measured Calc diff fixture is attached to this rejected offensive package yet."
+        }
+      ],
+      "path_id": "tree_pathing.nearby_fire_cast_package",
+      "path_node_refs": [
+        "tree_pathing.nearby_fire_cast_package.node.1",
+        "tree_pathing.nearby_fire_cast_package.node.2",
+        "tree_pathing.nearby_fire_cast_package.node.3"
+      ],
+      "resource_cost": {
+        "payoff_points": 2.0,
+        "refund_or_respec_cost": null,
+        "total_passive_points": 3.0,
+        "travel_points": 1.0
+      },
+      "route_summary": "Take a compact nearby offensive package with one connector point.",
+      "travel_tax": {
+        "payoff_points": 2.0,
+        "summary": "1/3 passives are travel (33.3%).",
+        "total_passive_points": 3.0,
+        "travel_points": 1.0,
+        "travel_tax_ratio": 0.3333333333333333,
+        "travel_to_payoff_ratio": 0.5
+      },
+      "uncertainty": {
+        "level": "medium",
+        "notes": [
+          "CV3 compares authored path candidates only and does not solve the passive tree graph."
+        ]
+      },
+      "value_per_point": {
+        "per_payoff_point": 7.0,
+        "per_total_passive": 4.666666666666667,
+        "per_travel_point": 14.0,
+        "summary": "14 weighted_delta_percent over 3 passives.",
+        "total_value_units": 14.0,
+        "value_unit_label": "weighted_delta_percent"
+      },
+      "verdict": "rejected",
+      "verdict_reason": "Rejected because its value per total passive (4.667) and travel tax (0.333) lose to tree_pathing.nearby_dex_life_package (5.250, travel tax 0.250)."
+    }
+  ],
+  "constraint_relief": [
+    {
+      "after_shortfall": 0.0,
+      "before_shortfall": 18.0,
+      "constraint_kind": "attribute",
+      "evidence_refs": [
+        {
+          "evidence_kind": "calc_delta",
+          "json_pointer": "/changed_surfaces/7",
+          "locator": "calc_snapshot_diff_example.json",
+          "ref_id": "evidence.cv3.nearby-dex-life.calc-diff.dex",
+          "summary": "Fixture-style Calc diff ref for an attribute shortfall repair surface."
+        }
+      ],
+      "metric_key": "dexterity_requirement_shortfall",
+      "relief_amount": 18.0,
+      "summary": "Repairs an 18 Dexterity shortfall while keeping travel tax low."
+    }
+  ],
+  "decision_family": "direct_build.tree_pathing",
+  "evidence_refs": [
+    {
+      "evidence_kind": "action_cost_value_ledger",
+      "json_pointer": "/rows",
+      "locator": "action_cost_value_tree_pathing_mvp.json",
+      "ref_id": "evidence.cv3.nearby-dex-life.ledger",
+      "summary": "CV1 Action Cost/Value Ledger fixture provides path package cost context."
+    },
+    {
+      "evidence_kind": "calc_delta",
+      "json_pointer": "/changed_surfaces/0",
+      "locator": "calc_snapshot_diff_example.json",
+      "ref_id": "evidence.cv3.nearby-dex-life.calc-diff",
+      "summary": "CV2 Calc Snapshot Diff fixture provides measured delta evidence when available."
+    }
+  ],
+  "expected_surfaces": [
+    {
+      "expected_direction": "increase",
+      "metric_key": "normal_passive_count",
+      "note": "Path package consumes passive budget.",
+      "surface_kind": "tree_state"
+    },
+    {
+      "expected_direction": "increase",
+      "metric_key": "LifeAndDexRequirement",
+      "note": "Authored candidate expects value on this surface before measurement refs are compared.",
+      "surface_kind": "calc_surface"
+    }
+  ],
+  "generated_at": "2026-05-06T00:00:00Z",
+  "missing_evidence": [],
+  "opportunity_cost_id": "cv3.pathing-opportunity-cost.mvp",
+  "product_agent_behavioral_proof_required": false,
+  "record_kind": "pathing_opportunity_cost",
+  "rejected_path_ids": [
+    "tree_pathing.distant_big_fire_cluster",
+    "tree_pathing.nearby_fire_cast_package"
+  ],
+  "resource_cost": {
+    "payoff_points": 3.0,
+    "refund_or_respec_cost": null,
+    "total_passive_points": 4.0,
+    "travel_points": 1.0
+  },
+  "schema_version": "0.1.0",
+  "selected_path_id": "tree_pathing.nearby_dex_life_package",
+  "summary": {
+    "candidate_count": 3,
+    "product_agent_behavioral_proof_required": false,
+    "rejected_path_count": 2,
+    "selected_travel_tax_ratio": 0.25,
+    "selected_value_per_total_passive": 5.25,
+    "text": "Compared 3 authored tree/pathing candidates. Selected tree_pathing.nearby_dex_life_package on value per passive and travel tax."
+  },
+  "travel_tax": {
+    "payoff_points": 3.0,
+    "summary": "1/4 passives are travel (25.0%).",
+    "total_passive_points": 4.0,
+    "travel_points": 1.0,
+    "travel_tax_ratio": 0.25,
+    "travel_to_payoff_ratio": 0.3333333333333333
+  },
+  "tree_state_ref": "fixture://cv3/current-tree-state",
+  "uncertainty": {
+    "level": "medium",
+    "notes": [
+      "CV3 compares authored path candidates only and does not solve the passive tree graph."
+    ]
+  },
+  "value_per_point": {
+    "per_payoff_point": 7.0,
+    "per_total_passive": 5.25,
+    "per_travel_point": 21.0,
+    "summary": "21 weighted_delta_percent over 4 passives.",
+    "total_value_units": 21.0,
+    "value_unit_label": "weighted_delta_percent"
+  },
+  "verdict_reason": "Selected because it has the strongest value per total passive (5.250) with travel tax 0.250 among the authored candidates."
+}

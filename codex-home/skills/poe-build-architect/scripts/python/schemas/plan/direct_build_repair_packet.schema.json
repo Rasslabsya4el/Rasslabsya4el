@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/plan/direct_build_repair_packet.schema.json",
+  "title": "DirectBuildRepairPacket",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "status",
+    "publishable",
+    "next_attempt_required",
+    "stop_allowed",
+    "ledger_id",
+    "pob_run_id",
+    "source_materialization_result",
+    "observed_blocker_codes",
+    "repair_items",
+    "minimum_next_hypotheses",
+    "required_next_artifacts",
+    "safe_next_actions",
+    "product_rule"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "direct_build_repair_packet"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["repair_required", "no_repair_required"]
+    },
+    "publishable": {
+      "type": "boolean"
+    },
+    "next_attempt_required": {
+      "type": "boolean"
+    },
+    "stop_allowed": {
+      "type": "boolean"
+    },
+    "ledger_id": {
+      "type": ["string", "null"]
+    },
+    "pob_run_id": {
+      "type": ["string", "null"]
+    },
+    "source_materialization_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_kind", "status"],
+      "properties": {
+        "record_kind": {
+          "type": ["string", "null"]
+        },
+        "status": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "observed_blocker_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "repair_items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/repair_item"
+      }
+    },
+    "minimum_next_hypotheses": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "required_next_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "safe_next_actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "product_rule": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "$defs": {
+    "repair_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repair_id",
+        "blocker_codes",
+        "priority",
+        "target_surfaces",
+        "observed",
+        "expected",
+        "agent_must_author",
+        "required_evidence",
+        "next_attempt_gate"
+      ],
+      "properties": {
+        "repair_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blocker_codes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "priority": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "target_surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": ["identity", "skill", "tree", "item", "config", "observe"]
+          }
+        },
+        "observed": {
+          "$ref": "#/$defs/loose_object"
+        },
+        "expected": {
+          "$ref": "#/$defs/loose_object"
+        },
+        "required_multiplier": {
+          "type": ["number", "null"]
+        },
+        "agent_must_author": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required_evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "next_attempt_gate": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "loose_object": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

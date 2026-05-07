@@ -1,0 +1,329 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/plan/calc_snapshot_diff.schema.json",
+  "title": "CalcSnapshotDiffEvidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "supported_path",
+    "diff_id",
+    "generated_at",
+    "baseline_snapshot_ref",
+    "after_snapshot_ref",
+    "action_refs",
+    "ledger_refs",
+    "selected_skill",
+    "changed_surfaces",
+    "unchanged_surfaces",
+    "regressions",
+    "missing_metrics",
+    "unsupported_claims",
+    "evidence_quality",
+    "summary",
+    "product_agent_behavioral_proof_required"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "calc_snapshot_diff_evidence"
+    },
+    "supported_path": {
+      "type": "string",
+      "const": "pob_calc_snapshot_diff_evidence_v1"
+    },
+    "diff_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "baseline_snapshot_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "after_snapshot_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "action_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "ledger_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "selected_skill": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "changed_surfaces": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/surface_delta"
+      }
+    },
+    "unchanged_surfaces": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/surface_delta"
+      }
+    },
+    "regressions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/surface_delta"
+      }
+    },
+    "missing_metrics": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/missing_metric"
+      }
+    },
+    "unsupported_claims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/unsupported_claim"
+      }
+    },
+    "evidence_quality": {
+      "type": "string",
+      "enum": [
+        "accepted",
+        "partial",
+        "blocked"
+      ]
+    },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "product_agent_behavioral_proof_required": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "$defs": {
+    "scalar": {
+      "type": [
+        "number",
+        "string",
+        "boolean",
+        "null"
+      ]
+    },
+    "surface_kind": {
+      "type": "string",
+      "enum": [
+        "pob_metric",
+        "calc_surface",
+        "constraint",
+        "qol",
+        "warning_codes"
+      ]
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "increase",
+        "decrease",
+        "unchanged",
+        "added",
+        "removed",
+        "changed",
+        "unknown"
+      ]
+    },
+    "classification": {
+      "type": "string",
+      "enum": [
+        "dps_gain",
+        "dps_loss",
+        "defense_gain",
+        "defense_regression",
+        "resource_gain",
+        "resource_regression",
+        "speed_qol_gain",
+        "aoe_qol_gain",
+        "qol_regression",
+        "requirement_repair",
+        "requirement_pressure",
+        "warning_added",
+        "warning_removed",
+        "no_change",
+        "metric_missing",
+        "other"
+      ]
+    },
+    "surface_delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface_id",
+        "surface_kind",
+        "metric_key",
+        "baseline_value",
+        "after_value",
+        "absolute_delta",
+        "percent_delta",
+        "direction",
+        "classification",
+        "evidence_ref_id"
+      ],
+      "properties": {
+        "surface_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "surface_kind": {
+          "$ref": "#/$defs/surface_kind"
+        },
+        "metric_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "baseline_value": {
+          "$ref": "#/$defs/scalar"
+        },
+        "after_value": {
+          "$ref": "#/$defs/scalar"
+        },
+        "absolute_delta": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "percent_delta": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "direction": {
+          "$ref": "#/$defs/direction"
+        },
+        "classification": {
+          "$ref": "#/$defs/classification"
+        },
+        "evidence_ref_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "missing_metric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metric_key",
+        "surface_kind",
+        "missing_from",
+        "reason"
+      ],
+      "properties": {
+        "metric_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "surface_kind": {
+          "$ref": "#/$defs/surface_kind"
+        },
+        "missing_from": {
+          "type": "string",
+          "enum": [
+            "baseline",
+            "after"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "unsupported_claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id",
+        "summary",
+        "reason"
+      ],
+      "properties": {
+        "claim_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "changed_surface_count",
+        "unchanged_surface_count",
+        "regression_count",
+        "missing_metric_count",
+        "unsupported_claim_count",
+        "product_agent_behavioral_proof_required"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "changed_surface_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unchanged_surface_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "regression_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "missing_metric_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unsupported_claim_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "product_agent_behavioral_proof_required": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    }
+  }
+}

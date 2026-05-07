@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "skill_name": "poe-loadout-planner",
+  "version": "0.1.0-clean-seed",
+  "package_role": "product_runtime_skill",
+  "runtime_boundary": "self_contained_installed_skill",
+  "primary_modes": [
+    "loadout_ladder",
+    "transition_friction",
+    "progression_plan"
+  ],
+  "packaged_assets": [
+    "SKILL.md",
+    "references/",
+    "templates/loadout_plan.md",
+    "scripts/python/schemas/plan/loadout_plan.schema.json"
+  ],
+  "readiness_probe": "poe-loadout-planner"
+}

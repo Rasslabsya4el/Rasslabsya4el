@@ -1,4 +1,4 @@
 interface:
   display_name: "Nikita Project Оркестратор"
-  short_description: "Проектный оркестратор для роудмепа, постановки и приемки в Nikita Project"
-  default_prompt: "Используй $nikita-project-orchestrator для постановки задач, приемки и ведения скеджела в Nikita Project."
+  short_description: "Nikita Project оркестратор с file-handoff задачами и приемкой"
+  default_prompt: "Используй $nikita-project-orchestrator для file-handoff постановки задач, приемки result paths и ведения скеджела в Nikita Project."

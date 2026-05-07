@@ -1,0 +1,234 @@
+{
+  "action_refs": [
+    "tree_pathing.rt_package"
+  ],
+  "after_snapshot_ref": "fixture://cv2/after-calc-snapshot",
+  "baseline_snapshot_ref": "fixture://cv2/baseline-calc-snapshot",
+  "changed_surfaces": [
+    {
+      "absolute_delta": 30000.0,
+      "after_value": 210000.0,
+      "baseline_value": 180000.0,
+      "classification": "dps_gain",
+      "direction": "increase",
+      "evidence_ref_id": "calc_delta.FullDPS",
+      "metric_key": "FullDPS",
+      "percent_delta": 16.666666666666664,
+      "surface_id": "FullDPS",
+      "surface_kind": "pob_metric"
+    },
+    {
+      "absolute_delta": 30000.0,
+      "after_value": 205000.0,
+      "baseline_value": 175000.0,
+      "classification": "dps_gain",
+      "direction": "increase",
+      "evidence_ref_id": "calc_delta.CombinedDPS",
+      "metric_key": "CombinedDPS",
+      "percent_delta": 17.142857142857142,
+      "surface_id": "CombinedDPS",
+      "surface_kind": "pob_metric"
+    },
+    {
+      "absolute_delta": 0.20000000000000018,
+      "after_value": 3.2,
+      "baseline_value": 3.0,
+      "classification": "speed_qol_gain",
+      "direction": "increase",
+      "evidence_ref_id": "calc_delta.CastRate",
+      "metric_key": "CastRate",
+      "percent_delta": 6.666666666666672,
+      "surface_id": "CastRate",
+      "surface_kind": "pob_metric"
+    },
+    {
+      "absolute_delta": -600.0,
+      "after_value": 21400.0,
+      "baseline_value": 22000.0,
+      "classification": "defense_regression",
+      "direction": "decrease",
+      "evidence_ref_id": "calc_delta.TotalEHP",
+      "metric_key": "TotalEHP",
+      "percent_delta": -2.727272727272727,
+      "surface_id": "TotalEHP",
+      "surface_kind": "pob_metric"
+    },
+    {
+      "absolute_delta": -150.0,
+      "after_value": 4350.0,
+      "baseline_value": 4500.0,
+      "classification": "defense_regression",
+      "direction": "decrease",
+      "evidence_ref_id": "calc_delta.Life",
+      "metric_key": "Life",
+      "percent_delta": -3.3333333333333335,
+      "surface_id": "Life",
+      "surface_kind": "pob_metric"
+    },
+    {
+      "absolute_delta": -25.0,
+      "after_value": 95.0,
+      "baseline_value": 120.0,
+      "classification": "resource_regression",
+      "direction": "decrease",
+      "evidence_ref_id": "calc_delta.ManaUnreserved",
+      "metric_key": "ManaUnreserved",
+      "percent_delta": -20.833333333333336,
+      "surface_id": "ManaUnreserved",
+      "surface_kind": "calc_surface"
+    },
+    {
+      "absolute_delta": 2.0,
+      "after_value": 24.0,
+      "baseline_value": 22.0,
+      "classification": "aoe_qol_gain",
+      "direction": "increase",
+      "evidence_ref_id": "calc_delta.Radius",
+      "metric_key": "Radius",
+      "percent_delta": 9.090909090909092,
+      "surface_id": "Radius",
+      "surface_kind": "qol"
+    },
+    {
+      "absolute_delta": 10.0,
+      "after_value": 10.0,
+      "baseline_value": 0.0,
+      "classification": "requirement_pressure",
+      "direction": "increase",
+      "evidence_ref_id": "calc_delta.requirement.strength",
+      "metric_key": "strength.shortfall",
+      "percent_delta": null,
+      "surface_id": "requirement.strength",
+      "surface_kind": "constraint"
+    },
+    {
+      "absolute_delta": null,
+      "after_value": true,
+      "baseline_value": false,
+      "classification": "warning_added",
+      "direction": "added",
+      "evidence_ref_id": "calc_delta.warning_code.unmet_strength_requirement",
+      "metric_key": "unmet_strength_requirement",
+      "percent_delta": null,
+      "surface_id": "warning_code.unmet_strength_requirement",
+      "surface_kind": "warning_codes"
+    }
+  ],
+  "diff_id": "cv2.calc-snapshot-diff.mvp",
+  "evidence_quality": "partial",
+  "generated_at": "2026-05-06T00:00:00Z",
+  "ledger_refs": [
+    "cv1.tree-pathing.mvp#/rows/0"
+  ],
+  "missing_metrics": [
+    {
+      "metric_key": "AverageHit",
+      "missing_from": "after",
+      "reason": "Metric exists on only one side of the before/after Calc snapshot pair.",
+      "surface_kind": "pob_metric"
+    }
+  ],
+  "product_agent_behavioral_proof_required": false,
+  "record_kind": "calc_snapshot_diff_evidence",
+  "regressions": [
+    {
+      "absolute_delta": -600.0,
+      "after_value": 21400.0,
+      "baseline_value": 22000.0,
+      "classification": "defense_regression",
+      "direction": "decrease",
+      "evidence_ref_id": "calc_delta.TotalEHP",
+      "metric_key": "TotalEHP",
+      "percent_delta": -2.727272727272727,
+      "surface_id": "TotalEHP",
+      "surface_kind": "pob_metric"
+    },
+    {
+      "absolute_delta": -150.0,
+      "after_value": 4350.0,
+      "baseline_value": 4500.0,
+      "classification": "defense_regression",
+      "direction": "decrease",
+      "evidence_ref_id": "calc_delta.Life",
+      "metric_key": "Life",
+      "percent_delta": -3.3333333333333335,
+      "surface_id": "Life",
+      "surface_kind": "pob_metric"
+    },
+    {
+      "absolute_delta": -25.0,
+      "after_value": 95.0,
+      "baseline_value": 120.0,
+      "classification": "resource_regression",
+      "direction": "decrease",
+      "evidence_ref_id": "calc_delta.ManaUnreserved",
+      "metric_key": "ManaUnreserved",
+      "percent_delta": -20.833333333333336,
+      "surface_id": "ManaUnreserved",
+      "surface_kind": "calc_surface"
+    },
+    {
+      "absolute_delta": 10.0,
+      "after_value": 10.0,
+      "baseline_value": 0.0,
+      "classification": "requirement_pressure",
+      "direction": "increase",
+      "evidence_ref_id": "calc_delta.requirement.strength",
+      "metric_key": "strength.shortfall",
+      "percent_delta": null,
+      "surface_id": "requirement.strength",
+      "surface_kind": "constraint"
+    },
+    {
+      "absolute_delta": null,
+      "after_value": true,
+      "baseline_value": false,
+      "classification": "warning_added",
+      "direction": "added",
+      "evidence_ref_id": "calc_delta.warning_code.unmet_strength_requirement",
+      "metric_key": "unmet_strength_requirement",
+      "percent_delta": null,
+      "surface_id": "warning_code.unmet_strength_requirement",
+      "surface_kind": "warning_codes"
+    }
+  ],
+  "schema_version": "0.1.0",
+  "selected_skill": "Fireball",
+  "summary": {
+    "changed_surface_count": 9,
+    "missing_metric_count": 1,
+    "product_agent_behavioral_proof_required": false,
+    "regression_count": 5,
+    "text": "Calc snapshot diff evidence is partial: 9 changed surfaces, 5 regressions, 1 missing metrics, 0 unsupported claims.",
+    "unchanged_surface_count": 2,
+    "unsupported_claim_count": 0
+  },
+  "supported_path": "pob_calc_snapshot_diff_evidence_v1",
+  "unchanged_surfaces": [
+    {
+      "absolute_delta": 0.0,
+      "after_value": 780.0,
+      "baseline_value": 780.0,
+      "classification": "no_change",
+      "direction": "unchanged",
+      "evidence_ref_id": "calc_delta.Mana",
+      "metric_key": "Mana",
+      "percent_delta": 0.0,
+      "surface_id": "Mana",
+      "surface_kind": "pob_metric"
+    },
+    {
+      "absolute_delta": 0.0,
+      "after_value": 0.0,
+      "baseline_value": 0.0,
+      "classification": "no_change",
+      "direction": "unchanged",
+      "evidence_ref_id": "calc_delta.EnergyShield",
+      "metric_key": "EnergyShield",
+      "percent_delta": null,
+      "surface_id": "EnergyShield",
+      "surface_kind": "pob_metric"
+    }
+  ],
+  "unsupported_claims": []
+}

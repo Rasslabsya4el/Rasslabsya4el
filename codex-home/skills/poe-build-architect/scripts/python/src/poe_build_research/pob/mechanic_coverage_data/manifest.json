@@ -1,0 +1,197 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_id": "pob_mechanic_coverage",
+  "source_game_corpus": {
+    "corpus_id": "pob_game_corpus",
+    "manifest_path": "src/poe_build_research/pob/corpus_data/manifest.json",
+    "manifest_sha256": "fddf685074afb5109ce7c3336acc57a17663f0c98204d35fbc33d89ba8f02d65",
+    "schema_version": "1.0.0",
+    "source_lane": {
+      "canonical_path": "vendor/pob/source",
+      "lane_id": "pob_source_lane",
+      "lock_path": "locks/pob.source.lock.json",
+      "observed_commit": "143ade33da3bd0f1c803671f17930b839c79ace7",
+      "pinned_commit": "143ade33da3bd0f1c803671f17930b839c79ace7",
+      "pinned_ref": "refs/tags/v2.64.0",
+      "repo": "PathOfBuildingCommunity/PathOfBuilding",
+      "repo_url": "https://github.com/PathOfBuildingCommunity/PathOfBuilding.git",
+      "tree_version": "3_28"
+    }
+  },
+  "source_tag_corpus": {
+    "corpus_id": "pob_tag_corpus",
+    "manifest_path": "src/poe_build_research/pob/tag_data/manifest.json",
+    "manifest_sha256": "cafadad041352467105c02efbab202823c11c4dc6276ae778531a9119f53ba2c",
+    "schema_version": "1.0.0",
+    "derived_from_game_manifest_sha256": "fddf685074afb5109ce7c3336acc57a17663f0c98204d35fbc33d89ba8f02d65",
+    "bundle_inputs": [
+      {
+        "family": "items",
+        "relative_path": "src/poe_build_research/pob/tag_data/items.json",
+        "record_count": 1062,
+        "sha256": "8a24fd645abb86894ddb074567bbadb080e03c14e276f177d35ffb3da1d01414"
+      },
+      {
+        "family": "active_gems",
+        "relative_path": "src/poe_build_research/pob/tag_data/active_gems.json",
+        "record_count": 549,
+        "sha256": "de82931cd95cc0029690d89a0d15efb1da77b54432671d3a33f795f522b2026d"
+      },
+      {
+        "family": "support_gems",
+        "relative_path": "src/poe_build_research/pob/tag_data/support_gems.json",
+        "record_count": 261,
+        "sha256": "35ad2b0e8fc7de25274388f97ad46abcdc7888ca85996b8a32fbc17ab4df56cb"
+      },
+      {
+        "family": "passives",
+        "relative_path": "src/poe_build_research/pob/tag_data/passives.json",
+        "record_count": 2415,
+        "sha256": "bb1a8e3a1212c8130ac558c5a2cbc6f99e2160b97a9bcd058899ac75af4d960a"
+      },
+      {
+        "family": "masteries",
+        "relative_path": "src/poe_build_research/pob/tag_data/masteries.json",
+        "record_count": 351,
+        "sha256": "ee02b95d2a024b2575da4cb05b3a4700fc1b11d1c74c852b23ff2f009c103fc7"
+      },
+      {
+        "family": "ascendancies",
+        "relative_path": "src/poe_build_research/pob/tag_data/ascendancies.json",
+        "record_count": 34,
+        "sha256": "8d1ec40ac6d6709313cadf34027fded3df6ac5dac0d0b7e4e8db3d6ace9a75fe"
+      },
+      {
+        "family": "keystones",
+        "relative_path": "src/poe_build_research/pob/tag_data/keystones.json",
+        "record_count": 54,
+        "sha256": "3d9cd6cc8fa2a50a8434a1801d80b241f3be5cf210dd16f747fb95e2234df498"
+      },
+      {
+        "family": "config_surfaces",
+        "relative_path": "src/poe_build_research/pob/tag_data/config_surfaces.json",
+        "record_count": 569,
+        "sha256": "3730e154772e6e5a3b2ae25afe68339e013f7cf14428e1514f45c35baa9c8204"
+      }
+    ]
+  },
+  "source_mod_corpus": {
+    "corpus_id": "pob_mod_corpus",
+    "manifest_path": "src/poe_build_research/pob/mod_data/manifest.json",
+    "manifest_sha256": "cf80e4a4fc1758a622a0102605b0ab5bd988c25b932d72217611738fe2dd4e42",
+    "schema_version": "1.0.0",
+    "derived_from_game_manifest_sha256": "fddf685074afb5109ce7c3336acc57a17663f0c98204d35fbc33d89ba8f02d65",
+    "bundle_inputs": [
+      {
+        "family": "mod_families",
+        "relative_path": "src/poe_build_research/pob/mod_data/mod_families.json",
+        "record_count": 1787,
+        "sha256": "875479d86481fd39a8181c77b7f4571cacf0ee7ab8f20ae85d00abe3e05b681c"
+      },
+      {
+        "family": "stat_families",
+        "relative_path": "src/poe_build_research/pob/mod_data/stat_families.json",
+        "record_count": 1604,
+        "sha256": "596e58dc200f43d7c7587d3ee97f4eedff5bdc4756fc408c88f5f79bb141b902"
+      }
+    ]
+  },
+  "families": [
+    {
+      "family": "coverage_map",
+      "relative_path": "src/poe_build_research/pob/mechanic_coverage_data/coverage_map.json",
+      "record_count": 91,
+      "coverage_status_counts": {
+        "covered": 85,
+        "partial": 4,
+        "gap": 2
+      }
+    },
+    {
+      "family": "missing_list",
+      "relative_path": "src/poe_build_research/pob/mechanic_coverage_data/missing_list.json",
+      "record_count": 6,
+      "coverage_status_counts": {
+        "covered": 0,
+        "partial": 4,
+        "gap": 2
+      }
+    }
+  ],
+  "downstream_policy": {
+    "read_root": "src/poe_build_research/pob/mechanic_coverage_data",
+    "derivation_source_roots": [
+      "src/poe_build_research/pob/corpus_data",
+      "src/poe_build_research/pob/tag_data",
+      "src/poe_build_research/pob/mod_data"
+    ],
+    "consumer_rule": "Downstream agents must read the committed mechanic coverage map and missing list instead of rebuilding PoB-side archetype coverage ad hoc.",
+    "loader_boundary": "poe_build_research.pob.mechanic_coverage",
+    "authority_rule": "Use accepted committed game, tag, and mod corpora for ordinary mechanic coverage reads; wiki and curated notes are follow-up sources only for missing_list entries.",
+    "missing_list_rule": "Treat partial and gap records as the only normal input surface for external wiki and curated-notes follow-up."
+  },
+  "field_order": {
+    "manifest": [
+      "schema_version",
+      "corpus_id",
+      "source_game_corpus",
+      "source_tag_corpus",
+      "source_mod_corpus",
+      "families",
+      "downstream_policy",
+      "field_order"
+    ],
+    "bundle": [
+      "schema_version",
+      "corpus_id",
+      "family",
+      "record_count",
+      "provenance",
+      "metadata",
+      "records"
+    ],
+    "coverage_record": [
+      "group_id",
+      "group_key",
+      "domains",
+      "matched_terms",
+      "coverage_status",
+      "delivery_required",
+      "layer_coverage",
+      "missing_layers",
+      "partial_layers",
+      "status_reason"
+    ],
+    "missing_record": [
+      "group_id",
+      "group_key",
+      "domains",
+      "coverage_status",
+      "missing_layers",
+      "partial_layers",
+      "present_layers",
+      "status_reason",
+      "next_step_sources",
+      "evidence_samples"
+    ],
+    "layer": [
+      "layer",
+      "required",
+      "status",
+      "tag_record_count",
+      "tag_source_families",
+      "mod_record_count",
+      "mod_source_families",
+      "evidence_samples"
+    ],
+    "evidence": [
+      "corpus_id",
+      "family",
+      "record_id",
+      "display_name",
+      "matched_terms",
+      "source_families",
+      "supporting_text"
+    ]
+  }
+}

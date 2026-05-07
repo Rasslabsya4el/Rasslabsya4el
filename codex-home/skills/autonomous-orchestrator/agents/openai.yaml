@@ -1,0 +1,6 @@
+interface:
+  display_name: "Autonomous Orchestrator"
+  short_description: "Autonomous file-driven project orchestrator"
+  default_prompt: "Use $autonomous-orchestrator to run a fully autonomous file-driven orchestrator loop in a single project."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,844 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/data/poe_ninja_build_page.schema.json",
+  "title": "PoENinjaBuildPage",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "source",
+    "page",
+    "snapshot",
+    "query",
+    "fields",
+    "field_descriptors",
+    "default_field_ids",
+    "sections",
+    "results",
+    "freshness",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "record_kind": {
+      "type": "string",
+      "const": "poe_ninja_build_page"
+    },
+    "source": {
+      "$ref": "#/$defs/source_surface"
+    },
+    "page": {
+      "$ref": "#/$defs/page_metadata"
+    },
+    "snapshot": {
+      "$ref": "#/$defs/snapshot_candidate"
+    },
+    "query": {
+      "$ref": "#/$defs/page_query"
+    },
+    "fields": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/search_field"
+      }
+    },
+    "field_descriptors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/field_descriptor"
+      }
+    },
+    "default_field_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/search_section"
+      }
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/result_row"
+      }
+    },
+    "freshness": {
+      "$ref": "#/$defs/freshness"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    }
+  },
+  "$defs": {
+    "source_surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "upstream_system",
+        "public_surface",
+        "site_base_url"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "const": "poe_ninja_public_builds"
+        },
+        "upstream_system": {
+          "type": "string",
+          "const": "poe_ninja_public_builds"
+        },
+        "public_surface": {
+          "type": "string",
+          "const": "build_page"
+        },
+        "site_base_url": {
+          "type": "string",
+          "const": "https://poe.ninja"
+        }
+      }
+    },
+    "page_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requested_url",
+        "title",
+        "description",
+        "canonical_url",
+        "og_url"
+      ],
+      "properties": {
+        "requested_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "canonical_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "og_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "snapshot_candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "league_url",
+        "snapshot_type",
+        "league_name",
+        "time_machine_labels",
+        "version",
+        "snapshot_name",
+        "overview_type",
+        "passive_tree",
+        "atlas_tree"
+      ],
+      "properties": {
+        "league_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "snapshot_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "league_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "time_machine_labels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "snapshot_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "overview_type": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "passive_tree": {
+          "type": "string",
+          "minLength": 1
+        },
+        "atlas_tree": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "page_query": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "league_url",
+        "snapshot_type",
+        "requested_time_machine",
+        "result_limit",
+        "filters"
+      ],
+      "properties": {
+        "league_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "snapshot_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "requested_time_machine": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "result_limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 25
+        },
+        "filters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "key",
+              "values"
+            ],
+            "properties": {
+              "key": {
+                "type": "string",
+                "minLength": 1
+              },
+              "values": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "search_field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "name",
+        "value_list_ids",
+        "sort_id",
+        "integer_dimension_id",
+        "properties",
+        "main_field_id",
+        "description",
+        "group",
+        "pinned"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value_list_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "sort_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "integer_dimension_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "properties": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "main_field_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "group": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pinned": {
+          "type": "boolean"
+        }
+      }
+    },
+    "field_descriptor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "optional",
+        "description",
+        "group",
+        "pinned"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "optional": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "group": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pinned": {
+          "type": "boolean"
+        }
+      }
+    },
+    "search_section": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "name",
+        "dimension_id",
+        "properties",
+        "top_items"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dimension_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "properties": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "top_items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/section_item"
+          }
+        }
+      }
+    },
+    "section_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dictionary_id",
+        "dictionary_key",
+        "label",
+        "count",
+        "percentage",
+        "entry_properties"
+      ],
+      "properties": {
+        "dictionary_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dictionary_key": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "percentage": {
+          "type": "number",
+          "minimum": 0
+        },
+        "entry_properties": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "result_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rank",
+        "page_index",
+        "character",
+        "summary",
+        "field_values"
+      ],
+      "properties": {
+        "rank": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "page_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "character": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "account",
+            "page_url"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "account": {
+              "type": "string",
+              "minLength": 1
+            },
+            "page_url": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        },
+        "summary": {
+          "type": "object",
+          "additionalProperties": {
+            "type": [
+              "string",
+              "integer",
+              "number",
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "field_values": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/field_value"
+          }
+        }
+      }
+    },
+    "field_value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "field_id",
+        "field_type",
+        "field_name",
+        "group",
+        "pinned",
+        "value_list_ids",
+        "resolved_values"
+      ],
+      "properties": {
+        "field_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "field_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "field_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "group": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pinned": {
+          "type": "boolean"
+        },
+        "value_list_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "resolved_values": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/resolved_value"
+          }
+        }
+      }
+    },
+    "resolved_value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value_id",
+        "kind"
+      ],
+      "properties": {
+        "value_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "string",
+            "number",
+            "dictionary",
+            "dictionary_list",
+            "number_list",
+            "string_list",
+            "boolean",
+            "empty"
+          ]
+        },
+        "string_value": {
+          "type": "string"
+        },
+        "number_value": {
+          "type": "integer"
+        },
+        "dictionary_id": {
+          "type": "string"
+        },
+        "dictionary_key": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "dictionary_keys": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "entry_properties": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "number_values": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "string_values": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "boolean_value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "retrieved_at",
+        "resources",
+        "observed_data_timestamps"
+      ],
+      "properties": {
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "resources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/resource_freshness"
+          }
+        },
+        "observed_data_timestamps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "resource_freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "url",
+        "method",
+        "content_type",
+        "age_seconds",
+        "last_modified",
+        "cf_cache_status",
+        "max_age_seconds",
+        "stale_while_revalidate_seconds",
+        "stale_if_error_seconds"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "method": {
+          "type": "string",
+          "const": "GET"
+        },
+        "content_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "age_seconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "last_modified": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cf_cache_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "max_age_seconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "stale_while_revalidate_seconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "stale_if_error_seconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generator",
+        "upstream_system",
+        "inputs",
+        "notes"
+      ],
+      "properties": {
+        "generator": {
+          "type": "string",
+          "const": "poe_build_research.data.poe_ninja"
+        },
+        "upstream_system": {
+          "type": "string",
+          "const": "poe_ninja_public_builds"
+        },
+        "inputs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/provenance_input"
+          }
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "provenance_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "url",
+        "method",
+        "status",
+        "content_type",
+        "etag",
+        "body_sha256",
+        "body_bytes",
+        "fetched_at"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "method": {
+          "type": "string",
+          "const": "GET"
+        },
+        "status": {
+          "type": "integer",
+          "minimum": 200
+        },
+        "content_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "etag": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "body_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "body_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fetched_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

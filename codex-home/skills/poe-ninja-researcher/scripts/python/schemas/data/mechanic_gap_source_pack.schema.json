@@ -1,0 +1,327 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://poe-build-research.local/schemas/data/mechanic_gap_source_pack.schema.json",
+  "title": "Mechanic gap source pack",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "pack_id",
+    "pack_version",
+    "description",
+    "input_missing_list",
+    "source_policy",
+    "records"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "pack_id": {
+      "type": "string",
+      "const": "mechanic_gap_source_pack"
+    },
+    "pack_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input_missing_list": {
+      "$ref": "#/$defs/input_missing_list"
+    },
+    "source_policy": {
+      "$ref": "#/$defs/source_policy"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    }
+  },
+  "$defs": {
+    "gap_family_key": {
+      "type": "string",
+      "enum": [
+        "nova",
+        "quiver",
+        "slam",
+        "warstaff",
+        "exposure",
+        "orb"
+      ]
+    },
+    "layer_name": {
+      "type": "string",
+      "enum": [
+        "delivery",
+        "scaling",
+        "enablement"
+      ]
+    },
+    "string_list": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "input_missing_list": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bundle_path",
+        "bundle_sha256",
+        "corpus_id",
+        "family",
+        "record_count",
+        "gap_family_keys"
+      ],
+      "properties": {
+        "bundle_path": {
+          "type": "string",
+          "const": "src/poe_build_research/pob/mechanic_coverage_data/missing_list.json"
+        },
+        "bundle_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "corpus_id": {
+          "type": "string",
+          "const": "pob_mechanic_coverage"
+        },
+        "family": {
+          "type": "string",
+          "const": "missing_list"
+        },
+        "record_count": {
+          "type": "integer",
+          "const": 6
+        },
+        "gap_family_keys": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/gap_family_key"
+          }
+        }
+      }
+    },
+    "source_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default_source_family",
+        "secondary_source_rule",
+        "promotion_boundary"
+      ],
+      "properties": {
+        "default_source_family": {
+          "type": "string",
+          "const": "wiki"
+        },
+        "secondary_source_rule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "promotion_boundary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "group_key",
+        "coverage_status",
+        "missing_layers",
+        "partial_layers",
+        "status_reason",
+        "wiki_only_sufficient",
+        "terminology_notes",
+        "ambiguity_notes",
+        "source_entries"
+      ],
+      "properties": {
+        "group_key": {
+          "$ref": "#/$defs/gap_family_key"
+        },
+        "coverage_status": {
+          "type": "string",
+          "enum": [
+            "partial",
+            "gap"
+          ]
+        },
+        "missing_layers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/layer_name"
+          }
+        },
+        "partial_layers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/layer_name"
+          }
+        },
+        "status_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "wiki_only_sufficient": {
+          "type": "boolean"
+        },
+        "terminology_notes": {
+          "$ref": "#/$defs/string_list"
+        },
+        "ambiguity_notes": {
+          "$ref": "#/$defs/string_list"
+        },
+        "source_entries": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/source_entry"
+          }
+        }
+      }
+    },
+    "source_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entry_id",
+        "source_family",
+        "source_kind",
+        "url",
+        "title",
+        "locator",
+        "normalized_claim_candidates",
+        "ambiguity_note",
+        "provenance"
+      ],
+      "properties": {
+        "entry_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "source_family": {
+          "type": "string",
+          "enum": [
+            "wiki",
+            "secondary"
+          ]
+        },
+        "source_kind": {
+          "type": "string",
+          "enum": [
+            "wiki_page",
+            "patch_notes",
+            "announcement",
+            "forum_post"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalized_claim_candidates": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/claim_candidate"
+          }
+        },
+        "ambiguity_note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        }
+      }
+    },
+    "claim_candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id",
+        "summary",
+        "normalized_statement",
+        "target_layers"
+      ],
+      "properties": {
+        "claim_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_.]+$"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalized_statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_layers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/layer_name"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "captured_at",
+        "capture_mode",
+        "surface_role",
+        "selection_reason"
+      ],
+      "properties": {
+        "captured_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "capture_mode": {
+          "type": "string",
+          "const": "manual_repo_tracked_review"
+        },
+        "surface_role": {
+          "type": "string",
+          "enum": [
+            "default_wiki",
+            "secondary_clarifier"
+          ]
+        },
+        "selection_reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

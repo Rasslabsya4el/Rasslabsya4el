@@ -1,0 +1,29 @@
+{
+  "calc_snapshot": {
+    "main_output": {
+      "AverageHit": 1000.0,
+      "CastRate": 3.0,
+      "CombinedDPS": 175000.0,
+      "EnergyShield": 0.0,
+      "FullDPS": 180000.0,
+      "Life": 4500.0,
+      "Mana": 780.0,
+      "ManaUnreserved": 120.0,
+      "Radius": 22.0,
+      "ReqStr": 100.0,
+      "Str": 120.0,
+      "TotalEHP": 22000.0
+    },
+    "triage": {
+      "requirement_pressure": {
+        "strength": {
+          "available": 120.0,
+          "required": 100.0,
+          "satisfied": true,
+          "shortfall": 0.0
+        }
+      }
+    },
+    "warning_codes": []
+  }
+}

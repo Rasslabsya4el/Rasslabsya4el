@@ -1,0 +1,85 @@
+{
+  "corpus_id": "pob_mod_corpus",
+  "downstream_policy": {
+    "consumer_rule": "Downstream agents must read committed mod-family bundles instead of deriving families ad hoc from the game corpus.",
+    "non_goals": [
+      "No build ranking.",
+      "No craft advice.",
+      "No DPS valuation.",
+      "No item delta calculation.",
+      "No shopping advice."
+    ],
+    "read_root": "src/poe_build_research/pob/mod_data",
+    "runtime_authority": "src/poe_build_research/pob/corpus_data"
+  },
+  "families": [
+    {
+      "family": "mod_families",
+      "member_count": 4786,
+      "record_count": 1787,
+      "relative_path": "src/poe_build_research/pob/mod_data/mod_families.json",
+      "source_families": [
+        "items",
+        "passives",
+        "keystones",
+        "masteries"
+      ]
+    },
+    {
+      "family": "stat_families",
+      "member_count": 6687,
+      "record_count": 1604,
+      "relative_path": "src/poe_build_research/pob/mod_data/stat_families.json",
+      "source_families": [
+        "items",
+        "passives",
+        "keystones",
+        "masteries"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_game_corpus": {
+    "bundle_inputs": [
+      {
+        "family": "items",
+        "record_count": 1062,
+        "relative_path": "src/poe_build_research/pob/corpus_data/items.json",
+        "sha256": "e6d24c4a0d5f46475ddf2380f2fc02b1fab35ff4a004038f7725b59becd8a87c"
+      },
+      {
+        "family": "passives",
+        "record_count": 2415,
+        "relative_path": "src/poe_build_research/pob/corpus_data/passives.json",
+        "sha256": "93c1f80d830b7877a1e1e5965228de4ab2bdcd0740810ec8270ba5a3f679e5aa"
+      },
+      {
+        "family": "keystones",
+        "record_count": 54,
+        "relative_path": "src/poe_build_research/pob/corpus_data/keystones.json",
+        "sha256": "16e10692d2883c8d6a40ff980841b0fee1c927379da2fc3c98799aea268c6cfe"
+      },
+      {
+        "family": "masteries",
+        "record_count": 351,
+        "relative_path": "src/poe_build_research/pob/corpus_data/masteries.json",
+        "sha256": "c32bdb2b2db77d70031c625c98a2c5b970e37b3aebcbb2229aaa298b6b29d207"
+      }
+    ],
+    "corpus_id": "pob_game_corpus",
+    "manifest_path": "src/poe_build_research/pob/corpus_data/manifest.json",
+    "manifest_sha256": "fddf685074afb5109ce7c3336acc57a17663f0c98204d35fbc33d89ba8f02d65",
+    "schema_version": "1.0.0",
+    "source_lane": {
+      "canonical_path": "vendor/pob/source",
+      "lane_id": "pob_source_lane",
+      "lock_path": "locks/pob.source.lock.json",
+      "observed_commit": "143ade33da3bd0f1c803671f17930b839c79ace7",
+      "pinned_commit": "143ade33da3bd0f1c803671f17930b839c79ace7",
+      "pinned_ref": "refs/tags/v2.64.0",
+      "repo": "PathOfBuildingCommunity/PathOfBuilding",
+      "repo_url": "https://github.com/PathOfBuildingCommunity/PathOfBuilding.git",
+      "tree_version": "3_28"
+    }
+  }
+}

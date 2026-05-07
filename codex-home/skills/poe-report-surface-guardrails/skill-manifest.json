@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "skill_name": "poe-report-surface-guardrails",
+  "version": "0.1.0-clean-seed",
+  "package_role": "product_runtime_skill",
+  "runtime_boundary": "self_contained_installed_skill",
+  "primary_modes": [
+    "accepted_report_surface_guard",
+    "prose_only_output_blocker"
+  ],
+  "packaged_assets": [
+    "SKILL.md",
+    "references/",
+    "templates/reports/"
+  ],
+  "readiness_probe": "poe-report-surface-guardrails"
+}

@@ -1,0 +1,283 @@
+{
+  "candidate_count": 3,
+  "candidates": [
+    {
+      "candidate_id": "tree_pathing.distant_big_fire_cluster",
+      "claims_measured_evidence": true,
+      "claims_opportunity_cost": true,
+      "evidence_refs": [
+        {
+          "evidence_kind": "action_cost_value_ledger",
+          "json_pointer": "/rows",
+          "locator": "action_cost_value_tree_pathing_mvp.json",
+          "ref_id": "evidence.cv4.tree_pathing.distant_big_fire_cluster.ledger",
+          "summary": "Action Cost/Value Ledger ref for resource cost and alternatives."
+        },
+        {
+          "evidence_kind": "calc_delta",
+          "json_pointer": "/changed_surfaces",
+          "locator": "calc_snapshot_diff_example.json",
+          "ref_id": "evidence.cv4.tree_pathing.distant_big_fire_cluster.calc-diff",
+          "summary": "Calc Snapshot Diff ref for measured before/after evidence."
+        },
+        {
+          "evidence_kind": "pathing_opportunity_cost",
+          "json_pointer": "/candidate_paths",
+          "locator": "pathing-opportunity-cost.json",
+          "ref_id": "evidence.cv4.tree_pathing.distant_big_fire_cluster.pathing",
+          "summary": "Pathing Opportunity Cost ref for travel tax and value per point."
+        }
+      ],
+      "expected_surfaces": [
+        {
+          "expected_direction": "increase",
+          "metric_key": "normal_passive_count",
+          "note": "Candidate consumes passive budget.",
+          "surface_kind": "tree_state"
+        },
+        {
+          "expected_direction": "increase",
+          "metric_key": "FullDPS_or_constraint_relief",
+          "note": "Candidate expects DPS, constraint relief, or both.",
+          "surface_kind": "calc_surface"
+        }
+      ],
+      "label": "Distant high-value fire cluster",
+      "missing_evidence": [],
+      "resource_cost": {
+        "payoff_points": 3,
+        "summary": "8 passives, 5 travel, 3 payoff.",
+        "total_passive_points": 8,
+        "travel_points": 5
+      },
+      "uncertainty": {
+        "level": "medium",
+        "notes": [
+          "CV4 validates comparison completeness only and does not optimize the build."
+        ]
+      },
+      "verdict": "rejected",
+      "verdict_reason": "Rejected because CV3 shows weaker value per total passive after travel tax."
+    },
+    {
+      "candidate_id": "tree_pathing.nearby_dex_life_package",
+      "claims_measured_evidence": true,
+      "claims_opportunity_cost": true,
+      "evidence_refs": [
+        {
+          "evidence_kind": "action_cost_value_ledger",
+          "json_pointer": "/rows",
+          "locator": "action_cost_value_tree_pathing_mvp.json",
+          "ref_id": "evidence.cv4.tree_pathing.nearby_dex_life_package.ledger",
+          "summary": "Action Cost/Value Ledger ref for resource cost and alternatives."
+        },
+        {
+          "evidence_kind": "calc_delta",
+          "json_pointer": "/changed_surfaces",
+          "locator": "calc_snapshot_diff_example.json",
+          "ref_id": "evidence.cv4.tree_pathing.nearby_dex_life_package.calc-diff",
+          "summary": "Calc Snapshot Diff ref for measured before/after evidence."
+        },
+        {
+          "evidence_kind": "pathing_opportunity_cost",
+          "json_pointer": "/candidate_paths",
+          "locator": "pathing-opportunity-cost.json",
+          "ref_id": "evidence.cv4.tree_pathing.nearby_dex_life_package.pathing",
+          "summary": "Pathing Opportunity Cost ref for travel tax and value per point."
+        }
+      ],
+      "expected_surfaces": [
+        {
+          "expected_direction": "increase",
+          "metric_key": "normal_passive_count",
+          "note": "Candidate consumes passive budget.",
+          "surface_kind": "tree_state"
+        },
+        {
+          "expected_direction": "increase",
+          "metric_key": "FullDPS_or_constraint_relief",
+          "note": "Candidate expects DPS, constraint relief, or both.",
+          "surface_kind": "calc_surface"
+        }
+      ],
+      "label": "Nearby dexterity and life package",
+      "missing_evidence": [],
+      "resource_cost": {
+        "payoff_points": 3,
+        "summary": "4 passives, 1 travel, 3 payoff.",
+        "total_passive_points": 4,
+        "travel_points": 1
+      },
+      "uncertainty": {
+        "level": "medium",
+        "notes": [
+          "CV4 validates comparison completeness only and does not optimize the build."
+        ]
+      },
+      "verdict": "selected",
+      "verdict_reason": "Selected because it has better value per passive and repairs Dexterity pressure."
+    },
+    {
+      "candidate_id": "tree_pathing.nearby_fire_cast_package",
+      "claims_measured_evidence": true,
+      "claims_opportunity_cost": true,
+      "evidence_refs": [
+        {
+          "evidence_kind": "action_cost_value_ledger",
+          "json_pointer": "/rows",
+          "locator": "action_cost_value_tree_pathing_mvp.json",
+          "ref_id": "evidence.cv4.tree_pathing.nearby_fire_cast_package.ledger",
+          "summary": "Action Cost/Value Ledger ref for resource cost and alternatives."
+        },
+        {
+          "evidence_kind": "calc_delta",
+          "json_pointer": "/changed_surfaces",
+          "locator": "calc_snapshot_diff_example.json",
+          "ref_id": "evidence.cv4.tree_pathing.nearby_fire_cast_package.calc-diff",
+          "summary": "Calc Snapshot Diff ref for measured before/after evidence."
+        },
+        {
+          "evidence_kind": "pathing_opportunity_cost",
+          "json_pointer": "/candidate_paths",
+          "locator": "pathing-opportunity-cost.json",
+          "ref_id": "evidence.cv4.tree_pathing.nearby_fire_cast_package.pathing",
+          "summary": "Pathing Opportunity Cost ref for travel tax and value per point."
+        }
+      ],
+      "expected_surfaces": [
+        {
+          "expected_direction": "increase",
+          "metric_key": "normal_passive_count",
+          "note": "Candidate consumes passive budget.",
+          "surface_kind": "tree_state"
+        },
+        {
+          "expected_direction": "increase",
+          "metric_key": "FullDPS_or_constraint_relief",
+          "note": "Candidate expects DPS, constraint relief, or both.",
+          "surface_kind": "calc_surface"
+        }
+      ],
+      "label": "Nearby fire and cast speed package",
+      "missing_evidence": [],
+      "resource_cost": {
+        "payoff_points": 2,
+        "summary": "3 passives, 1 travel, 2 payoff.",
+        "total_passive_points": 3,
+        "travel_points": 1
+      },
+      "uncertainty": {
+        "level": "medium",
+        "notes": [
+          "CV4 validates comparison completeness only and does not optimize the build."
+        ]
+      },
+      "verdict": "rejected",
+      "verdict_reason": "Rejected because CV3 shows lower total opportunity value than the selected constraint-relief package."
+    }
+  ],
+  "comparison_basis": {
+    "candidate_ids": [
+      "tree_pathing.distant_big_fire_cluster",
+      "tree_pathing.nearby_dex_life_package",
+      "tree_pathing.nearby_fire_cast_package"
+    ],
+    "expected_surfaces": [
+      {
+        "expected_direction": "increase",
+        "metric_key": "normal_passive_count",
+        "note": "Candidate consumes passive budget.",
+        "surface_kind": "tree_state"
+      },
+      {
+        "expected_direction": "increase",
+        "metric_key": "FullDPS_or_constraint_relief",
+        "note": "Candidate expects DPS, constraint relief, or both.",
+        "surface_kind": "calc_surface"
+      }
+    ],
+    "measured_evidence": {
+      "calc_snapshot_diff_refs": [
+        {
+          "evidence_kind": "calc_delta",
+          "json_pointer": "/changed_surfaces",
+          "locator": "calc_snapshot_diff_example.json",
+          "ref_id": "cv2.calc-snapshot-diff",
+          "summary": "CV2 diff supplies measured delta evidence where available."
+        }
+      ],
+      "claimed": true
+    },
+    "missing_evidence": [],
+    "opportunity_cost": {
+      "claimed": true,
+      "pathing_opportunity_cost_ref": {
+        "evidence_kind": "pathing_opportunity_cost",
+        "json_pointer": "/candidate_paths",
+        "locator": "pathing-opportunity-cost.json",
+        "ref_id": "cv3.pathing-opportunity-cost",
+        "summary": "CV3 pathing opportunity record prices travel tax and value per passive."
+      }
+    },
+    "resource_cost": {
+      "payoff_points": 3,
+      "summary": "4 passives, 1 travel, 3 payoff.",
+      "total_passive_points": 4,
+      "travel_points": 1
+    },
+    "uncertainty": {
+      "level": "medium",
+      "notes": [
+        "CV4 validates comparison completeness only and does not optimize the build."
+      ]
+    }
+  },
+  "comparison_id": "cv4.comparison-protocol.tree-pathing.mvp",
+  "decision_family": "direct_build.tree_pathing",
+  "generated_at": "2026-05-06T00:00:00Z",
+  "mode": "normal",
+  "product_agent_behavioral_proof_required": false,
+  "record_kind": "comparison_protocol",
+  "rejected_candidate_ids": [
+    "tree_pathing.distant_big_fire_cluster",
+    "tree_pathing.nearby_fire_cast_package"
+  ],
+  "required_artifact_refs": {
+    "action_cost_value_ledger_ref": {
+      "evidence_kind": "action_cost_value_ledger",
+      "json_pointer": "/rows",
+      "locator": "action_cost_value_tree_pathing_mvp.json",
+      "ref_id": "cv1.action-cost-value-ledger",
+      "summary": "CV1 ledger supplies candidate cost and alternatives."
+    },
+    "calc_snapshot_diff_refs": [
+      {
+        "evidence_kind": "calc_delta",
+        "json_pointer": "/changed_surfaces",
+        "locator": "calc_snapshot_diff_example.json",
+        "ref_id": "cv2.calc-snapshot-diff",
+        "summary": "CV2 diff supplies measured delta evidence where available."
+      }
+    ],
+    "pathing_opportunity_cost_ref": {
+      "evidence_kind": "pathing_opportunity_cost",
+      "json_pointer": "/candidate_paths",
+      "locator": "pathing-opportunity-cost.json",
+      "ref_id": "cv3.pathing-opportunity-cost",
+      "summary": "CV3 pathing opportunity record prices travel tax and value per passive."
+    }
+  },
+  "schema_version": "0.1.0",
+  "selected_candidate_id": "tree_pathing.nearby_dex_life_package",
+  "status": "accepted",
+  "stop_or_retry": {
+    "next_action": "Use the selected candidate as the authored material action input.",
+    "reason": "Comparison is accepted for this bounded decision; continue with the selected action if the caller owns the build decision.",
+    "recommendation": "stop_with_selected"
+  },
+  "validation": {
+    "finding_count": 0,
+    "findings": []
+  },
+  "verdict_reason": "Selected nearby Dex/life package because it compares three alternatives, keeps travel tax low, cites CV1/CV2/CV3 evidence, and repairs a constraint while the distant high-value route loses on value per total passive."
+}

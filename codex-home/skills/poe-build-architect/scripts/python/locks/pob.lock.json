@@ -1,0 +1,16 @@
+{
+  "repo": "PathOfBuildingCommunity/PathOfBuilding",
+  "tag": "v2.64.0",
+  "published_at": "2026-04-18T17:38:45Z",
+  "asset_name": "PathOfBuildingCommunity-Portable.zip",
+  "asset_url": "https://github.com/PathOfBuildingCommunity/PathOfBuilding/releases/download/v2.64.0/PathOfBuildingCommunity-Portable.zip",
+  "asset_sha256": "4645b3797bdebc05856b2af9e6e1bd7b7d07df0435b59452ff4633817eb321b6",
+  "asset_size": 457914753,
+  "fetched_at": "2026-04-20T19:19:22Z",
+  "extract_subdir": "app",
+  "release_id": 310602592,
+  "etag": "W/\"0c2f3730b4e0820d8c3b0a2046fde125010d2ebaefaf043e9703982513b152f8\"",
+  "notes_url": "https://github.com/PathOfBuildingCommunity/PathOfBuilding/releases/tag/v2.64.0",
+  "platform": "windows",
+  "fallback_asset_name": "PathOfBuildingCommunity-Setup.exe"
+}

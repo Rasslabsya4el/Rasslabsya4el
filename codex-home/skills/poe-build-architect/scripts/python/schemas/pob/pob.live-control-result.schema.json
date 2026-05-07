@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/pob/pob.live-control-result.schema.json",
+  "title": "PoB live control result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "build_id",
+    "supported_path",
+    "control_state",
+    "failure_state",
+    "failure_message",
+    "launched_at",
+    "startup_window_seconds",
+    "shutdown_timeout_seconds",
+    "startup_observed",
+    "launch_command",
+    "launch_cwd",
+    "workspace_build_path",
+    "settings_path",
+    "stdout_log_path",
+    "stderr_log_path",
+    "exit_code",
+    "termination"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "build_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "supported_path": {
+      "const": "pinned_portable_build_xml_settings_v1"
+    },
+    "control_state": {
+      "type": "string",
+      "enum": [
+        "launch_probe_succeeded",
+        "failed"
+      ]
+    },
+    "failure_state": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "invalid_build_xml",
+        "invalid_control_window",
+        "invalid_request",
+        "runtime_exited_early",
+        "runtime_launch_failed",
+        "runtime_launcher_missing",
+        "runtime_manifest_missing",
+        "runtime_shutdown_timeout",
+        "settings_surface_missing",
+        "workspace_build_missing"
+      ]
+    },
+    "failure_message": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "launched_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "startup_window_seconds": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "shutdown_timeout_seconds": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "startup_observed": {
+      "type": "boolean"
+    },
+    "launch_command": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "launch_cwd": {
+      "type": "string",
+      "minLength": 1
+    },
+    "workspace_build_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "settings_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stdout_log_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stderr_log_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "exit_code": {
+      "type": "integer"
+    },
+    "termination": {
+      "type": "string",
+      "enum": [
+        "not_needed",
+        "terminate",
+        "kill"
+      ]
+    }
+  }
+}

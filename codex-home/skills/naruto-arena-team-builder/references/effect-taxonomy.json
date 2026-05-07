@@ -1,0 +1,670 @@
+{
+  "artifact": "effect_taxonomy",
+  "taxonomy_version": "taxonomy-v1",
+  "generated_at": "2026-04-25T14:42:22Z",
+  "source_inputs": {
+    "characters_path": "data\\normalized\\characters.json",
+    "missions_path": "data\\normalized\\missions.json"
+  },
+  "summary": {
+    "character_count": 196,
+    "mission_count": 179,
+    "skill_count": 877,
+    "effect_count": 1638,
+    "requirement_count": 263
+  },
+  "effect_families": [
+    {
+      "family_id": "offense",
+      "label": "Offense",
+      "definition": "Effects that directly pressure health totals or raise future damage output.",
+      "observed_effect_count": 663
+    },
+    {
+      "family_id": "defense",
+      "label": "Defense",
+      "definition": "Effects that prevent damage, add protection, or reduce incoming or outgoing damage.",
+      "observed_effect_count": 371
+    },
+    {
+      "family_id": "control",
+      "label": "Control",
+      "definition": "Effects that limit enemy actions or apply rule-level restrictions.",
+      "observed_effect_count": 147
+    },
+    {
+      "family_id": "sustain",
+      "label": "Sustain",
+      "definition": "Effects that restore health or keep a character active over longer fights.",
+      "observed_effect_count": 53
+    },
+    {
+      "family_id": "resource",
+      "label": "Resource",
+      "definition": "Effects that grant, steal, or otherwise manipulate chakra-like resources and similar gains.",
+      "observed_effect_count": 26
+    },
+    {
+      "family_id": "state",
+      "label": "State",
+      "definition": "Effects that apply, remove, or modify persistent states without cleanly fitting damage/heal buckets.",
+      "observed_effect_count": 187
+    },
+    {
+      "family_id": "setup",
+      "label": "Setup",
+      "definition": "Effects that unlock, replace, or improve other skills and future actions.",
+      "observed_effect_count": 158
+    },
+    {
+      "family_id": "uncertainty",
+      "label": "Uncertainty",
+      "definition": "Fallback or ambiguity buckets that must be surfaced instead of guessed away.",
+      "observed_effect_count": 33
+    }
+  ],
+  "skill_classes": [
+    {
+      "class_id": "instant",
+      "label": "Instant",
+      "definition": "Source-provided skill class label captured directly from the canonical skill card.",
+      "observed_skill_count": 812,
+      "sample_skill_ids": [
+        "skill:character:uzumaki-naruto:1:uzumaki-naruto-combo",
+        "skill:character:uzumaki-naruto:2:rasengan",
+        "skill:character:uzumaki-naruto:3:shadow-clones"
+      ]
+    },
+    {
+      "class_id": "physical",
+      "label": "Physical",
+      "definition": "Source-provided skill class label for physical-type skills.",
+      "observed_skill_count": 413,
+      "sample_skill_ids": [
+        "skill:character:uzumaki-naruto:1:uzumaki-naruto-combo",
+        "skill:character:haruno-sakura:1:ko-punch",
+        "skill:character:uchiha-sasuke:1:lion-combo"
+      ]
+    },
+    {
+      "class_id": "unique",
+      "label": "Unique",
+      "definition": "Source-provided skill class label indicating the skill is marked unique by the canonical source.",
+      "observed_skill_count": 344,
+      "sample_skill_ids": [
+        "skill:character:haruno-sakura:3:inner-sakura",
+        "skill:character:uchiha-sasuke:3:sharingan",
+        "skill:character:inuzuka-kiba:2:double-headed-wolf"
+      ]
+    },
+    {
+      "class_id": "chakra",
+      "label": "Chakra",
+      "definition": "Source-provided skill class label for chakra-type skills.",
+      "observed_skill_count": 326,
+      "sample_skill_ids": [
+        "skill:character:uzumaki-naruto:2:rasengan",
+        "skill:character:uzumaki-naruto:3:shadow-clones",
+        "skill:character:uzumaki-naruto:4:sexy-technique"
+      ]
+    },
+    {
+      "class_id": "ranged",
+      "label": "Ranged",
+      "definition": "Source-provided skill class label for ranged skills.",
+      "observed_skill_count": 296,
+      "sample_skill_ids": [
+        "skill:character:uchiha-sasuke:3:sharingan",
+        "skill:character:inuzuka-kiba:3:dynamic-air-marking",
+        "skill:character:aburame-shino:1:chakra-leach"
+      ]
+    },
+    {
+      "class_id": "melee",
+      "label": "Melee",
+      "definition": "Source-provided skill class label for melee skills.",
+      "observed_skill_count": 236,
+      "sample_skill_ids": [
+        "skill:character:uzumaki-naruto:1:uzumaki-naruto-combo",
+        "skill:character:uzumaki-naruto:2:rasengan",
+        "skill:character:haruno-sakura:1:ko-punch"
+      ]
+    },
+    {
+      "class_id": "mental",
+      "label": "Mental",
+      "definition": "Source-provided skill class label for mental-type skills.",
+      "observed_skill_count": 133,
+      "sample_skill_ids": [
+        "skill:character:haruno-sakura:3:inner-sakura",
+        "skill:character:uchiha-sasuke:3:sharingan",
+        "skill:character:hyuuga-hinata:3:byakugan"
+      ]
+    },
+    {
+      "class_id": "affliction",
+      "label": "Affliction",
+      "definition": "Source-provided skill class label for affliction-type skills.",
+      "observed_skill_count": 131,
+      "sample_skill_ids": [
+        "skill:character:inuzuka-kiba:3:dynamic-air-marking",
+        "skill:character:aburame-shino:1:chakra-leach",
+        "skill:character:aburame-shino:2:female-bug"
+      ]
+    },
+    {
+      "class_id": "action",
+      "label": "Action",
+      "definition": "Source-provided skill class label marking action-type skills.",
+      "observed_skill_count": 74,
+      "sample_skill_ids": [
+        "skill:character:inuzuka-kiba:2:double-headed-wolf",
+        "skill:character:hyuuga-hinata:1:hinata-gentle-fist",
+        "skill:character:hyuuga-hinata:2:eight-trigrams-64-palms-protection"
+      ]
+    },
+    {
+      "class_id": "harmful",
+      "label": "Harmful",
+      "definition": "Source-provided skill class label marking harmful skills.",
+      "observed_skill_count": 37,
+      "sample_skill_ids": [
+        "skill:character:inuzuka-kiba-s:2:piercing-fang",
+        "skill:character:inuzuka-kiba-s:3:fang-over-fang",
+        "skill:character:inuzuka-kiba-s:5:enhanced-garouga"
+      ]
+    },
+    {
+      "class_id": "helpful",
+      "label": "Helpful",
+      "definition": "Source-provided skill class label marking helpful skills.",
+      "observed_skill_count": 23,
+      "sample_skill_ids": [
+        "skill:character:nara-shikamaru:4:shikamaru-hide",
+        "skill:character:uchiha-itachi:4:sharingan-insight",
+        "skill:character:inuzuka-kiba-s:1:man-beast-clone"
+      ]
+    },
+    {
+      "class_id": "control",
+      "label": "Control",
+      "definition": "Source-provided skill class label marking control-oriented skills.",
+      "observed_skill_count": 12,
+      "sample_skill_ids": [
+        "skill:character:nara-shikamaru:3:shadow-imitation",
+        "skill:character:yamanaka-ino:2:change-of-heart",
+        "skill:character:tsurugi-misumi:2:soft-physique-modification"
+      ]
+    },
+    {
+      "class_id": "passive",
+      "label": "Passive",
+      "definition": "Source-provided skill class label marking passive skills.",
+      "observed_skill_count": 3,
+      "sample_skill_ids": [
+        "skill:character:uzumaki-naruto:5:passive-kyuubis-chakra-awakening",
+        "skill:character:uchiha-sasuke:5:passive-cursed-seal-awakening",
+        "skill:character:uchiha-sasuke-s:5:passive-cursed-seal-protection"
+      ]
+    }
+  ],
+  "effect_types": [
+    {
+      "effect_type": "damage",
+      "family_id": "offense",
+      "label": "Damage",
+      "definition": "Direct health loss on the described target.",
+      "inference_notes": "Use target_shape subtags only when targeting is structured; otherwise keep only the broad damage tag.",
+      "observed_effect_count": 570,
+      "sample_effect_ids": [
+        "effect:character:uzumaki-naruto:skill:1:1",
+        "effect:character:uzumaki-naruto:skill:2:1",
+        "effect:character:uzumaki-naruto:skill:3:2"
+      ],
+      "tag_hooks": [
+        "character.capability.damage_effects",
+        "character.capability.damage_single_target",
+        "character.capability.damage_aoe"
+      ]
+    },
+    {
+      "effect_type": "increase_damage",
+      "family_id": "offense",
+      "label": "Increase Damage",
+      "definition": "Raises damage dealt by another skill or future attack window.",
+      "inference_notes": "Treat as setup or burst support, not standalone pressure, unless paired with direct damage evidence.",
+      "observed_effect_count": 93,
+      "sample_effect_ids": [
+        "effect:character:uzumaki-naruto:skill:1:2",
+        "effect:character:uzumaki-naruto:skill:5:2",
+        "effect:character:haruno-sakura:skill:1:3"
+      ],
+      "tag_hooks": [
+        "character.capability.damage_amplification"
+      ]
+    },
+    {
+      "effect_type": "reduce_damage",
+      "family_id": "defense",
+      "label": "Reduce Damage",
+      "definition": "Reduces damage taken or lowers damage output, depending on the target described by the effect.",
+      "inference_notes": "Target-specific protection tags are safe only when the target is structured as self, ally, or all allies.",
+      "observed_effect_count": 71,
+      "sample_effect_ids": [
+        "effect:character:uzumaki-naruto:skill:3:1",
+        "effect:character:uzumaki-naruto:skill:5:3",
+        "effect:character:haruno-sakura:skill:3:1"
+      ],
+      "tag_hooks": [
+        "character.capability.damage_reduction",
+        "character.capability.self_protection",
+        "character.capability.ally_protection"
+      ]
+    },
+    {
+      "effect_type": "protect",
+      "family_id": "defense",
+      "label": "Protect",
+      "definition": "Protection-style effect such as invulnerability, destructible defense, shielding, or similar protective language.",
+      "inference_notes": "This bucket is broader than invulnerability alone; inspect raw text when exact protection semantics matter.",
+      "observed_effect_count": 300,
+      "sample_effect_ids": [
+        "effect:character:uzumaki-naruto:skill:4:1",
+        "effect:character:haruno-sakura:skill:3:3",
+        "effect:character:haruno-sakura:skill:4:1"
+      ],
+      "tag_hooks": [
+        "character.capability.protect_effects",
+        "character.capability.self_protection",
+        "character.capability.ally_protection"
+      ]
+    },
+    {
+      "effect_type": "stun",
+      "family_id": "control",
+      "label": "Stun",
+      "definition": "Prevents or limits skill use for the stated duration.",
+      "inference_notes": "Current normalization does not split partial and full stun variants; downstream use should inspect evidence text when needed.",
+      "observed_effect_count": 147,
+      "sample_effect_ids": [
+        "effect:character:uzumaki-naruto:skill:2:2",
+        "effect:character:haruno-sakura:skill:1:2",
+        "effect:character:nara-shikamaru:skill:3:1"
+      ],
+      "tag_hooks": [
+        "character.capability.stun_effects"
+      ]
+    },
+    {
+      "effect_type": "apply_state",
+      "family_id": "state",
+      "label": "Apply State",
+      "definition": "Broad parser bucket for applied rules or states such as cannot be countered, invisibility, or other persistent constraints.",
+      "inference_notes": "This bucket is intentionally broad and should not be mistaken for a single canonical mechanic family.",
+      "observed_effect_count": 144,
+      "sample_effect_ids": [
+        "effect:character:uzumaki-naruto:skill:5:4",
+        "effect:character:uchiha-sasuke:skill:5:3",
+        "effect:character:inuzuka-kiba:skill:3:2"
+      ],
+      "tag_hooks": [
+        "character.capability.state_application"
+      ]
+    },
+    {
+      "effect_type": "heal",
+      "family_id": "sustain",
+      "label": "Heal",
+      "definition": "Restores health to the target described by the effect.",
+      "inference_notes": "Magnitude can stay partial when the text scales from current health thresholds or other conditions.",
+      "observed_effect_count": 53,
+      "sample_effect_ids": [
+        "effect:character:uzumaki-naruto:skill:5:1",
+        "effect:character:haruno-sakura:skill:2:1",
+        "effect:character:rock-lee:skill:5:1"
+      ],
+      "tag_hooks": [
+        "character.capability.heal_effects"
+      ]
+    },
+    {
+      "effect_type": "remove_state",
+      "family_id": "state",
+      "label": "Remove State",
+      "definition": "Broad parser bucket for removing chakra, buffs, afflictions, defense, or other existing states.",
+      "inference_notes": "Do not assume every remove_state entry is chakra denial; check evidence when exact removal type matters.",
+      "observed_effect_count": 43,
+      "sample_effect_ids": [
+        "effect:character:hyuuga-hinata:skill:1:2",
+        "effect:character:young-kakashi:skill:3:4",
+        "effect:character:nohara-rin:skill:2:2"
+      ],
+      "tag_hooks": [
+        "character.capability.removal_effects"
+      ]
+    },
+    {
+      "effect_type": "gain",
+      "family_id": "resource",
+      "label": "Gain",
+      "definition": "Broad parser bucket for gaining chakra, defense, or other beneficial recurring value.",
+      "inference_notes": "This bucket may mix direct resource gain with other beneficial gain text; keep the tag broad.",
+      "observed_effect_count": 19,
+      "sample_effect_ids": [
+        "effect:character:akimichi-chouji:skill:5:2",
+        "effect:character:rock-lee:skill:5:2",
+        "effect:character:abumi-zaku:skill:3:2"
+      ],
+      "tag_hooks": [
+        "character.capability.gain_effects"
+      ]
+    },
+    {
+      "effect_type": "drain",
+      "family_id": "resource",
+      "label": "Drain",
+      "definition": "Broad parser bucket for drain, steal, absorb, or drain-setup text.",
+      "inference_notes": "Some drain entries describe setup or replacement text instead of already-resolved drain output.",
+      "observed_effect_count": 7,
+      "sample_effect_ids": [
+        "effect:character:akadou-yoroi:skill:1:1",
+        "effect:character:akadou-yoroi:skill:2:1",
+        "effect:character:akadou-yoroi:skill:3:1"
+      ],
+      "tag_hooks": [
+        "character.capability.drain_effects"
+      ]
+    },
+    {
+      "effect_type": "conditional",
+      "family_id": "setup",
+      "label": "Conditional",
+      "definition": "Setup text that unlocks, replaces, improves, or otherwise changes later skills or later turns.",
+      "inference_notes": "Treat this as an enabler or transform bucket, not proof of immediate output by itself.",
+      "observed_effect_count": 158,
+      "sample_effect_ids": [
+        "effect:character:uzumaki-naruto:skill:3:3",
+        "effect:character:uzumaki-naruto:skill:4:2",
+        "effect:character:uchiha-sasuke:skill:3:2"
+      ],
+      "tag_hooks": [
+        "character.capability.conditional_effects"
+      ]
+    },
+    {
+      "effect_type": "unknown",
+      "family_id": "uncertainty",
+      "label": "Unknown",
+      "definition": "Fallback effect bucket when current heuristics cannot safely classify the text further.",
+      "inference_notes": "Must be surfaced as uncertainty; downstream logic should inspect raw text and not invent a cleaner type.",
+      "observed_effect_count": 33,
+      "sample_effect_ids": [
+        "effect:character:aburame-shino:skill:3:1",
+        "effect:character:hatake-kakashi:skill:3:1",
+        "effect:character:baki:skill:1:1"
+      ],
+      "tag_hooks": [
+        "character.data.effect_fallback_unknown"
+      ]
+    }
+  ],
+  "condition_types": [
+    {
+      "condition_type": "previous_skill",
+      "label": "Previous Skill",
+      "definition": "The effect applies only while or after a referenced skill has been used or is active.",
+      "observed_condition_count": 46,
+      "sample_skill_ids": [
+        "skill:character:uzumaki-naruto:1:uzumaki-naruto-combo",
+        "skill:character:uzumaki-naruto:4:sexy-technique",
+        "skill:character:haruno-sakura:1:ko-punch"
+      ],
+      "tag_hooks": [
+        "character.capability.combo_dependency"
+      ]
+    },
+    {
+      "condition_type": "requires_state",
+      "label": "Requires State",
+      "definition": "The effect depends on a described threshold or state that is not fully resolved to a reusable normalized reference.",
+      "observed_condition_count": 20,
+      "sample_skill_ids": [
+        "skill:character:uzumaki-naruto:5:passive-kyuubis-chakra-awakening",
+        "skill:character:uchiha-sasuke:5:passive-cursed-seal-awakening",
+        "skill:character:akimichi-chouji:5:passive-butterfly-mode"
+      ],
+      "tag_hooks": [
+        "character.capability.state_dependency"
+      ]
+    }
+  ],
+  "mission_requirement_types": [
+    {
+      "requirement_type": "win_with_character",
+      "label": "Win With Character",
+      "definition": "Objective requires winning a number of battles with a named character or character group condition.",
+      "observed_requirement_count": 69,
+      "sample_requirement_ids": [
+        "mission:a-blank-slate:req:01",
+        "mission:a-dishonored-shinobi:req:01",
+        "mission:a-double-agent:req:01"
+      ],
+      "tag_hooks": [
+        "mission.objective.win_with_character"
+      ]
+    },
+    {
+      "requirement_type": "streak",
+      "label": "Streak",
+      "definition": "Objective requires consecutive wins before the counter resets.",
+      "observed_requirement_count": 67,
+      "sample_requirement_ids": [
+        "mission:a-dishonored-shinobi:req:02",
+        "mission:a-downpour-of-illusion:req:01",
+        "mission:a-final-promise:req:02"
+      ],
+      "tag_hooks": [
+        "mission.objective.streak"
+      ]
+    },
+    {
+      "requirement_type": "use_skill",
+      "label": "Use Skill",
+      "definition": "Objective requires activating a specific skill a stated number of times.",
+      "observed_requirement_count": 9,
+      "sample_requirement_ids": [
+        "mission:a-final-promise:req:03",
+        "mission:a-final-promise:req:04",
+        "mission:the-adored-elder-sister:req:01"
+      ],
+      "tag_hooks": [
+        "mission.objective.use_skill"
+      ]
+    },
+    {
+      "requirement_type": "unknown",
+      "label": "Unknown",
+      "definition": "Objective text is unavailable in the captured mission detail snapshot and must remain explicit unknown state.",
+      "observed_requirement_count": 118,
+      "sample_requirement_ids": [
+        "mission:a-cautious-blade-in-the-cloud:req:01",
+        "mission:a-chance-at-redemption:req:01",
+        "mission:a-feast-for-crows:req:01"
+      ],
+      "tag_hooks": [
+        "mission.objective.unknown"
+      ]
+    }
+  ],
+  "ambiguity_codes": {
+    "effect": [
+      {
+        "code": "effect_target_unknown",
+        "label": "Effect Target Unknown",
+        "definition": "Parser could not safely resolve a structured target for the effect text.",
+        "observed_count": 789,
+        "sample_effect_ids": [
+          "effect:character:uzumaki-naruto:skill:1:2",
+          "effect:character:uzumaki-naruto:skill:3:1",
+          "effect:character:uzumaki-naruto:skill:3:2"
+        ],
+        "tag_hooks": [
+          "character.data.effect_target_unknown"
+        ]
+      },
+      {
+        "code": "effect_type_heuristic",
+        "label": "Effect Type Heuristic",
+        "definition": "Effect type was inferred heuristically rather than from a cleaner parser match.",
+        "observed_count": 302,
+        "sample_effect_ids": [
+          "effect:character:uzumaki-naruto:skill:3:3",
+          "effect:character:uzumaki-naruto:skill:4:2",
+          "effect:character:uzumaki-naruto:skill:5:4"
+        ],
+        "tag_hooks": [
+          "character.data.effect_type_heuristic"
+        ]
+      },
+      {
+        "code": "effect_magnitude_unknown",
+        "label": "Effect Magnitude Unknown",
+        "definition": "Parser could not safely extract a structured numeric magnitude from the effect text.",
+        "observed_count": 108,
+        "sample_effect_ids": [
+          "effect:character:aburame-shino:skill:2:2",
+          "effect:character:akimichi-chouji:skill:3:3",
+          "effect:character:akimichi-chouji:skill:5:2"
+        ],
+        "tag_hooks": [
+          "character.data.effect_magnitude_unknown"
+        ]
+      },
+      {
+        "code": "effect_fallback_unknown",
+        "label": "Effect Fallback Unknown",
+        "definition": "No structured heuristic matched the effect text, so the effect stays in the explicit unknown bucket.",
+        "observed_count": 33,
+        "sample_effect_ids": [
+          "effect:character:aburame-shino:skill:3:1",
+          "effect:character:hatake-kakashi:skill:3:1",
+          "effect:character:baki:skill:1:1"
+        ],
+        "tag_hooks": [
+          "character.data.effect_fallback_unknown"
+        ]
+      }
+    ],
+    "mission": [
+      {
+        "code": "objective_text_missing",
+        "label": "Objective Text Missing",
+        "definition": "Mission objective text was unavailable in the captured snapshot.",
+        "observed_count": 118,
+        "sample_requirement_ids": [
+          "mission:a-cautious-blade-in-the-cloud:req:01",
+          "mission:a-chance-at-redemption:req:01",
+          "mission:a-feast-for-crows:req:01"
+        ],
+        "tag_hooks": [
+          "mission.data.objective_text_missing"
+        ]
+      },
+      {
+        "code": "detail_payload_redirect",
+        "label": "Detail Payload Redirect",
+        "definition": "Mission detail route returned a redirect-shaped payload instead of the expected mission detail body.",
+        "observed_count": 71,
+        "sample_requirement_ids": [
+          "mission:a-cautious-blade-in-the-cloud:req:01",
+          "mission:a-chance-at-redemption:req:01",
+          "mission:a-feast-for-crows:req:01"
+        ],
+        "tag_hooks": [
+          "mission.data.detail_payload_redirect"
+        ]
+      },
+      {
+        "code": "detail_payload_error_page",
+        "label": "Detail Payload Error Page",
+        "definition": "Mission detail route resolved to an error page payload, so the objective stays unknown.",
+        "observed_count": 46,
+        "sample_requirement_ids": [
+          "mission:a-true-artist:req:01",
+          "mission:aburame-at-war:req:01",
+          "mission:an-anbu-of-the-leaf:req:01"
+        ],
+        "tag_hooks": [
+          "mission.data.detail_payload_error_page"
+        ]
+      },
+      {
+        "code": "detail_payload_unexpected_home",
+        "label": "Detail Payload Unexpected Home",
+        "definition": "Mission detail route fell back to the site home payload instead of a mission detail payload.",
+        "observed_count": 1,
+        "sample_requirement_ids": [
+          "mission:deva-path:req:01"
+        ],
+        "tag_hooks": [
+          "mission.data.detail_payload_unexpected_home"
+        ]
+      },
+      {
+        "code": "character_group_not_modeled",
+        "label": "Character Group Not Modeled",
+        "definition": "Objective names a character group in text, but the current normalized mission contract does not model that group as explicit character refs.",
+        "observed_count": 21,
+        "sample_requirement_ids": [
+          "mission:a-blank-slate:req:01",
+          "mission:maki-of-the-sand:req:01",
+          "mission:maki-of-the-sand:req:02"
+        ],
+        "tag_hooks": [
+          "mission.data.character_group_not_modeled"
+        ]
+      },
+      {
+        "code": "multi_character_condition_not_structured",
+        "label": "Multi Character Condition Not Structured",
+        "definition": "Objective mentions multiple characters or a compound character condition that stays preserved only in free text.",
+        "observed_count": 12,
+        "sample_requirement_ids": [
+          "mission:a-new-team-leader:req:01",
+          "mission:beginning-a-path-of-vengeance:req:02",
+          "mission:disciples-of-the-slug:req:03"
+        ],
+        "tag_hooks": [
+          "mission.data.multi_character_condition_not_structured"
+        ]
+      },
+      {
+        "code": "character_subject_not_resolved",
+        "label": "Character Subject Not Resolved",
+        "definition": "Objective names a character subject that could not be resolved into a normalized character ref.",
+        "observed_count": 5,
+        "sample_requirement_ids": [
+          "mission:a-final-promise:req:02",
+          "mission:from-teacher-to-partner:req:01",
+          "mission:from-teacher-to-partner:req:02"
+        ],
+        "tag_hooks": [
+          "mission.data.character_subject_not_resolved"
+        ]
+      },
+      {
+        "code": "skill_reference_not_resolved",
+        "label": "Skill Reference Not Resolved",
+        "definition": "Objective names a skill that could not be safely resolved into a normalized skill ref.",
+        "observed_count": 2,
+        "sample_requirement_ids": [
+          "mission:the-adored-elder-sister:req:01",
+          "mission:the-adored-elder-sister:req:02"
+        ],
+        "tag_hooks": [
+          "mission.data.skill_reference_not_resolved"
+        ]
+      }
+    ]
+  }
+}
