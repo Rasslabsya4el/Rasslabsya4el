@@ -14,18 +14,7 @@
 
 ### Public
 
-Most of my public repos fall into four buckets: agents, data / enrichment pipelines, browser tools, and automation utilities.
-
-#### Agents
-
-- [`Hermes Finances Agent`](https://github.com/Rasslabsya4el/Hermes-finances-agent)  
-  Local-first finance agent for tracking family expenses from receipts and text notes, with SQLite as the source of truth and Google Sheets as the review layer.
-
-- [`Poe Junkroan`](https://github.com/Rasslabsya4el/Poe-Junkroan)  
-  Path of Exile build agent that works with real Path of Building states, tries changes, compares outcomes, and returns either a usable build artifact or a clear failure reason.
-
-- [`Naruto Arena Agent`](https://github.com/Rasslabsya4el/naruto-arena-agent)  
-  Game helper agent for team building, matchup planning, and character usage based on local game references instead of made-up answers.
+Most of my public repos fall into five buckets: data / enrichment pipelines, automation utilities, agents, browser tools, and company take-home demos.
 
 #### Data And Enrichment Pipelines
 
@@ -52,6 +41,17 @@ Most of my public repos fall into four buckets: agents, data / enrichment pipeli
 - [`7TV Telegram Bot`](https://github.com/Rasslabsya4el/7tv-telegram-bot)  
   Minimal Cloudflare Worker that answers Telegram inline queries with SevenTV emotes without a dedicated server.
 
+#### Agents
+
+- [`Hermes Finances Agent`](https://github.com/Rasslabsya4el/Hermes-finances-agent)  
+  Local-first finance agent for tracking family expenses from receipts and text notes, with SQLite as the source of truth and Google Sheets as the review layer.
+
+- [`Poe Junkroan`](https://github.com/Rasslabsya4el/Poe-Junkroan)  
+  Path of Exile build agent that works with real Path of Building states, tries changes, compares outcomes, and returns either a usable build artifact or a clear failure reason.
+
+- [`Naruto Arena Agent`](https://github.com/Rasslabsya4el/naruto-arena-agent)  
+  Game helper agent for team building, matchup planning, and character usage based on local game references instead of made-up answers.
+
 #### Browser Tools And Extensions
 
 - [`PoE Wiki Quick Search Extension`](https://github.com/Rasslabsya4el/PoE-Wiki-Quick-Search-Extension)  
@@ -62,6 +62,14 @@ Most of my public repos fall into four buckets: agents, data / enrichment pipeli
 
 - [`Youtube Aim Trainer Extension`](https://github.com/Rasslabsya4el/Youtube-Aim-trainer-extension)  
   Lightweight YouTube overlay game built as a Chrome extension.
+
+#### Company Take-Home Demos
+
+- [`LD Latte Demo`](https://github.com/Rasslabsya4el/LD-Latte-demo)  
+  Reviewer-facing Flask demo for a job assignment: a polished meeting calendar flow with prepared events, meeting details, and conflict feedback for new bookings.
+
+- [`Improvado Vendor Onboarding`](https://github.com/Rasslabsya4el/improvado_vendor_onboarding)  
+  Reviewer-facing n8n take-home prototype for vendor onboarding that classifies risk with an LLM, routes requests by tier, and leaves a readable audit trail.
 
 ### Private / NDA
 
